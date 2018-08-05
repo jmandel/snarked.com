@@ -1,0 +1,97 @@
+
+<HTML>
+<HEAD>
+<TITLE>snarked dot com</TITLE>
+<LINK REL=StyleSheet HREF="/config/snarked_style.css" TYPE="text/css" MEDIA=screen>
+<LINK rel="SHORTCUT ICON" href="/favicon2.ico" type="image/x-icon">
+</HEAD>
+<BODY>
+
+
+<div class="snarkedtable">
+<div class="headerline">
+<form action="/view-recipe.php">
+<a href="/">snarked.com</a>: 
+just like <em>your</em> recipe box, only <b>online.</b></a>
+<span class="droplist">
+<select name="shortname">
+<option value="">pick a recipe</option><option value="banana_bread">Banana Bread</option>
+<option value="refined_banana_bread">Banana Bread (Refined)</option>
+<option value="black_forest_fudge">Black Forest Fudge</option>
+<option value="chocolate_cake">Chocolate cake</option>
+<option value="multigrain_pancakes">Cooks' Multigrain Pancakes</option>
+<option value="cornmeal_pancakes">Cornmeal Pancakes</option>
+<option value="crepes">Crepes</option>
+<option value="kubideh">Kubideh</option>
+<option value="chocolate_chip_cookies">Over-Size Chocolate Chip Cookies</option>
+<option value="shanghainese_wontons">Shanghainese Wontons</option>
+<option value="Smothered_Chicken">Smothered Chicken + Barley</option>
+<option value="lemon_squares">Suchele-Inspired Lemon Squares</option>
+</select><input type="submit"  value="go">
+</span>
+</form>
+</div>
+<div class="basictext">
+
+	<div class="headtext">
+	<a href="/recipe/chocolate_cake">Chocolate cake</a>
+	</div>
+
+	<div class="basictext">
+	Submitted by: Josh<br>
+	Date: 2003-08-16<br>
+	<br>
+	</div>
+<table class="recipetable">
+		<caption class="smalltext">Click photo to enlarge</caption>
+		<tr>
+<td><a href="/recipe/chocolate_cake/photo/0"><img border=1 src="/recipe_files/chocolate_cake_image_0_small.jpg"></a></td>
+<td><a href="/recipe/chocolate_cake/photo/1"><img border=1 src="/recipe_files/chocolate_cake_image_1_small.jpg"></a></td>
+<td><a href="/recipe/chocolate_cake/photo/2"><img border=1 src="/recipe_files/chocolate_cake_image_2_small.jpg"></a></td>
+</tr></table>
+<div class="recipetable" id="limitwidth">
+<div class="ingredienttext">
+<b>Ingredients:</b><br> 2 1/4 cups cake flour (not self-rising)<br />
+3/4 cup unsweetened<br />
+Dutch-process cocoa powder<br />
+1/2 teaspoon salt<br />
+1/4 teaspoon baking soda<br />
+1 cup sour cream (8 1/2 ounces)<br />
+2 1/4 sticks (1 cup plus 2 tablespoons) unsalted butter, softened<br />
+1 1/2 cups granulated sugar<br />
+1 1/2 cups packed dark brown sugar<br />
+1 tablespoon chocolate extract* (optional)<br />
+1 teaspoon vanilla extract<br />
+6 large eggs<br />
+3 ounces fine-quality bittersweet chocolate (not unsweetened)<br />
+2 tablespoons unsalted butter</div><br><br>
+<div class="instructiontext">
+<b>Instructions</b><br>
+ Do not preheat oven. Butter and flour a 12-cup bundt pan, knocking out any excess flour.<br><br>
+
+Into a small bowl sift together flour, unsweetened cocoa powder, and salt. In another small bowl stir together baking soda and sour cream.<br><br>
+
+In a large bowl with an electric mixer (preferably a standing electric mixer) beat together butter and sugars until light and fluffy, about 10 minutes. Beat in extracts and add eggs 1 at a time, beating well after each addition. With mixer at low speed, add flour mixture and sour cream mixture alternately in batches, beating until just combined.<br><br>
+
+Pour batter into bundt pan and put in middle of cold oven. Set oven to 350°F and bake cake 1 hour and 25 minutes, or until a tester comes out clean. Cool cake in pan on a rack 15 minutes and turn out onto rack to cool completely. Pound cake keeps, wrapped in plastic wrap, at room temperature 1 week. Alternatively, pound cake may be frozen, wrapped well in plastic wrap and foil, 3 months.<br><br>
+
+Chop bittersweet chocolate and in a double boiler or a metal bowl set over a saucepan of barely simmering water melt chocolate with butter, stirring until smooth. Transfer glaze to a pastry bag fitted with a #3 plain tip (slightly smaller than 1/8 inch). (Alternatively, transfer glaze to a small heavy-duty sealable plastic bag and press out excess air. Snip off 1 corner, making a small hole.) Pipe glaze back and forth over top of cake, letting it drip down sides. Let glaze set 30 minutes at room temperature.<br><br>
+
+Serve cake with dollops of sour cream and strawberries.<br><br>
+</div>
+</div>
+<div  class="closingline">snarked.com 2003, <a href="mailto:jmandel@alum.mit.edu">Josh Mandel</a></div>
+</div>
+</div>
+
+
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+

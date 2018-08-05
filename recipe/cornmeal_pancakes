@@ -1,0 +1,77 @@
+
+<HTML>
+<HEAD>
+<TITLE>snarked dot com</TITLE>
+<LINK REL=StyleSheet HREF="/config/snarked_style.css" TYPE="text/css" MEDIA=screen>
+<LINK rel="SHORTCUT ICON" href="/favicon2.ico" type="image/x-icon">
+</HEAD>
+<BODY>
+
+
+<div class="snarkedtable">
+<div class="headerline">
+<form action="/view-recipe.php">
+<a href="/">snarked.com</a>: 
+just like <em>your</em> recipe box, only <b>online.</b></a>
+<span class="droplist">
+<select name="shortname">
+<option value="">pick a recipe</option><option value="banana_bread">Banana Bread</option>
+<option value="refined_banana_bread">Banana Bread (Refined)</option>
+<option value="black_forest_fudge">Black Forest Fudge</option>
+<option value="chocolate_cake">Chocolate cake</option>
+<option value="multigrain_pancakes">Cooks' Multigrain Pancakes</option>
+<option value="cornmeal_pancakes">Cornmeal Pancakes</option>
+<option value="crepes">Crepes</option>
+<option value="kubideh">Kubideh</option>
+<option value="chocolate_chip_cookies">Over-Size Chocolate Chip Cookies</option>
+<option value="shanghainese_wontons">Shanghainese Wontons</option>
+<option value="Smothered_Chicken">Smothered Chicken + Barley</option>
+<option value="lemon_squares">Suchele-Inspired Lemon Squares</option>
+</select><input type="submit"  value="go">
+</span>
+</form>
+</div>
+<div class="basictext">
+
+	<div class="headtext">
+	<a href="/recipe/cornmeal_pancakes">Cornmeal Pancakes</a>
+	</div>
+
+	<div class="basictext">
+	Submitted by: jmandel@snarked.com<br>
+	Date: 2007-02-21<br>
+	<br>
+	</div>
+<div class="recipetable" id="limitwidth">
+<div class="ingredienttext">
+<b>Ingredients:</b><br>Dry:<br />
+1.25 C Yellow cornmeal<br />
+.75 C flour<br />
+1.75 tsp baking powder<br />
+.75 tsp salt<br />
+<br />
+Wet:<br />
+1.67 C milk<br />
+4 Tbsp melted butter<br />
+.25 C Maple syrup<br />
+2 eggs</div><br><br>
+<div class="instructiontext">
+<b>Instructions</b><br>
+Mix the dry and the wet separately, then combine without overmixing to form a thin batter.  Serves 3---4.
+</div>
+</div>
+<div  class="closingline">snarked.com 2003, <a href="mailto:jmandel@alum.mit.edu">Josh Mandel</a></div>
+</div>
+</div>
+
+
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+

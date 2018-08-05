@@ -1,0 +1,87 @@
+
+<HTML>
+<HEAD>
+<TITLE>snarked dot com</TITLE>
+<LINK REL=StyleSheet HREF="/config/snarked_style.css" TYPE="text/css" MEDIA=screen>
+<LINK rel="SHORTCUT ICON" href="/favicon2.ico" type="image/x-icon">
+</HEAD>
+<BODY>
+
+
+<div class="snarkedtable">
+<div class="headerline">
+<form action="/view-recipe.php">
+<a href="/">snarked.com</a>: 
+just like <em>your</em> recipe box, only <b>online.</b></a>
+<span class="droplist">
+<select name="shortname">
+<option value="">pick a recipe</option><option value="banana_bread">Banana Bread</option>
+<option value="refined_banana_bread">Banana Bread (Refined)</option>
+<option value="black_forest_fudge">Black Forest Fudge</option>
+<option value="chocolate_cake">Chocolate cake</option>
+<option value="multigrain_pancakes">Cooks' Multigrain Pancakes</option>
+<option value="cornmeal_pancakes">Cornmeal Pancakes</option>
+<option value="crepes">Crepes</option>
+<option value="kubideh">Kubideh</option>
+<option value="chocolate_chip_cookies">Over-Size Chocolate Chip Cookies</option>
+<option value="shanghainese_wontons">Shanghainese Wontons</option>
+<option value="Smothered_Chicken">Smothered Chicken + Barley</option>
+<option value="lemon_squares">Suchele-Inspired Lemon Squares</option>
+</select><input type="submit"  value="go">
+</span>
+</form>
+</div>
+<div class="basictext">
+
+	<div class="headtext">
+	<a href="/recipe/refined_banana_bread">Banana Bread (Refined)</a>
+	</div>
+
+	<div class="basictext">
+	Submitted by: Josh &lt;jmandel@snarked.com&gt;<br>
+	Date: 2010-10-12<br>
+	<br>
+	</div>
+<table class="recipetable">
+		<caption class="smalltext">Click photo to enlarge</caption>
+		<tr>
+<td><a href="/recipe/refined_banana_bread/photo/0"><img border=1 src="/recipe_files/healthier_banana_bread_image_0_small.jpg"></a></td>
+</tr></table>
+<div class="recipetable" id="limitwidth">
+<div class="ingredienttext">
+<b>Ingredients:</b><br>1 c sugar<br />
+4 Tbsp butter<br />
+4 Tbsp olive oil<br />
+2 eggs<br />
+2-3 bananas, mashed OR 1 banana + 2 grated carrots<br />
+1/4 c low-fat plain yogurt<br />
+1 tsp vanilla extract<br />
+1 1/2 c whole wheat flour<br />
+1 tsp baking soda<br />
+1/4 tsp baking powder<br />
+1/4 tsp salt<br />
+1/2 c chocolate chips and/or nuts</div><br><br>
+<div class="instructiontext">
+<b>Instructions</b><br>
+Cream butter + oil and sugar. Add eggs, then bananas and/or carrots. Stir in yogurt and vanilla.
+
+In another bowl, soft together flour, baking soda, baking powder, salt, and chips/nuts. Mix dry ingredients with wet until just combined.
+
+Pour into a greased loaf pan and cook for 75 minutes at 350 degrees F. 
+</div>
+</div>
+<div  class="closingline">snarked.com 2003, <a href="mailto:jmandel@alum.mit.edu">Josh Mandel</a></div>
+</div>
+</div>
+
+
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+
