@@ -161,9 +161,9 @@ ${opts.content}
 function header(active: "home" | "add", assetPrefix = ""): string {
   return `<header class="sn-header">
 <div class="container row">
-<a class="sn-mark" href="${assetPrefix}index.html">snarked<span class="dot"></span></a>
+<a class="sn-mark" href="${assetPrefix || "./"}">snarked<span class="dot"></span></a>
 <nav class="sn-nav">
-<a href="${assetPrefix}add-recipe.html" ${active === "add" ? 'class="active"' : ""}>Add a recipe</a>
+<a href="${assetPrefix}add-recipe/" ${active === "add" ? 'class="active"' : ""}>Add a recipe</a>
 </nav>
 </div>
 </header>`;
@@ -196,7 +196,7 @@ function renderHero(): string {
 }
 
 function renderRow(r: Recipe): string {
-  return `<a class="sn-row" href="recipe/${escapeHtml(r.shortname)}.html">
+  return `<a class="sn-row" href="recipe/${escapeHtml(r.shortname)}/">
 <div class="sn-row__body">
 <h3 class="sn-row__title">${escapeHtml(r.title)}</h3>
 <p class="sn-row__blurb">${escapeHtml(r.blurb)}</p>
@@ -215,7 +215,7 @@ ${renderHero()}
 <div class="sn-list">
 ${list}
 </div>
-<p class="sn-add-line">Have a favorite food? Why not <a href="add-recipe.html"><b>add a recipe</b></a>?</p>
+<p class="sn-add-line">Have a favorite food? Why not <a href="add-recipe/"><b>add a recipe</b></a>?</p>
 </div>
 </section>
 </main>
@@ -271,11 +271,12 @@ function renderGallery(r: Recipe, prefix: string): string {
 }
 
 function renderRecipe(r: Recipe, all: Recipe[]): string {
-  const content = `${header("home", "../")}
+  const prefix = "../../";
+  const content = `${header("home", prefix)}
 <main>
 <section class="sn-detail__top">
 <div class="container">
-<div class="sn-detail__breadcrumb"><a href="../index.html">snarked.com</a></div>
+<div class="sn-detail__breadcrumb"><a href="${prefix}">snarked.com</a></div>
 <h1 class="sn-detail__title">${escapeHtml(r.title)}</h1>
 <p class="sn-detail__lede">${escapeHtml(r.blurb)}</p>
 <div class="sn-detail__byline">
@@ -287,7 +288,7 @@ function renderRecipe(r: Recipe, all: Recipe[]): string {
 
 <div class="container">
 <div class="sn-detail__body">
-${renderGallery(r, "../")}
+${renderGallery(r, prefix)}
 ${renderIngredientsPanel(r)}
 ${renderMethodPanel(r)}
 </div>
@@ -298,12 +299,12 @@ ${footer()}`;
     title: `${r.title} — snarked.com`,
     description: r.blurb,
     content,
-    assetPrefix: "../",
+    assetPrefix: prefix,
   });
 }
 
 function renderAddRecipe(): string {
-  const content = `${header("add")}
+  const content = `${header("add", "../")}
 <main>
 <section class="sn-prose">
 <div class="narrow">
@@ -340,7 +341,7 @@ Step the first. Step the second.</code></pre>
 </section>
 </main>
 ${footer()}`;
-  return pageShell({ title: "Add a recipe — snarked.com", content });
+  return pageShell({ title: "Add a recipe — snarked.com", content, assetPrefix: "../" });
 }
 
 function copyDirIfExists(src: string, dest: string) {
@@ -356,16 +357,18 @@ function copyFileIfExists(src: string, dest: string) {
 function build() {
   rmSync(DIST, { recursive: true, force: true });
   mkdirSync(DIST, { recursive: true });
-  mkdirSync(join(DIST, "recipe"), { recursive: true });
 
   const files = readdirSync(RECIPES_DIR).filter((f) => f.endsWith(".md"));
   const recipes = files.map(loadRecipe);
   const sorted = [...recipes].sort((a, b) => a.title.localeCompare(b.title));
 
   writeFileSync(join(DIST, "index.html"), renderIndex(sorted));
-  writeFileSync(join(DIST, "add-recipe.html"), renderAddRecipe());
+  mkdirSync(join(DIST, "add-recipe"), { recursive: true });
+  writeFileSync(join(DIST, "add-recipe", "index.html"), renderAddRecipe());
   for (const r of sorted) {
-    writeFileSync(join(DIST, "recipe", `${r.shortname}.html`), renderRecipe(r, sorted));
+    const dir = join(DIST, "recipe", r.shortname);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "index.html"), renderRecipe(r, sorted));
   }
 
   copyDirIfExists(join(ROOT, "images"), join(DIST, "images"));

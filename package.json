@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "bun run build.ts",
-    "dev": "bun run build.ts && bun --hot serve dist"
+    "serve": "bun run build.ts && cd dist && python3 -m http.server 8000",
+    "dev": "bun run build.ts && cd dist && python3 -m http.server 8000"
   },
   "dependencies": {
     "marked": "^14.1.4"
