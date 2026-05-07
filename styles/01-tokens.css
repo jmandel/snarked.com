@@ -1,0 +1,243 @@
+/* =============================================================
+   Snarked Design System — Tokens
+   colors_and_type.css
+
+   Brand mood: modern maritime — vibrant ocean blues, white pages,
+   coral snark accents. Channels The Hunting of the Snark as a
+   sea voyage, not a Victorian study.
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- COLORS ---------- */
+
+  /* Maritime blues */
+  --abyss:       #051845;   /* deepest, used in footers / overlays */
+  --sea:         #0B3B91;   /* deep ocean — hero blocks, headers */
+  --sail:        #2A6EF0;   /* vibrant primary blue — links, CTAs */
+  --sail-deep:   #1E4FC4;   /* hover state for sail */
+  --sky:         #7DBEFF;   /* soft sky blue — illustrations, sub-accents */
+  --foam:        #EFF6FF;   /* lightest blue surface */
+  --cloud:       #FFFFFF;   /* pure white surface */
+
+  /* Ink */
+  --ink:         #0A1F4D;   /* primary text on light surfaces */
+  --ink-soft:    #2D3F6B;
+  --ink-faint:   #6B7BA0;
+  --ink-rule:    #C4D2EA;
+
+  /* On-dark text */
+  --on-sea:      #FFFFFF;
+  --on-sea-soft: #B8CDFF;
+  --on-sea-faint:#7DBEFF;
+
+  /* Snark accents */
+  --coral:       #F43F5E;   /* the dot, hot stamps, "new" markers */
+  --coral-deep:  #C8203F;
+  --coral-tint:  #FFE0E6;
+  --brass:       #F59E0B;   /* once per page, max */
+  --kelp:        #0FA37F;   /* success / "tested" */
+  --kelp-tint:   #CDF2E5;
+
+  /* Semantic mapping */
+  --bg:              var(--cloud);
+  --bg-alt:          var(--foam);
+  --bg-deep:         var(--sea);
+  --bg-input:        var(--cloud);
+  --bg-inverse:      var(--abyss);
+
+  --fg:              var(--ink);
+  --fg-muted:        var(--ink-soft);
+  --fg-subtle:       var(--ink-faint);
+  --fg-on-inverse:   var(--on-sea);
+
+  --link:            var(--sail);
+  --link-hover:      var(--sail-deep);
+
+  --accent:          var(--sail);
+  --accent-hover:    var(--sail-deep);
+  --accent-soft:     var(--foam);
+
+  --hot:             var(--coral);
+  --hot-deep:        var(--coral-deep);
+  --hot-tint:        var(--coral-tint);
+
+  --success:         var(--kelp);
+  --success-tint:    var(--kelp-tint);
+  --warning:         var(--brass);
+  --danger:          var(--coral);
+
+  --border:          var(--ink);
+  --border-soft:     var(--ink-rule);
+  --border-faint:    var(--ink-faint);
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display:    'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-body:       'Lora', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-mono:       'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  /* ---------- TYPE SCALE ---------- */
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-32: 2rem;
+  --fs-40: 2.5rem;
+  --fs-56: 3.5rem;
+  --fs-80: 5rem;
+  --fs-120: 7.5rem;
+
+  --lh-tight:  1.02;
+  --lh-snug:   1.15;
+  --lh-normal: 1.45;
+  --lh-body:   1.6;
+  --lh-loose:  1.8;
+
+  --tracking-tight:    -0.025em;
+  --tracking-normal:    0;
+  --tracking-wide:      0.04em;
+  --tracking-eyebrow:   0.18em;
+
+  /* ---------- SPACING (8px grid) ---------- */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px; --space-10: 128px;
+
+  /* ---------- RADII ---------- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  /* ---------- BORDERS ---------- */
+  --hairline:    1px solid var(--border-soft);
+  --rule:        1px solid var(--ink-faint);
+  --rule-strong: 2px solid var(--ink);
+
+  /* ---------- ELEVATION (one printer's-drop only) ---------- */
+  --shadow-1:      0 2px 0 0 var(--ink);
+  --shadow-1-sail: 0 2px 0 0 var(--sail);
+  --shadow-modal:  0 12px 32px -8px rgba(11, 59, 145, 0.35);
+
+  /* ---------- LAYOUT ---------- */
+  --container:        1120px;
+  --container-narrow: 720px;
+  --header-h:         72px;
+
+  /* ---------- MOTION ---------- */
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --ease:     cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* =============================================================
+   GLOBAL DEFAULTS
+   ============================================================= */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =============================================================
+   SEMANTIC TYPE STYLES
+   ============================================================= */
+
+.display {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: var(--fs-120); line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.h1, h1 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: var(--fs-56); line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-5);
+}
+.h2, h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--fs-40); line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-4);
+}
+.h3, h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--fs-32); line-height: var(--lh-snug);
+  margin: 0 0 var(--space-3);
+}
+.h4, h4 {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: var(--fs-24); line-height: var(--lh-snug);
+  margin: 0 0 var(--space-3);
+}
+
+.eyebrow {
+  font-family: var(--font-mono); font-size: var(--fs-12); font-weight: 500;
+  text-transform: uppercase; letter-spacing: var(--tracking-eyebrow);
+  color: var(--fg-muted);
+}
+.lede, .lead {
+  font-family: var(--font-body); font-size: var(--fs-20); line-height: var(--lh-normal);
+  color: var(--fg); font-style: italic;
+}
+p, .p {
+  font-family: var(--font-body); font-size: var(--fs-16); line-height: var(--lh-body);
+  color: var(--fg); margin: 0 0 var(--space-4); max-width: 66ch;
+}
+.small, small {
+  font-family: var(--font-body); font-size: var(--fs-14); line-height: var(--lh-normal);
+  color: var(--fg-muted);
+}
+.caption {
+  font-family: var(--font-body); font-style: italic;
+  font-size: var(--fs-13); color: var(--fg-subtle);
+}
+code, .code, .mono {
+  font-family: var(--font-mono); font-size: 0.92em; letter-spacing: 0;
+}
+.meta {
+  font-family: var(--font-mono); font-size: var(--fs-12);
+  text-transform: uppercase; letter-spacing: var(--tracking-wide);
+  color: var(--fg-muted);
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease);
+}
+a:hover { color: var(--link-hover); }
+
+hr.snark-rule {
+  border: 0; text-align: center; overflow: visible;
+  height: 1em; margin: var(--space-6) 0; color: var(--sail);
+}
+hr.snark-rule::before {
+  content: "✦ ✦ ✦";
+  font-family: var(--font-display);
+  letter-spacing: 0.6em;
+  font-size: var(--fs-16);
+}
+
+/* Reusable hot-stamp badge */
+.snark-stamp {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--coral);
+  border: 1.5px solid var(--coral);
+  padding: 5px 9px; border-radius: 2px;
+  transform: rotate(-2deg);
+  background: var(--cloud);
+}
