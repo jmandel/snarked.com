@@ -1,0 +1,45 @@
+name: Submit a recipe
+description: Suggest a new recipe for snarked.com
+title: "Recipe: <your title>"
+labels: ["recipe"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: As it should appear at the top of the page.
+    validations:
+      required: true
+  - type: input
+    id: shortname
+    attributes:
+      label: Shortname
+      description: Lowercase, underscore-separated. Becomes the URL slug.
+      placeholder: my_recipe
+    validations:
+      required: true
+  - type: input
+    id: blurb
+    attributes:
+      label: Blurb
+      description: A short, snarky one-liner that shows up on the index.
+    validations:
+      required: true
+  - type: input
+    id: submitter
+    attributes:
+      label: Submitter
+      description: Name (and optionally email) you'd like credited.
+  - type: textarea
+    id: ingredients
+    attributes:
+      label: Ingredients
+      description: One per line.
+    validations:
+      required: true
+  - type: textarea
+    id: instructions
+    attributes:
+      label: Instructions
+    validations:
+      required: true

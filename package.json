@@ -1,0 +1,15 @@
+{
+  "name": "snarked.com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun run build.ts",
+    "dev": "bun run build.ts && bun --hot serve dist"
+  },
+  "dependencies": {
+    "marked": "^14.1.4"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
