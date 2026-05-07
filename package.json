@@ -4,11 +4,13 @@
   "type": "module",
   "scripts": {
     "build": "bun run build.ts",
-    "serve": "bun run build.ts && cd dist && python3 -m http.server 8000",
-    "dev": "bun run build.ts && cd dist && python3 -m http.server 8000"
+    "dev": "bun run serve.ts"
   },
   "dependencies": {
-    "marked": "^14.1.4"
+    "marked": "^14.1.4",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "zustand": "^5.0.13"
   },
   "devDependencies": {
     "@types/bun": "latest"
