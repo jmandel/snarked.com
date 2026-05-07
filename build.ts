@@ -190,7 +190,7 @@ Then the bowsprit got mixed with the rudder sometimes,<br>
 function renderHero(): string {
   return `<section class="sn-hero">
 <div class="container">
-<h1>just like <em>your</em><br>recipe box, only <span class="online">online.</span></h1>
+<h1>just like <em>your</em> recipe box, only <b>online.</b></h1>
 </div>
 </section>`;
 }

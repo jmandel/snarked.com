@@ -53,20 +53,20 @@ a:hover { color: var(--link-hover); }
 /* =============================================================
    FOOTER
    ============================================================= */
-.sn-footer { background: var(--abyss); color: var(--cloud); padding: 56px 0 32px; margin-top: auto; }
+.sn-footer { background: var(--abyss); color: var(--cloud); padding: 28px 0 20px; margin-top: auto; }
 .sn-footer .stanza {
   font-family: var(--font-display); font-style: italic;
-  font-size: 22px; line-height: 1.5; color: var(--cloud);
-  max-width: 680px; margin: 0 0 18px;
+  font-size: 17px; line-height: 1.45; color: var(--cloud);
+  max-width: 680px; margin: 0 0 10px;
   border-left: 2px solid var(--coral);
-  padding-left: 22px;
+  padding-left: 18px;
 }
 .sn-footer .stanza em { color: var(--coral); font-style: italic; font-weight: 600; }
 .sn-footer .attribution {
   font-family: var(--font-body); font-style: italic; color: var(--on-sea-faint); font-size: 14px;
 }
 .sn-footer .colophon {
-  margin-top: 40px; padding-top: 22px;
+  margin-top: 18px; padding-top: 14px;
   border-top: 1px solid rgba(125,190,255,0.22);
   font-family: var(--font-mono); font-size: 10px;
   text-transform: uppercase; letter-spacing: 0.2em; color: var(--on-sea-faint);
@@ -101,21 +101,13 @@ a:hover { color: var(--link-hover); }
 .sn-hero {
   background: var(--sea); color: var(--on-sea);
   position: relative; overflow: hidden;
-  padding: 96px 0 80px;
-}
-.sn-hero::before, .sn-hero::after {
-  content: ""; position: absolute;
-  border-radius: 50%; pointer-events: none;
-}
-.sn-hero::before {
-  width: 520px; height: 520px;
-  background: radial-gradient(circle at center, rgba(125,190,255,0.45) 0%, rgba(125,190,255,0) 65%);
-  top: -180px; right: -120px;
+  padding: 22px 0 26px;
 }
 .sn-hero::after {
-  width: 360px; height: 360px;
-  background: radial-gradient(circle at center, rgba(244,63,94,0.30) 0%, rgba(244,63,94,0) 70%);
-  bottom: -160px; left: -80px;
+  content: ""; position: absolute;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(125,190,255,0.35) 0%, rgba(125,190,255,0) 65%);
+  top: -180px; right: -80px; pointer-events: none;
 }
 .sn-hero .columns {
   display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px;
@@ -131,10 +123,13 @@ a:hover { color: var(--link-hover); }
 .sn-hero .eyebrow .glyph { color: var(--coral); font-family: var(--font-display); font-size: 18px; letter-spacing: 0; }
 .sn-hero h1 {
   font-family: var(--font-display); font-weight: 700;
-  font-size: 88px; line-height: 0.96; letter-spacing: -0.03em;
-  color: var(--cloud); margin: 0 0 28px;
+  font-size: 36px; line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--cloud); margin: 0;
 }
-.sn-hero h1 em { font-style: italic; color: var(--coral); font-weight: 600; }
+/* On the dark Sea background, coral italic fails contrast for some
+   color-deficient readers. Keep emphasis purely typographic. */
+.sn-hero h1 em { font-style: italic; color: var(--cloud); font-weight: 600; }
+.sn-hero h1 b { font-weight: 800; color: var(--cloud); }
 .sn-hero .tag {
   font-family: var(--font-body); font-style: italic;
   font-size: 22px; line-height: 1.4; color: var(--on-sea-soft);
@@ -166,7 +161,7 @@ a:hover { color: var(--link-hover); }
 /* =============================================================
    FEED — section heads + list
    ============================================================= */
-.sn-section { padding: 72px 0 48px; }
+.sn-section { padding: 32px 0 32px; }
 .sn-section__head {
   display: flex; justify-content: space-between; align-items: baseline;
   border-bottom: 2px solid var(--ink);
@@ -186,7 +181,7 @@ a:hover { color: var(--link-hover); }
 
 .sn-row {
   display: block;
-  padding: 20px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--ink-rule);
   text-decoration: none;
   color: inherit;
@@ -197,18 +192,18 @@ a:hover { color: var(--link-hover); }
 .sn-row__body { min-width: 0; max-width: 100%; }
 .sn-row__title {
   font-family: var(--font-display);
-  font-weight: 700; font-size: 28px; line-height: 1.1;
-  color: var(--ink); margin: 0 0 6px;
+  font-weight: 700; font-size: 22px; line-height: 1.15;
+  color: var(--ink); margin: 0 0 2px;
   letter-spacing: -0.02em;
 }
 .sn-row__blurb {
-  font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  font-family: var(--font-body); font-size: 14px; line-height: 1.4;
   color: var(--ink-soft); margin: 0; max-width: 60ch;
   overflow-wrap: anywhere;
 }
 .sn-add-line {
-  font-family: var(--font-body); font-size: 16px; color: var(--ink-soft);
-  margin: 32px 0 0;
+  font-family: var(--font-body); font-size: 15px; color: var(--ink-soft);
+  margin: 20px 0 0;
 }
 .sn-add-line a { color: var(--sail); }
 
@@ -422,9 +417,6 @@ hr.snark-rule::before {
    RESPONSIVE
    ============================================================= */
 @media (max-width: 920px) {
-  .sn-hero { padding: 64px 0 56px; }
-  .sn-hero .columns { grid-template-columns: 1fr; gap: 32px; }
-  .sn-hero h1 { font-size: 56px; }
   .sn-detail__body { padding: 32px 0 56px; }
 }
 
@@ -461,11 +453,8 @@ hr.snark-rule::before {
   .sn-nav { gap: 10px; }
   .sn-nav a { font-size: 9px; letter-spacing: 0.10em; }
 
-  .sn-hero { padding: 48px 0 40px; }
-  .sn-hero h1 { font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; word-break: break-word; }
-  .sn-hero .tag { font-size: 17px; }
-  .sn-hero .ctas .sn-btn--primary,
-  .sn-hero .ctas .sn-btn--ghost { font-size: 14px; padding: 12px 18px; }
+  .sn-hero { padding: 18px 0 22px; }
+  .sn-hero h1 { font-size: 26px; line-height: 1.2; }
 
   .sn-detail__title { font-size: 40px; }
   .sn-detail__byline { gap: 14px; font-size: 11px; }
