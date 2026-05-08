@@ -187,11 +187,13 @@ Then the bowsprit got mixed with the rudder sometimes,<br>
 </footer>`;
 }
 
-function renderHero(): string {
+function renderHero(assetPrefix = ""): string {
   return `<section class="sn-hero">
 <div class="container">
 <h1>just like <em>your</em> recipe box, only <b>online.</b></h1>
 </div>
+<div class="sn-hero__wave" aria-hidden="true"></div>
+<script src="${assetPrefix}assets/wave.js" defer></script>
 </section>`;
 }
 
