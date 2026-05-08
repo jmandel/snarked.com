@@ -286,6 +286,8 @@ function renderRecipe(r: Recipe, all: Recipe[]): string {
 <span>Date: ${escapeHtml(r.date)}</span>
 </div>
 </div>
+<div class="sn-hero__wave sn-hero__wave--compact" data-static aria-hidden="true"></div>
+<script src="${prefix}assets/wave.js" defer></script>
 </section>
 
 <div class="container">

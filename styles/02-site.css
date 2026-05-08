@@ -113,6 +113,7 @@ a:hover { color: var(--link-hover); }
   pointer-events: none;
   overflow: hidden;
 }
+.sn-hero__wave--compact { height: 110px; }
 .sn-hero__wave > svg {
   display: block;
   width: 100%;
@@ -223,22 +224,11 @@ a:hover { color: var(--link-hover); }
    ============================================================= */
 .sn-detail__top {
   background: var(--sea); color: var(--on-sea);
-  padding: 56px 0 72px;
+  padding: 40px 0 0;
   position: relative; overflow: hidden;
 }
-.sn-detail__top::before {
-  content: ""; position: absolute;
-  width: 420px; height: 420px; border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(125,190,255,0.40) 0%, rgba(125,190,255,0) 65%);
-  top: -160px; right: -100px; pointer-events: none;
-}
-.sn-detail__top::after {
-  content: ""; position: absolute;
-  width: 320px; height: 320px; border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(244,63,94,0.28) 0%, rgba(244,63,94,0) 70%);
-  bottom: -140px; left: -80px; pointer-events: none;
-}
-.sn-detail__top > .container { position: relative; z-index: 1; }
+.sn-detail__top > .container { position: relative; z-index: 1; padding-bottom: 24px; }
+.sn-detail__top > .sn-hero__wave { position: relative; z-index: 0; }
 
 .sn-detail__breadcrumb {
   font-family: var(--font-mono); font-size: 11px;

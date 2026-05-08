@@ -4,8 +4,13 @@
 // ease-out (waves "settle" to a halt), then freeze.
 
 (() => {
-  const host = document.querySelector(".sn-hero__wave");
-  if (!host) return;
+  const hosts = document.querySelectorAll(".sn-hero__wave");
+  if (!hosts.length) return;
+  hosts.forEach(setupWave);
+})();
+
+function setupWave(host) {
+  const STATIC = host.hasAttribute("data-static");
 
   const SVG_NS = "http://www.w3.org/2000/svg";
   const W = 1600;
@@ -237,6 +242,30 @@
     return integ * 2 * SETTLE_SECONDS; // 0..SETTLE_SECONDS over 0..DUR
   };
 
+  // Static mode: render once at the settled time and stop. Used on
+  // utility pages (recipe detail) where a half-second swell on every
+  // navigation would be more noise than delight.
+  if (STATIC) {
+    const t = 2 * SETTLE_SECONDS; // any value past the easedTime asymptote works
+    const allYs = computeAll(t);
+    for (let i = 0; i < layers.length; i++) {
+      const entry = elements[i];
+      const d = pathDFromYs(layers[i], allYs[i]);
+      entry.el.setAttribute("d", d);
+      if (entry.hatch) entry.hatch.setAttribute("d", d);
+    }
+    const foreground = layers[7];
+    let buoyY = foreground.baseY;
+    let buoyDX = 0;
+    for (const h of foreground.harmonics) {
+      const phi = h.freq * buoyX + h.phase + h.phaseSpeed * t;
+      buoyY += h.amp * Math.sin(phi);
+      buoyDX += h.amp * Math.cos(phi) * 0.6;
+    }
+    lifebuoyGroup.setAttribute("transform", `translate(${buoyX + buoyDX} ${buoyY - 6})`);
+    return;
+  }
+
   const start = performance.now();
   function frame(now) {
     const elapsed = now - start;
@@ -266,4 +295,4 @@
     if (elapsed < DUR) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
-})();
+}
