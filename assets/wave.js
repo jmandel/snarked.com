@@ -17,41 +17,63 @@
   // Each layer is a horizontal band, built from N harmonics summed onto a
   // base Y. Some layers are stroked (atmosphere/engraving lines), some are
   // filled and closed to the bottom of the viewbox (the body of the sea).
+  // Filled layers stack top → bottom. Each upper fill is clamped so its
+  // crest never dips below the next fill's crest (prevents the light
+  // engraving line from punching through the dark foreground curve).
+  const MIN_GAP = 2; // px gap each upper layer is held above the next
+
   const layerSpecs = [
-    // Atmospheric horizon hatch (4 thin lines, low amplitude)
-    { baseY: 22,  fill: false, stroke: "#7DBEFF", strokeWidth: 0.6, opacity: 0.32, ampMax: 5,  harmonics: 3, phaseSpeedMax: 1.6 },
-    { baseY: 38,  fill: false, stroke: "#7DBEFF", strokeWidth: 0.6, opacity: 0.28, ampMax: 5,  harmonics: 3, phaseSpeedMax: 1.6 },
-    { baseY: 54,  fill: false, stroke: "#7DBEFF", strokeWidth: 0.55, opacity: 0.24, ampMax: 5,  harmonics: 3, phaseSpeedMax: 1.6 },
-    { baseY: 70,  fill: false, stroke: "#7DBEFF", strokeWidth: 0.55, opacity: 0.20, ampMax: 5,  harmonics: 3, phaseSpeedMax: 1.6 },
-    // Distant wave (fill)
-    { baseY: 110, fill: "#0B3B91", opacity: 0.95, ampMax: 14, harmonics: 4, phaseSpeedMax: 2.6 },
-    // Mid wave (fill, with hatched shading)
-    { baseY: 142, fill: "#0B3B91", opacity: 1,    ampMax: 16, harmonics: 4, phaseSpeedMax: 3.0, hatch: true },
-    // Mid wave engraving line (stroke that traces top of mid wave — uses same y values)
-    { baseY: 142, fill: false, stroke: "#7DBEFF", strokeWidth: 1.4, opacity: 0.85, ampMax: 16, harmonics: 4, phaseSpeedMax: 3.0, mirrorOf: 5 },
-    // Foreground wave (fill, deepest)
-    { baseY: 178, fill: "#051845", opacity: 1,    ampMax: 18, harmonics: 4, phaseSpeedMax: 3.4 },
-    // Foreground white-cap engraving line
-    { baseY: 178, fill: false, stroke: "#FFFFFF", strokeWidth: 1.0, opacity: 0.55, ampMax: 18, harmonics: 4, phaseSpeedMax: 3.4, mirrorOf: 7 },
+    // Atmospheric horizon hatch (3 thin lines, low amplitude)
+    { baseY: 18,  fill: false, stroke: "#7DBEFF", strokeWidth: 0.6, opacity: 0.32, ampMax: 5,  harmonics: 3, phaseSpeedMax: 1.6 },
+    { baseY: 36,  fill: false, stroke: "#7DBEFF", strokeWidth: 0.6, opacity: 0.26, ampMax: 5,  harmonics: 3, phaseSpeedMax: 1.6 },
+    { baseY: 54,  fill: false, stroke: "#7DBEFF", strokeWidth: 0.55, opacity: 0.20, ampMax: 5,  harmonics: 3, phaseSpeedMax: 1.6 },
+    // High pale wave (sail-deep — lighter blue band) — index 3
+    { baseY: 84,  fill: "#1E4FC4", opacity: 0.78, ampMax: 11, harmonics: 4, phaseSpeedMax: 2.2, clampBelow: 4 },
+    // Distant wave (sail — bright primary blue) — index 4
+    { baseY: 116, fill: "#2A6EF0", opacity: 0.95, ampMax: 13, harmonics: 4, phaseSpeedMax: 2.6, clampBelow: 5 },
+    // Mid wave (sea blue, hatched shading) — index 5
+    { baseY: 146, fill: "#0B3B91", opacity: 1,    ampMax: 16, harmonics: 4, phaseSpeedMax: 3.0, hatch: true, clampBelow: 7 },
+    // Mid wave engraving line (mirrors mid fill) — index 6
+    { baseY: 146, fill: false, stroke: "#7DBEFF", strokeWidth: 1.4, opacity: 0.9, ampMax: 16, harmonics: 4, phaseSpeedMax: 3.0, mirrorOf: 5 },
+    // Foreground wave (abyss, deepest) — index 7
+    { baseY: 182, fill: "#051845", opacity: 1,    ampMax: 18, harmonics: 4, phaseSpeedMax: 3.4 },
+    // Foreground white-cap engraving line — index 8
+    { baseY: 182, fill: false, stroke: "#FFFFFF", strokeWidth: 1.0, opacity: 0.55, ampMax: 18, harmonics: 4, phaseSpeedMax: 3.4, mirrorOf: 7 },
   ];
 
-  const layers = layerSpecs.map((spec, i) => {
+  // Pick a master propagation direction for the scene. All wave layers
+  // mostly travel the same way (a coherent ocean), with the occasional
+  // counter-current. Within a layer every harmonic travels in the same
+  // direction; higher harmonics travel a touch faster — a deep-water
+  // dispersion approximation that keeps the wave shape "watery" rather
+  // than rigid-scrolling.
+  const masterDir = Math.random() < 0.5 ? -1 : 1;
+
+  const layers = layerSpecs.map((spec) => {
     if (spec.mirrorOf != null) {
       // Reuses harmonics from another layer so stroke lines exactly trace fills
       return { ...spec, harmonics: null, mirror: spec.mirrorOf };
     }
+    const layerDir = masterDir * (Math.random() < 0.88 ? 1 : -1);
     return {
       ...spec,
-      harmonics: Array.from({ length: spec.harmonics }, (_, k) => ({
-        amp: rand(spec.ampMax * 0.35, spec.ampMax) / Math.pow(1.5, k), // taper higher harmonics
-        freq: rand(0.0015, 0.012) * (1 + k * 0.6),
-        phase: rand(0, Math.PI * 2),
-        phaseSpeed: rand(-spec.phaseSpeedMax, spec.phaseSpeedMax),
-      })),
+      direction: layerDir,
+      harmonics: Array.from({ length: spec.harmonics }, (_, k) => {
+        const freq = rand(0.0015, 0.012) * (1 + k * 0.6);
+        // Phase speed: same sign across the layer, magnitude grows with
+        // harmonic index (rough linear dispersion proxy).
+        const speedMag = rand(spec.phaseSpeedMax * 0.55, spec.phaseSpeedMax) * (1 + k * 0.35);
+        return {
+          amp: rand(spec.ampMax * 0.35, spec.ampMax) / Math.pow(1.5, k), // taper higher harmonics
+          freq,
+          phase: rand(0, Math.PI * 2),
+          phaseSpeed: layerDir * speedMag,
+        };
+      }),
     };
   });
 
-  function ySamples(layer, t) {
+  function rawYSamples(layer, t) {
     const harmonics = layer.harmonics ?? layers[layer.mirror].harmonics;
     const ys = new Float32Array(STEPS + 1);
     for (let i = 0; i <= STEPS; i++) {
@@ -69,8 +91,44 @@
   // the SVG so the gradient bg's white shore shows through underneath.
   const FILL_BOTTOM = 215;
 
-  function pathD(layer, t) {
-    const ys = ySamples(layer, t);
+  // Compute samples for ALL layers at time t. Filled layers and their
+  // mirroring strokes are stacked top→bottom; each upper layer is clamped
+  // so its y is never below the y of the layer it covers (minus MIN_GAP).
+  // Returns an array of Float32Array, one per layer.
+  function computeAll(t) {
+    const samples = new Array(layers.length);
+
+    // First pass: raw samples for any layer that has its own harmonics
+    for (let i = 0; i < layers.length; i++) {
+      if (layers[i].mirror == null) samples[i] = rawYSamples(layers[i], t);
+    }
+
+    // Second pass: clamp upper-fill layers against their `clampBelow` index.
+    // Walk from deepest to shallowest so the clamp target is already final.
+    const fillOrder = layers
+      .map((l, i) => ({ l, i }))
+      .filter(({ l }) => l.fill && l.clampBelow != null)
+      // Deepest clampBelow first so the chain resolves correctly.
+      .sort((a, b) => b.l.clampBelow - a.l.clampBelow);
+
+    for (const { l, i } of fillOrder) {
+      const target = samples[l.clampBelow];
+      const my = samples[i];
+      for (let k = 0; k <= STEPS; k++) {
+        const limit = target[k] - MIN_GAP;
+        if (my[k] > limit) my[k] = limit;
+      }
+    }
+
+    // Third pass: mirrored strokes copy from their target's (now clamped) samples.
+    for (let i = 0; i < layers.length; i++) {
+      if (layers[i].mirror != null) samples[i] = samples[layers[i].mirror];
+    }
+
+    return samples;
+  }
+
+  function pathDFromYs(layer, ys) {
     let d = `M ${(0).toFixed(2)} ${ys[0].toFixed(2)}`;
     for (let i = 1; i <= STEPS; i++) {
       const x = (W * i) / STEPS;
@@ -183,18 +241,27 @@
   function frame(now) {
     const elapsed = now - start;
     const t = easedTime(elapsed);
-    for (const { layer, el, hatch } of elements) {
-      const d = pathD(layer, t);
-      el.setAttribute("d", d);
-      if (hatch) hatch.setAttribute("d", d);
+    const allYs = computeAll(t);
+    for (let i = 0; i < layers.length; i++) {
+      const layer = layers[i];
+      const entry = elements[i];
+      const d = pathDFromYs(layer, allYs[i]);
+      entry.el.setAttribute("d", d);
+      if (entry.hatch) entry.hatch.setAttribute("d", d);
     }
-    // Drive the lifebuoy: ride the foreground wave at fixed x
-    const foreground = layers[7]; // the foreground fill layer
+
+    // Drive the lifebuoy: ride the foreground wave with deep-water
+    // orbital motion (water particles trace circles, so the buoy traces
+    // a small ellipse on the surface).
+    const foreground = layers[7];
     let buoyY = foreground.baseY;
+    let buoyDX = 0;
     for (const h of foreground.harmonics) {
-      buoyY += h.amp * Math.sin(h.freq * buoyX + h.phase + h.phaseSpeed * t);
+      const phi = h.freq * buoyX + h.phase + h.phaseSpeed * t;
+      buoyY += h.amp * Math.sin(phi);
+      buoyDX += h.amp * Math.cos(phi) * 0.6;
     }
-    lifebuoyGroup.setAttribute("transform", `translate(${buoyX} ${buoyY - 6})`);
+    lifebuoyGroup.setAttribute("transform", `translate(${buoyX + buoyDX} ${buoyY - 6})`);
 
     if (elapsed < DUR) requestAnimationFrame(frame);
   }
