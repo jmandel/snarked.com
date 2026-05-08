@@ -61,7 +61,9 @@ a:hover { color: var(--link-hover); }
   border-left: 2px solid var(--coral);
   padding-left: 18px;
 }
-.sn-footer .stanza em { color: var(--coral); font-style: italic; font-weight: 600; }
+/* Coral on Abyss fails contrast for some color-deficient readers; carry
+   the emphasis with italic + weight against the existing cloud color. */
+.sn-footer .stanza em { color: var(--cloud); font-style: italic; font-weight: 700; }
 .sn-footer .attribution {
   font-family: var(--font-body); font-style: italic; color: var(--on-sea-faint); font-size: 14px;
 }
