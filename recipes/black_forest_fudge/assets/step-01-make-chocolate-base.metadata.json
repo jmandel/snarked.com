@@ -1,0 +1,22 @@
+{
+  "filename": "step-01-make-chocolate-base.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T14:56:24.225Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-black-forest-fudge/codex-home/generated_images/019e21cd-2988-79d1-8915-c670960b22bf/ig_01945ae0fa76eb3e016a049077ed588199aef4ffe021035bad.png",
+  "promptFile": "recipes/black_forest_fudge/prompts/step-01-make-chocolate-base.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3026109,
+    "afterBytes": 2908500
+  }
+}

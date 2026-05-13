@@ -1,0 +1,22 @@
+{
+  "filename": "hero-banana-bread.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T14:52:51.140Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-banana-bread/codex-home/generated_images/019e21cd-294d-7b13-9c19-8273d6e31f39/ig_038a3a87079bfdfc016a048fd5ab30819a929bfd0fb0a30ad3.png",
+  "promptFile": "recipes/banana_bread/prompts/hero-banana-bread.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2872233,
+    "afterBytes": 2732548
+  }
+}

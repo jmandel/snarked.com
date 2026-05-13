@@ -1,0 +1,22 @@
+{
+  "filename": "storyboard-crepes.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:03:04.660Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T155854Z-crepes/codex-home/generated_images/019e2210-03b3-79d1-9c78-d3d4ce9d63d9/ig_0133012b57b47703016a04a01e0620819a8d17134dcac57a36.png",
+  "promptFile": "recipes/crepes/prompts/storyboard-crepes.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2846984,
+    "afterBytes": 2751408
+  }
+}

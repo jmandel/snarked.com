@@ -1,0 +1,22 @@
+{
+  "filename": "step-01-preheat-oven.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:46:43.371Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T163726Z-zaatar-salmon-tahini/codex-home/generated_images/019e2233-4c15-74e1-94bf-ca5b7b8ba71a/ig_0cb9b95090aeb5e7016a04aa9a5b508199882a7d5afcf9a55e.png",
+  "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-01-preheat-oven.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3042666,
+    "afterBytes": 2968478
+  }
+}

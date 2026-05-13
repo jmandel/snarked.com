@@ -1,0 +1,374 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "crepes",
+  "title": "Crepes",
+  "subtitle": "The genuine French article",
+  "source": {
+    "submittedBy": "La Maison Francaise",
+    "date": "2003-08-15",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Stations",
+      "value": "refrigerator + stovetop"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-crepes.png",
+    "placement": "Continuity storyboard",
+    "alt": "Crepes visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "refrigerator",
+        "description": "Use one consistent refrigerator design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stovetop",
+        "description": "Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "bowl",
+        "description": "Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "eggs",
+        "description": "3 batter; ingredient"
+      },
+      {
+        "name": "salt",
+        "description": "1/2 teaspoon batter; ingredient"
+      },
+      {
+        "name": "flour",
+        "description": "1 1/2 cups batter; The source ingredient line omits the ingredient name; flour is inferred from the method.; ingredient"
+      },
+      {
+        "name": "milk",
+        "description": "2 cups batter; ingredient"
+      },
+      {
+        "name": "sugar",
+        "description": "1 tablespoon batter; ingredient"
+      },
+      {
+        "name": "vanilla extract",
+        "description": "2 teaspoons batter; ingredient"
+      },
+      {
+        "name": "melted butter",
+        "description": "2 tablespoons batter; melted; ingredient"
+      },
+      {
+        "name": "egg and salt mixture",
+        "description": "mix: 3 eggs + 1/2 teaspoon salt"
+      },
+      {
+        "name": "smooth crepe batter",
+        "description": "beat: egg and salt mixture + 1 1/2 cups flour + 2 cups milk + 1 tablespoon sugar + 2 teaspoons vanilla extract + 2 tablespoons melted butter (melted)"
+      },
+      {
+        "name": "rested crepe batter",
+        "description": "rest: smooth crepe batter"
+      },
+      {
+        "name": "crepes",
+        "description": "cook: rested crepe batter"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "egg and salt mixture",
+        "description": "mix from eggs + salt; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "smooth crepe batter",
+        "description": "beat from egg and salt mixture + flour + milk + sugar + vanilla extract + melted butter; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "rested crepe batter",
+        "description": "rest from smooth crepe batter; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "crepes",
+        "description": "cook from rested crepe batter; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Mix Eggs Salt: Mix eggs and salt in a large bowl. Result: egg and salt mixture.",
+      "Step 2, Beat Batter: Beat in flour and milk alternately. Add sugar and vanilla; beat until smooth. Add butter. Result: smooth crepe batter.",
+      "Step 3, Refrigerate: Refrigerate for at least an hour. Result: rested crepe batter. Tool/station: refrigerator.",
+      "Step 4, Cook: Cook. Result: crepes. Tool/station: stovetop."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Crepes. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-crepes.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "mix-eggs-salt"
+      },
+      {
+        "type": "step",
+        "step": "beat-batter"
+      },
+      {
+        "type": "step",
+        "step": "refrigerate"
+      },
+      {
+        "type": "step",
+        "step": "cook"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "mix-eggs-salt",
+      "sourceActionId": "mix_eggs_salt",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Eggs Salt",
+      "instruction": "Mix eggs and salt in a large bowl.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "3",
+          "item": "eggs",
+          "amounts": {
+            "original": "3"
+          }
+        },
+        {
+          "qty": "1/2 teaspoon",
+          "item": "salt",
+          "amounts": {
+            "original": "1/2 teaspoon",
+            "metric": "3 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "egg and salt mixture"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-mix-eggs-salt.png"
+    },
+    {
+      "id": "beat-batter",
+      "sourceActionId": "beat_batter",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Beat Batter",
+      "instruction": "Beat in flour and milk alternately. Add sugar and vanilla; beat until smooth. Add butter.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "egg and salt mixture"
+        },
+        {
+          "qty": "1 1/2 cups",
+          "item": "flour",
+          "note": "The source ingredient line omits the ingredient name; flour is inferred from the method.",
+          "amounts": {
+            "original": "1 1/2 cups",
+            "metric": "180 g"
+          }
+        },
+        {
+          "qty": "2 cups",
+          "item": "milk",
+          "amounts": {
+            "original": "2 cups",
+            "metric": "480 g"
+          }
+        },
+        {
+          "qty": "1 tablespoon",
+          "item": "sugar",
+          "amounts": {
+            "original": "1 tablespoon",
+            "metric": "13 g"
+          }
+        },
+        {
+          "qty": "2 teaspoons",
+          "item": "vanilla extract",
+          "amounts": {
+            "original": "2 teaspoons",
+            "metric": "8.4 g"
+          }
+        },
+        {
+          "qty": "2 tablespoons",
+          "item": "melted butter",
+          "note": "melted",
+          "amounts": {
+            "original": "2 tablespoons",
+            "metric": "28 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "smooth crepe batter"
+        }
+      ],
+      "notes": [
+        "Source timing: until smooth"
+      ],
+      "asset": "step-02-beat-batter.png"
+    },
+    {
+      "id": "refrigerate",
+      "sourceActionId": "refrigerate",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "wait",
+      "title": "Refrigerate",
+      "instruction": "Refrigerate for at least an hour.",
+      "duration": {},
+      "resources": [
+        "refrigerator"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "smooth crepe batter"
+        }
+      ],
+      "makes": [
+        {
+          "item": "rested crepe batter"
+        }
+      ],
+      "notes": [
+        "Source timing: at least an hour"
+      ],
+      "asset": "step-03-refrigerate.png"
+    },
+    {
+      "id": "cook",
+      "sourceActionId": "cook",
+      "number": 4,
+      "timeLabel": "0 min",
+      "phase": "cook",
+      "title": "Cook",
+      "instruction": "Cook.",
+      "duration": {},
+      "resources": [
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "rested crepe batter"
+        }
+      ],
+      "makes": [
+        {
+          "item": "crepes"
+        }
+      ],
+      "notes": [],
+      "asset": "step-04-cook.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-crepes.png",
+      "placement": "Recipe header",
+      "alt": "Crepes finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished crepes for Crepes, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-mix-eggs-salt.png",
+      "placement": "Step 1 card",
+      "alt": "Crepes: Mix Eggs Salt",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Mix Eggs Salt: Mix eggs and salt in a large bowl. Depict the ingredients or components used now: 3 eggs; 1/2 teaspoon salt. Show the resulting food state: egg and salt mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-beat-batter.png",
+      "placement": "Step 2 card",
+      "alt": "Crepes: Beat Batter",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-mix-eggs-salt.png"
+      ],
+      "prompt": "Beat Batter: Beat in flour and milk alternately. Add sugar and vanilla; beat until smooth. Add butter. Depict the ingredients or components used now: egg and salt mixture; 1 1/2 cups flour; 2 cups milk; 1 tablespoon sugar; 2 teaspoons vanilla extract; 2 tablespoons melted butter (melted). Show the resulting food state: smooth crepe batter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-refrigerate.png",
+      "placement": "Step 3 card",
+      "alt": "Crepes: Refrigerate",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-mix-eggs-salt.png",
+        "step-02-beat-batter.png"
+      ],
+      "prompt": "Refrigerate: Refrigerate for at least an hour. Depict the ingredients or components used now: smooth crepe batter. Show the resulting food state: rested crepe batter.  Tools or station: refrigerator. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-cook.png",
+      "placement": "Step 4 card",
+      "alt": "Crepes: Cook",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-beat-batter.png",
+        "step-03-refrigerate.png"
+      ],
+      "prompt": "Cook: Cook. Depict the ingredients or components used now: rested crepe batter. Show the resulting food state: crepes.  Tools or station: stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

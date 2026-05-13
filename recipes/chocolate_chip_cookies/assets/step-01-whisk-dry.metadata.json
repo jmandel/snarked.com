@@ -1,0 +1,22 @@
+{
+  "filename": "step-01-whisk-dry.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:34:44.957Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T152351Z-chocolate-chip-cookies/codex-home/generated_images/019e21ef-ecd1-72c2-bf31-7389c3e8a695/ig_0c1036176f8d2a73016a049980d024819b924eec046276e700.png",
+  "promptFile": "recipes/chocolate_chip_cookies/prompts/step-01-whisk-dry.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2668844,
+    "afterBytes": 2460184
+  }
+}

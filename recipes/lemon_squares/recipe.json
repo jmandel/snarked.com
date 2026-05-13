@@ -1,0 +1,652 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "lemon-squares",
+  "title": "Suchele-Inspired Lemon Squares",
+  "subtitle": "Inspired by the famous lemon squares of Suchele's bakery in Lenox, Mass.",
+  "source": {
+    "submittedBy": "jmandel@snarked.com",
+    "date": "2006-06-30",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Active",
+      "value": "~30 min"
+    },
+    {
+      "label": "Heat",
+      "value": "350 degrees"
+    },
+    {
+      "label": "Stations",
+      "value": "oven"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-lemon-squares.png",
+    "placement": "Continuity storyboard",
+    "alt": "Suchele-Inspired Lemon Squares visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "oven",
+        "description": "Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "jellyroll pan",
+        "description": "Use one consistent jellyroll pan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "flour",
+        "description": "3 1/4 C (+) crust; ingredient"
+      },
+      {
+        "name": "butter",
+        "description": "1.5 C (+) crust; softened; ingredient"
+      },
+      {
+        "name": "confectioners sugar",
+        "description": "3/4 C (+) crust; ingredient"
+      },
+      {
+        "name": "sugar",
+        "description": "3 1/4 C (+) filling dry; ingredient"
+      },
+      {
+        "name": "confectioners sugar",
+        "description": "1 T (+) filling dry; ingredient"
+      },
+      {
+        "name": "flour",
+        "description": "1/2 C (-) filling dry; ingredient"
+      },
+      {
+        "name": "salt",
+        "description": "1 t (-) filling dry; ingredient"
+      },
+      {
+        "name": "juice and rind of four lemons",
+        "description": "4 lemons filling wet; Add bottled lemon juice as needed until no longer sloshy.; ingredient"
+      },
+      {
+        "name": "eggs",
+        "description": "about 7.5432 filling wet; ingredient"
+      },
+      {
+        "name": "crust dough",
+        "description": "mix: 3 1/4 C (+) flour + 1.5 C (+) butter (softened) + 3/4 C (+) confectioners sugar"
+      },
+      {
+        "name": "pressed crust",
+        "description": "press: crust dough"
+      },
+      {
+        "name": "hot baked crust",
+        "description": "bake: pressed crust"
+      },
+      {
+        "name": "filling dry mix",
+        "description": "mix: 3 1/4 C (+) sugar + 1 T (+) confectioners sugar + 1/2 C (-) flour + 1 t (-) salt"
+      },
+      {
+        "name": "lemon egg mixture",
+        "description": "mix: 4 lemons juice and rind of four lemons + about 7.5432 eggs"
+      },
+      {
+        "name": "lemon filling",
+        "description": "combine: filling dry mix + lemon egg mixture"
+      },
+      {
+        "name": "hot crust with filling",
+        "description": "pour: hot baked crust + lemon filling"
+      },
+      {
+        "name": "partially set lemon squares",
+        "description": "bake: hot crust with filling"
+      },
+      {
+        "name": "lemon squares",
+        "description": "bake: partially set lemon squares"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "crust dough",
+        "description": "mix from flour + butter + confectioners sugar; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "pressed crust",
+        "description": "press from crust dough; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "hot baked crust",
+        "description": "bake from pressed crust; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "filling dry mix",
+        "description": "mix from sugar + confectioners sugar + flour + salt; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "lemon egg mixture",
+        "description": "mix from juice and rind of four lemons + eggs; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "lemon filling",
+        "description": "combine from filling dry mix + lemon egg mixture; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "hot crust with filling",
+        "description": "pour from hot baked crust + lemon filling; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "partially set lemon squares",
+        "description": "bake from hot crust with filling; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "lemon squares",
+        "description": "bake from partially set lemon squares; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Mix Crust: Mix crust ingredients. Result: crust dough.",
+      "Step 2, Press Crust: Press into a jellyroll pan. Result: pressed crust.",
+      "Step 3, Bake Crust: Bake crust at 350 degrees until just beginning to turn golden. Result: hot baked crust. Tool/station: oven.",
+      "Step 4, Mix Filling Dry: Prepare filling by mixing dry ingredients. Result: filling dry mix.",
+      "Step 5, Mix Filling Wet: Prepare filling by mixing wet ingredients. Result: lemon egg mixture.",
+      "Step 6, Combine Filling: Combine the dry and wet filling mixtures. Result: lemon filling.",
+      "Step 7, Pour Onto Hot Crust: Hold baked base in oven as another person pours the Lemon/Sugar/Egg mixture into pan, and slide gently into oven; be careful not to spill. Result: hot crust with filling. Tool/station: oven.",
+      "Step 8, Bake Until Turnable: Bake at 350 degrees until the pan can be turned around inside oven without spilling. Result: partially set lemon squares. Tool/station: oven.",
+      "Step 9, Finish Bake: After turning, cook until just firm. Maybe 30 minutes total, maybe not! Result: lemon squares. Tool/station: oven."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Suchele-Inspired Lemon Squares. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-lemon-squares.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "mix-crust"
+      },
+      {
+        "type": "step",
+        "step": "press-crust"
+      },
+      {
+        "type": "step",
+        "step": "bake-crust"
+      },
+      {
+        "type": "step",
+        "step": "mix-filling-dry"
+      },
+      {
+        "type": "step",
+        "step": "mix-filling-wet"
+      },
+      {
+        "type": "step",
+        "step": "combine-filling"
+      },
+      {
+        "type": "step",
+        "step": "pour-onto-hot-crust"
+      },
+      {
+        "type": "step",
+        "step": "bake-until-turnable"
+      },
+      {
+        "type": "step",
+        "step": "finish-bake"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "mix-crust",
+      "sourceActionId": "mix_crust",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Crust",
+      "instruction": "Mix crust ingredients.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "3 1/4 C (+)",
+          "item": "flour",
+          "amounts": {
+            "original": "3 1/4 C (+)",
+            "metric": "390 g"
+          }
+        },
+        {
+          "qty": "1.5 C (+)",
+          "item": "butter",
+          "note": "softened",
+          "amounts": {
+            "original": "1.5 C (+)",
+            "metric": "340 g"
+          }
+        },
+        {
+          "qty": "3/4 C (+)",
+          "item": "confectioners sugar",
+          "amounts": {
+            "original": "3/4 C (+)",
+            "metric": "90 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "crust dough"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-mix-crust.png"
+    },
+    {
+      "id": "press-crust",
+      "sourceActionId": "press_crust",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "step",
+      "title": "Press Crust",
+      "instruction": "Press into a jellyroll pan.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "crust dough"
+        }
+      ],
+      "makes": [
+        {
+          "item": "pressed crust"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-press-crust.png"
+    },
+    {
+      "id": "bake-crust",
+      "sourceActionId": "bake_crust",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "bake",
+      "title": "Bake Crust",
+      "instruction": "Bake crust at 350 degrees until just beginning to turn golden.",
+      "duration": {},
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "pressed crust"
+        }
+      ],
+      "makes": [
+        {
+          "item": "hot baked crust"
+        }
+      ],
+      "notes": [
+        "Heat: 350 degrees",
+        "Source timing: until just beginning to turn golden"
+      ],
+      "asset": "step-03-bake-crust.png"
+    },
+    {
+      "id": "mix-filling-dry",
+      "sourceActionId": "mix_filling_dry",
+      "number": 4,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Filling Dry",
+      "instruction": "Prepare filling by mixing dry ingredients.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "3 1/4 C (+)",
+          "item": "sugar",
+          "amounts": {
+            "original": "3 1/4 C (+)",
+            "metric": "650 g"
+          }
+        },
+        {
+          "qty": "1 T (+)",
+          "item": "confectioners sugar",
+          "amounts": {
+            "original": "1 T (+)",
+            "metric": "13 g"
+          }
+        },
+        {
+          "qty": "1/2 C (-)",
+          "item": "flour",
+          "amounts": {
+            "original": "1/2 C (-)",
+            "metric": "60 g"
+          }
+        },
+        {
+          "qty": "1 t (-)",
+          "item": "salt",
+          "amounts": {
+            "original": "1 t (-)",
+            "metric": "6 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "filling dry mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-04-mix-filling-dry.png"
+    },
+    {
+      "id": "mix-filling-wet",
+      "sourceActionId": "mix_filling_wet",
+      "number": 5,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Filling Wet",
+      "instruction": "Prepare filling by mixing wet ingredients.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "4 lemons",
+          "item": "juice and rind of four lemons",
+          "note": "Add bottled lemon juice as needed until no longer sloshy.",
+          "amounts": {
+            "original": "4 lemons"
+          }
+        },
+        {
+          "qty": "about 7.5432",
+          "item": "eggs",
+          "amounts": {
+            "original": "about 7.5432"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "lemon egg mixture"
+        }
+      ],
+      "notes": [],
+      "asset": "step-05-mix-filling-wet.png"
+    },
+    {
+      "id": "combine-filling",
+      "sourceActionId": "combine_filling",
+      "number": 6,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Combine Filling",
+      "instruction": "Combine the dry and wet filling mixtures.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "filling dry mix"
+        },
+        {
+          "qty": "",
+          "item": "lemon egg mixture"
+        }
+      ],
+      "makes": [
+        {
+          "item": "lemon filling"
+        }
+      ],
+      "notes": [],
+      "asset": "step-06-combine-filling.png"
+    },
+    {
+      "id": "pour-onto-hot-crust",
+      "sourceActionId": "pour_onto_hot_crust",
+      "number": 7,
+      "timeLabel": "0 min",
+      "phase": "step",
+      "title": "Pour Onto Hot Crust",
+      "instruction": "Hold baked base in oven as another person pours the Lemon/Sugar/Egg mixture into pan, and slide gently into oven; be careful not to spill.",
+      "duration": {},
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "hot baked crust"
+        },
+        {
+          "qty": "",
+          "item": "lemon filling"
+        }
+      ],
+      "makes": [
+        {
+          "item": "hot crust with filling"
+        }
+      ],
+      "notes": [],
+      "asset": "step-07-pour-onto-hot-crust.png"
+    },
+    {
+      "id": "bake-until-turnable",
+      "sourceActionId": "bake_until_turnable",
+      "number": 8,
+      "timeLabel": "0 min",
+      "phase": "bake",
+      "title": "Bake Until Turnable",
+      "instruction": "Bake at 350 degrees until the pan can be turned around inside oven without spilling.",
+      "duration": {},
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "hot crust with filling"
+        }
+      ],
+      "makes": [
+        {
+          "item": "partially set lemon squares"
+        }
+      ],
+      "notes": [
+        "Heat: 350 degrees",
+        "Source timing: until pan can be turned without spilling"
+      ],
+      "asset": "step-08-bake-until-turnable.png"
+    },
+    {
+      "id": "finish-bake",
+      "sourceActionId": "finish_bake",
+      "number": 9,
+      "timeLabel": "0 min",
+      "phase": "bake",
+      "title": "Finish Bake",
+      "instruction": "After turning, cook until just firm. Maybe 30 minutes total, maybe not!",
+      "duration": {
+        "activeMinutes": 30
+      },
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "partially set lemon squares"
+        }
+      ],
+      "makes": [
+        {
+          "item": "lemon squares"
+        }
+      ],
+      "notes": [
+        "Heat: 350 degrees",
+        "Source timing: until just firm; maybe 30 minutes total, maybe not"
+      ],
+      "asset": "step-09-finish-bake.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-lemon-squares.png",
+      "placement": "Recipe header",
+      "alt": "Suchele-Inspired Lemon Squares finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished lemon squares for Suchele-Inspired Lemon Squares, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-mix-crust.png",
+      "placement": "Step 1 card",
+      "alt": "Suchele-Inspired Lemon Squares: Mix Crust",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Mix Crust: Mix crust ingredients. Depict the ingredients or components used now: 3 1/4 C (+) flour; 1.5 C (+) butter (softened); 3/4 C (+) confectioners sugar. Show the resulting food state: crust dough. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-press-crust.png",
+      "placement": "Step 2 card",
+      "alt": "Suchele-Inspired Lemon Squares: Press Crust",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-mix-crust.png"
+      ],
+      "prompt": "Press Crust: Press into a jellyroll pan. Depict the ingredients or components used now: crust dough. Show the resulting food state: pressed crust. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-bake-crust.png",
+      "placement": "Step 3 card",
+      "alt": "Suchele-Inspired Lemon Squares: Bake Crust",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-mix-crust.png",
+        "step-02-press-crust.png"
+      ],
+      "prompt": "Bake Crust: Bake crust at 350 degrees until just beginning to turn golden. Depict the ingredients or components used now: pressed crust. Show the resulting food state: hot baked crust.  Tools or station: oven. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-mix-filling-dry.png",
+      "placement": "Step 4 card",
+      "alt": "Suchele-Inspired Lemon Squares: Mix Filling Dry",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-press-crust.png",
+        "step-03-bake-crust.png"
+      ],
+      "prompt": "Mix Filling Dry: Prepare filling by mixing dry ingredients. Depict the ingredients or components used now: 3 1/4 C (+) sugar; 1 T (+) confectioners sugar; 1/2 C (-) flour; 1 t (-) salt. Show the resulting food state: filling dry mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-mix-filling-wet.png",
+      "placement": "Step 5 card",
+      "alt": "Suchele-Inspired Lemon Squares: Mix Filling Wet",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-bake-crust.png",
+        "step-04-mix-filling-dry.png"
+      ],
+      "prompt": "Mix Filling Wet: Prepare filling by mixing wet ingredients. Depict the ingredients or components used now: 4 lemons juice and rind of four lemons; about 7.5432 eggs. Show the resulting food state: lemon egg mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-06-combine-filling.png",
+      "placement": "Step 6 card",
+      "alt": "Suchele-Inspired Lemon Squares: Combine Filling",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-mix-filling-dry.png",
+        "step-05-mix-filling-wet.png"
+      ],
+      "prompt": "Combine Filling: Combine the dry and wet filling mixtures. Depict the ingredients or components used now: filling dry mix; lemon egg mixture. Show the resulting food state: lemon filling. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-07-pour-onto-hot-crust.png",
+      "placement": "Step 7 card",
+      "alt": "Suchele-Inspired Lemon Squares: Pour Onto Hot Crust",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-05-mix-filling-wet.png",
+        "step-06-combine-filling.png"
+      ],
+      "prompt": "Pour Onto Hot Crust: Hold baked base in oven as another person pours the Lemon/Sugar/Egg mixture into pan, and slide gently into oven; be careful not to spill. Depict the ingredients or components used now: hot baked crust; lemon filling. Show the resulting food state: hot crust with filling.  Tools or station: oven. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-08-bake-until-turnable.png",
+      "placement": "Step 8 card",
+      "alt": "Suchele-Inspired Lemon Squares: Bake Until Turnable",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-06-combine-filling.png",
+        "step-07-pour-onto-hot-crust.png"
+      ],
+      "prompt": "Bake Until Turnable: Bake at 350 degrees until the pan can be turned around inside oven without spilling. Depict the ingredients or components used now: hot crust with filling. Show the resulting food state: partially set lemon squares.  Tools or station: oven. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-09-finish-bake.png",
+      "placement": "Step 9 card",
+      "alt": "Suchele-Inspired Lemon Squares: Finish Bake",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-07-pour-onto-hot-crust.png",
+        "step-08-bake-until-turnable.png"
+      ],
+      "prompt": "Finish Bake: After turning, cook until just firm. Maybe 30 minutes total, maybe not! Depict the ingredients or components used now: partially set lemon squares. Show the resulting food state: lemon squares.  Tools or station: oven. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

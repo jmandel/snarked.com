@@ -1,0 +1,166 @@
+{
+  "recipeId": "smothered-chicken",
+  "title": "Smothered Chicken + Barley",
+  "generatedAt": "2026-05-13T14:45:52.936Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-smothered-chicken.png",
+    "placement": "Continuity storyboard",
+    "alt": "Smothered Chicken + Barley visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/Smothered_Chicken/prompts/storyboard-smothered-chicken.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-smothered-chicken.png",
+      "placement": "Recipe header",
+      "alt": "Smothered Chicken + Barley finished dish",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/Smothered_Chicken/prompts/hero-smothered-chicken.txt"
+    },
+    {
+      "filename": "step-01-make-spice-mixture.png",
+      "placement": "Step 1 card",
+      "alt": "Smothered Chicken + Barley: Make Spice Mixture",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-01-make-spice-mixture.txt"
+    },
+    {
+      "filename": "step-02-chop-onions.png",
+      "placement": "Step 2 card",
+      "alt": "Smothered Chicken + Barley: Chop Onions",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-make-spice-mixture.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-02-chop-onions.txt"
+    },
+    {
+      "filename": "step-03-chop-red-pepper.png",
+      "placement": "Step 3 card",
+      "alt": "Smothered Chicken + Barley: Chop Red Pepper",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-make-spice-mixture.png",
+        "step-02-chop-onions.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-03-chop-red-pepper.txt"
+    },
+    {
+      "filename": "step-04-prep-tomatoes.png",
+      "placement": "Step 4 card",
+      "alt": "Smothered Chicken + Barley: Prep Tomatoes",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-chop-onions.png",
+        "step-03-chop-red-pepper.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-04-prep-tomatoes.txt"
+    },
+    {
+      "filename": "step-05-rub-chicken.png",
+      "placement": "Step 5 card",
+      "alt": "Smothered Chicken + Barley: Rub Chicken",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-03-chop-red-pepper.png",
+        "step-04-prep-tomatoes.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-05-rub-chicken.txt"
+    },
+    {
+      "filename": "step-06-brown-chicken.png",
+      "placement": "Step 6 card",
+      "alt": "Smothered Chicken + Barley: Brown Chicken",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-04-prep-tomatoes.png",
+        "step-05-rub-chicken.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-06-brown-chicken.txt"
+    },
+    {
+      "filename": "step-07-saute-vegetables.png",
+      "placement": "Step 7 card",
+      "alt": "Smothered Chicken + Barley: Saute Vegetables",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-05-rub-chicken.png",
+        "step-06-brown-chicken.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-07-saute-vegetables.txt"
+    },
+    {
+      "filename": "step-08-build-barley-sauce.png",
+      "placement": "Step 8 card",
+      "alt": "Smothered Chicken + Barley: Build Barley Sauce",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-06-brown-chicken.png",
+        "step-07-saute-vegetables.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-08-build-barley-sauce.txt"
+    },
+    {
+      "filename": "step-09-assemble.png",
+      "placement": "Step 9 card",
+      "alt": "Smothered Chicken + Barley: Assemble",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-07-saute-vegetables.png",
+        "step-08-build-barley-sauce.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-09-assemble.txt"
+    },
+    {
+      "filename": "step-10-bake.png",
+      "placement": "Step 10 card",
+      "alt": "Smothered Chicken + Barley: Bake",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-08-build-barley-sauce.png",
+        "step-09-assemble.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-10-bake.txt"
+    },
+    {
+      "filename": "step-11-slice-green-onions.png",
+      "placement": "Step 11 card",
+      "alt": "Smothered Chicken + Barley: Slice Green Onions",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-09-assemble.png",
+        "step-10-bake.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-11-slice-green-onions.txt"
+    },
+    {
+      "filename": "step-12-rest-and-garnish.png",
+      "placement": "Step 12 card",
+      "alt": "Smothered Chicken + Barley: Rest And Garnish",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-10-bake.png",
+        "step-11-slice-green-onions.png"
+      ],
+      "promptFile": "recipes/Smothered_Chicken/prompts/step-12-rest-and-garnish.txt"
+    }
+  ]
+}

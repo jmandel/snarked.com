@@ -1,0 +1,765 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "shanghainese-wontons",
+  "title": "Shanghainese Wontons",
+  "subtitle": "let's have some savories already",
+  "source": {
+    "submittedBy": "Carrie Poon <cpoon@wellesley.edu>",
+    "date": "2003-08-15",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Active",
+      "value": "~45 min"
+    },
+    {
+      "label": "Wait",
+      "value": "~26 min"
+    },
+    {
+      "label": "Stations",
+      "value": "stovetop"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-shanghainese-wontons.png",
+    "placement": "Continuity storyboard",
+    "alt": "Shanghainese Wontons visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "knife",
+        "description": "Use one consistent knife design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "cutting board",
+        "description": "Use one consistent cutting board design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "sink",
+        "description": "Use one consistent sink design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "counter",
+        "description": "Use one consistent counter design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stovetop",
+        "description": "Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stock pot",
+        "description": "Use one consistent stock pot design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stovetop burner",
+        "description": "Use one consistent stovetop burner design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "water pot",
+        "description": "Use one consistent water pot design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "slotted spoon",
+        "description": "Use one consistent slotted spoon design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "bowl",
+        "description": "Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "pot",
+        "description": "Use one consistent pot design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "spoon",
+        "description": "Use one consistent spoon design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "wonton wrappers",
+        "description": "1 lb wrapping; ingredient"
+      },
+      {
+        "name": "minced pork",
+        "description": "1 lb filling; ingredient"
+      },
+      {
+        "name": "Shanghainese bok choi",
+        "description": "1 1/4 lbs filling; ingredient"
+      },
+      {
+        "name": "shrimp",
+        "description": "1/2 lb filling; ingredient"
+      },
+      {
+        "name": "chicken stock",
+        "description": "1 can serving broth; ingredient"
+      },
+      {
+        "name": "soy sauce",
+        "description": "6 T seasoning; ingredient"
+      },
+      {
+        "name": "sesame oil",
+        "description": "1 T seasoning; ingredient"
+      },
+      {
+        "name": "corn flour",
+        "description": "2 T seasoning; ingredient"
+      },
+      {
+        "name": "sugar",
+        "description": "1 T seasoning; ingredient"
+      },
+      {
+        "name": "salt and pepper",
+        "description": "to taste seasoning; ingredient"
+      },
+      {
+        "name": "drained chopped bok choi",
+        "description": "chop: 1 1/4 lbs Shanghainese bok choi"
+      },
+      {
+        "name": "chopped shrimp",
+        "description": "chop: 1/2 lb shrimp"
+      },
+      {
+        "name": "seasoned wonton filling",
+        "description": "mix: 1 lb minced pork + drained chopped bok choi + chopped shrimp + 6 T soy sauce + 1 T sesame oil + 2 T corn flour + 1 T sugar + to taste salt and pepper"
+      },
+      {
+        "name": "wrapped wontons",
+        "description": "wrap: seasoned wonton filling + 1 lb wonton wrappers"
+      },
+      {
+        "name": "heated chicken stock",
+        "description": "heat: 1 can chicken stock"
+      },
+      {
+        "name": "boiling water",
+        "description": "heat"
+      },
+      {
+        "name": "cooked wontons",
+        "description": "boil: wrapped wontons + boiling water"
+      },
+      {
+        "name": "drained wontons",
+        "description": "drain: cooked wontons"
+      },
+      {
+        "name": "wontons in chicken stock",
+        "description": "serve: drained wontons + heated chicken stock"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "drained chopped bok choi",
+        "description": "chop from Shanghainese bok choi; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "chopped shrimp",
+        "description": "chop from shrimp; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "seasoned wonton filling",
+        "description": "mix from minced pork + drained chopped bok choi + chopped shrimp + soy sauce + sesame oil + corn flour + sugar + salt and pepper; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "wrapped wontons",
+        "description": "wrap from seasoned wonton filling + wonton wrappers; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "heated chicken stock",
+        "description": "heat from chicken stock; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "boiling water",
+        "description": "boil from prior preparation; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "cooked wontons",
+        "description": "boil from wrapped wontons + boiling water; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "drained wontons",
+        "description": "drain from cooked wontons; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "wontons in chicken stock",
+        "description": "serve from drained wontons + heated chicken stock; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Prep Bok Choi: Chop the bok choi into very small pieces, draining away as much water as possible. Result: drained chopped bok choi. Tool/station: knife, cutting board, sink.",
+      "Step 2, Prep Shrimp: Chop the shrimp into small pieces. Result: chopped shrimp. Tool/station: knife, cutting board.",
+      "Step 3, Mix Filling: Combine the pork, bok choi and shrimp. Add soy sauce, sesame oil, corn flour, sugar, salt and pepper. Mix well. Result: seasoned wonton filling. Tool/station: counter, mixing bowl.",
+      "Step 4, Wrap Wontons: Wrap the seasoned meat mix with wonton wrappers. Result: wrapped wontons. Tool/station: counter.",
+      "Step 5, Heat Stock: Heat the chicken stock in a medium pot. Result: heated chicken stock. Tool/station: stovetop, stock pot, stovetop burner.",
+      "Step 6, Boil Water: At the same time, boil enough water in another pot to cover wontons. Result: boiling water. Tool/station: stovetop, water pot, stovetop burner.",
+      "Step 7, Cook Wontons: Add the wontons and bring to a boil again. Let boil for another 10 minutes or until cooked. Result: cooked wontons. Tool/station: stovetop, water pot, stovetop burner.",
+      "Step 8, Drain Wontons: Scoop the wontons out of the water with a slotted spoon and drain the water. Result: drained wontons. Tool/station: sink, slotted spoon.",
+      "Step 9, Serve: Put into the heated chicken stock. Serve. Result: wontons in chicken stock. Tool/station: counter."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Shanghainese Wontons. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-shanghainese-wontons.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "prep-bok-choi"
+      },
+      {
+        "type": "step",
+        "step": "prep-shrimp"
+      },
+      {
+        "type": "step",
+        "step": "mix-filling"
+      },
+      {
+        "type": "step",
+        "step": "wrap-wontons"
+      },
+      {
+        "type": "step",
+        "step": "heat-stock"
+      },
+      {
+        "type": "step",
+        "step": "boil-water"
+      },
+      {
+        "type": "step",
+        "step": "cook-wontons"
+      },
+      {
+        "type": "step",
+        "step": "drain-wontons"
+      },
+      {
+        "type": "step",
+        "step": "serve"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "prep-bok-choi",
+      "sourceActionId": "prep_bok_choi",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "prep",
+      "title": "Prep Bok Choi",
+      "instruction": "Chop the bok choi into very small pieces, draining away as much water as possible.",
+      "duration": {
+        "activeMinutes": 8,
+        "activeLabel": "8 minutes, estimated"
+      },
+      "attention": "focused",
+      "resources": [
+        "knife",
+        "cutting board",
+        "sink"
+      ],
+      "ingredients": [
+        {
+          "qty": "1 1/4 lbs",
+          "item": "Shanghainese bok choi",
+          "amounts": {
+            "original": "1 1/4 lbs",
+            "metric": "565 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "drained chopped bok choi"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-prep-bok-choi.png"
+    },
+    {
+      "id": "prep-shrimp",
+      "sourceActionId": "prep_shrimp",
+      "number": 2,
+      "timeLabel": "8 min",
+      "phase": "prep",
+      "title": "Prep Shrimp",
+      "instruction": "Chop the shrimp into small pieces.",
+      "duration": {
+        "activeMinutes": 4,
+        "activeLabel": "4 minutes, estimated"
+      },
+      "attention": "focused",
+      "resources": [
+        "knife",
+        "cutting board"
+      ],
+      "ingredients": [
+        {
+          "qty": "1/2 lb",
+          "item": "shrimp",
+          "note": "optional",
+          "amounts": {
+            "original": "1/2 lb",
+            "metric": "225 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "chopped shrimp"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-prep-shrimp.png"
+    },
+    {
+      "id": "mix-filling",
+      "sourceActionId": "mix_filling",
+      "number": 3,
+      "timeLabel": "12 min",
+      "phase": "mix",
+      "title": "Mix Filling",
+      "instruction": "Combine the pork, bok choi and shrimp. Add soy sauce, sesame oil, corn flour, sugar, salt and pepper. Mix well.",
+      "duration": {
+        "activeMinutes": 5,
+        "activeLabel": "5 minutes"
+      },
+      "attention": "focused",
+      "resources": [
+        "counter",
+        "mixing bowl"
+      ],
+      "ingredients": [
+        {
+          "qty": "1 lb",
+          "item": "minced pork",
+          "amounts": {
+            "original": "1 lb",
+            "metric": "455 g"
+          }
+        },
+        {
+          "qty": "",
+          "item": "drained chopped bok choi"
+        },
+        {
+          "qty": "",
+          "item": "chopped shrimp",
+          "note": "optional"
+        },
+        {
+          "qty": "6 T",
+          "item": "soy sauce",
+          "amounts": {
+            "original": "6 T",
+            "metric": "95 g"
+          }
+        },
+        {
+          "qty": "1 T",
+          "item": "sesame oil",
+          "amounts": {
+            "original": "1 T",
+            "metric": "14 g"
+          }
+        },
+        {
+          "qty": "2 T",
+          "item": "corn flour",
+          "amounts": {
+            "original": "2 T",
+            "metric": "15 g"
+          }
+        },
+        {
+          "qty": "1 T",
+          "item": "sugar",
+          "amounts": {
+            "original": "1 T",
+            "metric": "13 g"
+          }
+        },
+        {
+          "qty": "to taste",
+          "item": "salt and pepper",
+          "amounts": {
+            "original": "to taste"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "seasoned wonton filling"
+        }
+      ],
+      "notes": [],
+      "asset": "step-03-mix-filling.png"
+    },
+    {
+      "id": "wrap-wontons",
+      "sourceActionId": "wrap_wontons",
+      "number": 4,
+      "timeLabel": "17 min",
+      "phase": "step",
+      "title": "Wrap Wontons",
+      "instruction": "Wrap the seasoned meat mix with wonton wrappers.",
+      "duration": {
+        "activeMinutes": 20,
+        "activeLabel": "20 minutes, estimated"
+      },
+      "attention": "focused",
+      "resources": [
+        "counter"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "seasoned wonton filling"
+        },
+        {
+          "qty": "1 lb",
+          "item": "wonton wrappers",
+          "amounts": {
+            "original": "1 lb",
+            "metric": "455 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "wrapped wontons"
+        }
+      ],
+      "notes": [],
+      "asset": "step-04-wrap-wontons.png"
+    },
+    {
+      "id": "heat-stock",
+      "sourceActionId": "heat_stock",
+      "number": 5,
+      "timeLabel": "37 min",
+      "phase": "setup",
+      "title": "Heat Stock",
+      "instruction": "Heat the chicken stock in a medium pot.",
+      "duration": {
+        "activeMinutes": 2,
+        "passiveMinutes": 8,
+        "activeLabel": "2 minutes",
+        "passiveLabel": "8 minutes, estimated"
+      },
+      "attention": "hands_off",
+      "resources": [
+        "stock pot",
+        "stovetop burner",
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "1 can",
+          "item": "chicken stock",
+          "amounts": {
+            "original": "1 can"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "heated chicken stock"
+        }
+      ],
+      "notes": [
+        "Wait: 8 minutes, estimated"
+      ],
+      "asset": "step-05-heat-stock.png"
+    },
+    {
+      "id": "boil-water",
+      "sourceActionId": "boil_water",
+      "number": 6,
+      "timeLabel": "39 min",
+      "phase": "cook",
+      "title": "Boil Water",
+      "instruction": "At the same time, boil enough water in another pot to cover wontons.",
+      "duration": {
+        "activeMinutes": 2,
+        "passiveMinutes": 8,
+        "activeLabel": "2 minutes",
+        "passiveLabel": "8 minutes, estimated"
+      },
+      "attention": "hands_off",
+      "resources": [
+        "water pot",
+        "stovetop burner",
+        "stovetop"
+      ],
+      "ingredients": [],
+      "makes": [
+        {
+          "item": "boiling water"
+        }
+      ],
+      "notes": [
+        "Wait: 8 minutes, estimated"
+      ],
+      "asset": "step-06-boil-water.png"
+    },
+    {
+      "id": "cook-wontons",
+      "sourceActionId": "cook_wontons",
+      "number": 7,
+      "timeLabel": "41 min",
+      "phase": "cook",
+      "title": "Cook Wontons",
+      "instruction": "Add the wontons and bring to a boil again. Let boil for another 10 minutes or until cooked.",
+      "duration": {
+        "activeMinutes": 1,
+        "passiveMinutes": 10,
+        "activeLabel": "1 minute",
+        "passiveLabel": "10 minutes"
+      },
+      "attention": "intermittent",
+      "resources": [
+        "water pot",
+        "stovetop burner",
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "wrapped wontons"
+        },
+        {
+          "qty": "",
+          "item": "boiling water"
+        }
+      ],
+      "makes": [
+        {
+          "item": "cooked wontons"
+        }
+      ],
+      "notes": [
+        "Source timing: another 10 minutes or until cooked",
+        "Wait: 10 minutes",
+        "Cue: wontons cooked"
+      ],
+      "asset": "step-07-cook-wontons.png"
+    },
+    {
+      "id": "drain-wontons",
+      "sourceActionId": "drain_wontons",
+      "number": 8,
+      "timeLabel": "42 min",
+      "phase": "prep",
+      "title": "Drain Wontons",
+      "instruction": "Scoop the wontons out of the water with a slotted spoon and drain the water.",
+      "duration": {
+        "activeMinutes": 2,
+        "activeLabel": "2 minutes"
+      },
+      "attention": "focused",
+      "resources": [
+        "sink",
+        "slotted spoon"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "cooked wontons"
+        }
+      ],
+      "makes": [
+        {
+          "item": "drained wontons"
+        }
+      ],
+      "notes": [
+        "Method: slotted spoon"
+      ],
+      "asset": "step-08-drain-wontons.png"
+    },
+    {
+      "id": "serve",
+      "sourceActionId": "serve",
+      "number": 9,
+      "timeLabel": "44 min",
+      "phase": "finish",
+      "title": "Serve",
+      "instruction": "Put into the heated chicken stock. Serve.",
+      "duration": {
+        "activeMinutes": 1,
+        "activeLabel": "1 minute"
+      },
+      "attention": "focused",
+      "resources": [
+        "counter"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "drained wontons"
+        },
+        {
+          "qty": "",
+          "item": "heated chicken stock"
+        }
+      ],
+      "makes": [
+        {
+          "item": "wontons in chicken stock"
+        }
+      ],
+      "notes": [],
+      "asset": "step-09-serve.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-shanghainese-wontons.png",
+      "placement": "Recipe header",
+      "alt": "Shanghainese Wontons finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished wontons in chicken stock for Shanghainese Wontons, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-prep-bok-choi.png",
+      "placement": "Step 1 card",
+      "alt": "Shanghainese Wontons: Prep Bok Choi",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Prep Bok Choi: Chop the bok choi into very small pieces, draining away as much water as possible. Depict the ingredients or components used now: 1 1/4 lbs Shanghainese bok choi. Show the resulting food state: drained chopped bok choi.  Tools or station: knife, cutting board, sink. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-prep-shrimp.png",
+      "placement": "Step 2 card",
+      "alt": "Shanghainese Wontons: Prep Shrimp",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-prep-bok-choi.png"
+      ],
+      "prompt": "Prep Shrimp: Chop the shrimp into small pieces. Depict the ingredients or components used now: 1/2 lb shrimp. Show the resulting food state: chopped shrimp.  Tools or station: knife, cutting board. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-mix-filling.png",
+      "placement": "Step 3 card",
+      "alt": "Shanghainese Wontons: Mix Filling",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-prep-bok-choi.png",
+        "step-02-prep-shrimp.png"
+      ],
+      "prompt": "Mix Filling: Combine the pork, bok choi and shrimp. Add soy sauce, sesame oil, corn flour, sugar, salt and pepper. Mix well. Depict the ingredients or components used now: 1 lb minced pork; drained chopped bok choi; chopped shrimp; 6 T soy sauce; 1 T sesame oil; 2 T corn flour; 1 T sugar; to taste salt and pepper. Show the resulting food state: seasoned wonton filling.  Tools or station: counter, mixing bowl. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-wrap-wontons.png",
+      "placement": "Step 4 card",
+      "alt": "Shanghainese Wontons: Wrap Wontons",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-prep-shrimp.png",
+        "step-03-mix-filling.png"
+      ],
+      "prompt": "Wrap Wontons: Wrap the seasoned meat mix with wonton wrappers. Depict the ingredients or components used now: seasoned wonton filling; 1 lb wonton wrappers. Show the resulting food state: wrapped wontons.  Tools or station: counter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-heat-stock.png",
+      "placement": "Step 5 card",
+      "alt": "Shanghainese Wontons: Heat Stock",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-mix-filling.png",
+        "step-04-wrap-wontons.png"
+      ],
+      "prompt": "Heat Stock: Heat the chicken stock in a medium pot. Depict the ingredients or components used now: 1 can chicken stock. Show the resulting food state: heated chicken stock.  Tools or station: stock pot, stovetop burner, stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-06-boil-water.png",
+      "placement": "Step 6 card",
+      "alt": "Shanghainese Wontons: Boil Water",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-wrap-wontons.png",
+        "step-05-heat-stock.png"
+      ],
+      "prompt": "Boil Water: At the same time, boil enough water in another pot to cover wontons. Show the resulting food state: boiling water.  Tools or station: water pot, stovetop burner, stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-07-cook-wontons.png",
+      "placement": "Step 7 card",
+      "alt": "Shanghainese Wontons: Cook Wontons",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-05-heat-stock.png",
+        "step-06-boil-water.png"
+      ],
+      "prompt": "Cook Wontons: Add the wontons and bring to a boil again. Let boil for another 10 minutes or until cooked. Depict the ingredients or components used now: wrapped wontons; boiling water. Show the resulting food state: cooked wontons.  Tools or station: water pot, stovetop burner, stovetop.  End state cue: wontons cooked. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-08-drain-wontons.png",
+      "placement": "Step 8 card",
+      "alt": "Shanghainese Wontons: Drain Wontons",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-06-boil-water.png",
+        "step-07-cook-wontons.png"
+      ],
+      "prompt": "Drain Wontons: Scoop the wontons out of the water with a slotted spoon and drain the water. Depict the ingredients or components used now: cooked wontons. Show the resulting food state: drained wontons.  Tools or station: sink, slotted spoon. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-09-serve.png",
+      "placement": "Step 9 card",
+      "alt": "Shanghainese Wontons: Serve",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-07-cook-wontons.png",
+        "step-08-drain-wontons.png"
+      ],
+      "prompt": "Serve: Put into the heated chicken stock. Serve. Depict the ingredients or components used now: drained wontons; heated chicken stock. Show the resulting food state: wontons in chicken stock.  Tools or station: counter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

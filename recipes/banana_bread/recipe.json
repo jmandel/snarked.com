@@ -1,0 +1,477 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "banana-bread",
+  "title": "Banana Bread",
+  "subtitle": "Moist, chocolatey, cake-like banana bread",
+  "source": {
+    "submittedBy": "Josh Mandel <jmandel@mit.edu>",
+    "date": "2003-08-14",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Active",
+      "value": "~1 h 15 min"
+    },
+    {
+      "label": "Heat",
+      "value": "350 degrees F"
+    },
+    {
+      "label": "Stations",
+      "value": "oven"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-banana-bread.png",
+    "placement": "Continuity storyboard",
+    "alt": "Banana Bread visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "oven",
+        "description": "Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "bowl",
+        "description": "Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "loaf pan",
+        "description": "Use one consistent loaf pan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "sugar",
+        "description": "1 1/2 c wet; ingredient"
+      },
+      {
+        "name": "butter",
+        "description": "1/2 c wet; ingredient"
+      },
+      {
+        "name": "eggs",
+        "description": "2 wet; ingredient"
+      },
+      {
+        "name": "bananas",
+        "description": "2-3 wet; mashed; ingredient"
+      },
+      {
+        "name": "french vanilla yogurt",
+        "description": "1/4 c wet; ingredient"
+      },
+      {
+        "name": "vanilla extract",
+        "description": "1 tsp wet; ingredient"
+      },
+      {
+        "name": "flour",
+        "description": "1 1/2 c dry; ingredient"
+      },
+      {
+        "name": "baking soda",
+        "description": "1 tsp dry; ingredient"
+      },
+      {
+        "name": "baking powder",
+        "description": "1/4 tsp dry; ingredient"
+      },
+      {
+        "name": "salt",
+        "description": "1/4 tsp dry; ingredient"
+      },
+      {
+        "name": "chocolate chips and/or nuts",
+        "description": "1/2 c dry; ingredient"
+      },
+      {
+        "name": "creamed butter and sugar",
+        "description": "cream: 1/2 c butter + 1 1/2 c sugar"
+      },
+      {
+        "name": "banana wet mix",
+        "description": "mix: creamed butter and sugar + 2 eggs + 2-3 bananas (mashed) + 1/4 c french vanilla yogurt + 1 tsp vanilla extract"
+      },
+      {
+        "name": "dry mix",
+        "description": "sift: 1 1/2 c flour + 1 tsp baking soda + 1/4 tsp baking powder + 1/4 tsp salt + 1/2 c chocolate chips and/or nuts"
+      },
+      {
+        "name": "banana bread batter",
+        "description": "fold: banana wet mix + dry mix"
+      },
+      {
+        "name": "banana bread",
+        "description": "bake: banana bread batter"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "creamed butter and sugar",
+        "description": "cream from butter + sugar; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "banana wet mix",
+        "description": "mix from creamed butter and sugar + eggs + bananas + french vanilla yogurt + vanilla extract; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "dry mix",
+        "description": "sift from flour + baking soda + baking powder + salt + chocolate chips and/or nuts; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "banana bread batter",
+        "description": "fold from banana wet mix + dry mix; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "banana bread",
+        "description": "bake from banana bread batter; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Cream Butter Sugar: Cream butter and sugar. Result: creamed butter and sugar.",
+      "Step 2, Add Wet Ingredients: Add eggs, then bananas, one at a time. Stir in yogurt and vanilla. Result: banana wet mix.",
+      "Step 3, Combine Dry: In another bowl, soft together flour, bakind soda, baking powder, salt, and chips/nuts. Result: dry mix.",
+      "Step 4, Make Batter: Mix dry ingredients with wet until just combined. Result: banana bread batter.",
+      "Step 5, Bake: Pour into a greased loaf pan and cook for 75 minutes at 350 degrees F. Result: banana bread. Tool/station: oven."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Banana Bread. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-banana-bread.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "cream-butter-sugar"
+      },
+      {
+        "type": "step",
+        "step": "add-wet-ingredients"
+      },
+      {
+        "type": "step",
+        "step": "combine-dry"
+      },
+      {
+        "type": "step",
+        "step": "make-batter"
+      },
+      {
+        "type": "step",
+        "step": "bake"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "cream-butter-sugar",
+      "sourceActionId": "cream_butter_sugar",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "step",
+      "title": "Cream Butter Sugar",
+      "instruction": "Cream butter and sugar.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "1/2 c",
+          "item": "butter",
+          "amounts": {
+            "original": "1/2 c",
+            "metric": "115 g"
+          }
+        },
+        {
+          "qty": "1 1/2 c",
+          "item": "sugar",
+          "amounts": {
+            "original": "1 1/2 c",
+            "metric": "300 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "creamed butter and sugar"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-cream-butter-sugar.png"
+    },
+    {
+      "id": "add-wet-ingredients",
+      "sourceActionId": "add_wet_ingredients",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Add Wet Ingredients",
+      "instruction": "Add eggs, then bananas, one at a time. Stir in yogurt and vanilla.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "creamed butter and sugar"
+        },
+        {
+          "qty": "2",
+          "item": "eggs",
+          "amounts": {
+            "original": "2"
+          }
+        },
+        {
+          "qty": "2-3",
+          "item": "bananas",
+          "note": "mashed",
+          "amounts": {
+            "original": "2-3"
+          }
+        },
+        {
+          "qty": "1/4 c",
+          "item": "french vanilla yogurt",
+          "amounts": {
+            "original": "1/4 c",
+            "metric": "61 g"
+          }
+        },
+        {
+          "qty": "1 tsp",
+          "item": "vanilla extract",
+          "amounts": {
+            "original": "1 tsp",
+            "metric": "4.2 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "banana wet mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-add-wet-ingredients.png"
+    },
+    {
+      "id": "combine-dry",
+      "sourceActionId": "combine_dry",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Combine Dry",
+      "instruction": "In another bowl, soft together flour, bakind soda, baking powder, salt, and chips/nuts.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "1 1/2 c",
+          "item": "flour",
+          "amounts": {
+            "original": "1 1/2 c",
+            "metric": "180 g"
+          }
+        },
+        {
+          "qty": "1 tsp",
+          "item": "baking soda",
+          "amounts": {
+            "original": "1 tsp",
+            "metric": "4.6 g"
+          }
+        },
+        {
+          "qty": "1/4 tsp",
+          "item": "baking powder",
+          "amounts": {
+            "original": "1/4 tsp",
+            "metric": "1 g"
+          }
+        },
+        {
+          "qty": "1/4 tsp",
+          "item": "salt",
+          "amounts": {
+            "original": "1/4 tsp",
+            "metric": "1.5 g"
+          }
+        },
+        {
+          "qty": "1/2 c",
+          "item": "chocolate chips and/or nuts",
+          "amounts": {
+            "original": "1/2 c",
+            "metric": "85 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "dry mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-03-combine-dry.png"
+    },
+    {
+      "id": "make-batter",
+      "sourceActionId": "make_batter",
+      "number": 4,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Make Batter",
+      "instruction": "Mix dry ingredients with wet until just combined.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "banana wet mix"
+        },
+        {
+          "qty": "",
+          "item": "dry mix"
+        }
+      ],
+      "makes": [
+        {
+          "item": "banana bread batter"
+        }
+      ],
+      "notes": [
+        "Source timing: until just combined"
+      ],
+      "asset": "step-04-make-batter.png"
+    },
+    {
+      "id": "bake",
+      "sourceActionId": "bake",
+      "number": 5,
+      "timeLabel": "0 min",
+      "phase": "bake",
+      "title": "Bake",
+      "instruction": "Pour into a greased loaf pan and cook for 75 minutes at 350 degrees F.",
+      "duration": {
+        "activeMinutes": 75
+      },
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "banana bread batter"
+        }
+      ],
+      "makes": [
+        {
+          "item": "banana bread"
+        }
+      ],
+      "notes": [
+        "Heat: 350 degrees F",
+        "Source timing: 75 minutes"
+      ],
+      "asset": "step-05-bake.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-banana-bread.png",
+      "placement": "Recipe header",
+      "alt": "Banana Bread finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished banana bread for Banana Bread, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-cream-butter-sugar.png",
+      "placement": "Step 1 card",
+      "alt": "Banana Bread: Cream Butter Sugar",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Cream Butter Sugar: Cream butter and sugar. Depict the ingredients or components used now: 1/2 c butter; 1 1/2 c sugar. Show the resulting food state: creamed butter and sugar. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-add-wet-ingredients.png",
+      "placement": "Step 2 card",
+      "alt": "Banana Bread: Add Wet Ingredients",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-cream-butter-sugar.png"
+      ],
+      "prompt": "Add Wet Ingredients: Add eggs, then bananas, one at a time. Stir in yogurt and vanilla. Depict the ingredients or components used now: creamed butter and sugar; 2 eggs; 2-3 bananas (mashed); 1/4 c french vanilla yogurt; 1 tsp vanilla extract. Show the resulting food state: banana wet mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-combine-dry.png",
+      "placement": "Step 3 card",
+      "alt": "Banana Bread: Combine Dry",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-cream-butter-sugar.png",
+        "step-02-add-wet-ingredients.png"
+      ],
+      "prompt": "Combine Dry: In another bowl, soft together flour, bakind soda, baking powder, salt, and chips/nuts. Depict the ingredients or components used now: 1 1/2 c flour; 1 tsp baking soda; 1/4 tsp baking powder; 1/4 tsp salt; 1/2 c chocolate chips and/or nuts. Show the resulting food state: dry mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-make-batter.png",
+      "placement": "Step 4 card",
+      "alt": "Banana Bread: Make Batter",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-add-wet-ingredients.png",
+        "step-03-combine-dry.png"
+      ],
+      "prompt": "Make Batter: Mix dry ingredients with wet until just combined. Depict the ingredients or components used now: banana wet mix; dry mix. Show the resulting food state: banana bread batter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-bake.png",
+      "placement": "Step 5 card",
+      "alt": "Banana Bread: Bake",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-combine-dry.png",
+        "step-04-make-batter.png"
+      ],
+      "prompt": "Bake: Pour into a greased loaf pan and cook for 75 minutes at 350 degrees F. Depict the ingredients or components used now: banana bread batter. Show the resulting food state: banana bread.  Tools or station: oven. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

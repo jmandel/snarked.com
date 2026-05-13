@@ -1,0 +1,24 @@
+{
+  "filename": "step-02-add-wet.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:33:44.295Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T162544Z-refined-banana-bread/codex-home/generated_images/019e2228-9586-7e80-912a-2fe573571cc1/ig_02d73f80c761b0ae016a04a76f361c8199a5d40f663ba5fd80.png",
+  "promptFile": "recipes/refined_banana_bread/prompts/step-02-add-wet.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-cream-fats-sugar.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3226302,
+    "afterBytes": 3123577
+  }
+}

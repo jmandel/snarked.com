@@ -1,0 +1,22 @@
+{
+  "filename": "storyboard-cornmeal-pancakes.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:40:24.622Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T153637Z-cornmeal-pancakes/codex-home/generated_images/019e21fb-9df2-73f3-b684-9840fa9a00f2/ig_00bf11c22c5222c8016a049acddbc0819ba2e746ebd0ec09fc.png",
+  "promptFile": "recipes/cornmeal_pancakes/prompts/storyboard-cornmeal-pancakes.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3117103,
+    "afterBytes": 3009032
+  }
+}

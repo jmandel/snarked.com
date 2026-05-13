@@ -1,0 +1,25 @@
+{
+  "filename": "step-07-saute-vegetables.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:12:12.340Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-smothered-chicken/codex-home/generated_images/019e21cd-291f-7c13-9397-9169b2e006ac/ig_07f2b06d515b40f5016a04943d625481998bc7fc78876e81d0.png",
+  "promptFile": "recipes/Smothered_Chicken/prompts/step-07-saute-vegetables.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-05-rub-chicken.png",
+    "step-06-brown-chicken.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3181816,
+    "afterBytes": 3084162
+  }
+}

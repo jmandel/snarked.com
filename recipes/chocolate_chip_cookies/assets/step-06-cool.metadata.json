@@ -1,0 +1,25 @@
+{
+  "filename": "step-06-cool.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:55:09.700Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T152351Z-chocolate-chip-cookies/codex-home/generated_images/019e21ef-ecd1-72c2-bf31-7389c3e8a695/ig_0c1036176f8d2a73016a049e4c4be4819bba48ebbff485d7e3.png",
+  "promptFile": "recipes/chocolate_chip_cookies/prompts/step-06-cool.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-04-form-cookies.png",
+    "step-05-bake.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3086098,
+    "afterBytes": 2972433
+  }
+}

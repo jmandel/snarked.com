@@ -1,0 +1,25 @@
+{
+  "filename": "step-03-combine-dry.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:06:25.345Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-banana-bread/codex-home/generated_images/019e21cd-294d-7b13-9c19-8273d6e31f39/ig_038a3a87079bfdfc016a0492dbf80c819a8b862af0cab52ae3.png",
+  "promptFile": "recipes/banana_bread/prompts/step-03-combine-dry.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-cream-butter-sugar.png",
+    "step-02-add-wet-ingredients.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3200348,
+    "afterBytes": 3127347
+  }
+}

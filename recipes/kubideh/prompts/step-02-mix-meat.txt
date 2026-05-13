@@ -1,0 +1,148 @@
+Generate one standalone recipe illustration.
+
+Recipe context: Kubideh — Kubideh with the meat of your choice
+Target image: Kubideh: Mix Meat
+Used as: Step 2 card
+Aspect ratio: 4:3
+
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Kubideh
+Kubideh with the meat of your choice
+
+## Quick facts
+- Stations: grill
+
+## Process layout
+- Step: drain-onion
+- Step: mix-meat
+- Step: form-logs
+- Step: make-baste
+- Step: grill
+- Step: garnish
+
+## Steps
+### 1. Drain Onion
+Timing: 0 min
+Squeeze grated onion through cheesecloth to drain.
+Uses:
+  - large yellow onion — peeled and grated
+Makes: drained grated onion
+Notes:
+- Method: cheesecloth
+
+### 2. Mix Meat
+Timing: 0 min
+Mix onion, spices, and meat.
+Uses:
+  - drained grated onion
+  - 1 lb ground meat (455 g) — Lamb, beef, chicken thighs, or another chosen meat.
+  - 1 clove garlic — peeled and finely chopped
+  - 1 egg — lightly beaten
+  - 1/4 cup dry bread crumbs (27 g)
+  - 2 tsp salt (12 g)
+  - 1/2 tsp fresh ground pepper (1.2 g)
+  - 1/2 tsp ground turmeric (1.5 g)
+  - 1/4 tsp paprika (0.6 g)
+Makes: kubideh meat mixture
+
+### 3. Form Logs
+Timing: 0 min
+Form into 8 logs.
+Uses:
+  - kubideh meat mixture
+Makes: 8 formed kubideh logs
+
+### 4. Make Baste
+Timing: 0 min
+Crumble saffron into melted butter.
+Uses:
+  - 1 pinch saffron threads
+  - 1 tbsp butter (14 g) — melted
+Makes: saffron butter
+
+### 5. Grill
+Timing: 0 min
+Station/tools: grill
+Use this mixture to baste kebabs while grilling.
+Uses:
+  - 8 formed kubideh logs
+  - saffron butter
+Makes: grilled kebabs
+
+### 6. Garnish
+Timing: 0 min
+Serve with ground sumac and lemon wedges if desired.
+Uses:
+  - grilled kebabs
+  - ground sumac and lemon wedges — optional
+Makes: kubideh
+</recipe_context_markdown>
+
+RECIPE STORYBOARD
+Use the storyboard asset and rules as the primary continuity reference when available.
+Continuity storyboard asset: storyboard-kubideh.png
+Intent: Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+Camera and angle: Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+Cookware/tools to preserve:
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- grill: Use one consistent grill design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+Recipe visual inventory:
+- large yellow onion: meat mixture; peeled and grated; ingredient
+- ground meat: 1 lb meat mixture; Lamb, beef, chicken thighs, or another chosen meat.; ingredient
+- garlic: 1 clove meat mixture; peeled and finely chopped; ingredient
+- egg: 1 meat mixture; lightly beaten; ingredient
+- dry bread crumbs: 1/4 cup meat mixture; ingredient
+- salt: 2 tsp spices; ingredient
+- fresh ground pepper: 1/2 tsp spices; ingredient
+- ground turmeric: 1/2 tsp spices; ingredient
+- paprika: 1/4 tsp spices; ingredient
+- saffron threads: 1 pinch baste; ingredient
+- butter: 1 tbsp baste; melted; ingredient
+- ground sumac and lemon wedges: garnish; ingredient
+- drained grated onion: squeeze: large yellow onion (peeled and grated)
+- kubideh meat mixture: mix: drained grated onion + 1 lb ground meat + 1 clove garlic (peeled and finely chopped) + 1 egg (lightly beaten) + 1/4 cup dry bread crumbs + 2 tsp salt + 1/2 tsp fresh ground pepper + 1/2 tsp ground turmeric + 1/4 tsp paprika
+- 8 formed kubideh logs: form: kubideh meat mixture
+- saffron butter: crumble: 1 pinch saffron threads + 1 tbsp butter (melted)
+- grilled kebabs: grill: 8 formed kubideh logs + saffron butter
+- kubideh: serve: grilled kebabs + ground sumac and lemon wedges
+Repeated food states:
+- drained grated onion: squeeze from large yellow onion; keep this state visually identical wherever it appears later.
+- kubideh meat mixture: mix from drained grated onion + ground meat + garlic + egg + dry bread crumbs + salt + fresh ground pepper + ground turmeric + paprika; keep this state visually identical wherever it appears later.
+- 8 formed kubideh logs: form from kubideh meat mixture; keep this state visually identical wherever it appears later.
+- saffron butter: crumble from saffron threads + butter; keep this state visually identical wherever it appears later.
+- grilled kebabs: grill from 8 formed kubideh logs + saffron butter; keep this state visually identical wherever it appears later.
+- kubideh: serve from grilled kebabs + ground sumac and lemon wedges; keep this state visually identical wherever it appears later.
+Continuity rules:
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+VISUAL CONTINUITY
+This asset should stay visually consistent with earlier generated assets: step-01-drain-onion.png. Repeated ingredients, tools, food states, colors, and plating should feel like the same recipe world unless the prompt explicitly changes them.
+
+
+IMAGE CONTENT
+Mix Meat: Mix onion, spices, and meat. Depict the ingredients or components used now: drained grated onion; 1 lb ground meat; 1 clove garlic (peeled and finely chopped); 1 egg (lightly beaten); 1/4 cup dry bread crumbs; 2 tsp salt; 1/2 tsp fresh ground pepper; 1/2 tsp ground turmeric; 1/4 tsp paprika. Show the resulting food state: kubideh meat mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

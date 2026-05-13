@@ -1,0 +1,94 @@
+{
+  "recipeId": "multigrain-pancakes",
+  "title": "Cooks' Multigrain Pancakes",
+  "generatedAt": "2026-05-13T16:11:13.934Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-multigrain-pancakes.png",
+    "placement": "Continuity storyboard",
+    "alt": "Cooks' Multigrain Pancakes visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/multigrain_pancakes/prompts/storyboard-multigrain-pancakes.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-multigrain-pancakes.png",
+      "placement": "Recipe header",
+      "alt": "Cooks' Multigrain Pancakes finished dish",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/multigrain_pancakes/prompts/hero-multigrain-pancakes.txt"
+    },
+    {
+      "filename": "step-01-thicken-milk.png",
+      "placement": "Step 1 card",
+      "alt": "Cooks' Multigrain Pancakes: Thicken Milk",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/multigrain_pancakes/prompts/step-01-thicken-milk.txt"
+    },
+    {
+      "filename": "step-02-process-muesli.png",
+      "placement": "Step 2 card",
+      "alt": "Cooks' Multigrain Pancakes: Process Muesli",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-thicken-milk.png"
+      ],
+      "promptFile": "recipes/multigrain_pancakes/prompts/step-02-process-muesli.txt"
+    },
+    {
+      "filename": "step-03-combine-dry.png",
+      "placement": "Step 3 card",
+      "alt": "Cooks' Multigrain Pancakes: Combine Dry",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-thicken-milk.png",
+        "step-02-process-muesli.png"
+      ],
+      "promptFile": "recipes/multigrain_pancakes/prompts/step-03-combine-dry.txt"
+    },
+    {
+      "filename": "step-04-combine-wet.png",
+      "placement": "Step 4 card",
+      "alt": "Cooks' Multigrain Pancakes: Combine Wet",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-process-muesli.png",
+        "step-03-combine-dry.png"
+      ],
+      "promptFile": "recipes/multigrain_pancakes/prompts/step-04-combine-wet.txt"
+    },
+    {
+      "filename": "step-05-make-batter.png",
+      "placement": "Step 5 card",
+      "alt": "Cooks' Multigrain Pancakes: Make Batter",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-03-combine-dry.png",
+        "step-04-combine-wet.png"
+      ],
+      "promptFile": "recipes/multigrain_pancakes/prompts/step-05-make-batter.txt"
+    },
+    {
+      "filename": "step-06-cook.png",
+      "placement": "Step 6 card",
+      "alt": "Cooks' Multigrain Pancakes: Cook",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-04-combine-wet.png",
+        "step-05-make-batter.png"
+      ],
+      "promptFile": "recipes/multigrain_pancakes/prompts/step-06-cook.txt"
+    }
+  ]
+}

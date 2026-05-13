@@ -1,0 +1,642 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "zaatar-salmon-tahini",
+  "title": "Za'atar Salmon & Tahini",
+  "subtitle": "Salmon baked over wilted greens with za'atar, sumac, lemon, and tahini",
+  "source": {
+    "submittedBy": "Food52 / Ottolenghi Test Kitchen",
+    "date": "2026-05-12",
+    "file": "recipe.md",
+    "url": "https://food52.com/recipes/86926-sauteed-salmon-recipe-with-tahini-greens"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Serves",
+      "value": "4"
+    },
+    {
+      "label": "Prep",
+      "value": "~5 min"
+    },
+    {
+      "label": "Cook",
+      "value": "~20 min"
+    },
+    {
+      "label": "Heat",
+      "value": "450 F"
+    },
+    {
+      "label": "Stations",
+      "value": "stovetop + oven"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-zaatar-salmon-tahini.png",
+    "placement": "Continuity storyboard",
+    "alt": "Za'atar Salmon & Tahini visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with pan handles and bowl ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "large oven-safe saute pan",
+        "description": "Wide shallow pan that can move from stovetop to oven; use the same pan for wilted greens, salmon first bake, tahini finish bake, and final serving state."
+      },
+      {
+        "name": "small spice bowl",
+        "description": "Small bowl for the za'atar-sumac mixture; preserve bowl material and angle if it appears again."
+      },
+      {
+        "name": "small sauce bowl and whisk",
+        "description": "Small bowl with whisk for tahini, garlic, lemon, water, and salt; use this for the tahini sauce step."
+      },
+      {
+        "name": "oven",
+        "description": "Same implied oven environment for preheat and bake stages; use warm interior glow without drawing numbers or labels."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "salmon fillets",
+        "description": "4 skin-on salmon fillets, raw and patted dry; later become za'atar-crusted salmon, salmon over greens, baked salmon with bubbling tahini, and finished plated salmon."
+      },
+      {
+        "name": "za'atar and sumac crust",
+        "description": "Green-brown herb spice crust made from za'atar and sumac, visibly coating only the top of the salmon."
+      },
+      {
+        "name": "olive oil",
+        "description": "Used in three portions: wilt greens, drizzle salmon before first bake, and finish the dish."
+      },
+      {
+        "name": "baby spinach or tender greens",
+        "description": "Loose green leaves that wilt into a bed in the saute pan."
+      },
+      {
+        "name": "tahini sauce",
+        "description": "Pale beige, smooth, runny tahini sauce whisked with garlic, lemon juice, salt, and water."
+      },
+      {
+        "name": "lemon, cilantro, and extra sumac",
+        "description": "Fresh finishing elements; lemon juice and oil gloss the dish, cilantro and sumac add green and red-purple accents."
+      },
+      {
+        "name": "wilted greens",
+        "description": "stovetop result: greens softened in the oven-safe saute pan."
+      },
+      {
+        "name": "za'atar-crusted salmon",
+        "description": "seasoning result: salmon fillets with a visible herb-spice crust on top."
+      },
+      {
+        "name": "salmon over wilted greens",
+        "description": "first bake state: salmon fillets arranged skin-side down over wilted greens in the same saute pan."
+      },
+      {
+        "name": "baked salmon with bubbling tahini",
+        "description": "finish bake state: tahini poured around, not over, the fish; sauce bubbles at the edges around the salmon."
+      },
+      {
+        "name": "za'atar salmon and tahini greens",
+        "description": "final state with lemon, olive oil, cilantro, and extra sumac on top."
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "za'atar-crusted salmon",
+        "description": "From raw salmon plus za'atar, sumac, salt, and pepper; keep the top crust color and texture consistent wherever it appears."
+      },
+      {
+        "name": "wilted greens",
+        "description": "From baby spinach cooked briefly in olive oil; keep the greens in the same wide saute pan."
+      },
+      {
+        "name": "salmon over wilted greens",
+        "description": "From za'atar-crusted salmon placed over wilted greens and drizzled with olive oil."
+      },
+      {
+        "name": "runny tahini sauce",
+        "description": "From tahini, garlic, lemon juice, water, and salt; pale beige and pourable, not thick paste."
+      },
+      {
+        "name": "baked salmon with bubbling tahini",
+        "description": "From salmon over greens plus tahini sauce; keep tahini around the fish, not hiding the spice crust."
+      },
+      {
+        "name": "za'atar salmon and tahini greens",
+        "description": "Final garnished dish; same pan and same salmon arrangement, finished with cilantro and sumac."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Preheat Oven: warm oven to 450 F while the first prep happens.",
+      "Step 2, Season Salmon: dry salmon, season, and crust the tops with za'atar and sumac.",
+      "Step 3, Wilt Greens: cook greens briefly in olive oil in the oven-safe saute pan.",
+      "Step 4, First Bake: place salmon over greens, drizzle oil, and bake 5 minutes.",
+      "Step 5, Whisk Tahini Sauce: during the 5-minute first bake, whisk tahini, garlic, lemon, salt, and water.",
+      "Step 6, Finish Bake: pour tahini around salmon and bake until fish is cooked and sauce bubbles.",
+      "Step 7, Garnish and Serve: finish with lemon juice, olive oil, cilantro, and extra sumac."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Za'atar Salmon & Tahini. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-zaatar-salmon-tahini.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "preheat-oven"
+      },
+      {
+        "type": "step",
+        "step": "season-salmon"
+      },
+      {
+        "type": "step",
+        "step": "wilt-greens"
+      },
+      {
+        "type": "parallel",
+        "summary": "While the pan bakes, whisk the tahini sauce.",
+        "lanes": [
+          {
+            "label": "Oven",
+            "accent": "cook",
+            "steps": [
+              "first-bake"
+            ]
+          },
+          {
+            "label": "Counter",
+            "accent": "prep",
+            "steps": [
+              "whisk-tahini-sauce"
+            ]
+          }
+        ],
+        "converge": {
+          "label": "Tahini sauce joins the pan for the finish bake.",
+          "targetStep": "finish-bake"
+        }
+      },
+      {
+        "type": "step",
+        "step": "finish-bake"
+      },
+      {
+        "type": "step",
+        "step": "garnish-and-serve"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "preheat-oven",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "setup",
+      "title": "Preheat Oven",
+      "instruction": "Preheat the oven to 450 F.",
+      "duration": {
+        "activeMinutes": 1,
+        "activeLabel": "1 minute",
+        "passiveLabel": "heats while you prep"
+      },
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [],
+      "makes": [],
+      "notes": [
+        "Let the oven heat while you season the fish and wilt the greens."
+      ],
+      "asset": "step-01-preheat-oven.png"
+    },
+    {
+      "id": "season-salmon",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "prep",
+      "title": "Season Salmon",
+      "instruction": "Pat salmon dry, season with salt and pepper, then cover the tops with mixed za'atar and sumac.",
+      "duration": {
+        "activeMinutes": 3,
+        "activeLabel": "3 minutes"
+      },
+      "resources": [
+        "counter",
+        "small bowl"
+      ],
+      "ingredients": [
+        {
+          "qty": "4 fillets (1 lb 5 oz)",
+          "item": "salmon fillets",
+          "note": "skin on, pin bones removed",
+          "amounts": {
+            "original": "4 fillets (1 lb 5 oz)",
+            "metric": "600 g"
+          }
+        },
+        {
+          "qty": "2 T",
+          "item": "za'atar",
+          "amounts": {
+            "original": "2 T",
+            "metric": "12 g"
+          }
+        },
+        {
+          "qty": "2 t",
+          "item": "sumac",
+          "amounts": {
+            "original": "2 t",
+            "metric": "4 g"
+          }
+        },
+        {
+          "qty": "to taste",
+          "item": "kosher salt and black pepper",
+          "amounts": {
+            "original": "to taste"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "za'atar-crusted salmon"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-season-salmon.png"
+    },
+    {
+      "id": "wilt-greens",
+      "number": 3,
+      "timeLabel": "3 min",
+      "phase": "cook",
+      "title": "Wilt Greens",
+      "instruction": "Heat oil in a large oven-safe saute pan, then cook greens with salt and pepper until wilted.",
+      "duration": {
+        "activeMinutes": 3,
+        "activeLabel": "2-3 minutes"
+      },
+      "resources": [
+        "stovetop",
+        "oven-safe saute pan"
+      ],
+      "ingredients": [
+        {
+          "qty": "1 T",
+          "item": "olive oil",
+          "amounts": {
+            "original": "1 T",
+            "metric": "14 g"
+          }
+        },
+        {
+          "qty": "9 oz",
+          "item": "baby spinach or tender greens",
+          "amounts": {
+            "original": "9 oz",
+            "metric": "250 g"
+          }
+        },
+        {
+          "qty": "pinch",
+          "item": "kosher salt and black pepper",
+          "amounts": {
+            "original": "pinch"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "wilted greens"
+        }
+      ],
+      "notes": [
+        "Use the pan that will go into the oven."
+      ],
+      "asset": "step-03-wilt-greens.png"
+    },
+    {
+      "id": "first-bake",
+      "number": 4,
+      "timeLabel": "6 min",
+      "phase": "bake",
+      "title": "First Bake",
+      "instruction": "Set salmon skin-side down on the greens, drizzle with oil, and bake 5 minutes.",
+      "duration": {
+        "activeMinutes": 1,
+        "activeLabel": "1 minute",
+        "passiveMinutes": 5,
+        "passiveLabel": "5 minutes"
+      },
+      "resources": [
+        "oven",
+        "oven-safe saute pan"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "wilted greens"
+        },
+        {
+          "qty": "",
+          "item": "za'atar-crusted salmon"
+        },
+        {
+          "qty": "2 T",
+          "item": "olive oil",
+          "amounts": {
+            "original": "2 T",
+            "metric": "27 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "salmon over wilted greens"
+        }
+      ],
+      "notes": [
+        "This brief bake creates the covered time for whisking the sauce."
+      ],
+      "asset": "step-04-first-bake.png"
+    },
+    {
+      "id": "whisk-tahini-sauce",
+      "number": 5,
+      "timeLabel": "7 min",
+      "phase": "prep",
+      "title": "Whisk Tahini Sauce",
+      "instruction": "Whisk tahini, garlic, lemon juice, salt, and water until smooth and runny.",
+      "duration": {
+        "activeMinutes": 4,
+        "activeLabel": "4 minutes"
+      },
+      "resources": [
+        "small bowl",
+        "whisk"
+      ],
+      "ingredients": [
+        {
+          "qty": "1/3 c",
+          "item": "tahini",
+          "amounts": {
+            "original": "1/3 c",
+            "metric": "90 g"
+          }
+        },
+        {
+          "qty": "3 cloves",
+          "item": "garlic",
+          "note": "minced",
+          "amounts": {
+            "original": "3 cloves",
+            "metric": "3 cloves"
+          }
+        },
+        {
+          "qty": "2 1/2 T",
+          "item": "lemon juice",
+          "amounts": {
+            "original": "2 1/2 T",
+            "metric": "38 g"
+          }
+        },
+        {
+          "qty": "7 T",
+          "item": "water",
+          "amounts": {
+            "original": "7 T",
+            "metric": "100 g"
+          }
+        },
+        {
+          "qty": "pinch",
+          "item": "kosher salt",
+          "amounts": {
+            "original": "pinch"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "runny tahini sauce"
+        }
+      ],
+      "notes": [
+        "Do this while the first bake is in the oven."
+      ],
+      "asset": "step-05-whisk-tahini-sauce.png"
+    },
+    {
+      "id": "finish-bake",
+      "number": 6,
+      "timeLabel": "12 min",
+      "phase": "bake",
+      "title": "Finish Bake",
+      "instruction": "Pour tahini around the salmon, not on top, and bake until the fish is cooked through and the tahini bubbles.",
+      "duration": {
+        "activeMinutes": 1,
+        "activeLabel": "1 minute",
+        "passiveMinutes": 5,
+        "passiveLabel": "5 minutes"
+      },
+      "resources": [
+        "oven",
+        "oven-safe saute pan"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "salmon over wilted greens"
+        },
+        {
+          "qty": "",
+          "item": "runny tahini sauce"
+        }
+      ],
+      "makes": [
+        {
+          "item": "baked salmon with bubbling tahini"
+        }
+      ],
+      "notes": [
+        "Keep the tahini around the fish so the spice crust stays visible."
+      ],
+      "asset": "step-06-finish-bake.png"
+    },
+    {
+      "id": "garnish-and-serve",
+      "number": 7,
+      "timeLabel": "18 min",
+      "phase": "finish",
+      "title": "Garnish and Serve",
+      "instruction": "Spoon lemon juice and olive oil over the pan, then finish with cilantro and extra sumac.",
+      "duration": {
+        "activeMinutes": 2,
+        "activeLabel": "2 minutes"
+      },
+      "resources": [
+        "counter"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "baked salmon with bubbling tahini"
+        },
+        {
+          "qty": "1 T",
+          "item": "lemon juice",
+          "amounts": {
+            "original": "1 T",
+            "metric": "15 g"
+          }
+        },
+        {
+          "qty": "1 T",
+          "item": "olive oil",
+          "amounts": {
+            "original": "1 T",
+            "metric": "14 g"
+          }
+        },
+        {
+          "qty": "1 1/2 T",
+          "item": "cilantro leaves",
+          "note": "roughly chopped",
+          "amounts": {
+            "original": "1 1/2 T",
+            "metric": "4 g"
+          }
+        },
+        {
+          "qty": "1/2 t",
+          "item": "sumac",
+          "amounts": {
+            "original": "1/2 t",
+            "metric": "1 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "za'atar salmon and tahini greens"
+        }
+      ],
+      "notes": [
+        "Serve shortly after cooking; cooked tahini is best fresh."
+      ],
+      "asset": "step-07-garnish-and-serve.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-zaatar-salmon-tahini.png",
+      "placement": "Recipe header",
+      "alt": "Finished za'atar salmon with tahini greens",
+      "aspectRatio": "16:9",
+      "prompt": "Finished Za'atar Salmon & Tahini in the same wide oven-safe saute pan: four salmon fillets with visible green-brown za'atar crust sitting over tender greens, pale bubbling tahini around the fish, scattered cilantro and sumac, and a small lemon cue. Show the final dish clearly and appetizingly from the recipe's consistent three-quarter overhead angle. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-preheat-oven.png",
+      "placement": "Step 1 card",
+      "alt": "Za'atar Salmon & Tahini: Preheat Oven",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Preheat Oven: show a warm oven interior ready for a saute pan, with a subtle glow and open rack. The oven should match later bake images. Do not show readable numbers, display text, labels, or UI."
+    },
+    {
+      "filename": "step-02-season-salmon.png",
+      "placement": "Step 2 card",
+      "alt": "Za'atar Salmon & Tahini: Season Salmon",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Season Salmon: four raw skin-on salmon fillets on a clean work surface with their tops coated in a green-brown za'atar and sumac crust; a small spice bowl nearby. The crust should be visibly on top of the fish, with salt and pepper implied but no labels. Show the resulting state: za'atar-crusted salmon."
+    },
+    {
+      "filename": "step-03-wilt-greens.png",
+      "placement": "Step 3 card",
+      "alt": "Za'atar Salmon & Tahini: Wilt Greens",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-season-salmon.png"
+      ],
+      "prompt": "Wilt Greens: the same wide oven-safe saute pan on a stovetop, holding tender green leaves collapsing in a little olive oil. Show some fresh leaves and some wilted greens so the cooking action is clear. Resulting state: wilted greens in the pan that will go into the oven."
+    },
+    {
+      "filename": "step-04-first-bake.png",
+      "placement": "Step 4 card",
+      "alt": "Za'atar Salmon & Tahini: First Bake",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-season-salmon.png",
+        "step-03-wilt-greens.png"
+      ],
+      "prompt": "First Bake: the same saute pan with wilted greens as a bed and four za'atar-crusted salmon fillets placed skin-side down on top, lightly glossed with olive oil. Show the pan entering or sitting in the warm oven, but keep the salmon crust visible and consistent with the seasoning step. Resulting state: salmon over wilted greens."
+    },
+    {
+      "filename": "step-05-whisk-tahini-sauce.png",
+      "placement": "Step 5 card",
+      "alt": "Za'atar Salmon & Tahini: Whisk Tahini Sauce",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-first-bake.png"
+      ],
+      "prompt": "Whisk Tahini Sauce: a small bowl with pale beige tahini sauce being whisked until smooth and runny; nearby garlic, lemon, and a small water cue. Keep it focused on the sauce texture and whisking action. Resulting state: runny tahini sauce, pourable and smooth."
+    },
+    {
+      "filename": "step-06-finish-bake.png",
+      "placement": "Step 6 card",
+      "alt": "Za'atar Salmon & Tahini: Finish Bake",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-first-bake.png",
+        "step-05-whisk-tahini-sauce.png"
+      ],
+      "prompt": "Finish Bake: the same saute pan in the oven with pale tahini sauce poured around the salmon, not over the fish. The sauce should bubble at the edges while the za'atar crust remains visible on the salmon. Resulting state: baked salmon with bubbling tahini."
+    },
+    {
+      "filename": "step-07-garnish-and-serve.png",
+      "placement": "Step 7 card",
+      "alt": "Za'atar Salmon & Tahini: Garnish and Serve",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-06-finish-bake.png"
+      ],
+      "prompt": "Garnish and Serve: finished za'atar salmon and tahini greens in the same saute pan, with lemon juice and olive oil gloss, chopped cilantro, and a final dusting of sumac. Show a fresh, ready-to-eat dish with the salmon crust still visible and tahini around the fish."
+    }
+  ],
+  "footerTip": "Serve shortly after cooking; the tahini sauce is best fresh.",
+  "style": "french-hen-folk-wave"
+}

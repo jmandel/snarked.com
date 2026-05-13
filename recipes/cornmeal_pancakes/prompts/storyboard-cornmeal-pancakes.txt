@@ -1,0 +1,116 @@
+Generate one visual continuity board for a recipe image set.
+Recipe context: Cornmeal Pancakes — From The Joy...
+Target image: Cornmeal Pancakes visual continuity storyboard
+Used as: Continuity storyboard
+Aspect ratio: 16:9
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Cornmeal Pancakes
+From The Joy...
+
+## Quick facts
+- Stations: stovetop
+
+## Process layout
+- Step: mix-dry
+- Step: mix-wet
+- Step: make-batter
+- Step: cook
+
+## Steps
+### 1. Mix Dry
+Timing: 0 min
+Mix the dry ingredients separately.
+Uses:
+  - 1.25 C yellow cornmeal (200 g)
+  - .75 C flour (90 g)
+  - 1.75 tsp baking powder (7 g)
+  - .75 tsp salt (4.5 g)
+Makes: dry mix
+
+### 2. Mix Wet
+Timing: 0 min
+Mix the wet ingredients separately.
+Uses:
+  - 1.67 C milk (400 g)
+  - 4 Tbsp butter (56 g) — melted
+  - .25 C maple syrup (81 g)
+  - 2 eggs
+Makes: wet mix
+
+### 3. Make Batter
+Timing: 0 min
+Combine without overmixing to form a thin batter.
+Uses:
+  - dry mix
+  - wet mix
+Makes: thin batter
+
+### 4. Cook
+Timing: 0 min
+Station/tools: stovetop
+Cook as pancakes.
+Uses:
+  - thin batter
+Makes: cornmeal pancakes
+</recipe_context_markdown>
+STORYBOARD PURPOSE
+Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+CAMERA AND ANGLE
+Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+COOKWARE AND TOOLS
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- stovetop: Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+VISUAL INVENTORY
+- yellow cornmeal: 1.25 C dry; ingredient
+- flour: .75 C dry; ingredient
+- baking powder: 1.75 tsp dry; ingredient
+- salt: .75 tsp dry; ingredient
+- milk: 1.67 C wet; ingredient
+- butter: 4 Tbsp wet; melted; ingredient
+- maple syrup: .25 C wet; ingredient
+- eggs: 2 wet; ingredient
+- dry mix: mix: 1.25 C yellow cornmeal + .75 C flour + 1.75 tsp baking powder + .75 tsp salt
+- wet mix: mix: 1.67 C milk + 4 Tbsp butter (melted) + .25 C maple syrup + 2 eggs
+- thin batter: fold: dry mix + wet mix
+- cornmeal pancakes: cook: thin batter
+STATE CONTINUITY
+- dry mix: mix from yellow cornmeal + flour + baking powder + salt; keep this state visually identical wherever it appears later.
+- wet mix: mix from milk + butter + maple syrup + eggs; keep this state visually identical wherever it appears later.
+- thin batter: fold from dry mix + wet mix; keep this state visually identical wherever it appears later.
+- cornmeal pancakes: cook from thin batter; keep this state visually identical wherever it appears later.
+PROCESS SEQUENCE NOTES
+- Step 1, Mix Dry: Mix the dry ingredients separately. Result: dry mix.
+- Step 2, Mix Wet: Mix the wet ingredients separately. Result: wet mix.
+- Step 3, Make Batter: Combine without overmixing to form a thin batter. Result: thin batter.
+- Step 4, Cook: Cook as pancakes. Result: cornmeal pancakes. Tool/station: stovetop.
+CONTINUITY RULES
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+IMAGE CONTENT
+Create one coherent unlabeled visual continuity board on a clean white paper background. Show the recipe elements that need to stay consistent across later images: main ingredients, cookware, tools, intermediate food states, and final serving. Arrange those elements as a natural hand-painted still life or inventory board with a shared camera angle and lighting, not as separate finished step illustrations. This is not a contact sheet, thumbnail grid, storyboard comic, timeline, flowchart, UI layout, or collection of all final assets. Do not draw labels, text, arrows, numbers, captions, frames, panels, or card borders.
+
+Recipe-specific content:
+Create one unlabeled visual continuity board for Cornmeal Pancakes. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

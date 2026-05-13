@@ -1,0 +1,22 @@
+{
+  "filename": "hero-chocolate-cake.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:29:33.784Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T152058Z-chocolate-cake/codex-home/generated_images/019e21ed-4b9f-7081-b1fa-431f97b1d196/ig_0d9149f3f43d20fd016a04988f2148819ba8861c0978b9c708.png",
+  "promptFile": "recipes/chocolate_cake/prompts/hero-chocolate-cake.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2850440,
+    "afterBytes": 2677465
+  }
+}

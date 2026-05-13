@@ -1,0 +1,25 @@
+{
+  "filename": "step-05-make-batter.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T19:12:40.128Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T190655Z-multigrain-make-batter-redo/codex-home/generated_images/019e22bc-2774-7611-8a34-12ca4e198461/ig_00de43f4e57858c2016a04cc8e1820819a8c87017780fb5d67.png",
+  "promptFile": "recipes/multigrain_pancakes/prompts/step-05-make-batter.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-03-combine-dry.png",
+    "step-04-combine-wet.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3300219,
+    "afterBytes": 3203408
+  }
+}

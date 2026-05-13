@@ -1,0 +1,25 @@
+{
+  "filename": "step-04-first-bake.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:56:55.217Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T163726Z-zaatar-salmon-tahini/codex-home/generated_images/019e2233-4c15-74e1-94bf-ca5b7b8ba71a/ig_0cb9b95090aeb5e7016a04ace45a608199b3033c4d74c1c972.png",
+  "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-04-first-bake.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-02-season-salmon.png",
+    "step-03-wilt-greens.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3442620,
+    "afterBytes": 3389771
+  }
+}

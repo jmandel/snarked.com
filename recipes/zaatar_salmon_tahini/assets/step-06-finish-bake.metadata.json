@@ -1,0 +1,25 @@
+{
+  "filename": "step-06-finish-bake.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T17:08:30.847Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T163726Z-zaatar-salmon-tahini/codex-home/generated_images/019e2233-4c15-74e1-94bf-ca5b7b8ba71a/ig_0cb9b95090aeb5e7016a04af932e108199bb98588715f79e89.png",
+  "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-06-finish-bake.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-04-first-bake.png",
+    "step-05-whisk-tahini-sauce.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3459457,
+    "afterBytes": 3379315
+  }
+}

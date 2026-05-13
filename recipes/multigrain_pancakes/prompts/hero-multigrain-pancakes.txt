@@ -1,0 +1,158 @@
+Generate one standalone recipe illustration.
+
+Recipe context: Cooks' Multigrain Pancakes — Multigrain pancakes worth eating
+Target image: Cooks' Multigrain Pancakes finished dish
+Used as: Recipe header
+Aspect ratio: 16:9
+
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Cooks' Multigrain Pancakes
+Multigrain pancakes worth eating
+
+## Quick facts
+- Active: ~2 min
+- Stations: stovetop
+
+## Process layout
+- Step: thicken-milk
+- Step: process-muesli
+- Step: combine-dry
+- Step: combine-wet
+- Step: make-batter
+- Step: cook
+
+## Steps
+### 1. Thicken Milk
+Timing: 0 min
+Whisk lemon juice and milk in bowl; set aside to thicken.
+Uses:
+  - 4 t lemon juice (20 g)
+  - 2 c whole milk (480 g)
+Makes: thickened lemon milk
+Notes:
+- Source timing: set aside to thicken
+
+### 2. Process Muesli
+Timing: 0 min
+Process 1.25 c muesli in food processor 2 minutes, transfer to large bowl.
+Uses:
+  - 1.25 c no-sugar-added muesli (250 g)
+Makes: processed muesli
+Notes:
+- Source timing: 2 minutes
+- Method: food processor
+
+### 3. Combine Dry
+Timing: 2 min
+Add remaining unground muesli, flours, brown sugar, baking powder and soda, and salt. Whisk to combine.
+Uses:
+  - processed muesli
+  - 3 T no-sugar-added muesli (38 g) — unground
+  - .75 c unbleached white flour (90 g)
+  - .5 c whole wheat flower — Source says 'flower'; preserved as written in label.
+  - 2 T light or dark brown sugar (25 g)
+  - 2.25 t baking powder (9 g)
+  - .5 t baking soda (2.3 g)
+  - .5 t table salt (3 g)
+Makes: multigrain dry mix
+
+### 4. Combine Wet
+Timing: 2 min
+Whisk eggs, melted butter, and vanilla into milk until combined.
+Uses:
+  - thickened lemon milk
+  - 2 large eggs
+  - 3 T unsalted butter (54 g) — melted and cooled
+  - .75 t vanilla (3.2 g)
+Makes: egg milk mixture
+
+### 5. Make Batter
+Timing: 2 min
+Mix well in center of dry ingredients in boowl, pour in milk mixture and whisk very gently until just combined.
+Uses:
+  - multigrain dry mix
+  - egg milk mixture
+Makes: multigrain batter
+Notes:
+- Source timing: until just combined
+
+### 6. Cook
+Timing: 2 min
+Station/tools: stovetop
+Cook.
+Uses:
+  - multigrain batter
+  - as needed vegetable oil
+Makes: multigrain pancakes
+</recipe_context_markdown>
+
+RECIPE STORYBOARD
+Use the storyboard asset and rules as the primary continuity reference when available.
+Continuity storyboard asset: storyboard-multigrain-pancakes.png
+Intent: Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+Camera and angle: Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+Cookware/tools to preserve:
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- stovetop: Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- bowl: Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- whisk: Use one consistent whisk design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- food processor: Use one consistent food processor design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+Recipe visual inventory:
+- lemon juice: 4 t wet; ingredient
+- whole milk: 2 c wet; ingredient
+- no-sugar-added muesli: 1.25 c dry; ingredient
+- no-sugar-added muesli: 3 T dry; unground; ingredient
+- unbleached white flour: .75 c dry; ingredient
+- whole wheat flower: .5 c dry; Source says 'flower'; preserved as written in label.; ingredient
+- light or dark brown sugar: 2 T dry; ingredient
+- baking powder: 2.25 t dry; ingredient
+- baking soda: .5 t dry; ingredient
+- table salt: .5 t dry; ingredient
+- large eggs: 2 wet; ingredient
+- unsalted butter: 3 T wet; melted and cooled; ingredient
+- vanilla: .75 t wet; ingredient
+- vegetable oil: as needed cooking; ingredient
+- thickened lemon milk: whisk: 4 t lemon juice + 2 c whole milk
+- processed muesli: process: 1.25 c no-sugar-added muesli
+- multigrain dry mix: whisk: processed muesli + 3 T no-sugar-added muesli (unground) + .75 c unbleached white flour + .5 c whole wheat flower + 2 T light or dark brown sugar + 2.25 t baking powder + .5 t baking soda + .5 t table salt
+- egg milk mixture: whisk: thickened lemon milk + 2 large eggs + 3 T unsalted butter (melted and cooled) + .75 t vanilla
+- multigrain batter: fold: multigrain dry mix + egg milk mixture
+- multigrain pancakes: cook: multigrain batter + as needed vegetable oil
+Repeated food states:
+- thickened lemon milk: whisk from lemon juice + whole milk; keep this state visually identical wherever it appears later.
+- processed muesli: process from no-sugar-added muesli; keep this state visually identical wherever it appears later.
+- multigrain dry mix: whisk from processed muesli + no-sugar-added muesli + unbleached white flour + whole wheat flower + light or dark brown sugar + baking powder + baking soda + table salt; keep this state visually identical wherever it appears later.
+- egg milk mixture: whisk from thickened lemon milk + large eggs + unsalted butter + vanilla; keep this state visually identical wherever it appears later.
+- multigrain batter: fold from multigrain dry mix + egg milk mixture; keep this state visually identical wherever it appears later.
+- multigrain pancakes: cook from multigrain batter + vegetable oil; keep this state visually identical wherever it appears later.
+Continuity rules:
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+
+IMAGE CONTENT
+Finished multigrain pancakes for Cooks' Multigrain Pancakes, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

@@ -1,0 +1,25 @@
+{
+  "filename": "step-09-serve.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:51:06.839Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T162734Z-shanghainese-wontons/codex-home/generated_images/019e222a-405f-7213-b98f-aa6e099b82c9/ig_01145d97073653c4016a04ab8a04d4819988808647fdf356dc.png",
+  "promptFile": "recipes/shanghainese_wontons/prompts/step-09-serve.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-07-cook-wontons.png",
+    "step-08-drain-wontons.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3019493,
+    "afterBytes": 2707267
+  }
+}

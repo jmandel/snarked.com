@@ -1,0 +1,142 @@
+Generate one standalone recipe illustration.
+
+Recipe context: Banana Bread (Refined) — Whole wheat banana bread with less sugar, olive oil, and optional carrots
+Target image: Banana Bread (Refined): Cream Fats Sugar
+Used as: Step 1 card
+Aspect ratio: 4:3
+
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Banana Bread (Refined)
+Whole wheat banana bread with less sugar, olive oil, and optional carrots
+
+## Quick facts
+- Active: ~1 h 15 min
+- Heat: 350 degrees F
+- Stations: oven
+
+## Process layout
+- Step: cream-fats-sugar
+- Step: add-wet
+- Step: combine-dry
+- Step: make-batter
+- Step: bake
+
+## Steps
+### 1. Cream Fats Sugar
+Timing: 0 min
+Cream butter + oil and sugar.
+Uses:
+  - 4 Tbsp butter (56 g)
+  - 4 Tbsp olive oil (56 g)
+  - 1 c sugar (200 g)
+Makes: creamed fats and sugar
+
+### 2. Add Wet
+Timing: 0 min
+Add eggs, then bananas and/or carrots. Stir in yogurt and vanilla.
+Uses:
+  - creamed fats and sugar
+  - 2 eggs
+  - 2-3 bananas OR 1 banana + 2 carrots bananas and/or carrots — mashed or grated; The source offers an alternate fruit/vegetable choice.
+  - 1/4 c low-fat plain yogurt (61 g)
+  - 1 tsp vanilla extract (4.2 g)
+Makes: banana wet mix
+
+### 3. Combine Dry
+Timing: 0 min
+In another bowl, soft together flour, baking soda, baking powder, salt, and chips/nuts.
+Uses:
+  - 1 1/2 c whole wheat flour (180 g)
+  - 1 tsp baking soda (4.6 g)
+  - 1/4 tsp baking powder (1 g)
+  - 1/4 tsp salt (1.5 g)
+  - 1/2 c chocolate chips and/or nuts (85 g)
+Makes: dry mix
+
+### 4. Make Batter
+Timing: 0 min
+Mix dry ingredients with wet until just combined.
+Uses:
+  - banana wet mix
+  - dry mix
+Makes: refined banana bread batter
+Notes:
+- Source timing: until just combined
+
+### 5. Bake
+Timing: 0 min
+Station/tools: oven
+Pour into a greased loaf pan and cook for 75 minutes at 350 degrees F.
+Uses:
+  - refined banana bread batter
+Makes: refined banana bread
+Notes:
+- Heat: 350 degrees F
+- Source timing: 75 minutes
+</recipe_context_markdown>
+
+RECIPE STORYBOARD
+Use the storyboard asset and rules as the primary continuity reference when available.
+Continuity storyboard asset: storyboard-refined-banana-bread.png
+Intent: Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+Camera and angle: Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+Cookware/tools to preserve:
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- oven: Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- bowl: Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- loaf pan: Use one consistent loaf pan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+Recipe visual inventory:
+- sugar: 1 c wet; ingredient
+- butter: 4 Tbsp wet; ingredient
+- olive oil: 4 Tbsp wet; ingredient
+- eggs: 2 wet; ingredient
+- bananas and/or carrots: 2-3 bananas OR 1 banana + 2 carrots wet; mashed or grated; The source offers an alternate fruit/vegetable choice.; ingredient
+- low-fat plain yogurt: 1/4 c wet; ingredient
+- vanilla extract: 1 tsp wet; ingredient
+- whole wheat flour: 1 1/2 c dry; ingredient
+- baking soda: 1 tsp dry; ingredient
+- baking powder: 1/4 tsp dry; ingredient
+- salt: 1/4 tsp dry; ingredient
+- chocolate chips and/or nuts: 1/2 c dry; ingredient
+- creamed fats and sugar: cream: 4 Tbsp butter + 4 Tbsp olive oil + 1 c sugar
+- banana wet mix: mix: creamed fats and sugar + 2 eggs + 2-3 bananas OR 1 banana + 2 carrots bananas and/or carrots (mashed or grated) + 1/4 c low-fat plain yogurt + 1 tsp vanilla extract
+- dry mix: sift: 1 1/2 c whole wheat flour + 1 tsp baking soda + 1/4 tsp baking powder + 1/4 tsp salt + 1/2 c chocolate chips and/or nuts
+- refined banana bread batter: fold: banana wet mix + dry mix
+- refined banana bread: bake: refined banana bread batter
+Repeated food states:
+- creamed fats and sugar: cream from butter + olive oil + sugar; keep this state visually identical wherever it appears later.
+- banana wet mix: mix from creamed fats and sugar + eggs + bananas and/or carrots + low-fat plain yogurt + vanilla extract; keep this state visually identical wherever it appears later.
+- dry mix: sift from whole wheat flour + baking soda + baking powder + salt + chocolate chips and/or nuts; keep this state visually identical wherever it appears later.
+- refined banana bread batter: fold from banana wet mix + dry mix; keep this state visually identical wherever it appears later.
+- refined banana bread: bake from refined banana bread batter; keep this state visually identical wherever it appears later.
+Continuity rules:
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+
+IMAGE CONTENT
+Cream Fats Sugar: Cream butter + oil and sugar. Depict the ingredients or components used now: 4 Tbsp butter; 4 Tbsp olive oil; 1 c sugar. Show the resulting food state: creamed fats and sugar. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

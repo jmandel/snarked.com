@@ -1,0 +1,101 @@
+{
+  "recipeId": "zaatar-salmon-tahini",
+  "title": "Za'atar Salmon & Tahini",
+  "generatedAt": "2026-05-13T19:13:28.299Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-zaatar-salmon-tahini.png",
+    "placement": "Continuity storyboard",
+    "alt": "Za'atar Salmon & Tahini visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/zaatar_salmon_tahini/prompts/storyboard-zaatar-salmon-tahini.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-zaatar-salmon-tahini.png",
+      "placement": "Recipe header",
+      "alt": "Finished za'atar salmon with tahini greens",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/hero-zaatar-salmon-tahini.txt"
+    },
+    {
+      "filename": "step-01-preheat-oven.png",
+      "placement": "Step 1 card",
+      "alt": "Za'atar Salmon & Tahini: Preheat Oven",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-01-preheat-oven.txt"
+    },
+    {
+      "filename": "step-02-season-salmon.png",
+      "placement": "Step 2 card",
+      "alt": "Za'atar Salmon & Tahini: Season Salmon",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-02-season-salmon.txt"
+    },
+    {
+      "filename": "step-03-wilt-greens.png",
+      "placement": "Step 3 card",
+      "alt": "Za'atar Salmon & Tahini: Wilt Greens",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-season-salmon.png"
+      ],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-03-wilt-greens.txt"
+    },
+    {
+      "filename": "step-04-first-bake.png",
+      "placement": "Step 4 card",
+      "alt": "Za'atar Salmon & Tahini: First Bake",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-season-salmon.png",
+        "step-03-wilt-greens.png"
+      ],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-04-first-bake.txt"
+    },
+    {
+      "filename": "step-05-whisk-tahini-sauce.png",
+      "placement": "Step 5 card",
+      "alt": "Za'atar Salmon & Tahini: Whisk Tahini Sauce",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-04-first-bake.png"
+      ],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-05-whisk-tahini-sauce.txt"
+    },
+    {
+      "filename": "step-06-finish-bake.png",
+      "placement": "Step 6 card",
+      "alt": "Za'atar Salmon & Tahini: Finish Bake",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-04-first-bake.png",
+        "step-05-whisk-tahini-sauce.png"
+      ],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-06-finish-bake.txt"
+    },
+    {
+      "filename": "step-07-garnish-and-serve.png",
+      "placement": "Step 7 card",
+      "alt": "Za'atar Salmon & Tahini: Garnish and Serve",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-06-finish-bake.png"
+      ],
+      "promptFile": "recipes/zaatar_salmon_tahini/prompts/step-07-garnish-and-serve.txt"
+    }
+  ]
+}

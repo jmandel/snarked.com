@@ -1,0 +1,82 @@
+{
+  "recipeId": "refined-banana-bread",
+  "title": "Banana Bread (Refined)",
+  "generatedAt": "2026-05-13T16:25:44.447Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-refined-banana-bread.png",
+    "placement": "Continuity storyboard",
+    "alt": "Banana Bread (Refined) visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/refined_banana_bread/prompts/storyboard-refined-banana-bread.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-refined-banana-bread.png",
+      "placement": "Recipe header",
+      "alt": "Banana Bread (Refined) finished dish",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/refined_banana_bread/prompts/hero-refined-banana-bread.txt"
+    },
+    {
+      "filename": "step-01-cream-fats-sugar.png",
+      "placement": "Step 1 card",
+      "alt": "Banana Bread (Refined): Cream Fats Sugar",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/refined_banana_bread/prompts/step-01-cream-fats-sugar.txt"
+    },
+    {
+      "filename": "step-02-add-wet.png",
+      "placement": "Step 2 card",
+      "alt": "Banana Bread (Refined): Add Wet",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-cream-fats-sugar.png"
+      ],
+      "promptFile": "recipes/refined_banana_bread/prompts/step-02-add-wet.txt"
+    },
+    {
+      "filename": "step-03-combine-dry.png",
+      "placement": "Step 3 card",
+      "alt": "Banana Bread (Refined): Combine Dry",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-cream-fats-sugar.png",
+        "step-02-add-wet.png"
+      ],
+      "promptFile": "recipes/refined_banana_bread/prompts/step-03-combine-dry.txt"
+    },
+    {
+      "filename": "step-04-make-batter.png",
+      "placement": "Step 4 card",
+      "alt": "Banana Bread (Refined): Make Batter",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-add-wet.png",
+        "step-03-combine-dry.png"
+      ],
+      "promptFile": "recipes/refined_banana_bread/prompts/step-04-make-batter.txt"
+    },
+    {
+      "filename": "step-05-bake.png",
+      "placement": "Step 5 card",
+      "alt": "Banana Bread (Refined): Bake",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-03-combine-dry.png",
+        "step-04-make-batter.png"
+      ],
+      "promptFile": "recipes/refined_banana_bread/prompts/step-05-bake.txt"
+    }
+  ]
+}

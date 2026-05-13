@@ -1,0 +1,371 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "cornmeal-pancakes",
+  "title": "Cornmeal Pancakes",
+  "subtitle": "From The Joy...",
+  "source": {
+    "submittedBy": "jmandel@snarked.com",
+    "date": "2007-02-21",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Stations",
+      "value": "stovetop"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-cornmeal-pancakes.png",
+    "placement": "Continuity storyboard",
+    "alt": "Cornmeal Pancakes visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stovetop",
+        "description": "Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "yellow cornmeal",
+        "description": "1.25 C dry; ingredient"
+      },
+      {
+        "name": "flour",
+        "description": ".75 C dry; ingredient"
+      },
+      {
+        "name": "baking powder",
+        "description": "1.75 tsp dry; ingredient"
+      },
+      {
+        "name": "salt",
+        "description": ".75 tsp dry; ingredient"
+      },
+      {
+        "name": "milk",
+        "description": "1.67 C wet; ingredient"
+      },
+      {
+        "name": "butter",
+        "description": "4 Tbsp wet; melted; ingredient"
+      },
+      {
+        "name": "maple syrup",
+        "description": ".25 C wet; ingredient"
+      },
+      {
+        "name": "eggs",
+        "description": "2 wet; ingredient"
+      },
+      {
+        "name": "dry mix",
+        "description": "mix: 1.25 C yellow cornmeal + .75 C flour + 1.75 tsp baking powder + .75 tsp salt"
+      },
+      {
+        "name": "wet mix",
+        "description": "mix: 1.67 C milk + 4 Tbsp butter (melted) + .25 C maple syrup + 2 eggs"
+      },
+      {
+        "name": "thin batter",
+        "description": "fold: dry mix + wet mix"
+      },
+      {
+        "name": "cornmeal pancakes",
+        "description": "cook: thin batter"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "dry mix",
+        "description": "mix from yellow cornmeal + flour + baking powder + salt; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "wet mix",
+        "description": "mix from milk + butter + maple syrup + eggs; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "thin batter",
+        "description": "fold from dry mix + wet mix; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "cornmeal pancakes",
+        "description": "cook from thin batter; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Mix Dry: Mix the dry ingredients separately. Result: dry mix.",
+      "Step 2, Mix Wet: Mix the wet ingredients separately. Result: wet mix.",
+      "Step 3, Make Batter: Combine without overmixing to form a thin batter. Result: thin batter.",
+      "Step 4, Cook: Cook as pancakes. Result: cornmeal pancakes. Tool/station: stovetop."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Cornmeal Pancakes. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-cornmeal-pancakes.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "mix-dry"
+      },
+      {
+        "type": "step",
+        "step": "mix-wet"
+      },
+      {
+        "type": "step",
+        "step": "make-batter"
+      },
+      {
+        "type": "step",
+        "step": "cook"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "mix-dry",
+      "sourceActionId": "mix_dry",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Dry",
+      "instruction": "Mix the dry ingredients separately.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "1.25 C",
+          "item": "yellow cornmeal",
+          "amounts": {
+            "original": "1.25 C",
+            "metric": "200 g"
+          }
+        },
+        {
+          "qty": ".75 C",
+          "item": "flour",
+          "amounts": {
+            "original": ".75 C",
+            "metric": "90 g"
+          }
+        },
+        {
+          "qty": "1.75 tsp",
+          "item": "baking powder",
+          "amounts": {
+            "original": "1.75 tsp",
+            "metric": "7 g"
+          }
+        },
+        {
+          "qty": ".75 tsp",
+          "item": "salt",
+          "amounts": {
+            "original": ".75 tsp",
+            "metric": "4.5 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "dry mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-mix-dry.png"
+    },
+    {
+      "id": "mix-wet",
+      "sourceActionId": "mix_wet",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Wet",
+      "instruction": "Mix the wet ingredients separately.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "1.67 C",
+          "item": "milk",
+          "amounts": {
+            "original": "1.67 C",
+            "metric": "400 g"
+          }
+        },
+        {
+          "qty": "4 Tbsp",
+          "item": "butter",
+          "note": "melted",
+          "amounts": {
+            "original": "4 Tbsp",
+            "metric": "56 g"
+          }
+        },
+        {
+          "qty": ".25 C",
+          "item": "maple syrup",
+          "amounts": {
+            "original": ".25 C",
+            "metric": "81 g"
+          }
+        },
+        {
+          "qty": "2",
+          "item": "eggs",
+          "amounts": {
+            "original": "2"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "wet mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-mix-wet.png"
+    },
+    {
+      "id": "make-batter",
+      "sourceActionId": "make_batter",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Make Batter",
+      "instruction": "Combine without overmixing to form a thin batter.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "dry mix"
+        },
+        {
+          "qty": "",
+          "item": "wet mix"
+        }
+      ],
+      "makes": [
+        {
+          "item": "thin batter"
+        }
+      ],
+      "notes": [],
+      "asset": "step-03-make-batter.png"
+    },
+    {
+      "id": "cook",
+      "sourceActionId": "cook",
+      "number": 4,
+      "timeLabel": "0 min",
+      "phase": "cook",
+      "title": "Cook",
+      "instruction": "Cook as pancakes.",
+      "duration": {},
+      "resources": [
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "thin batter"
+        }
+      ],
+      "makes": [
+        {
+          "item": "cornmeal pancakes"
+        }
+      ],
+      "notes": [],
+      "asset": "step-04-cook.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-cornmeal-pancakes.png",
+      "placement": "Recipe header",
+      "alt": "Cornmeal Pancakes finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished cornmeal pancakes for Cornmeal Pancakes, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-mix-dry.png",
+      "placement": "Step 1 card",
+      "alt": "Cornmeal Pancakes: Mix Dry",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Mix Dry: Mix the dry ingredients separately. Depict the ingredients or components used now: 1.25 C yellow cornmeal; .75 C flour; 1.75 tsp baking powder; .75 tsp salt. Show the resulting food state: dry mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-mix-wet.png",
+      "placement": "Step 2 card",
+      "alt": "Cornmeal Pancakes: Mix Wet",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-mix-dry.png"
+      ],
+      "prompt": "Mix Wet: Mix the wet ingredients separately. Depict the ingredients or components used now: 1.67 C milk; 4 Tbsp butter (melted); .25 C maple syrup; 2 eggs. Show the resulting food state: wet mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-make-batter.png",
+      "placement": "Step 3 card",
+      "alt": "Cornmeal Pancakes: Make Batter",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-mix-dry.png",
+        "step-02-mix-wet.png"
+      ],
+      "prompt": "Make Batter: Combine without overmixing to form a thin batter. Depict the ingredients or components used now: dry mix; wet mix. Show the resulting food state: thin batter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-cook.png",
+      "placement": "Step 4 card",
+      "alt": "Cornmeal Pancakes: Cook",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-mix-wet.png",
+        "step-03-make-batter.png"
+      ],
+      "prompt": "Cook: Cook as pancakes. Depict the ingredients or components used now: thin batter. Show the resulting food state: cornmeal pancakes.  Tools or station: stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

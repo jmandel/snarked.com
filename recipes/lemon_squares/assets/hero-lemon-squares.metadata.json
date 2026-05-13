@@ -1,0 +1,22 @@
+{
+  "filename": "hero-lemon-squares.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:06:59.261Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T160118Z-lemon-squares/codex-home/generated_images/019e2212-3430-7b32-b628-45171e57fbef/ig_0b23dd6b29762e90016a04a163bab0819a829c8f1af5e27085.png",
+  "promptFile": "recipes/lemon_squares/prompts/hero-lemon-squares.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3065917,
+    "afterBytes": 2995356
+  }
+}

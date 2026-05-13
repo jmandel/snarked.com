@@ -1,0 +1,25 @@
+{
+  "filename": "step-09-pipe-glaze.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:53:05.965Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T152058Z-chocolate-cake/codex-home/generated_images/019e21ed-4b9f-7081-b1fa-431f97b1d196/ig_0d9149f3f43d20fd016a049dfaad4c819b874a402ea40851b6.png",
+  "promptFile": "recipes/chocolate_cake/prompts/step-09-pipe-glaze.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-07-cool-cake.png",
+    "step-08-make-glaze.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2810745,
+    "afterBytes": 2674886
+  }
+}

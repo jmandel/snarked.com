@@ -1,0 +1,25 @@
+{
+  "filename": "step-07-cool-cake.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:47:07.805Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T152058Z-chocolate-cake/codex-home/generated_images/019e21ed-4b9f-7081-b1fa-431f97b1d196/ig_0d9149f3f43d20fd016a049c9bf608819bb064cf6bb5bb68f2.png",
+  "promptFile": "recipes/chocolate_cake/prompts/step-07-cool-cake.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-05-make-batter.png",
+    "step-06-bake-cake.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2858773,
+    "afterBytes": 2745241
+  }
+}

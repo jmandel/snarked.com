@@ -1,0 +1,24 @@
+{
+  "filename": "step-02-prep-shrimp.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:35:12.515Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T162734Z-shanghainese-wontons/codex-home/generated_images/019e222a-405f-7213-b98f-aa6e099b82c9/ig_01145d97073653c4016a04a7d95c54819998ee23b717ae336f.png",
+  "promptFile": "recipes/shanghainese_wontons/prompts/step-02-prep-shrimp.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-prep-bok-choi.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3009747,
+    "afterBytes": 2805209
+  }
+}

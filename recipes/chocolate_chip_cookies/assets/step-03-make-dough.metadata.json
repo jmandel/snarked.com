@@ -1,0 +1,25 @@
+{
+  "filename": "step-03-make-dough.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:41:57.734Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T152351Z-chocolate-chip-cookies/codex-home/generated_images/019e21ef-ecd1-72c2-bf31-7389c3e8a695/ig_0c1036176f8d2a73016a049b31e808819b8b9034aa9907e3f8.png",
+  "promptFile": "recipes/chocolate_chip_cookies/prompts/step-03-make-dough.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-whisk-dry.png",
+    "step-02-mix-wet.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2929718,
+    "afterBytes": 2830769
+  }
+}

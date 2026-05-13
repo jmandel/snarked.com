@@ -1,0 +1,25 @@
+{
+  "filename": "step-04-make-batter.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:11:06.472Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-banana-bread/codex-home/generated_images/019e21cd-294d-7b13-9c19-8273d6e31f39/ig_038a3a87079bfdfc016a0493f6af6c819a8aa92784a139d118.png",
+  "promptFile": "recipes/banana_bread/prompts/step-04-make-batter.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-02-add-wet-ingredients.png",
+    "step-03-combine-dry.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3166563,
+    "afterBytes": 3094084
+  }
+}

@@ -1,0 +1,185 @@
+Generate one standalone recipe illustration.
+
+Recipe context: Suchele-Inspired Lemon Squares — Inspired by the famous lemon squares of Suchele's bakery in Lenox, Mass.
+Target image: Suchele-Inspired Lemon Squares: Mix Filling Wet
+Used as: Step 5 card
+Aspect ratio: 4:3
+
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Suchele-Inspired Lemon Squares
+Inspired by the famous lemon squares of Suchele's bakery in Lenox, Mass.
+
+## Quick facts
+- Active: ~30 min
+- Heat: 350 degrees
+- Stations: oven
+
+## Process layout
+- Step: mix-crust
+- Step: press-crust
+- Step: bake-crust
+- Step: mix-filling-dry
+- Step: mix-filling-wet
+- Step: combine-filling
+- Step: pour-onto-hot-crust
+- Step: bake-until-turnable
+- Step: finish-bake
+
+## Steps
+### 1. Mix Crust
+Timing: 0 min
+Mix crust ingredients.
+Uses:
+  - 3 1/4 C (+) flour (390 g)
+  - 1.5 C (+) butter (340 g) — softened
+  - 3/4 C (+) confectioners sugar (90 g)
+Makes: crust dough
+
+### 2. Press Crust
+Timing: 0 min
+Press into a jellyroll pan.
+Uses:
+  - crust dough
+Makes: pressed crust
+
+### 3. Bake Crust
+Timing: 0 min
+Station/tools: oven
+Bake crust at 350 degrees until just beginning to turn golden.
+Uses:
+  - pressed crust
+Makes: hot baked crust
+Notes:
+- Heat: 350 degrees
+- Source timing: until just beginning to turn golden
+
+### 4. Mix Filling Dry
+Timing: 0 min
+Prepare filling by mixing dry ingredients.
+Uses:
+  - 3 1/4 C (+) sugar (650 g)
+  - 1 T (+) confectioners sugar (13 g)
+  - 1/2 C (-) flour (60 g)
+  - 1 t (-) salt (6 g)
+Makes: filling dry mix
+
+### 5. Mix Filling Wet
+Timing: 0 min
+Prepare filling by mixing wet ingredients.
+Uses:
+  - 4 lemons juice and rind of four lemons — Add bottled lemon juice as needed until no longer sloshy.
+  - about 7.5432 eggs
+Makes: lemon egg mixture
+
+### 6. Combine Filling
+Timing: 0 min
+Combine the dry and wet filling mixtures.
+Uses:
+  - filling dry mix
+  - lemon egg mixture
+Makes: lemon filling
+
+### 7. Pour Onto Hot Crust
+Timing: 0 min
+Station/tools: oven
+Hold baked base in oven as another person pours the Lemon/Sugar/Egg mixture into pan, and slide gently into oven; be careful not to spill.
+Uses:
+  - hot baked crust
+  - lemon filling
+Makes: hot crust with filling
+
+### 8. Bake Until Turnable
+Timing: 0 min
+Station/tools: oven
+Bake at 350 degrees until the pan can be turned around inside oven without spilling.
+Uses:
+  - hot crust with filling
+Makes: partially set lemon squares
+Notes:
+- Heat: 350 degrees
+- Source timing: until pan can be turned without spilling
+
+### 9. Finish Bake
+Timing: 0 min
+Station/tools: oven
+After turning, cook until just firm. Maybe 30 minutes total, maybe not!
+Uses:
+  - partially set lemon squares
+Makes: lemon squares
+Notes:
+- Heat: 350 degrees
+- Source timing: until just firm; maybe 30 minutes total, maybe not
+</recipe_context_markdown>
+
+RECIPE STORYBOARD
+Use the storyboard asset and rules as the primary continuity reference when available.
+Continuity storyboard asset: storyboard-lemon-squares.png
+Intent: Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+Camera and angle: Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+Cookware/tools to preserve:
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- oven: Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- jellyroll pan: Use one consistent jellyroll pan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+Recipe visual inventory:
+- flour: 3 1/4 C (+) crust; ingredient
+- butter: 1.5 C (+) crust; softened; ingredient
+- confectioners sugar: 3/4 C (+) crust; ingredient
+- sugar: 3 1/4 C (+) filling dry; ingredient
+- confectioners sugar: 1 T (+) filling dry; ingredient
+- flour: 1/2 C (-) filling dry; ingredient
+- salt: 1 t (-) filling dry; ingredient
+- juice and rind of four lemons: 4 lemons filling wet; Add bottled lemon juice as needed until no longer sloshy.; ingredient
+- eggs: about 7.5432 filling wet; ingredient
+- crust dough: mix: 3 1/4 C (+) flour + 1.5 C (+) butter (softened) + 3/4 C (+) confectioners sugar
+- pressed crust: press: crust dough
+- hot baked crust: bake: pressed crust
+- filling dry mix: mix: 3 1/4 C (+) sugar + 1 T (+) confectioners sugar + 1/2 C (-) flour + 1 t (-) salt
+- lemon egg mixture: mix: 4 lemons juice and rind of four lemons + about 7.5432 eggs
+- lemon filling: combine: filling dry mix + lemon egg mixture
+- hot crust with filling: pour: hot baked crust + lemon filling
+- partially set lemon squares: bake: hot crust with filling
+- lemon squares: bake: partially set lemon squares
+Repeated food states:
+- crust dough: mix from flour + butter + confectioners sugar; keep this state visually identical wherever it appears later.
+- pressed crust: press from crust dough; keep this state visually identical wherever it appears later.
+- hot baked crust: bake from pressed crust; keep this state visually identical wherever it appears later.
+- filling dry mix: mix from sugar + confectioners sugar + flour + salt; keep this state visually identical wherever it appears later.
+- lemon egg mixture: mix from juice and rind of four lemons + eggs; keep this state visually identical wherever it appears later.
+- lemon filling: combine from filling dry mix + lemon egg mixture; keep this state visually identical wherever it appears later.
+- hot crust with filling: pour from hot baked crust + lemon filling; keep this state visually identical wherever it appears later.
+- partially set lemon squares: bake from hot crust with filling; keep this state visually identical wherever it appears later.
+- lemon squares: bake from partially set lemon squares; keep this state visually identical wherever it appears later.
+Continuity rules:
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+VISUAL CONTINUITY
+This asset should stay visually consistent with earlier generated assets: step-03-bake-crust.png, step-04-mix-filling-dry.png. Repeated ingredients, tools, food states, colors, and plating should feel like the same recipe world unless the prompt explicitly changes them.
+
+
+IMAGE CONTENT
+Mix Filling Wet: Prepare filling by mixing wet ingredients. Depict the ingredients or components used now: 4 lemons juice and rind of four lemons; about 7.5432 eggs. Show the resulting food state: lemon egg mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

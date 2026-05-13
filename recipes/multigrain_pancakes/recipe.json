@@ -1,0 +1,564 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "multigrain-pancakes",
+  "title": "Cooks' Multigrain Pancakes",
+  "subtitle": "Multigrain pancakes worth eating",
+  "source": {
+    "submittedBy": "carrien",
+    "date": "2007-10-28",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Active",
+      "value": "~2 min"
+    },
+    {
+      "label": "Stations",
+      "value": "stovetop"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-multigrain-pancakes.png",
+    "placement": "Continuity storyboard",
+    "alt": "Cooks' Multigrain Pancakes visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stovetop",
+        "description": "Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "bowl",
+        "description": "Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "whisk",
+        "description": "Use one consistent whisk design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "food processor",
+        "description": "Use one consistent food processor design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "lemon juice",
+        "description": "4 t wet; ingredient"
+      },
+      {
+        "name": "whole milk",
+        "description": "2 c wet; ingredient"
+      },
+      {
+        "name": "no-sugar-added muesli",
+        "description": "1.25 c dry; ingredient"
+      },
+      {
+        "name": "no-sugar-added muesli",
+        "description": "3 T dry; unground; ingredient"
+      },
+      {
+        "name": "unbleached white flour",
+        "description": ".75 c dry; ingredient"
+      },
+      {
+        "name": "whole wheat flower",
+        "description": ".5 c dry; Source says 'flower'; preserved as written in label.; ingredient"
+      },
+      {
+        "name": "light or dark brown sugar",
+        "description": "2 T dry; ingredient"
+      },
+      {
+        "name": "baking powder",
+        "description": "2.25 t dry; ingredient"
+      },
+      {
+        "name": "baking soda",
+        "description": ".5 t dry; ingredient"
+      },
+      {
+        "name": "table salt",
+        "description": ".5 t dry; ingredient"
+      },
+      {
+        "name": "large eggs",
+        "description": "2 wet; ingredient"
+      },
+      {
+        "name": "unsalted butter",
+        "description": "3 T wet; melted and cooled; ingredient"
+      },
+      {
+        "name": "vanilla",
+        "description": ".75 t wet; ingredient"
+      },
+      {
+        "name": "vegetable oil",
+        "description": "as needed cooking; ingredient"
+      },
+      {
+        "name": "thickened lemon milk",
+        "description": "whisk: 4 t lemon juice + 2 c whole milk"
+      },
+      {
+        "name": "processed muesli",
+        "description": "process: 1.25 c no-sugar-added muesli"
+      },
+      {
+        "name": "multigrain dry mix",
+        "description": "whisk: processed muesli + 3 T no-sugar-added muesli (unground) + .75 c unbleached white flour + .5 c whole wheat flower + 2 T light or dark brown sugar + 2.25 t baking powder + .5 t baking soda + .5 t table salt"
+      },
+      {
+        "name": "egg milk mixture",
+        "description": "whisk: thickened lemon milk + 2 large eggs + 3 T unsalted butter (melted and cooled) + .75 t vanilla"
+      },
+      {
+        "name": "multigrain batter",
+        "description": "fold: multigrain dry mix + egg milk mixture"
+      },
+      {
+        "name": "multigrain pancakes",
+        "description": "cook: multigrain batter + as needed vegetable oil"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "thickened lemon milk",
+        "description": "whisk from lemon juice + whole milk; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "processed muesli",
+        "description": "process from no-sugar-added muesli; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "multigrain dry mix",
+        "description": "whisk from processed muesli + no-sugar-added muesli + unbleached white flour + whole wheat flower + light or dark brown sugar + baking powder + baking soda + table salt; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "egg milk mixture",
+        "description": "whisk from thickened lemon milk + large eggs + unsalted butter + vanilla; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "multigrain batter",
+        "description": "fold from multigrain dry mix + egg milk mixture; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "multigrain pancakes",
+        "description": "cook from multigrain batter + vegetable oil; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Thicken Milk: Whisk lemon juice and milk in bowl; set aside to thicken. Result: thickened lemon milk.",
+      "Step 2, Process Muesli: Process 1.25 c muesli in food processor 2 minutes, transfer to large bowl. Result: processed muesli.",
+      "Step 3, Combine Dry: Add remaining unground muesli, flours, brown sugar, baking powder and soda, and salt. Whisk to combine. Result: multigrain dry mix.",
+      "Step 4, Combine Wet: Whisk eggs, melted butter, and vanilla into milk until combined. Result: egg milk mixture.",
+      "Step 5, Make Batter: Mix well in center of dry ingredients in boowl, pour in milk mixture and whisk very gently until just combined. Result: multigrain batter.",
+      "Step 6, Cook: Cook. Result: multigrain pancakes. Tool/station: stovetop."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Cooks' Multigrain Pancakes. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-multigrain-pancakes.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "thicken-milk"
+      },
+      {
+        "type": "step",
+        "step": "process-muesli"
+      },
+      {
+        "type": "step",
+        "step": "combine-dry"
+      },
+      {
+        "type": "step",
+        "step": "combine-wet"
+      },
+      {
+        "type": "step",
+        "step": "make-batter"
+      },
+      {
+        "type": "step",
+        "step": "cook"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "thicken-milk",
+      "sourceActionId": "thicken_milk",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Thicken Milk",
+      "instruction": "Whisk lemon juice and milk in bowl; set aside to thicken.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "4 t",
+          "item": "lemon juice",
+          "amounts": {
+            "original": "4 t",
+            "metric": "20 g"
+          }
+        },
+        {
+          "qty": "2 c",
+          "item": "whole milk",
+          "amounts": {
+            "original": "2 c",
+            "metric": "480 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "thickened lemon milk"
+        }
+      ],
+      "notes": [
+        "Source timing: set aside to thicken"
+      ],
+      "asset": "step-01-thicken-milk.png"
+    },
+    {
+      "id": "process-muesli",
+      "sourceActionId": "process_muesli",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Process Muesli",
+      "instruction": "Process 1.25 c muesli in food processor 2 minutes, transfer to large bowl.",
+      "duration": {
+        "activeMinutes": 2
+      },
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "1.25 c",
+          "item": "no-sugar-added muesli",
+          "amounts": {
+            "original": "1.25 c",
+            "metric": "250 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "processed muesli"
+        }
+      ],
+      "notes": [
+        "Source timing: 2 minutes",
+        "Method: food processor"
+      ],
+      "asset": "step-02-process-muesli.png"
+    },
+    {
+      "id": "combine-dry",
+      "sourceActionId": "combine_dry",
+      "number": 3,
+      "timeLabel": "2 min",
+      "phase": "mix",
+      "title": "Combine Dry",
+      "instruction": "Add remaining unground muesli, flours, brown sugar, baking powder and soda, and salt. Whisk to combine.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "processed muesli"
+        },
+        {
+          "qty": "3 T",
+          "item": "no-sugar-added muesli",
+          "note": "unground",
+          "amounts": {
+            "original": "3 T",
+            "metric": "38 g"
+          }
+        },
+        {
+          "qty": ".75 c",
+          "item": "unbleached white flour",
+          "amounts": {
+            "original": ".75 c",
+            "metric": "90 g"
+          }
+        },
+        {
+          "qty": ".5 c",
+          "item": "whole wheat flower",
+          "note": "Source says 'flower'; preserved as written in label.",
+          "amounts": {
+            "original": ".5 c"
+          }
+        },
+        {
+          "qty": "2 T",
+          "item": "light or dark brown sugar",
+          "amounts": {
+            "original": "2 T",
+            "metric": "25 g"
+          }
+        },
+        {
+          "qty": "2.25 t",
+          "item": "baking powder",
+          "amounts": {
+            "original": "2.25 t",
+            "metric": "9 g"
+          }
+        },
+        {
+          "qty": ".5 t",
+          "item": "baking soda",
+          "amounts": {
+            "original": ".5 t",
+            "metric": "2.3 g"
+          }
+        },
+        {
+          "qty": ".5 t",
+          "item": "table salt",
+          "amounts": {
+            "original": ".5 t",
+            "metric": "3 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "multigrain dry mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-03-combine-dry.png"
+    },
+    {
+      "id": "combine-wet",
+      "sourceActionId": "combine_wet",
+      "number": 4,
+      "timeLabel": "2 min",
+      "phase": "mix",
+      "title": "Combine Wet",
+      "instruction": "Whisk eggs, melted butter, and vanilla into milk until combined.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "thickened lemon milk"
+        },
+        {
+          "qty": "2",
+          "item": "large eggs",
+          "amounts": {
+            "original": "2"
+          }
+        },
+        {
+          "qty": "3 T",
+          "item": "unsalted butter",
+          "note": "melted and cooled",
+          "amounts": {
+            "original": "3 T",
+            "metric": "54 g"
+          }
+        },
+        {
+          "qty": ".75 t",
+          "item": "vanilla",
+          "amounts": {
+            "original": ".75 t",
+            "metric": "3.2 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "egg milk mixture"
+        }
+      ],
+      "notes": [],
+      "asset": "step-04-combine-wet.png"
+    },
+    {
+      "id": "make-batter",
+      "sourceActionId": "make_batter",
+      "number": 5,
+      "timeLabel": "2 min",
+      "phase": "mix",
+      "title": "Make Batter",
+      "instruction": "Mix well in center of dry ingredients in boowl, pour in milk mixture and whisk very gently until just combined.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "multigrain dry mix"
+        },
+        {
+          "qty": "",
+          "item": "egg milk mixture"
+        }
+      ],
+      "makes": [
+        {
+          "item": "multigrain batter"
+        }
+      ],
+      "notes": [
+        "Source timing: until just combined"
+      ],
+      "asset": "step-05-make-batter.png"
+    },
+    {
+      "id": "cook",
+      "sourceActionId": "cook",
+      "number": 6,
+      "timeLabel": "2 min",
+      "phase": "cook",
+      "title": "Cook",
+      "instruction": "Cook.",
+      "duration": {},
+      "resources": [
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "multigrain batter"
+        },
+        {
+          "qty": "as needed",
+          "item": "vegetable oil",
+          "amounts": {
+            "original": "as needed"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "multigrain pancakes"
+        }
+      ],
+      "notes": [],
+      "asset": "step-06-cook.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-multigrain-pancakes.png",
+      "placement": "Recipe header",
+      "alt": "Cooks' Multigrain Pancakes finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished multigrain pancakes for Cooks' Multigrain Pancakes, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-thicken-milk.png",
+      "placement": "Step 1 card",
+      "alt": "Cooks' Multigrain Pancakes: Thicken Milk",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Thicken Milk: Whisk lemon juice and milk in bowl; set aside to thicken. Depict the ingredients or components used now: 4 t lemon juice; 2 c whole milk. Show the resulting food state: thickened lemon milk. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-process-muesli.png",
+      "placement": "Step 2 card",
+      "alt": "Cooks' Multigrain Pancakes: Process Muesli",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-thicken-milk.png"
+      ],
+      "prompt": "Process Muesli: Process 1.25 c muesli in food processor 2 minutes, transfer to large bowl. Depict the ingredients or components used now: 1.25 c no-sugar-added muesli. Show the resulting food state: processed muesli. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-combine-dry.png",
+      "placement": "Step 3 card",
+      "alt": "Cooks' Multigrain Pancakes: Combine Dry",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-thicken-milk.png",
+        "step-02-process-muesli.png"
+      ],
+      "prompt": "Combine Dry: Add remaining unground muesli, flours, brown sugar, baking powder and soda, and salt. Whisk to combine. Depict the ingredients or components used now: processed muesli; 3 T no-sugar-added muesli (unground); .75 c unbleached white flour; .5 c whole wheat flower; 2 T light or dark brown sugar; 2.25 t baking powder; .5 t baking soda; .5 t table salt. Show the resulting food state: multigrain dry mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-combine-wet.png",
+      "placement": "Step 4 card",
+      "alt": "Cooks' Multigrain Pancakes: Combine Wet",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-process-muesli.png",
+        "step-03-combine-dry.png"
+      ],
+      "prompt": "Combine Wet: Whisk eggs, melted butter, and vanilla into milk until combined. Depict the ingredients or components used now: thickened lemon milk; 2 large eggs; 3 T unsalted butter (melted and cooled); .75 t vanilla. Show the resulting food state: egg milk mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-make-batter.png",
+      "placement": "Step 5 card",
+      "alt": "Cooks' Multigrain Pancakes: Make Batter",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-combine-dry.png",
+        "step-04-combine-wet.png"
+      ],
+      "prompt": "Make Batter: Mix well in center of dry ingredients in boowl, pour in milk mixture and whisk very gently until just combined. Depict the ingredients or components used now: multigrain dry mix; egg milk mixture. Show the resulting food state: multigrain batter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-06-cook.png",
+      "placement": "Step 6 card",
+      "alt": "Cooks' Multigrain Pancakes: Cook",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-combine-wet.png",
+        "step-05-make-batter.png"
+      ],
+      "prompt": "Cook: Cook. Depict the ingredients or components used now: multigrain batter; as needed vegetable oil. Show the resulting food state: multigrain pancakes.  Tools or station: stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

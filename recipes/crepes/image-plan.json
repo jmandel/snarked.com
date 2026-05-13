@@ -1,0 +1,70 @@
+{
+  "recipeId": "crepes",
+  "title": "Crepes",
+  "generatedAt": "2026-05-13T15:58:54.598Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-crepes.png",
+    "placement": "Continuity storyboard",
+    "alt": "Crepes visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/crepes/prompts/storyboard-crepes.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-crepes.png",
+      "placement": "Recipe header",
+      "alt": "Crepes finished dish",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/crepes/prompts/hero-crepes.txt"
+    },
+    {
+      "filename": "step-01-mix-eggs-salt.png",
+      "placement": "Step 1 card",
+      "alt": "Crepes: Mix Eggs Salt",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/crepes/prompts/step-01-mix-eggs-salt.txt"
+    },
+    {
+      "filename": "step-02-beat-batter.png",
+      "placement": "Step 2 card",
+      "alt": "Crepes: Beat Batter",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-mix-eggs-salt.png"
+      ],
+      "promptFile": "recipes/crepes/prompts/step-02-beat-batter.txt"
+    },
+    {
+      "filename": "step-03-refrigerate.png",
+      "placement": "Step 3 card",
+      "alt": "Crepes: Refrigerate",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-mix-eggs-salt.png",
+        "step-02-beat-batter.png"
+      ],
+      "promptFile": "recipes/crepes/prompts/step-03-refrigerate.txt"
+    },
+    {
+      "filename": "step-04-cook.png",
+      "placement": "Step 4 card",
+      "alt": "Crepes: Cook",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-beat-batter.png",
+        "step-03-refrigerate.png"
+      ],
+      "promptFile": "recipes/crepes/prompts/step-04-cook.txt"
+    }
+  ]
+}

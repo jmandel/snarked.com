@@ -1,0 +1,25 @@
+{
+  "filename": "step-03-bake-crust.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:11:47.644Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T160118Z-lemon-squares/codex-home/generated_images/019e2212-3430-7b32-b628-45171e57fbef/ig_0b23dd6b29762e90016a04a28d4b84819ab326ac5179673a69.png",
+  "promptFile": "recipes/lemon_squares/prompts/step-03-bake-crust.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-mix-crust.png",
+    "step-02-press-crust.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3052368,
+    "afterBytes": 2960482
+  }
+}

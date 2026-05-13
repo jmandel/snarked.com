@@ -1,0 +1,24 @@
+{
+  "filename": "step-02-dissolve-syrup.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T14:59:54.911Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-black-forest-fudge/codex-home/generated_images/019e21cd-2988-79d1-8915-c670960b22bf/ig_01945ae0fa76eb3e016a04916ee4988199a4401f4ce6a615ab.png",
+  "promptFile": "recipes/black_forest_fudge/prompts/step-02-dissolve-syrup.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-make-chocolate-base.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2859561,
+    "afterBytes": 2694656
+  }
+}

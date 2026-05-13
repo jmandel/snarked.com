@@ -1,0 +1,25 @@
+{
+  "filename": "step-04-melt-chocolate.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:08:52.511Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-black-forest-fudge/codex-home/generated_images/019e21cd-2988-79d1-8915-c670960b22bf/ig_01945ae0fa76eb3e016a04937617fc8199b75170b65281a4f8.png",
+  "promptFile": "recipes/black_forest_fudge/prompts/step-04-melt-chocolate.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-02-dissolve-syrup.png",
+    "step-03-boil-syrup.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3045749,
+    "afterBytes": 2974397
+  }
+}

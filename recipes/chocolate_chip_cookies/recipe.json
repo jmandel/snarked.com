@@ -1,0 +1,513 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "chocolate-chip-cookies",
+  "title": "Over-Size Chocolate Chip Cookies",
+  "subtitle": "Thick and chewy over-size chocolate chip cookies from Cook's Illustrated",
+  "source": {
+    "submittedBy": "Josh Mandel <jmandel@mit.edu>",
+    "date": "2005-05-10",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Active",
+      "value": "~18 min"
+    },
+    {
+      "label": "Heat",
+      "value": "325 F"
+    },
+    {
+      "label": "Stations",
+      "value": "oven"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-chocolate-chip-cookies.png",
+    "placement": "Continuity storyboard",
+    "alt": "Over-Size Chocolate Chip Cookies visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "oven",
+        "description": "Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "bowl",
+        "description": "Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "whisk",
+        "description": "Use one consistent whisk design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "flour",
+        "description": "2 c + 2 T dry; Source says 'flower' in method.; ingredient"
+      },
+      {
+        "name": "baking soda",
+        "description": "1/2 t dry; ingredient"
+      },
+      {
+        "name": "salt",
+        "description": "1/2 t dry; ingredient"
+      },
+      {
+        "name": "butter",
+        "description": "12 T wet; melted and cooled; ingredient"
+      },
+      {
+        "name": "dark brown sugar",
+        "description": "1 c wet; packed; ingredient"
+      },
+      {
+        "name": "granulated sugar",
+        "description": "1/2 c wet; ingredient"
+      },
+      {
+        "name": "large egg",
+        "description": "1 wet; ingredient"
+      },
+      {
+        "name": "egg yolk",
+        "description": "1 wet; ingredient"
+      },
+      {
+        "name": "vanilla extract",
+        "description": "2 t wet; ingredient"
+      },
+      {
+        "name": "chocolate chips",
+        "description": "3/2 c mix-in; ingredient"
+      },
+      {
+        "name": "dry mix",
+        "description": "whisk: 2 c + 2 T flour + 1/2 t baking soda + 1/2 t salt"
+      },
+      {
+        "name": "butter and sugar mix",
+        "description": "mix: 12 T butter (melted and cooled) + 1 c dark brown sugar (packed) + 1/2 c granulated sugar + 1 large egg + 1 egg yolk + 2 t vanilla extract"
+      },
+      {
+        "name": "cookie dough",
+        "description": "beat: butter and sugar mix + dry mix + 3/2 c chocolate chips"
+      },
+      {
+        "name": "formed torn cookies",
+        "description": "form: cookie dough"
+      },
+      {
+        "name": "baked cookies",
+        "description": "bake: formed torn cookies"
+      },
+      {
+        "name": "cooled chocolate chip cookies",
+        "description": "cool: baked cookies"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "dry mix",
+        "description": "whisk from flour + baking soda + salt; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "butter and sugar mix",
+        "description": "mix from butter + dark brown sugar + granulated sugar + large egg + egg yolk + vanilla extract; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "cookie dough",
+        "description": "beat from butter and sugar mix + dry mix + chocolate chips; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "formed torn cookies",
+        "description": "form from cookie dough; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "baked cookies",
+        "description": "bake from formed torn cookies; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "cooled chocolate chip cookies",
+        "description": "cool from baked cookies; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Whisk Dry: Whisk flower, soda, salt in medium bowl. Result: dry mix.",
+      "Step 2, Mix Wet: Mix butter and sugars until combined. Add egg, yolk, and vanilla. Result: butter and sugar mix.",
+      "Step 3, Make Dough: Add dry ingredients and beat until combined. Add chips. Result: cookie dough.",
+      "Step 4, Form Cookies: Form cookies, about 1/4 c each, and tear to create an attractive finish. Result: formed torn cookies.",
+      "Step 5, Bake: Heat oven to 325, grease baking sheets, and bake until light golden brown with soft puffy centers. Result: baked cookies. Tool/station: oven.",
+      "Step 6, Cool: Cool on sheets. Result: cooled chocolate chip cookies."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Over-Size Chocolate Chip Cookies. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-chocolate-chip-cookies.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "whisk-dry"
+      },
+      {
+        "type": "step",
+        "step": "mix-wet"
+      },
+      {
+        "type": "step",
+        "step": "make-dough"
+      },
+      {
+        "type": "step",
+        "step": "form-cookies"
+      },
+      {
+        "type": "step",
+        "step": "bake"
+      },
+      {
+        "type": "step",
+        "step": "cool"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "whisk-dry",
+      "sourceActionId": "whisk_dry",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Whisk Dry",
+      "instruction": "Whisk flower, soda, salt in medium bowl.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "2 c + 2 T",
+          "item": "flour",
+          "note": "Source says 'flower' in method.",
+          "amounts": {
+            "original": "2 c + 2 T",
+            "metric": "255 g"
+          }
+        },
+        {
+          "qty": "1/2 t",
+          "item": "baking soda",
+          "amounts": {
+            "original": "1/2 t",
+            "metric": "2.3 g"
+          }
+        },
+        {
+          "qty": "1/2 t",
+          "item": "salt",
+          "amounts": {
+            "original": "1/2 t",
+            "metric": "3 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "dry mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-whisk-dry.png"
+    },
+    {
+      "id": "mix-wet",
+      "sourceActionId": "mix_wet",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Wet",
+      "instruction": "Mix butter and sugars until combined. Add egg, yolk, and vanilla.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "12 T",
+          "item": "butter",
+          "note": "melted and cooled",
+          "amounts": {
+            "original": "12 T",
+            "metric": "170 g"
+          }
+        },
+        {
+          "qty": "1 c",
+          "item": "dark brown sugar",
+          "note": "packed",
+          "amounts": {
+            "original": "1 c",
+            "metric": "220 g"
+          }
+        },
+        {
+          "qty": "1/2 c",
+          "item": "granulated sugar",
+          "amounts": {
+            "original": "1/2 c",
+            "metric": "100 g"
+          }
+        },
+        {
+          "qty": "1",
+          "item": "large egg",
+          "amounts": {
+            "original": "1"
+          }
+        },
+        {
+          "qty": "1",
+          "item": "egg yolk",
+          "amounts": {
+            "original": "1"
+          }
+        },
+        {
+          "qty": "2 t",
+          "item": "vanilla extract",
+          "amounts": {
+            "original": "2 t",
+            "metric": "8.4 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "butter and sugar mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-mix-wet.png"
+    },
+    {
+      "id": "make-dough",
+      "sourceActionId": "make_dough",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Make Dough",
+      "instruction": "Add dry ingredients and beat until combined. Add chips.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "butter and sugar mix"
+        },
+        {
+          "qty": "",
+          "item": "dry mix"
+        },
+        {
+          "qty": "3/2 c",
+          "item": "chocolate chips",
+          "amounts": {
+            "original": "3/2 c",
+            "metric": "255 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "cookie dough"
+        }
+      ],
+      "notes": [],
+      "asset": "step-03-make-dough.png"
+    },
+    {
+      "id": "form-cookies",
+      "sourceActionId": "form_cookies",
+      "number": 4,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Form Cookies",
+      "instruction": "Form cookies, about 1/4 c each, and tear to create an attractive finish.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "cookie dough"
+        }
+      ],
+      "makes": [
+        {
+          "item": "formed torn cookies"
+        }
+      ],
+      "notes": [],
+      "asset": "step-04-form-cookies.png"
+    },
+    {
+      "id": "bake",
+      "sourceActionId": "bake",
+      "number": 5,
+      "timeLabel": "0 min",
+      "phase": "bake",
+      "title": "Bake",
+      "instruction": "Heat oven to 325, grease baking sheets, and bake until light golden brown with soft puffy centers.",
+      "duration": {
+        "activeMinutes": 18
+      },
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "formed torn cookies"
+        }
+      ],
+      "makes": [
+        {
+          "item": "baked cookies"
+        }
+      ],
+      "notes": [
+        "Heat: 325 F",
+        "Source timing: 15 to 18 minutes"
+      ],
+      "asset": "step-05-bake.png"
+    },
+    {
+      "id": "cool",
+      "sourceActionId": "cool",
+      "number": 6,
+      "timeLabel": "18 min",
+      "phase": "wait",
+      "title": "Cool",
+      "instruction": "Cool on sheets.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "baked cookies"
+        }
+      ],
+      "makes": [
+        {
+          "item": "cooled chocolate chip cookies"
+        }
+      ],
+      "notes": [],
+      "asset": "step-06-cool.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-chocolate-chip-cookies.png",
+      "placement": "Recipe header",
+      "alt": "Over-Size Chocolate Chip Cookies finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished cooled chocolate chip cookies for Over-Size Chocolate Chip Cookies, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-whisk-dry.png",
+      "placement": "Step 1 card",
+      "alt": "Over-Size Chocolate Chip Cookies: Whisk Dry",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Whisk Dry: Whisk flower, soda, salt in medium bowl. Depict the ingredients or components used now: 2 c + 2 T flour; 1/2 t baking soda; 1/2 t salt. Show the resulting food state: dry mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-mix-wet.png",
+      "placement": "Step 2 card",
+      "alt": "Over-Size Chocolate Chip Cookies: Mix Wet",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-whisk-dry.png"
+      ],
+      "prompt": "Mix Wet: Mix butter and sugars until combined. Add egg, yolk, and vanilla. Depict the ingredients or components used now: 12 T butter (melted and cooled); 1 c dark brown sugar (packed); 1/2 c granulated sugar; 1 large egg; 1 egg yolk; 2 t vanilla extract. Show the resulting food state: butter and sugar mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-make-dough.png",
+      "placement": "Step 3 card",
+      "alt": "Over-Size Chocolate Chip Cookies: Make Dough",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-whisk-dry.png",
+        "step-02-mix-wet.png"
+      ],
+      "prompt": "Make Dough: Add dry ingredients and beat until combined. Add chips. Depict the ingredients or components used now: butter and sugar mix; dry mix; 3/2 c chocolate chips. Show the resulting food state: cookie dough. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-form-cookies.png",
+      "placement": "Step 4 card",
+      "alt": "Over-Size Chocolate Chip Cookies: Form Cookies",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-mix-wet.png",
+        "step-03-make-dough.png"
+      ],
+      "prompt": "Form Cookies: Form cookies, about 1/4 c each, and tear to create an attractive finish. Depict the ingredients or components used now: cookie dough. Show the resulting food state: formed torn cookies. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-bake.png",
+      "placement": "Step 5 card",
+      "alt": "Over-Size Chocolate Chip Cookies: Bake",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-make-dough.png",
+        "step-04-form-cookies.png"
+      ],
+      "prompt": "Bake: Heat oven to 325, grease baking sheets, and bake until light golden brown with soft puffy centers. Depict the ingredients or components used now: formed torn cookies. Show the resulting food state: baked cookies.  Tools or station: oven. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-06-cool.png",
+      "placement": "Step 6 card",
+      "alt": "Over-Size Chocolate Chip Cookies: Cool",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-form-cookies.png",
+        "step-05-bake.png"
+      ],
+      "prompt": "Cool: Cool on sheets. Depict the ingredients or components used now: baked cookies. Show the resulting food state: cooled chocolate chip cookies. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

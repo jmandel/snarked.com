@@ -1,0 +1,25 @@
+{
+  "filename": "step-03-make-batter.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:52:22.977Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T153637Z-cornmeal-pancakes/codex-home/generated_images/019e21fb-9df2-73f3-b684-9840fa9a00f2/ig_00bf11c22c5222c8016a049dd16bc4819b89da20f8146d664a.png",
+  "promptFile": "recipes/cornmeal_pancakes/prompts/step-03-make-batter.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-mix-dry.png",
+    "step-02-mix-wet.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2976917,
+    "afterBytes": 2760644
+  }
+}

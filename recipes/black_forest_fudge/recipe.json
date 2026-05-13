@@ -1,0 +1,549 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "black-forest-fudge",
+  "title": "Black Forest Fudge",
+  "subtitle": "Black, foresty, fudgy",
+  "source": {
+    "submittedBy": "Marissa Cheng",
+    "date": "2003-08-14",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Active",
+      "value": "~20 min"
+    },
+    {
+      "label": "Heat",
+      "value": "medium heat / 230 degrees F, medium high heat"
+    },
+    {
+      "label": "Stations",
+      "value": "stovetop + refrigerator"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-black-forest-fudge.png",
+    "placement": "Continuity storyboard",
+    "alt": "Black Forest Fudge visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stovetop",
+        "description": "Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "refrigerator",
+        "description": "Use one consistent refrigerator design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "bowl",
+        "description": "Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "saucepan",
+        "description": "Use one consistent saucepan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "spoon",
+        "description": "Use one consistent spoon design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "loaf pan",
+        "description": "Use one consistent loaf pan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "bittersweet chocolate",
+        "description": "6 ounces chocolate base; chopped; ingredient"
+      },
+      {
+        "name": "marshmallow fluff",
+        "description": ".5 cup chocolate base; ingredient"
+      },
+      {
+        "name": "unsweetened chocolate",
+        "description": "1 ounce chocolate base; chopped; ingredient"
+      },
+      {
+        "name": "vanilla",
+        "description": "1 teaspoon chocolate base; ingredient"
+      },
+      {
+        "name": "sugar",
+        "description": "1.25 cups syrup; ingredient"
+      },
+      {
+        "name": "condensed milk",
+        "description": "0.5 cup syrup; ingredient"
+      },
+      {
+        "name": "cherry preserves",
+        "description": "0.5 cup syrup; ingredient"
+      },
+      {
+        "name": "whipping cream",
+        "description": "0.5 cup syrup; ingredient"
+      },
+      {
+        "name": "water",
+        "description": "1/3 cup syrup; ingredient"
+      },
+      {
+        "name": "butter",
+        "description": "0.25 cup syrup; ingredient"
+      },
+      {
+        "name": "dried tart cherries",
+        "description": "2/3 cup syrup; ingredient"
+      },
+      {
+        "name": "chocolate base",
+        "description": "combine: 6 ounces bittersweet chocolate (chopped) + .5 cup marshmallow fluff + 1 ounce unsweetened chocolate (chopped) + 1 teaspoon vanilla"
+      },
+      {
+        "name": "dissolved sugar syrup",
+        "description": "stir: 1.25 cups sugar + 0.5 cup condensed milk + 0.5 cup cherry preserves + 0.5 cup whipping cream + 1/3 cup water + 0.25 cup butter"
+      },
+      {
+        "name": "hot cherry syrup",
+        "description": "boil: dissolved sugar syrup + 2/3 cup dried tart cherries"
+      },
+      {
+        "name": "fudge mixture",
+        "description": "stir: hot cherry syrup + chocolate base"
+      },
+      {
+        "name": "smoothed fudge in pan",
+        "description": "pour: fudge mixture into foil-lined loaf pan"
+      },
+      {
+        "name": "black forest fudge",
+        "description": "chill: smoothed fudge in pan"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "chocolate base",
+        "description": "combine from bittersweet chocolate + marshmallow fluff + unsweetened chocolate + vanilla; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "dissolved sugar syrup",
+        "description": "stir from sugar + condensed milk + cherry preserves + whipping cream + water + butter; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "hot cherry syrup",
+        "description": "boil from dissolved sugar syrup + dried tart cherries; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "fudge mixture",
+        "description": "stir from hot cherry syrup + chocolate base; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "smoothed fudge in pan",
+        "description": "pour from fudge mixture; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "black forest fudge",
+        "description": "chill from smoothed fudge in pan; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Make Chocolate Base: Put the first four ingredients in a metal bowl. Result: chocolate base.",
+      "Step 2, Dissolve Syrup: Mix the sugar, condensed milk, cherry preserves, whipping cream, water, and butter in a heavy saucepan. Stir over medium heat until butter melts and sugar dissolves. Result: dissolved sugar syrup. Tool/station: stovetop.",
+      "Step 3, Boil Syrup: Add the dried cherries. Attach a candy thermometer, increase the heat to medium high, and boil until the mixture reaches 230 degrees F, stirring constantly but slowly. Result: hot cherry syrup. Tool/station: stovetop.",
+      "Step 4, Melt Chocolate: Pour the hot syrup immediately over the chocolate mixture. Stir with a wooden spoon until the chocolate melts and the mixture thickens a little. Result: fudge mixture.",
+      "Step 5, Pan Fudge: Line a loaf pan with foil, pour the fudge mixture into the prepared pan, and smooth the top. Result: smoothed fudge in pan.",
+      "Step 6, Chill: Chill until firm, about half an hour. Result: black forest fudge. Tool/station: refrigerator."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Black Forest Fudge. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-black-forest-fudge.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "make-chocolate-base"
+      },
+      {
+        "type": "step",
+        "step": "dissolve-syrup"
+      },
+      {
+        "type": "step",
+        "step": "boil-syrup"
+      },
+      {
+        "type": "step",
+        "step": "melt-chocolate"
+      },
+      {
+        "type": "step",
+        "step": "pan-fudge"
+      },
+      {
+        "type": "step",
+        "step": "chill"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "make-chocolate-base",
+      "sourceActionId": "make_chocolate_base",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Make Chocolate Base",
+      "instruction": "Put the first four ingredients in a metal bowl.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "6 ounces",
+          "item": "bittersweet chocolate",
+          "note": "chopped",
+          "amounts": {
+            "original": "6 ounces",
+            "metric": "170 g"
+          }
+        },
+        {
+          "qty": ".5 cup",
+          "item": "marshmallow fluff",
+          "amounts": {
+            "original": ".5 cup"
+          }
+        },
+        {
+          "qty": "1 ounce",
+          "item": "unsweetened chocolate",
+          "note": "chopped",
+          "amounts": {
+            "original": "1 ounce",
+            "metric": "28 g"
+          }
+        },
+        {
+          "qty": "1 teaspoon",
+          "item": "vanilla",
+          "amounts": {
+            "original": "1 teaspoon",
+            "metric": "4.2 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "chocolate base"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-make-chocolate-base.png"
+    },
+    {
+      "id": "dissolve-syrup",
+      "sourceActionId": "dissolve_syrup",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Dissolve Syrup",
+      "instruction": "Mix the sugar, condensed milk, cherry preserves, whipping cream, water, and butter in a heavy saucepan. Stir over medium heat until butter melts and sugar dissolves.",
+      "duration": {},
+      "resources": [
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "1.25 cups",
+          "item": "sugar",
+          "amounts": {
+            "original": "1.25 cups",
+            "metric": "250 g"
+          }
+        },
+        {
+          "qty": "0.5 cup",
+          "item": "condensed milk",
+          "amounts": {
+            "original": "0.5 cup",
+            "metric": "120 g"
+          }
+        },
+        {
+          "qty": "0.5 cup",
+          "item": "cherry preserves",
+          "amounts": {
+            "original": "0.5 cup"
+          }
+        },
+        {
+          "qty": "0.5 cup",
+          "item": "whipping cream",
+          "amounts": {
+            "original": "0.5 cup",
+            "metric": "120 g"
+          }
+        },
+        {
+          "qty": "1/3 cup",
+          "item": "water",
+          "amounts": {
+            "original": "1/3 cup",
+            "metric": "80 g"
+          }
+        },
+        {
+          "qty": "0.25 cup",
+          "item": "butter",
+          "amounts": {
+            "original": "0.25 cup",
+            "metric": "57 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "dissolved sugar syrup"
+        }
+      ],
+      "notes": [
+        "Heat: medium heat"
+      ],
+      "asset": "step-02-dissolve-syrup.png"
+    },
+    {
+      "id": "boil-syrup",
+      "sourceActionId": "boil_syrup",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "cook",
+      "title": "Boil Syrup",
+      "instruction": "Add the dried cherries. Attach a candy thermometer, increase the heat to medium high, and boil until the mixture reaches 230 degrees F, stirring constantly but slowly.",
+      "duration": {
+        "activeMinutes": 17
+      },
+      "resources": [
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "dissolved sugar syrup"
+        },
+        {
+          "qty": "2/3 cup",
+          "item": "dried tart cherries",
+          "amounts": {
+            "original": "2/3 cup"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "hot cherry syrup"
+        }
+      ],
+      "notes": [
+        "Heat: 230 degrees F, medium high heat",
+        "Source timing: about 17 minutes",
+        "Method: candy thermometer"
+      ],
+      "asset": "step-03-boil-syrup.png"
+    },
+    {
+      "id": "melt-chocolate",
+      "sourceActionId": "melt_chocolate",
+      "number": 4,
+      "timeLabel": "17 min",
+      "phase": "mix",
+      "title": "Melt Chocolate",
+      "instruction": "Pour the hot syrup immediately over the chocolate mixture. Stir with a wooden spoon until the chocolate melts and the mixture thickens a little.",
+      "duration": {
+        "activeMinutes": 3
+      },
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "hot cherry syrup"
+        },
+        {
+          "qty": "",
+          "item": "chocolate base"
+        }
+      ],
+      "makes": [
+        {
+          "item": "fudge mixture"
+        }
+      ],
+      "notes": [
+        "Source timing: about 3 minutes",
+        "Method: wooden spoon"
+      ],
+      "asset": "step-04-melt-chocolate.png"
+    },
+    {
+      "id": "pan-fudge",
+      "sourceActionId": "pan_fudge",
+      "number": 5,
+      "timeLabel": "20 min",
+      "phase": "step",
+      "title": "Pan Fudge",
+      "instruction": "Line a loaf pan with foil, pour the fudge mixture into the prepared pan, and smooth the top.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "fudge mixture"
+        }
+      ],
+      "makes": [
+        {
+          "item": "smoothed fudge in pan"
+        }
+      ],
+      "notes": [],
+      "asset": "step-05-pan-fudge.png"
+    },
+    {
+      "id": "chill",
+      "sourceActionId": "chill",
+      "number": 6,
+      "timeLabel": "20 min",
+      "phase": "wait",
+      "title": "Chill",
+      "instruction": "Chill until firm, about half an hour.",
+      "duration": {},
+      "resources": [
+        "refrigerator"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "smoothed fudge in pan"
+        }
+      ],
+      "makes": [
+        {
+          "item": "black forest fudge"
+        }
+      ],
+      "notes": [
+        "Source timing: about half an hour"
+      ],
+      "asset": "step-06-chill.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-black-forest-fudge.png",
+      "placement": "Recipe header",
+      "alt": "Black Forest Fudge finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished black forest fudge for Black Forest Fudge, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-make-chocolate-base.png",
+      "placement": "Step 1 card",
+      "alt": "Black Forest Fudge: Make Chocolate Base",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Make Chocolate Base: Put the first four ingredients in a metal bowl. Depict the ingredients or components used now: 6 ounces bittersweet chocolate (chopped); .5 cup marshmallow fluff; 1 ounce unsweetened chocolate (chopped); 1 teaspoon vanilla. Show the resulting food state: chocolate base. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-dissolve-syrup.png",
+      "placement": "Step 2 card",
+      "alt": "Black Forest Fudge: Dissolve Syrup",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-make-chocolate-base.png"
+      ],
+      "prompt": "Dissolve Syrup: Mix the sugar, condensed milk, cherry preserves, whipping cream, water, and butter in a heavy saucepan. Stir over medium heat until butter melts and sugar dissolves. Depict the ingredients or components used now: 1.25 cups sugar; 0.5 cup condensed milk; 0.5 cup cherry preserves; 0.5 cup whipping cream; 1/3 cup water; 0.25 cup butter. Show the resulting food state: dissolved sugar syrup.  Tools or station: stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-boil-syrup.png",
+      "placement": "Step 3 card",
+      "alt": "Black Forest Fudge: Boil Syrup",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-make-chocolate-base.png",
+        "step-02-dissolve-syrup.png"
+      ],
+      "prompt": "Boil Syrup: Add the dried cherries. Attach a candy thermometer, increase the heat to medium high, and boil until the mixture reaches 230 degrees F, stirring constantly but slowly. Depict the ingredients or components used now: dissolved sugar syrup; 2/3 cup dried tart cherries. Show the resulting food state: hot cherry syrup.  Tools or station: stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-melt-chocolate.png",
+      "placement": "Step 4 card",
+      "alt": "Black Forest Fudge: Melt Chocolate",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-dissolve-syrup.png",
+        "step-03-boil-syrup.png"
+      ],
+      "prompt": "Melt Chocolate: Pour the hot syrup immediately over the chocolate mixture. Stir with a wooden spoon until the chocolate melts and the mixture thickens a little. Depict the ingredients or components used now: hot cherry syrup; chocolate base. Show the resulting food state: fudge mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-pan-fudge.png",
+      "placement": "Step 5 card",
+      "alt": "Black Forest Fudge: Pan Fudge",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-boil-syrup.png",
+        "step-04-melt-chocolate.png"
+      ],
+      "prompt": "Pan Fudge: Line a loaf pan with foil, pour the fudge mixture into the prepared pan, and smooth the top. Depict the ingredients or components used now: fudge mixture. Show the resulting food state: smoothed fudge in pan. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-06-chill.png",
+      "placement": "Step 6 card",
+      "alt": "Black Forest Fudge: Chill",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-melt-chocolate.png",
+        "step-05-pan-fudge.png"
+      ],
+      "prompt": "Chill: Chill until firm, about half an hour. Depict the ingredients or components used now: smoothed fudge in pan. Show the resulting food state: black forest fudge.  Tools or station: refrigerator. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

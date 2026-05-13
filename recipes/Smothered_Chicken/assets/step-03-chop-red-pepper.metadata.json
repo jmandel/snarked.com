@@ -1,0 +1,25 @@
+{
+  "filename": "step-03-chop-red-pepper.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T14:59:23.348Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-smothered-chicken/codex-home/generated_images/019e21cd-291f-7c13-9397-9169b2e006ac/ig_07f2b06d515b40f5016a049173e6d48199b3740dd51dc1ed2a.png",
+  "promptFile": "recipes/Smothered_Chicken/prompts/step-03-chop-red-pepper.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-01-make-spice-mixture.png",
+    "step-02-chop-onions.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2759531,
+    "afterBytes": 2558217
+  }
+}

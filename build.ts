@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync, mkdirSync, writeFileSync, rmSync, cpSync, existsSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { marked } from "marked";
@@ -7,6 +8,8 @@ const RECIPES_DIR = join(ROOT, "recipes");
 const STYLES_DIR = join(ROOT, "styles");
 const ASSETS_DIR = join(ROOT, "assets");
 const DIST = join(ROOT, "dist");
+const RESPONSIVE_IMAGE_WIDTHS = [480, 768, 1200];
+const RESPONSIVE_IMAGE_QUALITY = "86";
 
 const GH_REPO = "jmandel/snarked.com";
 const GH_RECIPE_TEMPLATE = encodeURIComponent(
@@ -29,7 +32,7 @@ photos: []
 Step the first. Step the second.
 `,
 );
-const GH_NEW_FILE_URL = `https://github.com/${GH_REPO}/new/master/recipes?filename=your_recipe.md&value=${GH_RECIPE_TEMPLATE}`;
+const GH_NEW_FILE_URL = `https://github.com/${GH_REPO}/new/master/recipes?filename=your_recipe/recipe.md&value=${GH_RECIPE_TEMPLATE}`;
 const GH_ISSUE_URL = `https://github.com/${GH_REPO}/issues/new?template=recipe.yml`;
 
 type FrontMatter = {
@@ -42,11 +45,50 @@ type FrontMatter = {
 };
 
 type Recipe = FrontMatter & {
+  dirName: string;
+  localDir: string;
   bodyMd: string;
   sections: Section[];
 };
 
 type Section = { name: string; md: string };
+type ReciPopIngredient = { qty?: string; quantity?: string; item?: string; ingredient?: string; note?: string; amounts?: Record<string, string> };
+type ReciPopStep = {
+  id: string;
+  number?: number;
+  timeLabel?: string;
+  phase?: string;
+  title?: string;
+  instruction?: string;
+  duration?: { activeLabel?: string; passiveLabel?: string; activeMinutes?: number; passiveMinutes?: number };
+  resources?: string[];
+  ingredients?: ReciPopIngredient[];
+  makes?: Array<{ item?: string }>;
+  notes?: string[];
+  asset?: string;
+};
+type ReciPopRecipe = {
+  id: string;
+  title: string;
+  subtitle?: string;
+  assetBasePath?: string;
+  _recipeDir?: string;
+  _recipeShortname?: string;
+  unitSystems?: Array<{ id: string; label?: string }>;
+  defaultUnitSystem?: string;
+  quickFacts?: Array<{ label: string; value: string }>;
+  storyboard?: { filename?: string; alt?: string };
+  heroAssets?: string[];
+  layout?: { sections?: Array<any> };
+  steps?: ReciPopStep[];
+  assets?: Array<{ filename: string; alt?: string }>;
+};
+type ScalingOption = {
+  item: string;
+  context: string;
+  original: string;
+  metric: string;
+};
 
 function parseFrontMatter(src: string): { data: Record<string, unknown>; body: string } {
   if (!src.startsWith("---")) return { data: {}, body: src };
@@ -107,20 +149,33 @@ function renderMd(md: string): string {
   return marked.parse(normalized, { async: false }) as string;
 }
 
-function loadRecipe(file: string): Recipe {
-  const raw = readFileSync(join(RECIPES_DIR, file), "utf8");
+function loadRecipe(dirName: string): Recipe {
+  const localDir = join(RECIPES_DIR, dirName);
+  const raw = readFileSync(join(localDir, "recipe.md"), "utf8");
   const { data, body } = parseFrontMatter(raw);
   const photos = Array.isArray(data.photos) ? (data.photos as string[]) : [];
   return {
     title: String(data.title ?? "Untitled"),
-    shortname: String(data.shortname ?? file.replace(/\.md$/, "")),
+    shortname: String(data.shortname ?? dirName),
     blurb: String(data.blurb ?? ""),
     submitter: String(data.submitter ?? ""),
     date: String(data.date ?? ""),
     photos,
+    dirName,
+    localDir,
     bodyMd: body,
     sections: splitSections(body),
   };
+}
+
+function loadReciPop(shortname: string): ReciPopRecipe | null {
+  const recipeDir = join(RECIPES_DIR, shortname);
+  const recipePath = join(recipeDir, "recipe.json");
+  if (!existsSync(recipePath)) return null;
+  const recipe = JSON.parse(readFileSync(recipePath, "utf8")) as ReciPopRecipe;
+  recipe._recipeDir = recipeDir;
+  recipe._recipeShortname = shortname;
+  return recipe;
 }
 
 function escapeHtml(s: string): string {
@@ -272,8 +327,421 @@ function renderGallery(r: Recipe, prefix: string): string {
   return `<div class="${cls}">${cells}</div>`;
 }
 
+function hasMetricUnits(recipe: ReciPopRecipe): boolean {
+  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some((row) => row.amounts?.metric));
+}
+
+function renderUnitToggle(recipe: ReciPopRecipe): string {
+  if (!hasMetricUnits(recipe)) return "";
+  const systems = recipe.unitSystems?.length ? recipe.unitSystems : [
+    { id: "original", label: "Original" },
+    { id: "metric", label: "Metric" },
+  ];
+  return `<div class="sn-unit-toggle" aria-label="Ingredient units">
+${systems.map((system) => `<button type="button" data-unit-choice="${escapeHtml(system.id)}">${escapeHtml(system.label ?? system.id)}</button>`).join("\n")}
+</div>`;
+}
+
+function getIngredientQuantity(row: ReciPopIngredient): string {
+  return row.qty ?? row.quantity ?? "";
+}
+
+function hasScalableQuantities(recipe: ReciPopRecipe): boolean {
+  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some((row) => getIngredientQuantity(row) || row.amounts?.metric));
+}
+
+function scalingOptions(recipe: ReciPopRecipe): ScalingOption[] {
+  const seen = new Set<string>();
+  const options: ScalingOption[] = [];
+  for (const step of recipe.steps ?? []) {
+    for (const row of step.ingredients ?? []) {
+      const item = row.item ?? row.ingredient ?? "";
+      const original = getIngredientQuantity(row);
+      const metric = row.amounts?.metric ?? "";
+      if (!item || (!original && !metric)) continue;
+      const key = `${item.toLowerCase()}|${original}|${metric}|${step.id}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      options.push({
+        item,
+        context: step.title ?? `Step ${step.number ?? ""}`.trim(),
+        original,
+        metric,
+      });
+    }
+  }
+  return options;
+}
+
+function renderScaleControls(recipe: ReciPopRecipe): string {
+  if (!hasScalableQuantities(recipe)) return "";
+  const options = scalingOptions(recipe);
+  return `<div class="sn-scale-control" aria-label="Ingredient scaling">
+<label>Scale <input type="number" min="0.1" max="20" step="0.25" value="1" data-scale-factor inputmode="decimal"><span>&times;</span></label>
+${options.length ? `<label class="sn-scale-control__key">Set <select data-scale-key>
+${options.map((option, index) => `<option value="${index}" data-base-original="${escapeHtml(option.original)}" data-base-metric="${escapeHtml(option.metric)}">${escapeHtml(option.item)}${option.context ? ` · ${escapeHtml(option.context)}` : ""}</option>`).join("\n")}
+</select></label>
+<input type="text" data-scale-target aria-label="Target ingredient quantity">` : ""}
+<button type="button" data-scale-reset>Reset</button>
+</div>`;
+}
+
+function renderReciPopScript(enableUnits: boolean, enableScale: boolean, recipeId: string): string {
+  return `<script>
+(() => {
+  const roots = [...document.querySelectorAll(".sn-recipop")];
+  const unitKey = "snarked.recipeUnits";
+  const scaleKey = "snarked.recipeScale.${escapeHtml(recipeId)}";
+  const clampScale = (value) => {
+    const n = Number(value);
+    return Number.isFinite(n) && n > 0 ? Math.min(20, Math.max(0.1, n)) : 1;
+  };
+  const parseToken = (token) => {
+    token = String(token || "").trim();
+    const mixed = token.match(/^(\\d+(?:\\.\\d+)?)\\s+(\\d+)\\/(\\d+)$/);
+    if (mixed) return Number(mixed[1]) + Number(mixed[2]) / Number(mixed[3]);
+    const frac = token.match(/^(\\d+)\\/(\\d+)$/);
+    if (frac) return Number(frac[1]) / Number(frac[2]);
+    const n = Number(token);
+    return Number.isFinite(n) ? n : null;
+  };
+  const parseQuantity = (text) => {
+    const source = String(text || "").trim();
+    const amountPattern = "(\\\\d+\\\\s+\\\\d+\\\\/\\\\d+|\\\\d+\\\\/\\\\d+|\\\\d+(?:\\\\.\\\\d+)?|\\\\.\\\\d+)";
+    const match = source.match(new RegExp("^([^\\\\d.+-]*?)" + amountPattern + "(?:\\\\s*(?:-|–|to)\\\\s*" + amountPattern + ")?(.*)$", "i"));
+    if (!match) return null;
+    const first = parseToken(match[2]);
+    const second = match[3] ? parseToken(match[3]) : null;
+    if (first == null || (match[3] && second == null)) return null;
+    return { prefix: match[1] || "", first, second, suffix: match[4] || "" };
+  };
+  const trimNumber = (value, places = 2) => {
+    const rounded = Number(value.toFixed(places));
+    return String(rounded).replace(/\\.0+$/, "").replace(/(\\.\\d*?)0+$/, "$1");
+  };
+  const formatFraction = (value) => {
+    if (!Number.isFinite(value)) return "";
+    const sign = value < 0 ? "-" : "";
+    value = Math.abs(value);
+    const whole = Math.floor(value + 1e-9);
+    const frac = value - whole;
+    if (frac < 0.03) return sign + String(whole);
+    const denoms = [2, 3, 4, 8, 16];
+    let best = { denom: 16, num: Math.round(frac * 16), err: Infinity };
+    for (const denom of denoms) {
+      const num = Math.round(frac * denom);
+      const err = Math.abs(frac - num / denom);
+      if (num > 0 && num < denom && err < best.err) best = { denom, num, err };
+    }
+    if (best.err > 0.035) return sign + trimNumber(value, value < 10 ? 2 : 1);
+    const gcd = (a, b) => b ? gcd(b, a % b) : a;
+    const d = gcd(best.num, best.denom);
+    const num = best.num / d;
+    const denom = best.denom / d;
+    if (whole === 0) return sign + num + "/" + denom;
+    return sign + whole + " " + num + "/" + denom;
+  };
+  const formatGrams = (value) => {
+    if (!Number.isFinite(value)) return "";
+    if (value >= 100) return String(Math.round(value / 5) * 5);
+    if (value >= 10) return String(Math.round(value));
+    if (value >= 1) return trimNumber(value, 1);
+    return trimNumber(value, 2);
+  };
+  const formatQuantity = (parsed, scale) => {
+    const isGrams = /^\\s*(g|gram|grams)\\b/i.test(parsed.suffix);
+    const format = (value) => isGrams ? formatGrams(value * scale) : formatFraction(value * scale);
+    const amount = parsed.second == null
+      ? format(parsed.first)
+      : format(parsed.first) + "-" + format(parsed.second);
+    return parsed.prefix + amount + parsed.suffix;
+  };
+  const scaleQuantity = (text, scale) => {
+    const parsed = parseQuantity(text);
+    return parsed ? formatQuantity(parsed, scale) : text;
+  };
+  const activeUnits = (root) => root.dataset.units || "original";
+  const currentOptionBase = (root, option) => {
+    const units = activeUnits(root);
+    return option?.dataset[units === "metric" ? "baseMetric" : "baseOriginal"] || option?.dataset.baseOriginal || option?.dataset.baseMetric || "";
+  };
+  const updateScaleTarget = (root, scale) => {
+    const target = root.querySelector("[data-scale-target]");
+    const select = root.querySelector("[data-scale-key]");
+    if (!target || !select) return;
+    const option = select.selectedOptions[0];
+    const base = currentOptionBase(root, option);
+    target.value = base ? scaleQuantity(base, scale) : "";
+  };
+  const applyScale = (root, scale, persist = true) => {
+    root.dataset.scale = String(scale);
+    root.querySelectorAll("[data-scale-qty]").forEach((node) => {
+      const base = node.dataset.scaleQty || node.textContent || "";
+      node.textContent = scaleQuantity(base, scale);
+    });
+    const input = root.querySelector("[data-scale-factor]");
+    if (input) input.value = trimNumber(scale, 2);
+    updateScaleTarget(root, scale);
+    if (persist) localStorage.setItem(scaleKey, String(scale));
+  };
+  const setUnits = (value) => {
+    roots.forEach((root) => {
+      root.dataset.units = value;
+      root.querySelectorAll("[data-unit-choice]").forEach((button) => {
+        button.setAttribute("aria-pressed", button.dataset.unitChoice === value ? "true" : "false");
+      });
+      updateScaleTarget(root, clampScale(root.dataset.scale || 1));
+    });
+    localStorage.setItem(unitKey, value);
+  };
+  roots.forEach((root) => {
+    root.querySelectorAll("[data-scale-factor]").forEach((input) => {
+      input.addEventListener("input", () => applyScale(root, clampScale(input.value)));
+    });
+    root.querySelectorAll("[data-scale-key]").forEach((select) => {
+      select.addEventListener("change", () => updateScaleTarget(root, clampScale(root.dataset.scale || 1)));
+    });
+    root.querySelectorAll("[data-scale-target]").forEach((input) => {
+      input.addEventListener("change", () => {
+        const select = root.querySelector("[data-scale-key]");
+        const option = select?.selectedOptions[0];
+        const baseParsed = parseQuantity(currentOptionBase(root, option));
+        const targetParsed = parseQuantity(input.value);
+        if (!baseParsed || !targetParsed || !baseParsed.first) return updateScaleTarget(root, clampScale(root.dataset.scale || 1));
+        applyScale(root, clampScale(targetParsed.first / baseParsed.first));
+      });
+    });
+    root.querySelectorAll("[data-scale-reset]").forEach((button) => {
+      button.addEventListener("click", () => applyScale(root, 1));
+    });
+    root.querySelectorAll("[data-unit-choice]").forEach((button) => {
+      button.addEventListener("click", () => setUnits(button.dataset.unitChoice || "original"));
+    });
+    if (${enableScale ? "true" : "false"}) applyScale(root, clampScale(localStorage.getItem(scaleKey) || 1), false);
+  });
+  if (${enableUnits ? "true" : "false"}) setUnits(localStorage.getItem(unitKey) || roots[0]?.dataset.units || "original");
+})();
+</script>`;
+}
+
+function stepMap(recipe: ReciPopRecipe): Map<string, ReciPopStep> {
+  return new Map((recipe.steps ?? []).map((step) => [step.id, step]));
+}
+
+function assetUrl(recipe: ReciPopRecipe, filename: string, prefix: string): string {
+  const base = recipe.assetBasePath ?? "assets";
+  if (/^(?:https?:)?\/\//.test(base) || base.startsWith("/")) {
+    return `${base.replace(/\/$/, "")}/${filename}`;
+  }
+  if (recipe._recipeShortname && (base === "assets" || !base.includes("/"))) {
+    return `${base.replace(/\/$/, "")}/${filename}`;
+  }
+  return `${prefix}${base}/${filename}`.replace(/\/+/g, "/").replace(":/", "://");
+}
+
+function assetExists(recipe: ReciPopRecipe, filename: string): boolean {
+  const base = recipe.assetBasePath ?? "assets";
+  if (recipe._recipeDir && !base.startsWith("/") && !/^(?:https?:)?\/\//.test(base)) {
+    return existsSync(join(recipe._recipeDir, base, filename));
+  }
+  return existsSync(join(ROOT, base, filename));
+}
+
+function supportsResponsiveAsset(recipe: ReciPopRecipe, filename: string): boolean {
+  const base = recipe.assetBasePath ?? "assets";
+  return /\.(?:png|jpe?g)$/i.test(filename)
+    && Boolean(recipe._recipeShortname)
+    && !base.startsWith("/")
+    && !/^(?:https?:)?\/\//.test(base)
+    && (base === "assets" || !base.includes("/"));
+}
+
+function responsiveAssetFilename(filename: string, width: number): string {
+  return `generated/${filename.replace(/\.[^.]+$/, `-${width}.webp`)}`;
+}
+
+function responsiveImageSizes(className: string): string {
+  if (className.includes("hero")) return "(max-width: 720px) calc(100vw - 40px), min(980px, calc(100vw - 64px))";
+  return "(max-width: 720px) calc(100vw - 74px), 430px";
+}
+
+function renderReciPopImage(recipe: ReciPopRecipe, filename: string | undefined, prefix: string, className: string): string {
+  if (!filename) return "";
+  const asset = (recipe.assets ?? []).find((item) => item.filename === filename);
+  const alt = asset?.alt ?? filename.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ");
+  if (assetExists(recipe, filename)) {
+    const masterUrl = assetUrl(recipe, filename, prefix);
+    const loading = className.includes("hero") ? "eager" : "lazy";
+    const fetchPriority = className.includes("hero") ? ' fetchpriority="high"' : "";
+    const img = supportsResponsiveAsset(recipe, filename)
+      ? `<picture>
+<source type="image/webp" srcset="${RESPONSIVE_IMAGE_WIDTHS.map((width) => `${assetUrl(recipe, responsiveAssetFilename(filename, width), prefix)} ${width}w`).join(", ")}" sizes="${escapeHtml(responsiveImageSizes(className))}">
+<img src="${masterUrl}" alt="${escapeHtml(alt)}" loading="${loading}" decoding="async"${fetchPriority}>
+</picture>`
+      : `<img src="${masterUrl}" alt="${escapeHtml(alt)}" loading="${loading}" decoding="async"${fetchPriority}>`;
+    return `<figure class="${className}"><a class="sn-art-link" href="${masterUrl}" target="_blank" rel="noreferrer">${img}</a></figure>`;
+  }
+  return `<figure class="${className} sn-art--missing"><div><strong>Illustration pending</strong><span>${escapeHtml(alt)}</span></div></figure>`;
+}
+
+function renderStoryboardLink(recipe: ReciPopRecipe, prefix: string): string {
+  const filename = recipe.storyboard?.filename;
+  if (!filename || !assetExists(recipe, filename)) return "";
+  const alt = recipe.storyboard?.alt || "visual continuity storyboard";
+  return `<p class="sn-recipop__storyboard"><a href="${assetUrl(recipe, filename, prefix)}" target="_blank" rel="noreferrer">Open storyboard reference</a><span>${escapeHtml(alt)}</span></p>`;
+}
+
+function renderReciPopFacts(recipe: ReciPopRecipe): string {
+  const facts = (recipe.quickFacts ?? []).filter((fact) => fact.label && fact.value);
+  if (!facts.length) return "";
+  return `<dl class="sn-recipop__facts">
+${facts.map((fact) => `<div><dt>${escapeHtml(fact.label)}</dt><dd>${escapeHtml(fact.value)}</dd></div>`).join("\n")}
+</dl>`;
+}
+
+function renderReciPopIngredientRows(rows: ReciPopIngredient[] = []): string {
+  if (!rows.length) return "";
+  return `<table class="sn-flow-ingredients"><tbody>
+${rows.map((row) => {
+    const qty = row.qty ?? row.quantity ?? "";
+    const metric = row.amounts?.metric ?? "";
+    const item = row.item ?? row.ingredient ?? "";
+    const originalAttrs = qty ? ` data-scale-qty="${escapeHtml(qty)}"` : "";
+    const metricAttrs = metric ? ` data-scale-qty="${escapeHtml(metric)}"` : "";
+    const qtyHtml = metric
+      ? `<span data-unit-value="original"${originalAttrs}>${escapeHtml(qty)}</span><span data-unit-value="metric"${metricAttrs}>${escapeHtml(metric)}</span>`
+      : `<span${originalAttrs}>${escapeHtml(qty)}</span>`;
+    if (!qty && !metric) {
+      return `<tr class="sn-flow-ingredients__component"><td colspan="2"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+    }
+    return `<tr><td>${qtyHtml}</td><td><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+  }).join("\n")}
+</tbody></table>`;
+}
+
+function renderStepMeta(step: ReciPopStep): string {
+  const pieces = [
+    step.timeLabel,
+    step.duration?.activeLabel,
+    step.duration?.passiveLabel ? `wait ${step.duration.passiveLabel}` : "",
+    ...(step.resources ?? []).slice(0, 3),
+  ].filter(Boolean);
+  return pieces.length ? `<p class="sn-flow-step__meta">${pieces.map(escapeHtml).join(" · ")}</p>` : "";
+}
+
+function renderStepFooter(step: ReciPopStep): string {
+  const makes = (step.makes ?? []).map((item) => item.item).filter(Boolean);
+  const notes = step.notes ?? [];
+  if (!makes.length && !notes.length) return "";
+  return `<div class="sn-flow-step__footer">
+${makes.length ? `<p><b>Makes</b> ${makes.map(escapeHtml).join(", ")}</p>` : ""}
+${notes.map((note) => `<p>${escapeHtml(note)}</p>`).join("\n")}
+</div>`;
+}
+
+function phaseClass(phase?: string): string {
+  const p = String(phase ?? "").toLowerCase();
+  if (["prep", "setup"].includes(p)) return "sn-flow-step--prep";
+  if (["cook", "bake"].includes(p)) return "sn-flow-step--cook";
+  if (["wait", "finish"].includes(p)) return "sn-flow-step--finish";
+  return "sn-flow-step--mix";
+}
+
+function phaseBucket(phase?: string): "prep" | "mix" | "cook" | "finish" {
+  const p = String(phase ?? "").toLowerCase();
+  if (["prep", "setup"].includes(p)) return "prep";
+  if (["cook", "bake"].includes(p)) return "cook";
+  if (["wait", "finish"].includes(p)) return "finish";
+  return "mix";
+}
+
+function renderPhaseKey(recipe: ReciPopRecipe): string {
+  const present = new Set((recipe.steps ?? []).map((step) => phaseBucket(step.phase)));
+  const items = [
+    { id: "prep", label: "Prep/setup", className: "sn-flow-step--prep" },
+    { id: "mix", label: "Mix/assemble", className: "sn-flow-step--mix" },
+    { id: "cook", label: "Cook/bake", className: "sn-flow-step--cook" },
+    { id: "finish", label: "Wait/finish", className: "sn-flow-step--finish" },
+  ].filter((item) => present.has(item.id as any));
+  if (items.length < 2) return "";
+  return `<div class="sn-flow-key" aria-label="Step color key">
+${items.map((item) => `<span class="${item.className}"><i aria-hidden="true"></i>${escapeHtml(item.label)}</span>`).join("\n")}
+</div>`;
+}
+
+function renderReciPopStep(recipe: ReciPopRecipe, step: ReciPopStep, prefix: string, compact = false): string {
+  return `<article class="sn-flow-step ${phaseClass(step.phase)}${compact ? " sn-flow-step--compact" : ""}">
+<div class="sn-flow-step__rail"><span>${escapeHtml(String(step.number ?? ""))}</span></div>
+<div class="sn-flow-step__copy">
+${renderReciPopImage(recipe, step.asset, prefix, "sn-flow-step__art")}
+<div class="sn-flow-step__main">
+<header>
+<h2>${escapeHtml(step.title ?? "Step")}</h2>
+${renderStepMeta(step)}
+</header>
+${step.instruction ? `<p class="sn-flow-step__instruction">${escapeHtml(step.instruction)}</p>` : ""}
+${renderReciPopIngredientRows(step.ingredients ?? [])}
+${renderStepFooter(step)}
+</div>
+</div>
+</article>`;
+}
+
+function renderParallelSection(recipe: ReciPopRecipe, section: any, steps: Map<string, ReciPopStep>, prefix: string): string {
+  const lanes = Array.isArray(section.lanes) ? section.lanes : [];
+  return `<section class="sn-flow-parallel">
+${section.summary ? `<p class="sn-flow-parallel__summary">${escapeHtml(section.summary)}</p>` : ""}
+<div class="sn-flow-parallel__lanes">
+${lanes.map((lane: any) => `<div class="sn-flow-parallel__lane">
+${(lane.steps ?? []).map((id: string) => {
+    const step = steps.get(id);
+    return step ? renderReciPopStep(recipe, step, prefix, true) : "";
+  }).join("\n")}
+</div>`).join("\n")}
+</div>
+${section.converge?.label ? `<p class="sn-flow-parallel__converge">${escapeHtml(section.converge.label)}</p>` : ""}
+</section>`;
+}
+
+function renderReciPopProcess(recipe: ReciPopRecipe, prefix: string): string {
+  const steps = stepMap(recipe);
+  const sections = recipe.layout?.sections ?? (recipe.steps ?? []).map((step) => ({ type: "step", step: step.id }));
+  return `<div class="sn-flow">
+${sections.map((section: any) => {
+    if (section.type === "parallel") return renderParallelSection(recipe, section, steps, prefix);
+    const step = steps.get(section.step);
+    return step ? renderReciPopStep(recipe, step, prefix) : "";
+  }).join("\n")}
+</div>`;
+}
+
+function renderReciPopRecipe(flow: ReciPopRecipe, sourceRecipe: Recipe, prefix: string): string {
+  const units = flow.defaultUnitSystem ?? "original";
+  const heroes = flow.heroAssets ?? [];
+  const hasUnits = hasMetricUnits(flow);
+  const hasScale = hasScalableQuantities(flow);
+  return `<section class="sn-recipop" data-units="${escapeHtml(units)}">
+<div class="sn-recipop__toolbar">
+${renderUnitToggle(flow)}
+${renderScaleControls(flow)}
+<a href="recipe.json">JSON</a>
+</div>
+${heroes.length ? `<div class="sn-recipop__hero-art">${heroes.map((filename) => renderReciPopImage(flow, filename, prefix, "sn-recipop__hero-image")).join("\n")}</div>` : ""}
+${renderReciPopFacts(flow)}
+${renderPhaseKey(flow)}
+${renderReciPopProcess(flow, prefix)}
+${renderStoryboardLink(flow, prefix)}
+<details class="sn-source-recipe">
+<summary>Original recipe text</summary>
+${renderMd(sourceRecipe.bodyMd)}
+</details>
+</section>
+${hasUnits || hasScale ? renderReciPopScript(hasUnits, hasScale, flow.id) : ""}`;
+}
+
 function renderRecipe(r: Recipe, all: Recipe[]): string {
   const prefix = "../../";
+  const reciPop = loadReciPop(r.shortname);
   const content = `${header("home", prefix)}
 <main>
 <section class="sn-detail__top">
@@ -291,10 +759,10 @@ function renderRecipe(r: Recipe, all: Recipe[]): string {
 </section>
 
 <div class="container">
-<div class="sn-detail__body">
-${renderGallery(r, prefix)}
+<div class="sn-detail__body${reciPop ? " sn-detail__body--flow" : ""}">
+${reciPop ? renderReciPopRecipe(reciPop, r, prefix) : `${renderGallery(r, prefix)}
 ${renderIngredientsPanel(r)}
-${renderMethodPanel(r)}
+${renderMethodPanel(r)}`}
 </div>
 </div>
 </main>
@@ -340,7 +808,7 @@ photos: []
 
 Step the first. Step the second.</code></pre>
 
-<p>Photos go in <code>recipe_files/</code> in the same PR; list their filenames under <code>photos:</code> in the frontmatter.</p>
+<p>Put each recipe in <code>recipes/your_recipe/recipe.md</code>. Reci-pop recipes can also include <code>recipe.json</code>, generated <code>assets/</code>, and prompt/debug files in the same folder.</p>
 </div>
 </section>
 </main>
@@ -358,11 +826,41 @@ function copyFileIfExists(src: string, dest: string) {
   cpSync(src, dest);
 }
 
+function generateResponsiveRecipeImages(recipe: Recipe, flow: ReciPopRecipe | null, destRecipeDir: string) {
+  if (!flow) return;
+  const base = flow.assetBasePath ?? "assets";
+  if (base !== "assets") return;
+  const srcAssetsDir = join(recipe.localDir, base);
+  if (!existsSync(srcAssetsDir)) return;
+  const destGeneratedDir = join(destRecipeDir, base, "generated");
+  mkdirSync(destGeneratedDir, { recursive: true });
+
+  const imageNames = readdirSync(srcAssetsDir).filter((name) => /\.(?:png|jpe?g)$/i.test(name));
+  for (const imageName of imageNames) {
+    const src = join(srcAssetsDir, imageName);
+    for (const width of RESPONSIVE_IMAGE_WIDTHS) {
+      const dest = join(destGeneratedDir, imageName.replace(/\.[^.]+$/, `-${width}.webp`));
+      execFileSync("magick", [
+        src,
+        "-auto-orient",
+        "-strip",
+        "-resize",
+        `${width}x>`,
+        "-quality",
+        RESPONSIVE_IMAGE_QUALITY,
+        "-define",
+        "webp:method=5",
+        dest,
+      ], { stdio: "ignore" });
+    }
+  }
+}
+
 function build() {
   rmSync(DIST, { recursive: true, force: true });
   mkdirSync(DIST, { recursive: true });
 
-  const files = readdirSync(RECIPES_DIR).filter((f) => f.endsWith(".md"));
+  const files = readdirSync(RECIPES_DIR).filter((f) => existsSync(join(RECIPES_DIR, f, "recipe.md")));
   const recipes = files.map(loadRecipe);
   const sorted = [...recipes].sort((a, b) => a.title.localeCompare(b.title));
 
@@ -371,13 +869,22 @@ function build() {
   writeFileSync(join(DIST, "add-recipe", "index.html"), renderAddRecipe());
   for (const r of sorted) {
     const dir = join(DIST, "recipe", r.shortname);
+    const flow = loadReciPop(r.shortname);
     mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, "index.html"), renderRecipe(r, sorted));
+    copyFileIfExists(join(r.localDir, "recipe.md"), join(dir, "recipe.md"));
+    copyFileIfExists(join(r.localDir, "recipe.json"), join(dir, "recipe.json"));
+    copyFileIfExists(join(r.localDir, "image-plan.json"), join(dir, "image-plan.json"));
+    copyDirIfExists(join(r.localDir, "assets"), join(dir, "assets"));
+    generateResponsiveRecipeImages(r, flow, dir);
+    copyDirIfExists(join(r.localDir, "prompts"), join(dir, "prompts"));
   }
 
   copyDirIfExists(join(ROOT, "images"), join(DIST, "images"));
   copyDirIfExists(join(ROOT, "recipe_files"), join(DIST, "recipe_files"));
   copyDirIfExists(ASSETS_DIR, join(DIST, "assets"));
+  copyDirIfExists(STYLES_DIR, join(DIST, "styles"));
+  copyDirIfExists(join(ROOT, "schemas"), join(DIST, "schemas"));
   copyFileIfExists(join(ROOT, "favicon2.ico"), join(DIST, "favicon2.ico"));
   copyFileIfExists(join(ROOT, "CNAME"), join(DIST, "CNAME"));
   copyFileIfExists(join(ROOT, "robots.txt"), join(DIST, "robots.txt"));

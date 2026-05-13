@@ -1,0 +1,839 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "chocolate-cake",
+  "title": "Chocolate cake",
+  "subtitle": "from epicurious.com",
+  "source": {
+    "submittedBy": "Josh",
+    "date": "2003-08-16",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Active",
+      "value": "~2 h 20 min"
+    },
+    {
+      "label": "Heat",
+      "value": "cold oven set to 350 F"
+    },
+    {
+      "label": "Stations",
+      "value": "oven + stovetop + counter"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-chocolate-cake.png",
+    "placement": "Continuity storyboard",
+    "alt": "Chocolate cake visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "oven",
+        "description": "Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "stovetop",
+        "description": "Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "counter",
+        "description": "Use one consistent counter design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "small bowl",
+        "description": "Use one consistent small bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "bowl",
+        "description": "Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "mixer",
+        "description": "Use one consistent mixer design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "cake flour",
+        "description": "2 1/4 cups dry; Not self-rising.; ingredient"
+      },
+      {
+        "name": "unsweetened Dutch-process cocoa powder",
+        "description": "3/4 cup dry; ingredient"
+      },
+      {
+        "name": "salt",
+        "description": "1/2 teaspoon dry; ingredient"
+      },
+      {
+        "name": "baking soda",
+        "description": "1/4 teaspoon sour cream mix; ingredient"
+      },
+      {
+        "name": "sour cream",
+        "description": "1 cup / 8 1/2 ounces sour cream mix; ingredient"
+      },
+      {
+        "name": "unsalted butter",
+        "description": "2 1/4 sticks / 1 cup plus 2 tablespoons butter base; softened; ingredient"
+      },
+      {
+        "name": "granulated sugar",
+        "description": "1 1/2 cups butter base; ingredient"
+      },
+      {
+        "name": "dark brown sugar",
+        "description": "1 1/2 cups butter base; packed; ingredient"
+      },
+      {
+        "name": "chocolate extract",
+        "description": "1 tablespoon butter base; ingredient"
+      },
+      {
+        "name": "vanilla extract",
+        "description": "1 teaspoon butter base; ingredient"
+      },
+      {
+        "name": "large eggs",
+        "description": "6 butter base; ingredient"
+      },
+      {
+        "name": "fine-quality bittersweet chocolate",
+        "description": "3 ounces glaze; chopped; Not unsweetened.; ingredient"
+      },
+      {
+        "name": "unsalted butter",
+        "description": "2 tablespoons glaze; ingredient"
+      },
+      {
+        "name": "sour cream and strawberries",
+        "description": "serving; ingredient"
+      },
+      {
+        "name": "flour cocoa mix",
+        "description": "sift: 2 1/4 cups cake flour + 3/4 cup unsweetened Dutch-process cocoa powder + 1/2 teaspoon salt"
+      },
+      {
+        "name": "sour cream mixture",
+        "description": "stir: 1/4 teaspoon baking soda + 1 cup / 8 1/2 ounces sour cream"
+      },
+      {
+        "name": "light fluffy butter sugar base",
+        "description": "beat: 2 1/4 sticks / 1 cup plus 2 tablespoons unsalted butter (softened) + 1 1/2 cups granulated sugar + 1 1/2 cups dark brown sugar (packed)"
+      },
+      {
+        "name": "egg extract base",
+        "description": "beat: light fluffy butter sugar base + 1 tablespoon chocolate extract + 1 teaspoon vanilla extract + 6 large eggs"
+      },
+      {
+        "name": "chocolate cake batter",
+        "description": "beat: egg extract base + flour cocoa mix + sour cream mixture"
+      },
+      {
+        "name": "baked chocolate cake",
+        "description": "bake: chocolate cake batter"
+      },
+      {
+        "name": "cooled chocolate cake",
+        "description": "cool: baked chocolate cake"
+      },
+      {
+        "name": "smooth chocolate glaze",
+        "description": "melt: 3 ounces fine-quality bittersweet chocolate (chopped) + 2 tablespoons unsalted butter"
+      },
+      {
+        "name": "glazed chocolate cake",
+        "description": "pipe: cooled chocolate cake + smooth chocolate glaze"
+      },
+      {
+        "name": "set glazed cake",
+        "description": "set: glazed chocolate cake"
+      },
+      {
+        "name": "served chocolate cake",
+        "description": "serve: set glazed cake + sour cream and strawberries"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "flour cocoa mix",
+        "description": "sift from cake flour + unsweetened Dutch-process cocoa powder + salt; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "sour cream mixture",
+        "description": "stir from baking soda + sour cream; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "light fluffy butter sugar base",
+        "description": "beat from unsalted butter + granulated sugar + dark brown sugar; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "egg extract base",
+        "description": "beat from light fluffy butter sugar base + chocolate extract + vanilla extract + large eggs; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "chocolate cake batter",
+        "description": "beat from egg extract base + flour cocoa mix + sour cream mixture; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "baked chocolate cake",
+        "description": "bake from chocolate cake batter; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "cooled chocolate cake",
+        "description": "cool from baked chocolate cake; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "smooth chocolate glaze",
+        "description": "melt from fine-quality bittersweet chocolate + unsalted butter; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "glazed chocolate cake",
+        "description": "pipe from cooled chocolate cake + smooth chocolate glaze; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "set glazed cake",
+        "description": "set from glazed chocolate cake; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "served chocolate cake",
+        "description": "serve from set glazed cake + sour cream and strawberries; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Sift Dry: Into a small bowl sift together flour, unsweetened cocoa powder, and salt. Result: flour cocoa mix.",
+      "Step 2, Mix Sour Cream: In another small bowl stir together baking soda and sour cream. Result: sour cream mixture.",
+      "Step 3, Cream Butter Sugars: Beat together butter and sugars until light and fluffy. Result: light fluffy butter sugar base.",
+      "Step 4, Add Extracts Eggs: Beat in extracts and add eggs 1 at a time, beating well after each addition. Result: egg extract base.",
+      "Step 5, Make Batter: With mixer at low speed, add flour mixture and sour cream mixture alternately in batches, beating until just combined. Result: chocolate cake batter.",
+      "Step 6, Bake Cake: Butter and flour a 12-cup bundt pan. Pour batter into the pan and put in middle of cold oven. Set oven to 350 F and bake cake 1 hour and 25 minutes, or until a tester comes out clean. Result: baked chocolate cake. Tool/station: oven.",
+      "Step 7, Cool Cake: Cool cake in pan on a rack 15 minutes and turn out onto rack to cool completely. Result: cooled chocolate cake.",
+      "Step 8, Make Glaze: Chop bittersweet chocolate and melt it with butter in a double boiler or metal bowl set over barely simmering water, stirring until smooth. Result: smooth chocolate glaze. Tool/station: stovetop.",
+      "Step 9, Pipe Glaze: Transfer glaze to a pastry bag or plastic bag and pipe glaze back and forth over top of cake, letting it drip down sides. Result: glazed chocolate cake.",
+      "Step 10, Set Glaze: Let glaze set 30 minutes at room temperature. Result: set glazed cake. Tool/station: counter.",
+      "Step 11, Serve: Serve cake with dollops of sour cream and strawberries. Result: served chocolate cake."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Chocolate cake. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-chocolate-cake.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "sift-dry"
+      },
+      {
+        "type": "step",
+        "step": "mix-sour-cream"
+      },
+      {
+        "type": "step",
+        "step": "cream-butter-sugars"
+      },
+      {
+        "type": "step",
+        "step": "add-extracts-eggs"
+      },
+      {
+        "type": "step",
+        "step": "make-batter"
+      },
+      {
+        "type": "step",
+        "step": "bake-cake"
+      },
+      {
+        "type": "step",
+        "step": "cool-cake"
+      },
+      {
+        "type": "step",
+        "step": "make-glaze"
+      },
+      {
+        "type": "step",
+        "step": "pipe-glaze"
+      },
+      {
+        "type": "step",
+        "step": "set-glaze"
+      },
+      {
+        "type": "step",
+        "step": "serve"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "sift-dry",
+      "sourceActionId": "sift_dry",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "step",
+      "title": "Sift Dry",
+      "instruction": "Into a small bowl sift together flour, unsweetened cocoa powder, and salt.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "2 1/4 cups",
+          "item": "cake flour",
+          "note": "Not self-rising.",
+          "amounts": {
+            "original": "2 1/4 cups",
+            "metric": "260 g"
+          }
+        },
+        {
+          "qty": "3/4 cup",
+          "item": "unsweetened Dutch-process cocoa powder",
+          "amounts": {
+            "original": "3/4 cup",
+            "metric": "64 g"
+          }
+        },
+        {
+          "qty": "1/2 teaspoon",
+          "item": "salt",
+          "amounts": {
+            "original": "1/2 teaspoon",
+            "metric": "3 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "flour cocoa mix"
+        }
+      ],
+      "notes": [],
+      "asset": "step-01-sift-dry.png"
+    },
+    {
+      "id": "mix-sour-cream",
+      "sourceActionId": "mix_sour_cream",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Sour Cream",
+      "instruction": "In another small bowl stir together baking soda and sour cream.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "1/4 teaspoon",
+          "item": "baking soda",
+          "amounts": {
+            "original": "1/4 teaspoon",
+            "metric": "1.2 g"
+          }
+        },
+        {
+          "qty": "1 cup / 8 1/2 ounces",
+          "item": "sour cream",
+          "amounts": {
+            "original": "1 cup / 8 1/2 ounces",
+            "metric": "240 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "sour cream mixture"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-mix-sour-cream.png"
+    },
+    {
+      "id": "cream-butter-sugars",
+      "sourceActionId": "cream_butter_sugars",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Cream Butter Sugars",
+      "instruction": "Beat together butter and sugars until light and fluffy.",
+      "duration": {
+        "activeMinutes": 10
+      },
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "2 1/4 sticks / 1 cup plus 2 tablespoons",
+          "item": "unsalted butter",
+          "note": "softened",
+          "amounts": {
+            "original": "2 1/4 sticks / 1 cup plus 2 tablespoons",
+            "metric": "740 g"
+          }
+        },
+        {
+          "qty": "1 1/2 cups",
+          "item": "granulated sugar",
+          "amounts": {
+            "original": "1 1/2 cups",
+            "metric": "300 g"
+          }
+        },
+        {
+          "qty": "1 1/2 cups",
+          "item": "dark brown sugar",
+          "note": "packed",
+          "amounts": {
+            "original": "1 1/2 cups",
+            "metric": "330 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "light fluffy butter sugar base"
+        }
+      ],
+      "notes": [
+        "Source timing: about 10 minutes",
+        "Method: electric mixer"
+      ],
+      "asset": "step-03-cream-butter-sugars.png"
+    },
+    {
+      "id": "add-extracts-eggs",
+      "sourceActionId": "add_extracts_eggs",
+      "number": 4,
+      "timeLabel": "10 min",
+      "phase": "mix",
+      "title": "Add Extracts Eggs",
+      "instruction": "Beat in extracts and add eggs 1 at a time, beating well after each addition.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "light fluffy butter sugar base"
+        },
+        {
+          "qty": "1 tablespoon",
+          "item": "chocolate extract",
+          "note": "optional",
+          "amounts": {
+            "original": "1 tablespoon"
+          }
+        },
+        {
+          "qty": "1 teaspoon",
+          "item": "vanilla extract",
+          "amounts": {
+            "original": "1 teaspoon",
+            "metric": "4.2 g"
+          }
+        },
+        {
+          "qty": "6",
+          "item": "large eggs",
+          "amounts": {
+            "original": "6"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "egg extract base"
+        }
+      ],
+      "notes": [
+        "Method: electric mixer"
+      ],
+      "asset": "step-04-add-extracts-eggs.png"
+    },
+    {
+      "id": "make-batter",
+      "sourceActionId": "make_batter",
+      "number": 5,
+      "timeLabel": "10 min",
+      "phase": "mix",
+      "title": "Make Batter",
+      "instruction": "With mixer at low speed, add flour mixture and sour cream mixture alternately in batches, beating until just combined.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "egg extract base"
+        },
+        {
+          "qty": "",
+          "item": "flour cocoa mix"
+        },
+        {
+          "qty": "",
+          "item": "sour cream mixture"
+        }
+      ],
+      "makes": [
+        {
+          "item": "chocolate cake batter"
+        }
+      ],
+      "notes": [
+        "Source timing: until just combined",
+        "Method: mixer at low speed"
+      ],
+      "asset": "step-05-make-batter.png"
+    },
+    {
+      "id": "bake-cake",
+      "sourceActionId": "bake_cake",
+      "number": 6,
+      "timeLabel": "10 min",
+      "phase": "bake",
+      "title": "Bake Cake",
+      "instruction": "Butter and flour a 12-cup bundt pan. Pour batter into the pan and put in middle of cold oven. Set oven to 350 F and bake cake 1 hour and 25 minutes, or until a tester comes out clean.",
+      "duration": {
+        "activeMinutes": 85
+      },
+      "resources": [
+        "oven"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "chocolate cake batter"
+        }
+      ],
+      "makes": [
+        {
+          "item": "baked chocolate cake"
+        }
+      ],
+      "notes": [
+        "Heat: cold oven set to 350 F",
+        "Source timing: 1 hour 25 minutes, or until a tester comes out clean"
+      ],
+      "asset": "step-06-bake-cake.png"
+    },
+    {
+      "id": "cool-cake",
+      "sourceActionId": "cool_cake",
+      "number": 7,
+      "timeLabel": "95 min",
+      "phase": "wait",
+      "title": "Cool Cake",
+      "instruction": "Cool cake in pan on a rack 15 minutes and turn out onto rack to cool completely.",
+      "duration": {
+        "activeMinutes": 15
+      },
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "baked chocolate cake"
+        }
+      ],
+      "makes": [
+        {
+          "item": "cooled chocolate cake"
+        }
+      ],
+      "notes": [
+        "Source timing: 15 minutes in pan, then until completely cool"
+      ],
+      "asset": "step-07-cool-cake.png"
+    },
+    {
+      "id": "make-glaze",
+      "sourceActionId": "make_glaze",
+      "number": 8,
+      "timeLabel": "110 min",
+      "phase": "finish",
+      "title": "Make Glaze",
+      "instruction": "Chop bittersweet chocolate and melt it with butter in a double boiler or metal bowl set over barely simmering water, stirring until smooth.",
+      "duration": {},
+      "resources": [
+        "stovetop"
+      ],
+      "ingredients": [
+        {
+          "qty": "3 ounces",
+          "item": "fine-quality bittersweet chocolate",
+          "note": "chopped; Not unsweetened.",
+          "amounts": {
+            "original": "3 ounces",
+            "metric": "85 g"
+          }
+        },
+        {
+          "qty": "2 tablespoons",
+          "item": "unsalted butter",
+          "amounts": {
+            "original": "2 tablespoons",
+            "metric": "36 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "smooth chocolate glaze"
+        }
+      ],
+      "notes": [
+        "Source timing: until smooth",
+        "Method: double boiler or metal bowl over barely simmering water"
+      ],
+      "asset": "step-08-make-glaze.png"
+    },
+    {
+      "id": "pipe-glaze",
+      "sourceActionId": "pipe_glaze",
+      "number": 9,
+      "timeLabel": "110 min",
+      "phase": "step",
+      "title": "Pipe Glaze",
+      "instruction": "Transfer glaze to a pastry bag or plastic bag and pipe glaze back and forth over top of cake, letting it drip down sides.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "cooled chocolate cake"
+        },
+        {
+          "qty": "",
+          "item": "smooth chocolate glaze"
+        }
+      ],
+      "makes": [
+        {
+          "item": "glazed chocolate cake"
+        }
+      ],
+      "notes": [
+        "Method: pastry bag #3 tip or snipped plastic bag"
+      ],
+      "asset": "step-09-pipe-glaze.png"
+    },
+    {
+      "id": "set-glaze",
+      "sourceActionId": "set_glaze",
+      "number": 10,
+      "timeLabel": "110 min",
+      "phase": "wait",
+      "title": "Set Glaze",
+      "instruction": "Let glaze set 30 minutes at room temperature.",
+      "duration": {
+        "activeMinutes": 30
+      },
+      "resources": [
+        "counter"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "glazed chocolate cake"
+        }
+      ],
+      "makes": [
+        {
+          "item": "set glazed cake"
+        }
+      ],
+      "notes": [
+        "Source timing: 30 minutes"
+      ],
+      "asset": "step-10-set-glaze.png"
+    },
+    {
+      "id": "serve",
+      "sourceActionId": "serve",
+      "number": 11,
+      "timeLabel": "140 min",
+      "phase": "finish",
+      "title": "Serve",
+      "instruction": "Serve cake with dollops of sour cream and strawberries.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "set glazed cake"
+        },
+        {
+          "qty": "",
+          "item": "sour cream and strawberries",
+          "note": "optional"
+        }
+      ],
+      "makes": [
+        {
+          "item": "served chocolate cake"
+        }
+      ],
+      "notes": [],
+      "asset": "step-11-serve.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-chocolate-cake.png",
+      "placement": "Recipe header",
+      "alt": "Chocolate cake finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished served chocolate cake for Chocolate cake, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-sift-dry.png",
+      "placement": "Step 1 card",
+      "alt": "Chocolate cake: Sift Dry",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Sift Dry: Into a small bowl sift together flour, unsweetened cocoa powder, and salt. Depict the ingredients or components used now: 2 1/4 cups cake flour; 3/4 cup unsweetened Dutch-process cocoa powder; 1/2 teaspoon salt. Show the resulting food state: flour cocoa mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-mix-sour-cream.png",
+      "placement": "Step 2 card",
+      "alt": "Chocolate cake: Mix Sour Cream",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-sift-dry.png"
+      ],
+      "prompt": "Mix Sour Cream: In another small bowl stir together baking soda and sour cream. Depict the ingredients or components used now: 1/4 teaspoon baking soda; 1 cup / 8 1/2 ounces sour cream. Show the resulting food state: sour cream mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-cream-butter-sugars.png",
+      "placement": "Step 3 card",
+      "alt": "Chocolate cake: Cream Butter Sugars",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-sift-dry.png",
+        "step-02-mix-sour-cream.png"
+      ],
+      "prompt": "Cream Butter Sugars: Beat together butter and sugars until light and fluffy. Depict the ingredients or components used now: 2 1/4 sticks / 1 cup plus 2 tablespoons unsalted butter (softened); 1 1/2 cups granulated sugar; 1 1/2 cups dark brown sugar (packed). Show the resulting food state: light fluffy butter sugar base. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-add-extracts-eggs.png",
+      "placement": "Step 4 card",
+      "alt": "Chocolate cake: Add Extracts Eggs",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-mix-sour-cream.png",
+        "step-03-cream-butter-sugars.png"
+      ],
+      "prompt": "Add Extracts Eggs: Beat in extracts and add eggs 1 at a time, beating well after each addition. Depict the ingredients or components used now: light fluffy butter sugar base; 1 tablespoon chocolate extract; 1 teaspoon vanilla extract; 6 large eggs. Show the resulting food state: egg extract base. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-make-batter.png",
+      "placement": "Step 5 card",
+      "alt": "Chocolate cake: Make Batter",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-cream-butter-sugars.png",
+        "step-04-add-extracts-eggs.png"
+      ],
+      "prompt": "Make Batter: With mixer at low speed, add flour mixture and sour cream mixture alternately in batches, beating until just combined. Depict the ingredients or components used now: egg extract base; flour cocoa mix; sour cream mixture. Show the resulting food state: chocolate cake batter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-06-bake-cake.png",
+      "placement": "Step 6 card",
+      "alt": "Chocolate cake: Bake Cake",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-add-extracts-eggs.png",
+        "step-05-make-batter.png"
+      ],
+      "prompt": "Bake Cake: Butter and flour a 12-cup bundt pan. Pour batter into the pan and put in middle of cold oven. Set oven to 350 F and bake cake 1 hour and 25 minutes, or until a tester comes out clean. Depict the ingredients or components used now: chocolate cake batter. Show the resulting food state: baked chocolate cake.  Tools or station: oven. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-07-cool-cake.png",
+      "placement": "Step 7 card",
+      "alt": "Chocolate cake: Cool Cake",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-05-make-batter.png",
+        "step-06-bake-cake.png"
+      ],
+      "prompt": "Cool Cake: Cool cake in pan on a rack 15 minutes and turn out onto rack to cool completely. Depict the ingredients or components used now: baked chocolate cake. Show the resulting food state: cooled chocolate cake. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-08-make-glaze.png",
+      "placement": "Step 8 card",
+      "alt": "Chocolate cake: Make Glaze",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-06-bake-cake.png",
+        "step-07-cool-cake.png"
+      ],
+      "prompt": "Make Glaze: Chop bittersweet chocolate and melt it with butter in a double boiler or metal bowl set over barely simmering water, stirring until smooth. Depict the ingredients or components used now: 3 ounces fine-quality bittersweet chocolate (chopped); 2 tablespoons unsalted butter. Show the resulting food state: smooth chocolate glaze.  Tools or station: stovetop. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-09-pipe-glaze.png",
+      "placement": "Step 9 card",
+      "alt": "Chocolate cake: Pipe Glaze",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-07-cool-cake.png",
+        "step-08-make-glaze.png"
+      ],
+      "prompt": "Pipe Glaze: Transfer glaze to a pastry bag or plastic bag and pipe glaze back and forth over top of cake, letting it drip down sides. Depict the ingredients or components used now: cooled chocolate cake; smooth chocolate glaze. Show the resulting food state: glazed chocolate cake. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-10-set-glaze.png",
+      "placement": "Step 10 card",
+      "alt": "Chocolate cake: Set Glaze",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-08-make-glaze.png",
+        "step-09-pipe-glaze.png"
+      ],
+      "prompt": "Set Glaze: Let glaze set 30 minutes at room temperature. Depict the ingredients or components used now: glazed chocolate cake. Show the resulting food state: set glazed cake.  Tools or station: counter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-11-serve.png",
+      "placement": "Step 11 card",
+      "alt": "Chocolate cake: Serve",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-09-pipe-glaze.png",
+        "step-10-set-glaze.png"
+      ],
+      "prompt": "Serve: Serve cake with dollops of sour cream and strawberries. Depict the ingredients or components used now: set glazed cake; sour cream and strawberries. Show the resulting food state: served chocolate cake. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}

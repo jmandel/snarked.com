@@ -1,0 +1,70 @@
+{
+  "recipeId": "cornmeal-pancakes",
+  "title": "Cornmeal Pancakes",
+  "generatedAt": "2026-05-13T15:36:37.822Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-cornmeal-pancakes.png",
+    "placement": "Continuity storyboard",
+    "alt": "Cornmeal Pancakes visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/cornmeal_pancakes/prompts/storyboard-cornmeal-pancakes.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-cornmeal-pancakes.png",
+      "placement": "Recipe header",
+      "alt": "Cornmeal Pancakes finished dish",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/cornmeal_pancakes/prompts/hero-cornmeal-pancakes.txt"
+    },
+    {
+      "filename": "step-01-mix-dry.png",
+      "placement": "Step 1 card",
+      "alt": "Cornmeal Pancakes: Mix Dry",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/cornmeal_pancakes/prompts/step-01-mix-dry.txt"
+    },
+    {
+      "filename": "step-02-mix-wet.png",
+      "placement": "Step 2 card",
+      "alt": "Cornmeal Pancakes: Mix Wet",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-mix-dry.png"
+      ],
+      "promptFile": "recipes/cornmeal_pancakes/prompts/step-02-mix-wet.txt"
+    },
+    {
+      "filename": "step-03-make-batter.png",
+      "placement": "Step 3 card",
+      "alt": "Cornmeal Pancakes: Make Batter",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-mix-dry.png",
+        "step-02-mix-wet.png"
+      ],
+      "promptFile": "recipes/cornmeal_pancakes/prompts/step-03-make-batter.txt"
+    },
+    {
+      "filename": "step-04-cook.png",
+      "placement": "Step 4 card",
+      "alt": "Cornmeal Pancakes: Cook",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-mix-wet.png",
+        "step-03-make-batter.png"
+      ],
+      "promptFile": "recipes/cornmeal_pancakes/prompts/step-04-cook.txt"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+Generate one standalone recipe illustration.
+
+Recipe context: Over-Size Chocolate Chip Cookies — Thick and chewy over-size chocolate chip cookies from Cook's Illustrated
+Target image: Over-Size Chocolate Chip Cookies: Form Cookies
+Used as: Step 4 card
+Aspect ratio: 4:3
+
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Over-Size Chocolate Chip Cookies
+Thick and chewy over-size chocolate chip cookies from Cook's Illustrated
+
+## Quick facts
+- Active: ~18 min
+- Heat: 325 F
+- Stations: oven
+
+## Process layout
+- Step: whisk-dry
+- Step: mix-wet
+- Step: make-dough
+- Step: form-cookies
+- Step: bake
+- Step: cool
+
+## Steps
+### 1. Whisk Dry
+Timing: 0 min
+Whisk flower, soda, salt in medium bowl.
+Uses:
+  - 2 c + 2 T flour (255 g) — Source says 'flower' in method.
+  - 1/2 t baking soda (2.3 g)
+  - 1/2 t salt (3 g)
+Makes: dry mix
+
+### 2. Mix Wet
+Timing: 0 min
+Mix butter and sugars until combined. Add egg, yolk, and vanilla.
+Uses:
+  - 12 T butter (170 g) — melted and cooled
+  - 1 c dark brown sugar (220 g) — packed
+  - 1/2 c granulated sugar (100 g)
+  - 1 large egg
+  - 1 egg yolk
+  - 2 t vanilla extract (8.4 g)
+Makes: butter and sugar mix
+
+### 3. Make Dough
+Timing: 0 min
+Add dry ingredients and beat until combined. Add chips.
+Uses:
+  - butter and sugar mix
+  - dry mix
+  - 3/2 c chocolate chips (255 g)
+Makes: cookie dough
+
+### 4. Form Cookies
+Timing: 0 min
+Form cookies, about 1/4 c each, and tear to create an attractive finish.
+Uses:
+  - cookie dough
+Makes: formed torn cookies
+
+### 5. Bake
+Timing: 0 min
+Station/tools: oven
+Heat oven to 325, grease baking sheets, and bake until light golden brown with soft puffy centers.
+Uses:
+  - formed torn cookies
+Makes: baked cookies
+Notes:
+- Heat: 325 F
+- Source timing: 15 to 18 minutes
+
+### 6. Cool
+Timing: 18 min
+Cool on sheets.
+Uses:
+  - baked cookies
+Makes: cooled chocolate chip cookies
+</recipe_context_markdown>
+
+RECIPE STORYBOARD
+Use the storyboard asset and rules as the primary continuity reference when available.
+Continuity storyboard asset: storyboard-chocolate-chip-cookies.png
+Intent: Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+Camera and angle: Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+Cookware/tools to preserve:
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- oven: Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- bowl: Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- whisk: Use one consistent whisk design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+Recipe visual inventory:
+- flour: 2 c + 2 T dry; Source says 'flower' in method.; ingredient
+- baking soda: 1/2 t dry; ingredient
+- salt: 1/2 t dry; ingredient
+- butter: 12 T wet; melted and cooled; ingredient
+- dark brown sugar: 1 c wet; packed; ingredient
+- granulated sugar: 1/2 c wet; ingredient
+- large egg: 1 wet; ingredient
+- egg yolk: 1 wet; ingredient
+- vanilla extract: 2 t wet; ingredient
+- chocolate chips: 3/2 c mix-in; ingredient
+- dry mix: whisk: 2 c + 2 T flour + 1/2 t baking soda + 1/2 t salt
+- butter and sugar mix: mix: 12 T butter (melted and cooled) + 1 c dark brown sugar (packed) + 1/2 c granulated sugar + 1 large egg + 1 egg yolk + 2 t vanilla extract
+- cookie dough: beat: butter and sugar mix + dry mix + 3/2 c chocolate chips
+- formed torn cookies: form: cookie dough
+- baked cookies: bake: formed torn cookies
+- cooled chocolate chip cookies: cool: baked cookies
+Repeated food states:
+- dry mix: whisk from flour + baking soda + salt; keep this state visually identical wherever it appears later.
+- butter and sugar mix: mix from butter + dark brown sugar + granulated sugar + large egg + egg yolk + vanilla extract; keep this state visually identical wherever it appears later.
+- cookie dough: beat from butter and sugar mix + dry mix + chocolate chips; keep this state visually identical wherever it appears later.
+- formed torn cookies: form from cookie dough; keep this state visually identical wherever it appears later.
+- baked cookies: bake from formed torn cookies; keep this state visually identical wherever it appears later.
+- cooled chocolate chip cookies: cool from baked cookies; keep this state visually identical wherever it appears later.
+Continuity rules:
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+VISUAL CONTINUITY
+This asset should stay visually consistent with earlier generated assets: step-02-mix-wet.png, step-03-make-dough.png. Repeated ingredients, tools, food states, colors, and plating should feel like the same recipe world unless the prompt explicitly changes them.
+
+
+IMAGE CONTENT
+Form Cookies: Form cookies, about 1/4 c each, and tear to create an attractive finish. Depict the ingredients or components used now: cookie dough. Show the resulting food state: formed torn cookies. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

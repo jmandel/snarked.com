@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "title": "Reci-pop Recipe",
+  "type": "object",
+  "required": ["id", "title", "style", "layout", "steps", "assets"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "title": { "type": "string" },
+    "subtitle": { "type": "string" },
+    "style": {
+      "description": "Preferred style reference. Use a string to resolve styles/<id>/style.json, or an inline style object for one-off recipes.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "object", "additionalProperties": true }
+      ]
+    },
+    "assetBasePath": { "type": "string" },
+    "defaultUnitSystem": { "type": "string" },
+    "unitSystems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "submittedBy": { "type": "string" },
+        "author": { "type": "string" },
+        "date": { "type": "string" },
+        "credit": { "type": "string" },
+        "url": { "type": "string" }
+      }
+    },
+    "quickFacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "value"],
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "string" },
+          "icon": { "type": "string" }
+        }
+      }
+    },
+    "imageGeneration": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "model": { "type": "string" },
+        "imageSize": { "type": "string" },
+        "defaultAspectRatio": { "type": "string" },
+        "referenceMode": { "enum": ["text", "image", "none"] }
+      }
+    },
+    "storyboard": {
+      "type": "object",
+      "description": "Recipe-level visual continuity board generated before per-asset images. It captures cookware, camera angle, inventory, repeated states, and continuity rules so individual assets do not drift. It should be one coherent white-background board of reusable elements, not a contact sheet, panel grid, or set of final step images.",
+      "required": ["filename", "prompt"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string" },
+        "filename": { "type": "string" },
+        "placement": { "type": "string" },
+        "alt": { "type": "string" },
+        "aspectRatio": { "type": "string" },
+        "imageSize": { "type": "string" },
+        "intent": { "type": "string" },
+        "camera": { "type": "string" },
+        "prompt": { "type": "string" },
+        "negative": { "type": "string" },
+        "cookware": {
+          "type": "array",
+          "items": {
+            "type": ["object", "string"],
+            "additionalProperties": true,
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "type": ["object", "string"],
+            "additionalProperties": true,
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "stateMap": {
+          "type": "array",
+          "items": {
+            "type": ["object", "string"],
+            "additionalProperties": true,
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "sequenceNotes": { "type": "array", "items": { "type": "string" } },
+        "continuityRules": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "heroAssets": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "layout": {
+      "type": "object",
+      "required": ["type", "sections"],
+      "additionalProperties": true,
+      "properties": {
+        "type": { "const": "vertical-process" },
+        "rail": {
+          "type": "object",
+          "description": "Legacy metadata only. Renderers must not reserve a permanent time rail or horizontal column for this.",
+          "additionalProperties": true,
+          "properties": {
+            "label": { "type": "string" }
+          }
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": ["type", "step"],
+                "properties": {
+                  "type": { "const": "step" },
+                  "step": { "type": "string" }
+                }
+              },
+              {
+                "type": "object",
+                "required": ["type", "lanes"],
+                "properties": {
+                  "type": {
+                    "const": "parallel",
+                    "description": "A local covered-time group, not a global swimlane. Use only when a wait/unattended step plausibly covers another task."
+                  },
+                  "label": { "type": "string" },
+                  "timeLabel": { "type": "string" },
+                  "summary": { "type": "string" },
+                  "lanes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["label", "steps"],
+                      "properties": {
+                        "label": { "type": "string" },
+                        "accent": { "type": "string" },
+                        "steps": { "type": "array", "items": { "type": "string" } }
+                      }
+                    }
+                  },
+                  "converge": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "label": { "type": "string" },
+                      "targetStep": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "number", "title"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "number": { "type": ["integer", "string"] },
+          "timeLabel": { "type": "string" },
+          "phase": { "type": "string" },
+          "title": { "type": "string" },
+          "instruction": { "type": "string" },
+          "method": { "type": "string" },
+          "notes": { "type": "array", "items": { "type": "string" } },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "qty": { "type": "string" },
+                "amounts": {
+                  "type": "object",
+                  "additionalProperties": { "type": "string" },
+                  "properties": {
+                    "metric": { "type": "string" },
+                    "us": { "type": "string" },
+                    "original": { "type": "string" }
+                  }
+                },
+                "item": { "type": "string" },
+                "note": { "type": "string" }
+              }
+            }
+          },
+          "asset": { "type": "string" },
+          "assetCaption": { "type": "string" }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["filename", "alt", "prompt"],
+        "additionalProperties": true,
+        "properties": {
+          "filename": { "type": "string" },
+          "placement": { "type": "string" },
+          "alt": { "type": "string" },
+          "prompt": { "type": "string" },
+          "aspectRatio": { "type": "string" },
+          "imageSize": { "type": "string" },
+          "negative": { "type": "string" },
+          "dependsOnAssets": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "transparent": { "type": "boolean" }
+        }
+      }
+    },
+    "footerTip": { "type": "string" }
+  }
+}

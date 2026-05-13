@@ -1,0 +1,22 @@
+{
+  "filename": "step-01-thicken-milk.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T16:20:11.745Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T161113Z-multigrain-pancakes/codex-home/generated_images/019e221b-4bd6-7980-9565-39fb12ae22d3/ig_084c1bb56b40b8ba016a04a46f53388198ac2b9be10b6a695a.png",
+  "promptFile": "recipes/multigrain_pancakes/prompts/step-01-thicken-milk.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2728343,
+    "afterBytes": 2554889
+  }
+}

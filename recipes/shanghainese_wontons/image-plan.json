@@ -1,0 +1,130 @@
+{
+  "recipeId": "shanghainese-wontons",
+  "title": "Shanghainese Wontons",
+  "generatedAt": "2026-05-13T16:27:34.144Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-shanghainese-wontons.png",
+    "placement": "Continuity storyboard",
+    "alt": "Shanghainese Wontons visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/shanghainese_wontons/prompts/storyboard-shanghainese-wontons.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-shanghainese-wontons.png",
+      "placement": "Recipe header",
+      "alt": "Shanghainese Wontons finished dish",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/shanghainese_wontons/prompts/hero-shanghainese-wontons.txt"
+    },
+    {
+      "filename": "step-01-prep-bok-choi.png",
+      "placement": "Step 1 card",
+      "alt": "Shanghainese Wontons: Prep Bok Choi",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-01-prep-bok-choi.txt"
+    },
+    {
+      "filename": "step-02-prep-shrimp.png",
+      "placement": "Step 2 card",
+      "alt": "Shanghainese Wontons: Prep Shrimp",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-prep-bok-choi.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-02-prep-shrimp.txt"
+    },
+    {
+      "filename": "step-03-mix-filling.png",
+      "placement": "Step 3 card",
+      "alt": "Shanghainese Wontons: Mix Filling",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-prep-bok-choi.png",
+        "step-02-prep-shrimp.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-03-mix-filling.txt"
+    },
+    {
+      "filename": "step-04-wrap-wontons.png",
+      "placement": "Step 4 card",
+      "alt": "Shanghainese Wontons: Wrap Wontons",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-prep-shrimp.png",
+        "step-03-mix-filling.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-04-wrap-wontons.txt"
+    },
+    {
+      "filename": "step-05-heat-stock.png",
+      "placement": "Step 5 card",
+      "alt": "Shanghainese Wontons: Heat Stock",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-03-mix-filling.png",
+        "step-04-wrap-wontons.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-05-heat-stock.txt"
+    },
+    {
+      "filename": "step-06-boil-water.png",
+      "placement": "Step 6 card",
+      "alt": "Shanghainese Wontons: Boil Water",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-04-wrap-wontons.png",
+        "step-05-heat-stock.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-06-boil-water.txt"
+    },
+    {
+      "filename": "step-07-cook-wontons.png",
+      "placement": "Step 7 card",
+      "alt": "Shanghainese Wontons: Cook Wontons",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-05-heat-stock.png",
+        "step-06-boil-water.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-07-cook-wontons.txt"
+    },
+    {
+      "filename": "step-08-drain-wontons.png",
+      "placement": "Step 8 card",
+      "alt": "Shanghainese Wontons: Drain Wontons",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-06-boil-water.png",
+        "step-07-cook-wontons.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-08-drain-wontons.txt"
+    },
+    {
+      "filename": "step-09-serve.png",
+      "placement": "Step 9 card",
+      "alt": "Shanghainese Wontons: Serve",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-07-cook-wontons.png",
+        "step-08-drain-wontons.png"
+      ],
+      "promptFile": "recipes/shanghainese_wontons/prompts/step-09-serve.txt"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+Generate one visual continuity board for a recipe image set.
+Recipe context: Black Forest Fudge — Black, foresty, fudgy
+Target image: Black Forest Fudge visual continuity storyboard
+Used as: Continuity storyboard
+Aspect ratio: 16:9
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Black Forest Fudge
+Black, foresty, fudgy
+
+## Quick facts
+- Active: ~20 min
+- Heat: medium heat / 230 degrees F, medium high heat
+- Stations: stovetop + refrigerator
+
+## Process layout
+- Step: make-chocolate-base
+- Step: dissolve-syrup
+- Step: boil-syrup
+- Step: melt-chocolate
+- Step: pan-fudge
+- Step: chill
+
+## Steps
+### 1. Make Chocolate Base
+Timing: 0 min
+Put the first four ingredients in a metal bowl.
+Uses:
+  - 6 ounces bittersweet chocolate (170 g) — chopped
+  - .5 cup marshmallow fluff
+  - 1 ounce unsweetened chocolate (28 g) — chopped
+  - 1 teaspoon vanilla (4.2 g)
+Makes: chocolate base
+
+### 2. Dissolve Syrup
+Timing: 0 min
+Station/tools: stovetop
+Mix the sugar, condensed milk, cherry preserves, whipping cream, water, and butter in a heavy saucepan. Stir over medium heat until butter melts and sugar dissolves.
+Uses:
+  - 1.25 cups sugar (250 g)
+  - 0.5 cup condensed milk (120 g)
+  - 0.5 cup cherry preserves
+  - 0.5 cup whipping cream (120 g)
+  - 1/3 cup water (80 g)
+  - 0.25 cup butter (57 g)
+Makes: dissolved sugar syrup
+Notes:
+- Heat: medium heat
+
+### 3. Boil Syrup
+Timing: 0 min
+Station/tools: stovetop
+Add the dried cherries. Attach a candy thermometer, increase the heat to medium high, and boil until the mixture reaches 230 degrees F, stirring constantly but slowly.
+Uses:
+  - dissolved sugar syrup
+  - 2/3 cup dried tart cherries
+Makes: hot cherry syrup
+Notes:
+- Heat: 230 degrees F, medium high heat
+- Source timing: about 17 minutes
+- Method: candy thermometer
+
+### 4. Melt Chocolate
+Timing: 17 min
+Pour the hot syrup immediately over the chocolate mixture. Stir with a wooden spoon until the chocolate melts and the mixture thickens a little.
+Uses:
+  - hot cherry syrup
+  - chocolate base
+Makes: fudge mixture
+Notes:
+- Source timing: about 3 minutes
+- Method: wooden spoon
+
+### 5. Pan Fudge
+Timing: 20 min
+Line a loaf pan with foil, pour the fudge mixture into the prepared pan, and smooth the top.
+Uses:
+  - fudge mixture
+Makes: smoothed fudge in pan
+
+### 6. Chill
+Timing: 20 min
+Station/tools: refrigerator
+Chill until firm, about half an hour.
+Uses:
+  - smoothed fudge in pan
+Makes: black forest fudge
+Notes:
+- Source timing: about half an hour
+</recipe_context_markdown>
+STORYBOARD PURPOSE
+Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+CAMERA AND ANGLE
+Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+COOKWARE AND TOOLS
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- stovetop: Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- refrigerator: Use one consistent refrigerator design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- bowl: Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- saucepan: Use one consistent saucepan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- spoon: Use one consistent spoon design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- loaf pan: Use one consistent loaf pan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+VISUAL INVENTORY
+- bittersweet chocolate: 6 ounces chocolate base; chopped; ingredient
+- marshmallow fluff: .5 cup chocolate base; ingredient
+- unsweetened chocolate: 1 ounce chocolate base; chopped; ingredient
+- vanilla: 1 teaspoon chocolate base; ingredient
+- sugar: 1.25 cups syrup; ingredient
+- condensed milk: 0.5 cup syrup; ingredient
+- cherry preserves: 0.5 cup syrup; ingredient
+- whipping cream: 0.5 cup syrup; ingredient
+- water: 1/3 cup syrup; ingredient
+- butter: 0.25 cup syrup; ingredient
+- dried tart cherries: 2/3 cup syrup; ingredient
+- chocolate base: combine: 6 ounces bittersweet chocolate (chopped) + .5 cup marshmallow fluff + 1 ounce unsweetened chocolate (chopped) + 1 teaspoon vanilla
+- dissolved sugar syrup: stir: 1.25 cups sugar + 0.5 cup condensed milk + 0.5 cup cherry preserves + 0.5 cup whipping cream + 1/3 cup water + 0.25 cup butter
+- hot cherry syrup: boil: dissolved sugar syrup + 2/3 cup dried tart cherries
+- fudge mixture: stir: hot cherry syrup + chocolate base
+- smoothed fudge in pan: pour: fudge mixture into foil-lined loaf pan
+- black forest fudge: chill: smoothed fudge in pan
+STATE CONTINUITY
+- chocolate base: combine from bittersweet chocolate + marshmallow fluff + unsweetened chocolate + vanilla; keep this state visually identical wherever it appears later.
+- dissolved sugar syrup: stir from sugar + condensed milk + cherry preserves + whipping cream + water + butter; keep this state visually identical wherever it appears later.
+- hot cherry syrup: boil from dissolved sugar syrup + dried tart cherries; keep this state visually identical wherever it appears later.
+- fudge mixture: stir from hot cherry syrup + chocolate base; keep this state visually identical wherever it appears later.
+- smoothed fudge in pan: pour from fudge mixture; keep this state visually identical wherever it appears later.
+- black forest fudge: chill from smoothed fudge in pan; keep this state visually identical wherever it appears later.
+PROCESS SEQUENCE NOTES
+- Step 1, Make Chocolate Base: Put the first four ingredients in a metal bowl. Result: chocolate base.
+- Step 2, Dissolve Syrup: Mix the sugar, condensed milk, cherry preserves, whipping cream, water, and butter in a heavy saucepan. Stir over medium heat until butter melts and sugar dissolves. Result: dissolved sugar syrup. Tool/station: stovetop.
+- Step 3, Boil Syrup: Add the dried cherries. Attach a candy thermometer, increase the heat to medium high, and boil until the mixture reaches 230 degrees F, stirring constantly but slowly. Result: hot cherry syrup. Tool/station: stovetop.
+- Step 4, Melt Chocolate: Pour the hot syrup immediately over the chocolate mixture. Stir with a wooden spoon until the chocolate melts and the mixture thickens a little. Result: fudge mixture.
+- Step 5, Pan Fudge: Line a loaf pan with foil, pour the fudge mixture into the prepared pan, and smooth the top. Result: smoothed fudge in pan.
+- Step 6, Chill: Chill until firm, about half an hour. Result: black forest fudge. Tool/station: refrigerator.
+CONTINUITY RULES
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+IMAGE CONTENT
+Create one coherent unlabeled visual continuity board on a clean white paper background. Show the recipe elements that need to stay consistent across later images: main ingredients, cookware, tools, intermediate food states, and final serving. Arrange those elements as a natural hand-painted still life or inventory board with a shared camera angle and lighting, not as separate finished step illustrations. This is not a contact sheet, thumbnail grid, storyboard comic, timeline, flowchart, UI layout, or collection of all final assets. Do not draw labels, text, arrows, numbers, captions, frames, panels, or card borders.
+
+Recipe-specific content:
+Create one unlabeled visual continuity board for Black Forest Fudge. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

@@ -1,5 +1,7 @@
 node_modules/
 dist/
 .design/
+.recipop-runs/
+cooking-for-engineers/
 bun.lockb
 bun.lock

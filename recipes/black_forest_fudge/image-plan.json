@@ -1,0 +1,94 @@
+{
+  "recipeId": "black-forest-fudge",
+  "title": "Black Forest Fudge",
+  "generatedAt": "2026-05-13T14:45:52.930Z",
+  "model": "openai/gpt-5.4-image-2",
+  "style": "french-hen-folk-wave",
+  "storyboard": {
+    "filename": "storyboard-black-forest-fudge.png",
+    "placement": "Continuity storyboard",
+    "alt": "Black Forest Fudge visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "imageSize": "1K",
+    "promptFile": "recipes/black_forest_fudge/prompts/storyboard-black-forest-fudge.txt"
+  },
+  "assets": [
+    {
+      "filename": "hero-black-forest-fudge.png",
+      "placement": "Recipe header",
+      "alt": "Black Forest Fudge finished dish",
+      "aspectRatio": "16:9",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/black_forest_fudge/prompts/hero-black-forest-fudge.txt"
+    },
+    {
+      "filename": "step-01-make-chocolate-base.png",
+      "placement": "Step 1 card",
+      "alt": "Black Forest Fudge: Make Chocolate Base",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [],
+      "promptFile": "recipes/black_forest_fudge/prompts/step-01-make-chocolate-base.txt"
+    },
+    {
+      "filename": "step-02-dissolve-syrup.png",
+      "placement": "Step 2 card",
+      "alt": "Black Forest Fudge: Dissolve Syrup",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-make-chocolate-base.png"
+      ],
+      "promptFile": "recipes/black_forest_fudge/prompts/step-02-dissolve-syrup.txt"
+    },
+    {
+      "filename": "step-03-boil-syrup.png",
+      "placement": "Step 3 card",
+      "alt": "Black Forest Fudge: Boil Syrup",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-01-make-chocolate-base.png",
+        "step-02-dissolve-syrup.png"
+      ],
+      "promptFile": "recipes/black_forest_fudge/prompts/step-03-boil-syrup.txt"
+    },
+    {
+      "filename": "step-04-melt-chocolate.png",
+      "placement": "Step 4 card",
+      "alt": "Black Forest Fudge: Melt Chocolate",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-02-dissolve-syrup.png",
+        "step-03-boil-syrup.png"
+      ],
+      "promptFile": "recipes/black_forest_fudge/prompts/step-04-melt-chocolate.txt"
+    },
+    {
+      "filename": "step-05-pan-fudge.png",
+      "placement": "Step 5 card",
+      "alt": "Black Forest Fudge: Pan Fudge",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-03-boil-syrup.png",
+        "step-04-melt-chocolate.png"
+      ],
+      "promptFile": "recipes/black_forest_fudge/prompts/step-05-pan-fudge.txt"
+    },
+    {
+      "filename": "step-06-chill.png",
+      "placement": "Step 6 card",
+      "alt": "Black Forest Fudge: Chill",
+      "aspectRatio": "4:3",
+      "imageSize": "1K",
+      "dependsOnAssets": [
+        "step-04-melt-chocolate.png",
+        "step-05-pan-fudge.png"
+      ],
+      "promptFile": "recipes/black_forest_fudge/prompts/step-06-chill.txt"
+    }
+  ]
+}

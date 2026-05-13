@@ -1,0 +1,512 @@
+{
+  "$schema": "https://snarked.com/schemas/recipop-recipe.schema.json",
+  "id": "kubideh",
+  "title": "Kubideh",
+  "subtitle": "Kubideh with the meat of your choice",
+  "source": {
+    "submittedBy": "Josh <jmandel@snarked.com>",
+    "date": "2008-09-17",
+    "file": "recipe.md"
+  },
+  "assetBasePath": "assets",
+  "unitSystems": [
+    {
+      "id": "original",
+      "label": "Original"
+    },
+    {
+      "id": "metric",
+      "label": "Metric"
+    }
+  ],
+  "defaultUnitSystem": "metric",
+  "quickFacts": [
+    {
+      "label": "Stations",
+      "value": "grill"
+    }
+  ],
+  "imageGeneration": {
+    "model": "openai/gpt-5.4-image-2",
+    "imageSize": "1K",
+    "defaultAspectRatio": "4:3",
+    "referenceMode": "image"
+  },
+  "storyboard": {
+    "id": "recipe-continuity-storyboard",
+    "filename": "storyboard-kubideh.png",
+    "placement": "Continuity storyboard",
+    "alt": "Kubideh visual continuity storyboard",
+    "aspectRatio": "16:9",
+    "intent": "Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.",
+    "camera": "Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.",
+    "cookware": [
+      {
+        "name": "mixing bowl",
+        "description": "Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      },
+      {
+        "name": "grill",
+        "description": "Use one consistent grill design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets."
+      }
+    ],
+    "inventory": [
+      {
+        "name": "large yellow onion",
+        "description": "meat mixture; peeled and grated; ingredient"
+      },
+      {
+        "name": "ground meat",
+        "description": "1 lb meat mixture; Lamb, beef, chicken thighs, or another chosen meat.; ingredient"
+      },
+      {
+        "name": "garlic",
+        "description": "1 clove meat mixture; peeled and finely chopped; ingredient"
+      },
+      {
+        "name": "egg",
+        "description": "1 meat mixture; lightly beaten; ingredient"
+      },
+      {
+        "name": "dry bread crumbs",
+        "description": "1/4 cup meat mixture; ingredient"
+      },
+      {
+        "name": "salt",
+        "description": "2 tsp spices; ingredient"
+      },
+      {
+        "name": "fresh ground pepper",
+        "description": "1/2 tsp spices; ingredient"
+      },
+      {
+        "name": "ground turmeric",
+        "description": "1/2 tsp spices; ingredient"
+      },
+      {
+        "name": "paprika",
+        "description": "1/4 tsp spices; ingredient"
+      },
+      {
+        "name": "saffron threads",
+        "description": "1 pinch baste; ingredient"
+      },
+      {
+        "name": "butter",
+        "description": "1 tbsp baste; melted; ingredient"
+      },
+      {
+        "name": "ground sumac and lemon wedges",
+        "description": "garnish; ingredient"
+      },
+      {
+        "name": "drained grated onion",
+        "description": "squeeze: large yellow onion (peeled and grated)"
+      },
+      {
+        "name": "kubideh meat mixture",
+        "description": "mix: drained grated onion + 1 lb ground meat + 1 clove garlic (peeled and finely chopped) + 1 egg (lightly beaten) + 1/4 cup dry bread crumbs + 2 tsp salt + 1/2 tsp fresh ground pepper + 1/2 tsp ground turmeric + 1/4 tsp paprika"
+      },
+      {
+        "name": "8 formed kubideh logs",
+        "description": "form: kubideh meat mixture"
+      },
+      {
+        "name": "saffron butter",
+        "description": "crumble: 1 pinch saffron threads + 1 tbsp butter (melted)"
+      },
+      {
+        "name": "grilled kebabs",
+        "description": "grill: 8 formed kubideh logs + saffron butter"
+      },
+      {
+        "name": "kubideh",
+        "description": "serve: grilled kebabs + ground sumac and lemon wedges"
+      }
+    ],
+    "stateMap": [
+      {
+        "name": "drained grated onion",
+        "description": "squeeze from large yellow onion; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "kubideh meat mixture",
+        "description": "mix from drained grated onion + ground meat + garlic + egg + dry bread crumbs + salt + fresh ground pepper + ground turmeric + paprika; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "8 formed kubideh logs",
+        "description": "form from kubideh meat mixture; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "saffron butter",
+        "description": "crumble from saffron threads + butter; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "grilled kebabs",
+        "description": "grill from 8 formed kubideh logs + saffron butter; keep this state visually identical wherever it appears later."
+      },
+      {
+        "name": "kubideh",
+        "description": "serve from grilled kebabs + ground sumac and lemon wedges; keep this state visually identical wherever it appears later."
+      }
+    ],
+    "sequenceNotes": [
+      "Step 1, Drain Onion: Squeeze grated onion through cheesecloth to drain. Result: drained grated onion.",
+      "Step 2, Mix Meat: Mix onion, spices, and meat. Result: kubideh meat mixture.",
+      "Step 3, Form Logs: Form into 8 logs. Result: 8 formed kubideh logs.",
+      "Step 4, Make Baste: Crumble saffron into melted butter. Result: saffron butter.",
+      "Step 5, Grill: Use this mixture to baste kebabs while grilling. Result: grilled kebabs. Tool/station: grill.",
+      "Step 6, Garnish: Serve with ground sumac and lemon wedges if desired. Result: kubideh."
+    ],
+    "continuityRules": [
+      "This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.",
+      "Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.",
+      "Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.",
+      "Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.",
+      "Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images."
+    ],
+    "prompt": "Create one unlabeled visual continuity board for Kubideh. Show the final dish, main raw ingredients, intermediate mixtures or cooked states, repeated tools/stations, and serving/garnish elements that appear in the recipe as one coherent hand-painted recipe-world reference on clean white paper. Arrange the elements in loose process order only enough to help continuity; do not draw a timeline, flowchart, labels, text, arrows, UI, frames, panels, or a grid of step thumbnails. Make cookware choices explicit through the art itself so repeated pans, bowls, dishes, boards, and tools can be reused consistently in later images."
+  },
+  "heroAssets": [
+    "hero-kubideh.png"
+  ],
+  "layout": {
+    "type": "vertical-process",
+    "sections": [
+      {
+        "type": "step",
+        "step": "drain-onion"
+      },
+      {
+        "type": "step",
+        "step": "mix-meat"
+      },
+      {
+        "type": "step",
+        "step": "form-logs"
+      },
+      {
+        "type": "step",
+        "step": "make-baste"
+      },
+      {
+        "type": "step",
+        "step": "grill"
+      },
+      {
+        "type": "step",
+        "step": "garnish"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "drain-onion",
+      "sourceActionId": "drain_onion",
+      "number": 1,
+      "timeLabel": "0 min",
+      "phase": "prep",
+      "title": "Drain Onion",
+      "instruction": "Squeeze grated onion through cheesecloth to drain.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "large yellow onion",
+          "note": "peeled and grated"
+        }
+      ],
+      "makes": [
+        {
+          "item": "drained grated onion"
+        }
+      ],
+      "notes": [
+        "Method: cheesecloth"
+      ],
+      "asset": "step-01-drain-onion.png"
+    },
+    {
+      "id": "mix-meat",
+      "sourceActionId": "mix_meat",
+      "number": 2,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Mix Meat",
+      "instruction": "Mix onion, spices, and meat.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "drained grated onion"
+        },
+        {
+          "qty": "1 lb",
+          "item": "ground meat",
+          "note": "Lamb, beef, chicken thighs, or another chosen meat.",
+          "amounts": {
+            "original": "1 lb",
+            "metric": "455 g"
+          }
+        },
+        {
+          "qty": "1 clove",
+          "item": "garlic",
+          "note": "peeled and finely chopped",
+          "amounts": {
+            "original": "1 clove"
+          }
+        },
+        {
+          "qty": "1",
+          "item": "egg",
+          "note": "lightly beaten",
+          "amounts": {
+            "original": "1"
+          }
+        },
+        {
+          "qty": "1/4 cup",
+          "item": "dry bread crumbs",
+          "amounts": {
+            "original": "1/4 cup",
+            "metric": "27 g"
+          }
+        },
+        {
+          "qty": "2 tsp",
+          "item": "salt",
+          "amounts": {
+            "original": "2 tsp",
+            "metric": "12 g"
+          }
+        },
+        {
+          "qty": "1/2 tsp",
+          "item": "fresh ground pepper",
+          "amounts": {
+            "original": "1/2 tsp",
+            "metric": "1.2 g"
+          }
+        },
+        {
+          "qty": "1/2 tsp",
+          "item": "ground turmeric",
+          "amounts": {
+            "original": "1/2 tsp",
+            "metric": "1.5 g"
+          }
+        },
+        {
+          "qty": "1/4 tsp",
+          "item": "paprika",
+          "amounts": {
+            "original": "1/4 tsp",
+            "metric": "0.6 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "kubideh meat mixture"
+        }
+      ],
+      "notes": [],
+      "asset": "step-02-mix-meat.png"
+    },
+    {
+      "id": "form-logs",
+      "sourceActionId": "form_logs",
+      "number": 3,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Form Logs",
+      "instruction": "Form into 8 logs.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "kubideh meat mixture"
+        }
+      ],
+      "makes": [
+        {
+          "item": "8 formed kubideh logs"
+        }
+      ],
+      "notes": [],
+      "asset": "step-03-form-logs.png"
+    },
+    {
+      "id": "make-baste",
+      "sourceActionId": "make_baste",
+      "number": 4,
+      "timeLabel": "0 min",
+      "phase": "mix",
+      "title": "Make Baste",
+      "instruction": "Crumble saffron into melted butter.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "1 pinch",
+          "item": "saffron threads",
+          "amounts": {
+            "original": "1 pinch"
+          }
+        },
+        {
+          "qty": "1 tbsp",
+          "item": "butter",
+          "note": "melted",
+          "amounts": {
+            "original": "1 tbsp",
+            "metric": "14 g"
+          }
+        }
+      ],
+      "makes": [
+        {
+          "item": "saffron butter"
+        }
+      ],
+      "notes": [],
+      "asset": "step-04-make-baste.png"
+    },
+    {
+      "id": "grill",
+      "sourceActionId": "grill",
+      "number": 5,
+      "timeLabel": "0 min",
+      "phase": "cook",
+      "title": "Grill",
+      "instruction": "Use this mixture to baste kebabs while grilling.",
+      "duration": {},
+      "resources": [
+        "grill"
+      ],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "8 formed kubideh logs"
+        },
+        {
+          "qty": "",
+          "item": "saffron butter"
+        }
+      ],
+      "makes": [
+        {
+          "item": "grilled kebabs"
+        }
+      ],
+      "notes": [],
+      "asset": "step-05-grill.png"
+    },
+    {
+      "id": "garnish",
+      "sourceActionId": "garnish",
+      "number": 6,
+      "timeLabel": "0 min",
+      "phase": "finish",
+      "title": "Garnish",
+      "instruction": "Serve with ground sumac and lemon wedges if desired.",
+      "duration": {},
+      "resources": [],
+      "ingredients": [
+        {
+          "qty": "",
+          "item": "grilled kebabs"
+        },
+        {
+          "qty": "",
+          "item": "ground sumac and lemon wedges",
+          "note": "optional"
+        }
+      ],
+      "makes": [
+        {
+          "item": "kubideh"
+        }
+      ],
+      "notes": [],
+      "asset": "step-06-garnish.png"
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-kubideh.png",
+      "placement": "Recipe header",
+      "alt": "Kubideh finished dish",
+      "aspectRatio": "16:9",
+      "prompt": "Finished kubideh for Kubideh, plated or served naturally in a clean recipe illustration. Show the final dish clearly and appetizingly with only relevant garnish or serving pieces. No text, labels, UI, or decorative border."
+    },
+    {
+      "filename": "step-01-drain-onion.png",
+      "placement": "Step 1 card",
+      "alt": "Kubideh: Drain Onion",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [],
+      "prompt": "Drain Onion: Squeeze grated onion through cheesecloth to drain. Depict the ingredients or components used now: large yellow onion (peeled and grated). Show the resulting food state: drained grated onion. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-02-mix-meat.png",
+      "placement": "Step 2 card",
+      "alt": "Kubideh: Mix Meat",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-drain-onion.png"
+      ],
+      "prompt": "Mix Meat: Mix onion, spices, and meat. Depict the ingredients or components used now: drained grated onion; 1 lb ground meat; 1 clove garlic (peeled and finely chopped); 1 egg (lightly beaten); 1/4 cup dry bread crumbs; 2 tsp salt; 1/2 tsp fresh ground pepper; 1/2 tsp ground turmeric; 1/4 tsp paprika. Show the resulting food state: kubideh meat mixture. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-03-form-logs.png",
+      "placement": "Step 3 card",
+      "alt": "Kubideh: Form Logs",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-01-drain-onion.png",
+        "step-02-mix-meat.png"
+      ],
+      "prompt": "Form Logs: Form into 8 logs. Depict the ingredients or components used now: kubideh meat mixture. Show the resulting food state: 8 formed kubideh logs. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-04-make-baste.png",
+      "placement": "Step 4 card",
+      "alt": "Kubideh: Make Baste",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-02-mix-meat.png",
+        "step-03-form-logs.png"
+      ],
+      "prompt": "Make Baste: Crumble saffron into melted butter. Depict the ingredients or components used now: 1 pinch saffron threads; 1 tbsp butter (melted). Show the resulting food state: saffron butter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-05-grill.png",
+      "placement": "Step 5 card",
+      "alt": "Kubideh: Grill",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-03-form-logs.png",
+        "step-04-make-baste.png"
+      ],
+      "prompt": "Grill: Use this mixture to baste kebabs while grilling. Depict the ingredients or components used now: 8 formed kubideh logs; saffron butter. Show the resulting food state: grilled kebabs.  Tools or station: grill. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    },
+    {
+      "filename": "step-06-garnish.png",
+      "placement": "Step 6 card",
+      "alt": "Kubideh: Garnish",
+      "aspectRatio": "4:3",
+      "dependsOnAssets": [
+        "step-04-make-baste.png",
+        "step-05-grill.png"
+      ],
+      "prompt": "Garnish: Serve with ground sumac and lemon wedges if desired. Depict the ingredients or components used now: grilled kebabs; ground sumac and lemon wedges. Show the resulting food state: kubideh. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+    }
+  ],
+  "notes": [],
+  "style": "french-hen-folk-wave"
+}
