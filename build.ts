@@ -10,6 +10,7 @@ const ASSETS_DIR = join(ROOT, "assets");
 const DIST = join(ROOT, "dist");
 const RESPONSIVE_IMAGE_WIDTHS = [480, 768, 1200];
 const RESPONSIVE_IMAGE_QUALITY = "86";
+let imageMagickBin: string | null = null;
 
 const GH_REPO = "jmandel/snarked.com";
 const GH_RECIPE_TEMPLATE = encodeURIComponent(
@@ -826,6 +827,20 @@ function copyFileIfExists(src: string, dest: string) {
   cpSync(src, dest);
 }
 
+function imageMagickCommand(): string {
+  if (imageMagickBin) return imageMagickBin;
+  for (const command of ["magick", "convert"]) {
+    try {
+      execFileSync(command, ["-version"], { stdio: "ignore" });
+      imageMagickBin = command;
+      return command;
+    } catch {
+      // Keep looking; CI installs ImageMagick 6, which exposes `convert`.
+    }
+  }
+  throw new Error("ImageMagick is required to generate responsive recipe images. Install ImageMagick 7 (`magick`) or ImageMagick 6 (`convert`).");
+}
+
 function generateResponsiveRecipeImages(recipe: Recipe, flow: ReciPopRecipe | null, destRecipeDir: string) {
   if (!flow) return;
   const base = flow.assetBasePath ?? "assets";
@@ -836,11 +851,12 @@ function generateResponsiveRecipeImages(recipe: Recipe, flow: ReciPopRecipe | nu
   mkdirSync(destGeneratedDir, { recursive: true });
 
   const imageNames = readdirSync(srcAssetsDir).filter((name) => /\.(?:png|jpe?g)$/i.test(name));
+  const command = imageMagickCommand();
   for (const imageName of imageNames) {
     const src = join(srcAssetsDir, imageName);
     for (const width of RESPONSIVE_IMAGE_WIDTHS) {
       const dest = join(destGeneratedDir, imageName.replace(/\.[^.]+$/, `-${width}.webp`));
-      execFileSync("magick", [
+      execFileSync(command, [
         src,
         "-auto-orient",
         "-strip",
