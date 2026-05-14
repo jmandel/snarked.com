@@ -431,33 +431,11 @@ function renderReciPopScript(enableUnits: boolean, enableScale: boolean, recipeI
     const first = parseToken(match[2]);
     const second = match[3] ? parseToken(match[3]) : null;
     if (first == null || (match[3] && second == null)) return null;
-    return { prefix: match[1] || "", first, second, suffix: match[4] || "" };
+    return { source, prefix: match[1] || "", first, second, suffix: match[4] || "" };
   };
   const trimNumber = (value, places = 2) => {
     const rounded = Number(value.toFixed(places));
     return String(rounded).replace(/\\.0+$/, "").replace(/(\\.\\d*?)0+$/, "$1");
-  };
-  const formatFraction = (value) => {
-    if (!Number.isFinite(value)) return "";
-    const sign = value < 0 ? "-" : "";
-    value = Math.abs(value);
-    const whole = Math.floor(value + 1e-9);
-    const frac = value - whole;
-    if (frac < 0.03) return sign + String(whole);
-    const denoms = [2, 3, 4, 8, 16];
-    let best = { denom: 16, num: Math.round(frac * 16), err: Infinity };
-    for (const denom of denoms) {
-      const num = Math.round(frac * denom);
-      const err = Math.abs(frac - num / denom);
-      if (num > 0 && num < denom && err < best.err) best = { denom, num, err };
-    }
-    if (best.err > 0.035) return sign + trimNumber(value, value < 10 ? 2 : 1);
-    const gcd = (a, b) => b ? gcd(b, a % b) : a;
-    const d = gcd(best.num, best.denom);
-    const num = best.num / d;
-    const denom = best.denom / d;
-    if (whole === 0) return sign + num + "/" + denom;
-    return sign + whole + " " + num + "/" + denom;
   };
   const formatGrams = (value) => {
     if (!Number.isFinite(value)) return "";
@@ -466,9 +444,15 @@ function renderReciPopScript(enableUnits: boolean, enableScale: boolean, recipeI
     if (value >= 1) return trimNumber(value, 1);
     return trimNumber(value, 2);
   };
+  const formatDecimal = (value) => {
+    if (!Number.isFinite(value)) return "";
+    if (Math.abs(value - Math.round(value)) < 0.001) return String(Math.round(value));
+    return trimNumber(value, value < 10 ? 1 : 0);
+  };
   const formatQuantity = (parsed, scale) => {
+    if (Math.abs(scale - 1) < 0.001) return parsed.source;
     const isGrams = /^\\s*(g|gram|grams)\\b/i.test(parsed.suffix);
-    const format = (value) => isGrams ? formatGrams(value * scale) : formatFraction(value * scale);
+    const format = (value) => isGrams ? formatGrams(value * scale) : formatDecimal(value * scale);
     const amount = parsed.second == null
       ? format(parsed.first)
       : format(parsed.first) + "-" + format(parsed.second);
@@ -633,23 +617,44 @@ ${rows.map((row) => {
     if (!qty && !metric) {
       return `<tr class="sn-flow-ingredients__component"><td colspan="2"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
     }
-    return `<tr><td>${qtyHtml}</td><td><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+    return `<tr><td class="sn-flow-ingredients__qty">${qtyHtml}</td><td><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
   }).join("\n")}
 </tbody></table>`;
 }
 
+function formatMinutes(minutes: number): string {
+  if (!Number.isFinite(minutes) || minutes <= 0) return "";
+  if (minutes < 60) return `${minutes} min`;
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  return rest ? `${hours} h ${rest} min` : `${hours} h`;
+}
+
+function noteValue(notes: string[] = [], prefix: string): string {
+  const note = notes.find((item) => item.toLowerCase().startsWith(prefix.toLowerCase()));
+  return note ? note.slice(prefix.length).trim() : "";
+}
+
+function stepDurationLabel(step: ReciPopStep): string {
+  const active = step.duration?.activeLabel || formatMinutes(step.duration?.activeMinutes ?? 0);
+  const passive = step.duration?.passiveLabel ? `wait ${step.duration.passiveLabel}` : "";
+  return [active, passive].filter(Boolean).join(" + ");
+}
+
 function renderStepMeta(step: ReciPopStep): string {
+  const start = step.timeLabel && !/^0\s*min$/i.test(step.timeLabel) ? step.timeLabel : "";
+  const heat = noteValue(step.notes, "Heat:");
   const pieces = [
-    step.timeLabel,
-    step.duration?.activeLabel,
-    step.duration?.passiveLabel ? `wait ${step.duration.passiveLabel}` : "",
+    start,
+    stepDurationLabel(step),
+    heat,
     ...(step.resources ?? []).slice(0, 3),
   ].filter(Boolean);
   return pieces.length ? `<p class="sn-flow-step__meta">${pieces.map(escapeHtml).join(" · ")}</p>` : "";
 }
 
 function renderStepFooter(step: ReciPopStep): string {
-  const notes = step.notes ?? [];
+  const notes = (step.notes ?? []).filter((note) => !/^(?:Source timing|Heat):/i.test(note));
   if (!notes.length) return "";
   return `<div class="sn-flow-step__footer">
 ${notes.map((note) => `<p>${escapeHtml(note)}</p>`).join("\n")}

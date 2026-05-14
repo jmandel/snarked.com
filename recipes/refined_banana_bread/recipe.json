@@ -270,11 +270,13 @@
           }
         },
         {
-          "qty": "2-3 bananas OR 1 banana + 2 carrots",
-          "item": "bananas and/or carrots",
-          "note": "mashed or grated; The source offers an alternate fruit/vegetable choice.",
+          "qty": "2-3",
+          "quantityKind": "count",
+          "scalable": false,
+          "item": "bananas or 1 banana plus 2 carrots",
+          "note": "mashed or grated; The source offers an alternate fruit/vegetable choice, so this row is not scaled mechanically.",
           "amounts": {
-            "original": "2-3 bananas OR 1 banana + 2 carrots"
+            "original": "2-3"
           }
         },
         {

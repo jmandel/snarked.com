@@ -636,7 +636,7 @@ a:hover { color: var(--link-hover); }
 }
 .sn-flow-ingredients {
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
   border-collapse: collapse;
   font-family: var(--font-body);
   background: var(--foam);
@@ -651,15 +651,21 @@ a:hover { color: var(--link-hover); }
   line-height: 1.25;
 }
 .sn-flow-ingredients td:first-child {
-  width: 5.5rem;
+  width: 1%;
+  min-width: 4.25rem;
   color: var(--coral-deep);
   font-family: var(--font-mono);
   font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+.sn-flow-ingredients__qty span {
   white-space: nowrap;
 }
 .sn-flow-ingredients b {
   display: block;
   color: var(--ink);
+  text-align: left;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -1008,7 +1014,10 @@ hr.snark-rule::before {
     padding: 8px;
   }
   .sn-flow-ingredients td:first-child {
-    width: 5.6rem;
+    width: 1%;
+    min-width: 3.75rem;
+  }
+  .sn-flow-ingredients__qty span {
     white-space: nowrap;
   }
   .sn-flow-parallel {

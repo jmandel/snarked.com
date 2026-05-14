@@ -15,6 +15,7 @@ Requirements:
 - Include quick facts only when they help a cook orient: yield, prep time, cook time, bake time, temperature, chill/rest time.
 - Create `unitSystems` with `original` and `metric` when any defensible metric quantities are present.
 - Keep `qty` as the source-facing quantity. Add `amounts.metric` for reasonable gram conversions. Use sensible precision: whole grams for ordinary quantities, one decimal below 10 g, two decimals only for tiny amounts where precision matters.
+- Keep `qty` compact: amount and unit, not prose. Put alternatives and prep instructions in `item` or `note`, and set `scalable: false` when an either/or quantity would not scale coherently.
 - Use `quantityKind` where plain quantities are ambiguous: `portion` for relational splits such as `half spice mixture` or `remaining half dough`, `as-needed` for oiling/greasing as needed, and `to-taste` for salt, pepper, pinches, or judgment quantities.
 - Do not add `amounts.metric` to relational portions of a previously made component unless the recipe explicitly gives that component yield. A later `half spice mixture` scales through the spices that made the mixture, not through an invented standalone gram amount.
 - Create a `steps` array with stable ids, numbers, time labels, phases, ingredients, makes, notes, durations, resources, and one image asset filename per illustrated step.

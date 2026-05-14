@@ -229,6 +229,7 @@ Use this minimal shape, then fill in the richer fields as needed:
 Preserve source wording and add alternatives. Do not overwrite the original recipe.
 
 - `ingredients[].qty` is the source-facing quantity.
+- Keep `qty` to the amount/unit only when possible. Put alternatives, prep state, and explanatory prose in `item` or `note`; for example use `qty: "2-3"` with `item: "bananas or 1 banana plus 2 carrots"` instead of putting the whole alternative sentence in the quantity column.
 - `ingredients[].quantityKind` clarifies quantity semantics. Use `absolute` or omit it for normal quantities, `count` for explicit counts when helpful, `portion` for relational splits of a previously made component, `as-needed` for greasing/oiling as needed, and `to-taste` for salt/pepper/pinch adjustments.
 - `ingredients[].amounts.metric` is the metric display when a defensible conversion exists.
 - Prefer grams for weights and for volume-to-weight conversions with reasonable ingredient-specific densities.
@@ -237,6 +238,7 @@ Preserve source wording and add alternatives. Do not overwrite the original reci
 - Leave metric absent for `quantityKind: "portion"` rows such as `half spice mixture`. The whole component scales by scaling the source ingredients, so converting the later half into a standalone gram value breaks the logic unless the source states the component yield.
 - Use parseable leading quantities so renderers can scale: `240 g`, `1 1/2 c`, `remaining 2 T`, `2 eggs`.
 - Scaling can be by factor or by a key ingredient target. The renderer should multiply parseable leading absolute/count quantities, keep `remaining 2 T` style known split amounts scalable, and leave `portion`, `as-needed`, `to-taste`, and component rows unchanged.
+- Mark rows `scalable: false` when the quantity is an either/or choice, a judgment quantity, or otherwise cannot be multiplied without changing the meaning.
 
 ## Layout Guidance
 
