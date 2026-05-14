@@ -583,7 +583,7 @@ a:hover { color: var(--link-hover); }
   display: inline-flex;
   gap: 4px;
   align-items: baseline;
-  justify-content: flex-end;
+  justify-content: flex-start;
   min-width: 0;
   color: var(--coral-deep);
   font-family: var(--font-mono);
