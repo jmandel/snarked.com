@@ -54,7 +54,7 @@ type ReciIngredient = {
   qty: string;
   item: string;
   group?: string;
-  quantityKind?: "absolute" | "count" | "portion" | "ratio" | "as-needed" | "to-taste" | "component";
+  quantityKind?: "absolute" | "count" | "portion" | "ratio" | "as-needed" | "to-taste" | "component" | "alternative";
   scalable?: boolean;
   note?: string;
   amounts?: Record<string, string>;

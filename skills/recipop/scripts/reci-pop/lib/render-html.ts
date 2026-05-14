@@ -32,6 +32,29 @@ function renderFigure(recipe, filename, caption = '', extraClass = '', ctx = {})
 function renderIngredients(rows = []) {
   if (!rows.length) return '';
   const trs = rows.map(row => {
+    if (row?.alternatives?.length) {
+      const item = row.item ?? row.ingredient ?? 'choice';
+      const head = `<tr><td colspan="2">${escapeHtml(item)}${row.note ? ` <span class="ingredient-note">${escapeHtml(row.note)}</span>` : ''}</td></tr>`;
+      const choices = row.alternatives.flatMap((choice, index) => {
+        const label = choice.label ? `<tr><td colspan="2">${escapeHtml(choice.label)}${choice.note ? ` <span class="ingredient-note">${escapeHtml(choice.note)}</span>` : ''}</td></tr>` : '';
+        const separator = index > 0 ? '<tr><td colspan="2">or</td></tr>' : '';
+        return [
+          separator,
+          label,
+          ...(choice.items || []).map((itemRow) => {
+            const qty = itemRow.qty ?? itemRow.quantity ?? '';
+            const metric = itemRow.amounts?.metric ?? '';
+            const itemName = itemRow.item ?? itemRow.ingredient ?? '';
+            const note = itemRow.note ? ` <span class="ingredient-note">${escapeHtml(itemRow.note)}</span>` : '';
+            const qtyHtml = metric
+              ? `<span data-unit-value="original">${escapeHtml(qty)}</span><span data-unit-value="metric">${escapeHtml(metric)}</span>`
+              : `<span>${escapeHtml(qty)}</span>`;
+            return `<tr><td>${qtyHtml}</td><td>${escapeHtml(itemName)}${note}</td></tr>`;
+          })
+        ].filter(Boolean);
+      }).join('');
+      return head + choices;
+    }
     const qty = typeof row === 'string' ? '' : (row.qty ?? row.quantity ?? '');
     const metric = typeof row === 'string' ? '' : (row.amounts?.metric ?? '');
     const item = typeof row === 'string' ? row : (row.item ?? row.ingredient ?? '');
@@ -45,7 +68,10 @@ function renderIngredients(rows = []) {
 }
 
 function hasMetricUnits(recipe) {
-  return (recipe.steps || []).some(step => (step.ingredients || []).some(row => row?.amounts?.metric));
+  return (recipe.steps || []).some(step => (step.ingredients || []).some(row => {
+    if (row?.amounts?.metric) return true;
+    return (row?.alternatives || []).some(choice => (choice.items || []).some(item => item?.amounts?.metric));
+  }));
 }
 
 function renderUnitToggle(recipe) {

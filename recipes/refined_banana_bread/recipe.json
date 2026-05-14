@@ -84,8 +84,8 @@
         "description": "2 wet; ingredient"
       },
       {
-        "name": "bananas and/or carrots",
-        "description": "2-3 bananas OR 1 banana + 2 carrots wet; mashed or grated; The source offers an alternate fruit/vegetable choice.; ingredient"
+        "name": "fruit or vegetable choice",
+        "description": "Choose one source option for the wet mix: 2-3 mashed bananas OR 1 mashed banana plus 2 grated carrots."
       },
       {
         "name": "low-fat plain yogurt",
@@ -121,7 +121,7 @@
       },
       {
         "name": "banana wet mix",
-        "description": "mix: creamed fats and sugar + 2 eggs + 2-3 bananas OR 1 banana + 2 carrots bananas and/or carrots (mashed or grated) + 1/4 c low-fat plain yogurt + 1 tsp vanilla extract"
+        "description": "mix: creamed fats and sugar + 2 eggs + chosen fruit/vegetable option + 1/4 c low-fat plain yogurt + 1 tsp vanilla extract"
       },
       {
         "name": "dry mix",
@@ -143,7 +143,7 @@
       },
       {
         "name": "banana wet mix",
-        "description": "mix from creamed fats and sugar + eggs + bananas and/or carrots + low-fat plain yogurt + vanilla extract; keep this state visually identical wherever it appears later."
+        "description": "mix from creamed fats and sugar + eggs + the chosen banana or banana-carrot option + low-fat plain yogurt + vanilla extract; keep this state visually identical wherever it appears later."
       },
       {
         "name": "dry mix",
@@ -160,7 +160,7 @@
     ],
     "sequenceNotes": [
       "Step 1, Cream Fats Sugar: Cream butter + oil and sugar. Result: creamed fats and sugar.",
-      "Step 2, Add Wet: Add eggs, then bananas and/or carrots. Stir in yogurt and vanilla. Result: banana wet mix.",
+      "Step 2, Add Wet: Add eggs, then the chosen banana or banana-carrot option. Stir in yogurt and vanilla. Result: banana wet mix.",
       "Step 3, Combine Dry: In another bowl, soft together flour, baking soda, baking powder, salt, and chips/nuts. Result: dry mix.",
       "Step 4, Make Batter: Mix dry ingredients with wet until just combined. Result: refined banana bread batter.",
       "Step 5, Bake: Pour into a greased loaf pan and cook for 75 minutes at 350 degrees F. Result: refined banana bread. Tool/station: oven."
@@ -270,14 +270,47 @@
           }
         },
         {
-          "qty": "2-3",
-          "quantityKind": "count",
+          "quantityKind": "alternative",
           "scalable": false,
-          "item": "bananas or 1 banana plus 2 carrots",
-          "note": "mashed or grated; The source offers an alternate fruit/vegetable choice, so this row is not scaled mechanically.",
-          "amounts": {
-            "original": "2-3"
-          }
+          "item": "fruit or vegetable choice",
+          "group": "Produce",
+          "note": "mashed or grated; choose one source option",
+          "alternatives": [
+            {
+              "label": "banana option",
+              "items": [
+                {
+                  "qty": "2-3",
+                  "quantityKind": "count",
+                  "item": "bananas",
+                  "amounts": {
+                    "original": "2-3"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "banana-carrot option",
+              "items": [
+                {
+                  "qty": "1",
+                  "quantityKind": "count",
+                  "item": "banana",
+                  "amounts": {
+                    "original": "1"
+                  }
+                },
+                {
+                  "qty": "2",
+                  "quantityKind": "count",
+                  "item": "carrots",
+                  "amounts": {
+                    "original": "2"
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
           "qty": "1/4 c",
@@ -450,7 +483,7 @@
       "dependsOnAssets": [
         "step-01-cream-fats-sugar.png"
       ],
-      "prompt": "Add Wet: Add eggs, then bananas and/or carrots. Stir in yogurt and vanilla. Depict the ingredients or components used now: creamed fats and sugar; 2 eggs; 2-3 bananas OR 1 banana + 2 carrots bananas and/or carrots (mashed or grated); 1/4 c low-fat plain yogurt; 1 tsp vanilla extract. Show the resulting food state: banana wet mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
+      "prompt": "Add Wet: Add eggs, then the chosen fruit/vegetable option, then yogurt and vanilla. Depict the ingredients or components used now: creamed fats and sugar; 2 eggs; either 2-3 mashed bananas OR 1 mashed banana plus 2 grated carrots; 1/4 c low-fat plain yogurt; 1 tsp vanilla extract. Show the resulting food state: banana wet mix. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels."
     },
     {
       "filename": "step-03-combine-dry.png",

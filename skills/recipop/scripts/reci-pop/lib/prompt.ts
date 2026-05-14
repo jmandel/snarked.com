@@ -97,6 +97,18 @@ function xmlSafe(value) {
 }
 
 function ingredientLine(row = {}) {
+  if (row.alternatives?.length) {
+    const label = row.item || row.ingredient || 'choice';
+    const choices = row.alternatives.map((choice) => {
+      const items = (choice.items || [])
+        .map((item) => [item.qty || item.quantity || '', item.item || item.ingredient || ''].filter(Boolean).join(' '))
+        .filter(Boolean)
+        .join(' + ');
+      return [choice.label, items].filter(Boolean).join(': ');
+    }).filter(Boolean).join(' OR ');
+    const note = row.note ? ` — ${row.note}` : '';
+    return `  - ${label}: ${choices}${note}`.trimEnd();
+  }
   const qty = row.qty || row.quantity || '';
   const item = row.item || row.ingredient || '';
   const metric = row.amounts?.metric ? ` (${row.amounts.metric})` : '';

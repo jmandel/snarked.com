@@ -15,9 +15,10 @@ Requirements:
 - Include quick facts only when they help a cook orient: yield, prep time, cook time, bake time, temperature, chill/rest time.
 - Create `unitSystems` with `original` and `metric` when any defensible metric quantities are present.
 - Keep `qty` as the source-facing quantity. Add `amounts.metric` for reasonable gram conversions. Use sensible precision: whole grams for ordinary quantities, one decimal below 10 g, two decimals only for tiny amounts where precision matters.
-- Keep `qty` compact: amount and unit, not prose. Put alternatives and prep instructions in `item` or `note`, and set `scalable: false` when an either/or quantity would not scale coherently.
+- Keep `qty` compact: amount and unit, not prose. Put prep instructions in `item` or `note`.
+- Model either/or ingredient choices with `quantityKind: "alternative"`, `scalable: false`, and `alternatives[]`. Do not hide choices inside a single item string. For example, use a parent `item: "fruit or vegetable choice"` with choices for `2-3 bananas` OR `1 banana` plus `2 carrots`.
 - Add `group` on source ingredient rows when it improves the derived ingredient/shopping overview. Use practical cook-facing groups such as `Spices + seasoning`, `Produce`, `Protein`, `Dry goods`, `Liquids + fats`, `Dairy`, or `Garnish`. Do not group intermediate components or relational portions as shopping items.
-- Use `quantityKind` where plain quantities are ambiguous: `portion` for relational splits such as `half spice mixture` or `remaining half dough`, `as-needed` for oiling/greasing as needed, and `to-taste` for salt, pepper, pinches, or judgment quantities.
+- Use `quantityKind` where plain quantities are ambiguous: `portion` for relational splits such as `half spice mixture` or `remaining half dough`, `alternative` for either/or choices, `as-needed` for oiling/greasing as needed, and `to-taste` for salt, pepper, pinches, or judgment quantities.
 - Do not add `amounts.metric` to relational portions of a previously made component unless the recipe explicitly gives that component yield. A later `half spice mixture` scales through the spices that made the mixture, not through an invented standalone gram amount.
 - Create a `steps` array with stable ids, numbers, time labels, phases, ingredients, makes, notes, durations, resources, and one image asset filename per illustrated step.
 - Create an `assets` array with one entry per required illustration.

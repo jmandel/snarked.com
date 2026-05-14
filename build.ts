@@ -53,7 +53,7 @@ type Recipe = FrontMatter & {
 };
 
 type Section = { name: string; md: string };
-type ReciPopIngredient = {
+type ReciPopIngredientBase = {
   qty?: string;
   quantity?: string;
   quantityKind?: string;
@@ -64,6 +64,14 @@ type ReciPopIngredient = {
   ingredient?: string;
   note?: string;
   amounts?: Record<string, string>;
+};
+type ReciPopIngredientAlternative = {
+  label?: string;
+  note?: string;
+  items?: ReciPopIngredientBase[];
+};
+type ReciPopIngredient = ReciPopIngredientBase & {
+  alternatives?: ReciPopIngredientAlternative[];
 };
 type ReciPopStep = {
   id: string;
@@ -107,7 +115,17 @@ type IngredientOverviewItem = {
   notes: Set<string>;
   divided: boolean;
   quantities: Array<{ original: string; metric: string; scalable: boolean }>;
+  alternativeChoices?: Array<{
+    label?: string;
+    note?: string;
+    items: Array<{ item: string; quantity: { original: string; metric: string; scalable: boolean } }>;
+  }>;
 };
+
+const LEGACY_RECIPE_REDIRECTS = new Map<string, string>([
+  ["Smothered_Chicken", "smothered_chicken"],
+  ["banana_bread_refined", "refined_banana_bread"],
+]);
 
 function parseFrontMatter(src: string): { data: Record<string, unknown>; body: string } {
   if (!src.startsWith("---")) return { data: {}, body: src };
@@ -347,7 +365,10 @@ function renderGallery(r: Recipe, prefix: string): string {
 }
 
 function hasMetricUnits(recipe: ReciPopRecipe): boolean {
-  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some((row) => row.amounts?.metric));
+  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some((row) => {
+    if (row.amounts?.metric) return true;
+    return (row.alternatives ?? []).some((choice) => (choice.items ?? []).some((item) => item.amounts?.metric));
+  }));
 }
 
 function renderUnitToggle(recipe: ReciPopRecipe): string {
@@ -361,14 +382,14 @@ ${systems.map((system) => `<button type="button" data-unit-choice="${escapeHtml(
 </div>`;
 }
 
-function getIngredientQuantity(row: ReciPopIngredient): string {
+function getIngredientQuantity(row: ReciPopIngredientBase): string {
   return row.qty ?? row.quantity ?? "";
 }
 
-function isScalableIngredient(row: ReciPopIngredient): boolean {
+function isScalableIngredient(row: ReciPopIngredientBase): boolean {
   if (row.scalable === false) return false;
   const quantityKind = String(row.quantityKind ?? "absolute").toLowerCase();
-  if (["portion", "ratio", "as-needed", "to-taste", "component"].includes(quantityKind)) return false;
+  if (["portion", "ratio", "as-needed", "to-taste", "component", "alternative"].includes(quantityKind)) return false;
   const hasLeadingNumber = (text: string) => /^\D*(?:\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?|\.\d+)/.test(text.trim());
   return hasLeadingNumber(getIngredientQuantity(row)) || hasLeadingNumber(row.amounts?.metric ?? "");
 }
@@ -641,6 +662,36 @@ function overviewIngredientItems(recipe: ReciPopRecipe): IngredientOverviewItem[
       const originalSource = row.amounts?.original ?? getIngredientQuantity(row);
       const metricSource = row.amounts?.metric ?? "";
       const quantityKind = String(row.quantityKind ?? "absolute").toLowerCase();
+      if (row.alternatives?.length) {
+        const label = item || "choice";
+        const key = `alternative:${label.toLowerCase()}|${step.id}`;
+        const entry = items.get(key) ?? {
+          item: label,
+          group: inferIngredientGroup(row, label),
+          notes: new Set<string>(),
+          divided: false,
+          quantities: [],
+          alternativeChoices: [],
+        };
+        if (row.note) entry.notes.add(row.note);
+        for (const choice of row.alternatives) {
+          const choiceItems = (choice.items ?? []).map((choiceItem) => {
+            const choiceLabel = choiceItem.item ?? choiceItem.ingredient ?? "";
+            const original = cleanOverviewQuantity(choiceItem.amounts?.original ?? getIngredientQuantity(choiceItem));
+            const metric = cleanOverviewQuantity(choiceItem.amounts?.metric ?? "");
+            return {
+              item: choiceLabel,
+              quantity: { original: original.value, metric: metric.value, scalable: false },
+            };
+          }).filter((choiceItem) => choiceItem.item);
+          if (choiceItems.length) {
+            entry.alternativeChoices ??= [];
+            entry.alternativeChoices.push({ label: choice.label, note: choice.note, items: choiceItems });
+          }
+        }
+        items.set(key, entry);
+        continue;
+      }
       if (!item || !originalSource || skipKinds.has(quantityKind)) continue;
       const original = cleanOverviewQuantity(originalSource);
       const metric = cleanOverviewQuantity(metricSource);
@@ -699,6 +750,17 @@ ${groups.map(([group, groupItems]) => `<section class="sn-ingredient-overview__g
 ${groupItems.map((item) => {
     const notes = [...item.notes];
     const note = [item.divided ? "divided across steps" : "", ...notes].filter(Boolean).join("; ");
+    if (item.alternativeChoices?.length) {
+      const choices = item.alternativeChoices.map((choice, index) => {
+        const lines = choice.items.map((choiceItem) => `<span class="sn-ingredient-overview__choice-line">${renderOverviewAmount(choiceItem.quantity)}<b>${escapeHtml(choiceItem.item)}</b></span>`).join("");
+        return `<div class="sn-ingredient-overview__choice">${index > 0 ? `<span class="sn-ingredient-overview__or">or</span>` : ""}${choice.label ? `<strong>${escapeHtml(choice.label)}</strong>` : ""}${lines}${choice.note ? `<small>${escapeHtml(choice.note)}</small>` : ""}</div>`;
+      }).join("");
+      return `<li class="sn-ingredient-overview__alternative">
+<b>${escapeHtml(item.item)}</b>
+<div class="sn-ingredient-overview__choices">${choices}</div>
+${note ? `<small>${escapeHtml(note)}</small>` : ""}
+</li>`;
+    }
     return `<li>
 <span class="sn-ingredient-overview__qty">${item.quantities.map(renderOverviewAmount).join("<span class=\"sn-ingredient-overview__plus\">+</span>")}</span>
 <b>${escapeHtml(item.item)}</b>
@@ -711,23 +773,44 @@ ${note ? `<small>${escapeHtml(note)}</small>` : ""}
 </section>`;
 }
 
+function renderReciPopIngredientRow(row: ReciPopIngredientBase, forceStatic = false): string {
+  const qty = row.qty ?? row.quantity ?? "";
+  const metric = row.amounts?.metric ?? "";
+  const item = row.item ?? row.ingredient ?? "";
+  const scalable = !forceStatic && isScalableIngredient(row);
+  const originalAttrs = scalable && qty ? ` data-scale-qty="${escapeHtml(qty)}"` : "";
+  const metricAttrs = scalable && metric ? ` data-scale-qty="${escapeHtml(metric)}"` : "";
+  const qtyHtml = metric
+    ? `<span data-unit-value="original"${originalAttrs}>${escapeHtml(qty)}</span><span data-unit-value="metric"${metricAttrs}>${escapeHtml(metric)}</span>`
+    : `<span${originalAttrs}>${escapeHtml(qty)}</span>`;
+  if (!qty && !metric) {
+    return `<tr class="sn-flow-ingredients__component"><td colspan="2"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+  }
+  return `<tr><td class="sn-flow-ingredients__qty">${qtyHtml}</td><td><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+}
+
+function renderReciPopAlternativeRows(row: ReciPopIngredient): string {
+  const item = row.item ?? row.ingredient ?? "choice";
+  const choices = row.alternatives ?? [];
+  return [
+    `<tr class="sn-flow-ingredients__component sn-flow-ingredients__alternative-head"><td colspan="2"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`,
+    ...choices.flatMap((choice, index) => {
+      const rows = choice.items ?? [];
+      return [
+        index > 0 ? `<tr class="sn-flow-ingredients__or"><td colspan="2">or</td></tr>` : "",
+        choice.label ? `<tr class="sn-flow-ingredients__choice-label"><td colspan="2">${escapeHtml(choice.label)}${choice.note ? `<small>${escapeHtml(choice.note)}</small>` : ""}</td></tr>` : "",
+        ...rows.map((choiceItem) => renderReciPopIngredientRow(choiceItem, true)),
+      ].filter(Boolean);
+    }),
+  ].join("\n");
+}
+
 function renderReciPopIngredientRows(rows: ReciPopIngredient[] = []): string {
   if (!rows.length) return "";
   return `<table class="sn-flow-ingredients"><tbody>
 ${rows.map((row) => {
-    const qty = row.qty ?? row.quantity ?? "";
-    const metric = row.amounts?.metric ?? "";
-    const item = row.item ?? row.ingredient ?? "";
-    const scalable = isScalableIngredient(row);
-    const originalAttrs = scalable && qty ? ` data-scale-qty="${escapeHtml(qty)}"` : "";
-    const metricAttrs = scalable && metric ? ` data-scale-qty="${escapeHtml(metric)}"` : "";
-    const qtyHtml = metric
-      ? `<span data-unit-value="original"${originalAttrs}>${escapeHtml(qty)}</span><span data-unit-value="metric"${metricAttrs}>${escapeHtml(metric)}</span>`
-      : `<span${originalAttrs}>${escapeHtml(qty)}</span>`;
-    if (!qty && !metric) {
-      return `<tr class="sn-flow-ingredients__component"><td colspan="2"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
-    }
-    return `<tr><td class="sn-flow-ingredients__qty">${qtyHtml}</td><td><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+    if (row.alternatives?.length) return renderReciPopAlternativeRows(row);
+    return renderReciPopIngredientRow(row);
   }).join("\n")}
 </tbody></table>`;
 }
@@ -1002,6 +1085,39 @@ function generateResponsiveRecipeImages(recipe: Recipe, flow: ReciPopRecipe | nu
   }
 }
 
+function redirectHtml(target: string): string {
+  return `<!doctype html>
+<meta charset="utf-8">
+<title>Redirecting...</title>
+<link rel="canonical" href="${escapeHtml(target)}">
+<meta http-equiv="refresh" content="0; url=${escapeHtml(target)}">
+<script>location.replace(${JSON.stringify(target)});</script>
+<p>Redirecting to <a href="${escapeHtml(target)}">${escapeHtml(target)}</a>.</p>
+`;
+}
+
+function writeRedirectFile(filePath: string, target: string) {
+  mkdirSync(dirname(filePath), { recursive: true });
+  writeFileSync(filePath, redirectHtml(target));
+}
+
+function addRecipeRedirects(recipes: Recipe[]) {
+  const byShortname = new Map(recipes.map((recipe) => [recipe.shortname, recipe]));
+  const recipeDir = join(DIST, "recipe");
+  mkdirSync(recipeDir, { recursive: true });
+
+  for (const recipe of recipes) {
+    writeRedirectFile(join(recipeDir, `${recipe.shortname}.html`), `/recipe/${recipe.shortname}/`);
+  }
+
+  for (const [legacy, targetShortname] of LEGACY_RECIPE_REDIRECTS) {
+    if (!byShortname.has(targetShortname)) continue;
+    const target = `/recipe/${targetShortname}/`;
+    writeRedirectFile(join(recipeDir, legacy, "index.html"), target);
+    writeRedirectFile(join(recipeDir, `${legacy}.html`), target);
+  }
+}
+
 function build() {
   rmSync(DIST, { recursive: true, force: true });
   mkdirSync(DIST, { recursive: true });
@@ -1025,6 +1141,7 @@ function build() {
     generateResponsiveRecipeImages(r, flow, dir);
     copyDirIfExists(join(r.localDir, "prompts"), join(dir, "prompts"));
   }
+  addRecipeRedirects(sorted);
 
   copyDirIfExists(join(ROOT, "images"), join(DIST, "images"));
   copyDirIfExists(join(ROOT, "recipe_files"), join(DIST, "recipe_files"));

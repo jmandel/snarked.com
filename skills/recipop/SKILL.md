@@ -55,6 +55,7 @@ When the user says "add recipe at <url>" in a repo that contains this skill, run
    - Add `amounts.metric` for defensible gram conversions and leave unconvertible quantities alone.
    - Add scaling-friendly leading quantities, e.g. `240 g`, `1 1/2 c`, `remaining 2 T`.
    - Use `quantityKind` for quantity semantics. Relational component portions such as `half spice mixture`, `remaining half dough`, or `one third sauce` should be `quantityKind: "portion"` with no metric conversion; they scale through the component's source ingredients, not as an independent weight.
+   - Use `quantityKind: "alternative"` plus `alternatives[]` for either/or choices. Do not hide choices inside a prose `item` like `bananas or 1 banana plus 2 carrots`; model each option and the ingredients inside that option.
    - Add `group` on source ingredient rows when it helps the overview stay scannable: `Spices + seasoning`, `Produce`, `Protein`, `Dry goods`, `Liquids + fats`, `Dairy`, `Garnish`, or a similarly cook-facing group. Do not group intermediate components or relational portions for shopping.
    - Model setup and mise en place before active cooking; use `parallel` only for true covered-time simultaneity.
    - Include storyboard inventory/cookware/state continuity and one asset entry per hero or step image.
@@ -128,6 +129,7 @@ The representation is only useful if the decomposition matches how a person cook
 - Identify every meaningful changed state: drained onion, spice mixture, dough, wilted greens, browned chicken, rested batter, cooled cake.
 - Put quantities where they are used. Each step should stand alone so a cook does not scroll back to a master ingredient list to complete the action.
 - Preserve the logic of splits and divided components. If a step makes a component and later steps use `half`, `remaining half`, `a third`, or another relational portion, keep that portion relational with `quantityKind: "portion"` instead of inventing a gram amount. Only use a gram amount for the portion if the recipe explicitly gives the component yield or the split amount.
+- Preserve real either/or choices as structured alternatives. When a recipe says `2-3 bananas OR 1 banana plus 2 carrots`, make one parent row with `quantityKind: "alternative"`, `scalable: false`, and `alternatives[]` containing two choices. The renderer can then show the choice clearly and avoid multiplying one side of an OR expression as if it were a normal quantity.
 - Keep source ambiguity visible: `2-3 bananas`, `until golden`, `to taste`, `about 10 minutes`, source typos, and judgment calls should remain in step text or notes.
 - Default to mise en place cooking. Do setup first, then prep, then cooking. If a tiny spice bowl, sauce, garnish, pan setup, oven preheat, or tool setup can be completed before active cooking starts, model it as a normal earlier step.
 - Use parallel layout only for simultaneity, not mere nondependency. A second task belongs in a covered-time group only when the first task creates a real window: simmering mostly unattended, baking, chilling, resting, draining, cooling, reducing, or marinating.
@@ -205,7 +207,18 @@ Use this minimal shape, then fill in the richer fields as needed:
       "duration": {"activeMinutes": 2, "activeLabel": "2 min"},
       "ingredients": [
         {"qty": "1 tsp", "amounts": {"metric": "2.10 g"}, "item": "ground cumin"},
-        {"qty": "1/2 tsp", "amounts": {"metric": "3.00 g"}, "item": "salt"}
+        {"qty": "1/2 tsp", "amounts": {"metric": "3.00 g"}, "item": "salt"},
+        {
+          "quantityKind": "alternative",
+          "scalable": false,
+          "item": "fruit or vegetable choice",
+          "group": "Produce",
+          "note": "mashed or grated; choose one source option",
+          "alternatives": [
+            {"label": "banana option", "items": [{"qty": "2-3", "quantityKind": "count", "item": "bananas", "amounts": {"original": "2-3"}}]},
+            {"label": "banana-carrot option", "items": [{"qty": "1", "quantityKind": "count", "item": "banana", "amounts": {"original": "1"}}, {"qty": "2", "quantityKind": "count", "item": "carrots", "amounts": {"original": "2"}}]}
+          ]
+        }
       ],
       "makes": [{"item": "spice mixture"}],
       "notes": ["Use half now and half later."],
@@ -230,17 +243,19 @@ Use this minimal shape, then fill in the richer fields as needed:
 Preserve source wording and add alternatives. Do not overwrite the original recipe.
 
 - `ingredients[].qty` is the source-facing quantity.
-- Keep `qty` to the amount/unit only when possible. Put alternatives, prep state, and explanatory prose in `item` or `note`; for example use `qty: "2-3"` with `item: "bananas or 1 banana plus 2 carrots"` instead of putting the whole alternative sentence in the quantity column.
-- `ingredients[].quantityKind` clarifies quantity semantics. Use `absolute` or omit it for normal quantities, `count` for explicit counts when helpful, `portion` for relational splits of a previously made component, `as-needed` for greasing/oiling as needed, and `to-taste` for salt/pepper/pinch adjustments.
+- Keep `qty` to the amount/unit only. Put prep state in `item` or `note`; put either/or choices in `alternatives[]`, not in `qty` or a long `item` string.
+- `ingredients[].quantityKind` clarifies quantity semantics. Use `absolute` or omit it for normal quantities, `count` for explicit counts when helpful, `portion` for relational splits of a previously made component, `alternative` for either/or choices, `as-needed` for greasing/oiling as needed, and `to-taste` for salt/pepper/pinch adjustments.
+- `ingredients[].alternatives[]` models OR choices. The parent row should carry the cook-facing choice label, `quantityKind: "alternative"`, `scalable: false`, and usually the shopping `group`; each choice contains `items[]` with normal compact `qty` + `item` rows. Use this for `2-3 bananas OR 1 banana plus 2 carrots`, fish swaps, flour blends, and other source choices where the cook chooses one path.
 - `ingredients[].amounts.metric` is the metric display when a defensible conversion exists.
 - `ingredients[].group` is an optional cook-facing grouping for the derived ingredient/shopping overview. Prefer practical shopping/prep groups over taxonomy: `Spices + seasoning`, `Produce`, `Protein`, `Dry goods`, `Liquids + fats`, `Dairy`, `Garnish`. Use it for source ingredients; omit it on intermediate components and `portion` rows.
 - Prefer grams for weights and for volume-to-weight conversions with reasonable ingredient-specific densities.
 - Format grams sensibly: whole grams for ordinary quantities, one decimal below 10 g, two decimals only for tiny amounts where precision matters. Avoid fake precision such as `240.00 g` for flour.
 - Leave metric absent for `to taste`, `as needed`, ranges where density is unknowable, counts, garnish handfuls, or quantities where conversion would mislead.
 - Leave metric absent for `quantityKind: "portion"` rows such as `half spice mixture`. The whole component scales by scaling the source ingredients, so converting the later half into a standalone gram value breaks the logic unless the source states the component yield.
+- Leave metric absent on the parent `alternative` row. If an individual alternative item has a defensible metric value, put it on that item; keep the parent non-scalable because the cook must choose an option before scaling can be interpreted.
 - Use parseable leading quantities so renderers can scale: `240 g`, `1 1/2 c`, `remaining 2 T`, `2 eggs`.
 - Scaling can be by factor or by a key ingredient target. The renderer should multiply parseable leading absolute/count quantities, keep `remaining 2 T` style known split amounts scalable, and leave `portion`, `as-needed`, `to-taste`, and component rows unchanged.
-- Mark rows `scalable: false` when the quantity is an either/or choice, a judgment quantity, or otherwise cannot be multiplied without changing the meaning.
+- Mark rows `scalable: false` when the quantity is a judgment quantity or otherwise cannot be multiplied without changing the meaning. Either/or choices should also use `quantityKind: "alternative"` and structured `alternatives[]`.
 
 ## Layout Guidance
 

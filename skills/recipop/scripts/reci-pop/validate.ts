@@ -33,8 +33,8 @@ if (typeof recipe.style === 'string') {
 }
 
 const stepIds = new Set();
-const quantityKinds = new Set(['absolute', 'count', 'portion', 'ratio', 'as-needed', 'to-taste', 'component']);
-const noMetricQuantityKinds = new Set(['portion', 'ratio', 'as-needed', 'to-taste', 'component']);
+const quantityKinds = new Set(['absolute', 'count', 'portion', 'ratio', 'as-needed', 'to-taste', 'component', 'alternative']);
+const noMetricQuantityKinds = new Set(['portion', 'ratio', 'as-needed', 'to-taste', 'component', 'alternative']);
 for (const step of recipe.steps || []) {
   if (!step.id) errors.push('Every step needs an id');
   if (step.id && stepIds.has(step.id)) errors.push(`Duplicate step id: ${step.id}`);
@@ -54,6 +54,33 @@ for (const step of recipe.steps || []) {
     }
     if (noMetricQuantityKinds.has(row.quantityKind) && row.amounts?.metric) {
       errors.push(`Step ${step.id} ingredient ${row.item || row.ingredient || '?'} uses quantityKind ${row.quantityKind} but also defines amounts.metric`);
+    }
+    if (row.quantityKind === 'alternative' && !Array.isArray(row.alternatives)) {
+      errors.push(`Step ${step.id} ingredient ${row.item || row.ingredient || '?'} uses quantityKind alternative but has no alternatives[]`);
+    }
+    if (Array.isArray(row.alternatives)) {
+      if (row.quantityKind !== 'alternative') {
+        errors.push(`Step ${step.id} ingredient ${row.item || row.ingredient || '?'} has alternatives[] but quantityKind is ${row.quantityKind}; use quantityKind alternative`);
+      }
+      if (!row.alternatives.length) errors.push(`Step ${step.id} ingredient ${row.item || row.ingredient || '?'} has empty alternatives[]`);
+      for (const [choiceIndex, choice] of row.alternatives.entries()) {
+        if (!Array.isArray(choice.items) || !choice.items.length) {
+          errors.push(`Step ${step.id} alternative ${choiceIndex + 1} for ${row.item || row.ingredient || '?'} needs non-empty items[]`);
+          continue;
+        }
+        for (const [itemIndex, item] of choice.items.entries()) {
+          if (!item.item && !item.ingredient) {
+            errors.push(`Step ${step.id} alternative ${choiceIndex + 1} item ${itemIndex + 1} for ${row.item || row.ingredient || '?'} needs item`);
+          }
+          if (item.quantityKind && !quantityKinds.has(item.quantityKind)) {
+            errors.push(`Step ${step.id} alternative ${choiceIndex + 1} item ${itemIndex + 1} has invalid quantityKind: ${item.quantityKind}`);
+          }
+          if (item.amounts && typeof item.amounts !== 'object') errors.push(`Step ${step.id} alternative ${choiceIndex + 1} item ${itemIndex + 1} has amounts that are not an object`);
+          for (const [unitId, value] of Object.entries(item.amounts || {})) {
+            if (typeof value !== 'string') errors.push(`Step ${step.id} alternative ${choiceIndex + 1} item ${itemIndex + 1} amount ${unitId} must be a string`);
+          }
+        }
+      }
     }
   }
 }
