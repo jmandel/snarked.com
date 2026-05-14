@@ -55,6 +55,7 @@ When the user says "add recipe at <url>" in a repo that contains this skill, run
    - Add `amounts.metric` for defensible gram conversions and leave unconvertible quantities alone.
    - Add scaling-friendly leading quantities, e.g. `240 g`, `1 1/2 c`, `remaining 2 T`.
    - Use `quantityKind` for quantity semantics. Relational component portions such as `half spice mixture`, `remaining half dough`, or `one third sauce` should be `quantityKind: "portion"` with no metric conversion; they scale through the component's source ingredients, not as an independent weight.
+   - Add `group` on source ingredient rows when it helps the overview stay scannable: `Spices + seasoning`, `Produce`, `Protein`, `Dry goods`, `Liquids + fats`, `Dairy`, `Garnish`, or a similarly cook-facing group. Do not group intermediate components or relational portions for shopping.
    - Model setup and mise en place before active cooking; use `parallel` only for true covered-time simultaneity.
    - Include storyboard inventory/cookware/state continuity and one asset entry per hero or step image.
 6. Validate and plan:
@@ -131,9 +132,10 @@ The representation is only useful if the decomposition matches how a person cook
 - Default to mise en place cooking. Do setup first, then prep, then cooking. If a tiny spice bowl, sauce, garnish, pan setup, oven preheat, or tool setup can be completed before active cooking starts, model it as a normal earlier step.
 - Use parallel layout only for simultaneity, not mere nondependency. A second task belongs in a covered-time group only when the first task creates a real window: simmering mostly unattended, baking, chilling, resting, draining, cooling, reducing, or marinating.
 - Do not invent a parent duration for a parallel group. The child steps already carry timing; a parent label like "5 min" is usually misleading when the covered step and the covered prep have their own start times and active/passive durations.
-- Avoid generic parallel labels such as "Covered time". If the relationship needs explanation, write a short `summary` in ordinary cook-facing language, e.g. "While the pan bakes, whisk the sauce." Most renderers should not show a parent heading at all.
+- Treat parallel layout as structure, not prose. Do not write generic parent labels, summaries, or convergence captions such as "Covered time", "prep lane", or "Return to the main sequence"; the adjacent step cards should make the relationship clear.
 - Do not claim simultaneity while the cook is actively stirring, searing, whisking, forming, frying, or otherwise tied to the station. It is usually unrealistic to chop vegetables while also browning meat or forming kebabs.
-- Create explicit convergence. If a covered-time prep lane feeds a later step, return to a full-width step after the parallel group and name the concrete action, e.g. "Pour sauce around salmon" rather than vague "bring everything together".
+- Create explicit convergence through the next real step. If a covered-time prep task feeds a later action, make that later full-width step concrete, e.g. "Pour sauce around salmon" rather than adding a vague convergence caption.
+- Include enough source ingredient quantities in steps for renderers to derive a compact ingredient/shopping overview. Add `group` to source ingredient rows when grouping is not obvious. Intermediate components and relational portions stay in the step flow, not the overview.
 - Write cook-facing labels. Avoid filler like "magic", "journey", "harmony", "meet at", "feed into", or ingredients acting like characters.
 - Keep quick facts operational: yield, prep time, cook time, oven temperature, rest/chill time. Avoid decorative noun tiles such as "Key cue: cooked through"; put cues in the relevant step.
 
@@ -183,12 +185,11 @@ Use this minimal shape, then fill in the richer fields as needed:
       {"type": "step", "step": "mix-spices"},
       {
         "type": "parallel",
-        "summary": "While the bake is mostly hands-off, slice the garnish.",
         "lanes": [
           {"label": "Bake", "steps": ["bake"]},
           {"label": "Prep garnish", "steps": ["slice-garnish"]}
         ],
-        "converge": {"label": "Top with garnish after resting.", "targetStep": "serve"}
+        "converge": {"targetStep": "serve"}
       },
       {"type": "step", "step": "serve"}
     ]
@@ -232,6 +233,7 @@ Preserve source wording and add alternatives. Do not overwrite the original reci
 - Keep `qty` to the amount/unit only when possible. Put alternatives, prep state, and explanatory prose in `item` or `note`; for example use `qty: "2-3"` with `item: "bananas or 1 banana plus 2 carrots"` instead of putting the whole alternative sentence in the quantity column.
 - `ingredients[].quantityKind` clarifies quantity semantics. Use `absolute` or omit it for normal quantities, `count` for explicit counts when helpful, `portion` for relational splits of a previously made component, `as-needed` for greasing/oiling as needed, and `to-taste` for salt/pepper/pinch adjustments.
 - `ingredients[].amounts.metric` is the metric display when a defensible conversion exists.
+- `ingredients[].group` is an optional cook-facing grouping for the derived ingredient/shopping overview. Prefer practical shopping/prep groups over taxonomy: `Spices + seasoning`, `Produce`, `Protein`, `Dry goods`, `Liquids + fats`, `Dairy`, `Garnish`. Use it for source ingredients; omit it on intermediate components and `portion` rows.
 - Prefer grams for weights and for volume-to-weight conversions with reasonable ingredient-specific densities.
 - Format grams sensibly: whole grams for ordinary quantities, one decimal below 10 g, two decimals only for tiny amounts where precision matters. Avoid fake precision such as `240.00 g` for flour.
 - Leave metric absent for `to taste`, `as needed`, ranges where density is unknowable, counts, garnish handfuls, or quantities where conversion would mislead.
@@ -246,7 +248,7 @@ Preserve source wording and add alternatives. Do not overwrite the original reci
 
 - Use `{"type": "step", "step": "id"}` for normal top-to-bottom cooking.
 - Use `{"type": "parallel"}` only for covered-time simultaneity.
-- Do not expose internal layout terms in user-facing HTML. The JSON can say `parallel`, `lanes`, and `converge`; the page should show plain cook-facing sections.
+- Do not expose internal layout terms in user-facing HTML or JSON copy. The JSON keys can say `parallel`, `lanes`, and `converge`, but avoid human-visible text fields that explain the renderer's mechanics.
 - Keep process pages vertical and mobile-first. Prefer scrollable cards with full step context over dense CFE-style matrices except for analysis/debug views.
 - Each step card should include its own instruction, quantities/components, notes/cues, and image. The cook should not need a global ingredient table to perform a step.
 

@@ -53,6 +53,7 @@ type FlowRecipe = {
 type ReciIngredient = {
   qty: string;
   item: string;
+  group?: string;
   quantityKind?: "absolute" | "count" | "portion" | "ratio" | "as-needed" | "to-taste" | "component";
   scalable?: boolean;
   note?: string;
@@ -362,6 +363,7 @@ function ingredientForInput(
   const qty = input.amount || component?.quantity?.text || "";
   const item = component?.label || titleCase(input.ref);
   const ingredient: ReciIngredient = { qty, item };
+  if (component?.group) ingredient.group = component.group;
   const notes = [component?.state, component?.optional ? "optional" : "", component?.note].filter(Boolean);
   if (notes.length) ingredient.note = notes.join("; ");
   const quantityKind = quantityKindFor(qty);
@@ -473,14 +475,12 @@ function buildLayout(flow: FlowRecipe, steps: Array<{ id: string; sourceActionId
       if (stepA && stepB) {
         sections.push({
           type: "parallel",
-          label: "Covered time",
           timeLabel: actions[i].execution?.passive?.text || actions[i].duration?.text || "",
-          summary: "The first task is mostly hands-off here, so the prep lane can happen during that wait.",
           lanes: [
             { label: titleCase(action.verb || "Covered cooking"), accent: "cook", steps: [stepA] },
             { label: titleCase(next.verb || "Prep"), accent: "prep", steps: [stepB] }
           ],
-          converge: { label: "Return to the main sequence.", targetStep: idBySource.get(actions[i + 2]?.id || "") || "" }
+          converge: { targetStep: idBySource.get(actions[i + 2]?.id || "") || "" }
         });
         i++;
         continue;

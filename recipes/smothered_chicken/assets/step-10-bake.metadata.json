@@ -1,0 +1,25 @@
+{
+  "filename": "step-10-bake.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T15:24:30.095Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-smothered-chicken/codex-home/generated_images/019e21cd-291f-7c13-9397-9169b2e006ac/ig_07f2b06d515b40f5016a04973954388199971e9968ba78b91c.png",
+  "promptFile": "recipes/smothered_chicken/prompts/step-10-bake.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [
+    "step-08-build-barley-sauce.png",
+    "step-09-assemble.png"
+  ],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 3119815,
+    "afterBytes": 3023392
+  }
+}

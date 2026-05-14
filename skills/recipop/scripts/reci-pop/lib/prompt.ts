@@ -124,12 +124,10 @@ export function recipeContextMarkdown(recipe) {
       if (section.type === 'step') {
         lines.push(`- Step: ${section.step}`);
       } else if (section.type === 'parallel') {
-        lines.push(`- Covered-time group: ${section.label || 'parallel'}`);
-        if (section.summary) lines.push(`  - Why: ${section.summary}`);
+        lines.push('- Covered-time group');
         for (const lane of section.lanes || []) {
-          lines.push(`  - ${lane.label || 'lane'}: ${(lane.steps || []).join(', ')}`);
+          lines.push(`  - Steps: ${(lane.steps || []).join(', ')}`);
         }
-        if (section.converge?.label) lines.push(`  - Converge: ${section.converge.label}`);
       }
     }
     lines.push('');

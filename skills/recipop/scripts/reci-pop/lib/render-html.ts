@@ -103,22 +103,13 @@ function renderParallelModule(recipe, section, stepMap, ctx = {}) {
       const step = stepMap.get(stepId);
       return step ? renderStepCard(recipe, step, true, ctx) : '';
     }).join('\n');
-    const accent = phaseClass(lane.accent || lane.phase || '');
-    return `<section class="process-group ${accent}">
-      <h2 class="group-heading">${escapeHtml(lane.label || '')}</h2>
-      <div class="group-cards">${cards}</div>
-    </section>`;
+    return `<div class="parallel-lane">${cards}</div>`;
   }).join('\n');
 
   return `<div class="step-row parallel-row">
     ${renderTimeMark(section.timeLabel)}
-    <section class="parallel-module" aria-label="${escapeHtml(section.label || 'Grouped preparation')}">
-      <div class="parallel-copy">
-        ${section.label ? `<h2 class="parallel-title">${escapeHtml(section.label)}</h2>` : ''}
-        ${section.summary ? `<p>${escapeHtml(section.summary)}</p>` : ''}
-      </div>
+    <section class="parallel-module" aria-label="Parallel cooking tasks">
       <div class="parallel-lanes" style="--lane-count: ${Math.max(1, lanes.length)}">${renderedLanes}</div>
-      ${section.converge?.label ? `<div class="converge-hint">${escapeHtml(section.converge.label)}</div>` : ''}
     </section>
   </div>`;
 }
@@ -247,26 +238,15 @@ ${extraCssVars}
     .art-placeholder { display: grid; place-items: center; min-height: 118px; padding: 12px; border: 1px dashed #b8c5d4; border-radius: 12px; background: #fff; color: var(--muted); text-align: center; font-size: 0.78rem; overflow-wrap: anywhere; }
     .art-placeholder strong { display: block; color: var(--ink); font-size: 0.83rem; margin-bottom: 4px; }
     .parallel-module { min-width: 0; overflow: hidden; }
-    .parallel-copy { margin: 0 0 10px; }
-    .parallel-copy p { margin: 4px 0 0; color: var(--muted); font-weight: 650; }
-    .parallel-title { margin: 0; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .parallel-lanes { display: grid; grid-template-columns: 1fr; gap: var(--gap); align-items: start; }
-    .process-group { border: 1px solid #dfe7ef; border-radius: var(--radius); padding: 12px; background: #fff; align-self: start; }
-    .process-group.phase-blue { background: #f6fbff; border-color: color-mix(in srgb, var(--blue), white 50%); }
-    .process-group.phase-green { background: #f8fcf6; border-color: color-mix(in srgb, var(--green), white 50%); }
-    .process-group.phase-purple { background: #faf7ff; border-color: color-mix(in srgb, var(--purple), white 55%); }
-    .process-group.phase-orange { background: #fff9f2; border-color: color-mix(in srgb, var(--orange), white 45%); }
-    .process-group.phase-gold { background: #fffaf0; border-color: color-mix(in srgb, var(--gold), white 42%); }
-    .group-heading { margin: 0 0 10px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
-    .group-cards { display: grid; gap: 10px; }
+    .parallel-lanes { display: grid; grid-template-columns: 1fr; gap: var(--gap); align-items: stretch; }
+    .parallel-lane { min-width: 0; display: grid; grid-auto-rows: 1fr; gap: 10px; }
     .step-card.compact { padding: 12px; box-shadow: none; }
     .step-card.compact .step-inner { grid-template-columns: 1fr; }
     .step-card.compact .art-slot img, .step-card.compact .art-placeholder { max-height: 140px; min-height: 90px; }
-    .converge-hint { margin-top: 12px; padding: 10px 12px; border-radius: 12px; background: #f2edff; color: #3b2b6a; font-weight: 750; text-align: center; }
     .tip { margin-top: var(--gap); padding: 14px 16px; border: var(--border); border-color: #f2d39a; border-radius: var(--radius); background: #fffaf0; font-weight: 650; }
     @media (min-width: 620px) { .hero-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 22px); } .step-inner { grid-template-columns: minmax(0, 1.15fr) minmax(150px, 0.85fr); align-items: center; } .art-placeholder { min-height: 150px; } }
     @media (min-width: 860px) { .recipe-header { gap: clamp(16px, 3vw, 28px); } .step-inner { grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr); } .parallel-lanes { grid-template-columns: repeat(var(--lane-count, 2), minmax(0, 1fr)); } }
-    @media (max-width: 640px) { .recipe { padding: 10px; } .facts { margin-bottom: 14px; padding-top: 10px; } .parallel-copy { margin-bottom: 8px; } .parallel-copy p { font-size: 0.95rem; } .parallel-lanes { display: block; } .process-group { padding: 0; border: 0; background: transparent; } .process-group + .process-group { margin-top: 12px; } .group-heading { margin-bottom: 6px; } .step-card, .step-card.compact { padding: 10px; border-radius: 12px; } .step-inner, .step-card.compact .step-inner { grid-template-columns: 1fr; gap: 10px; } .art-slot img, .step-card.compact .art-slot img { max-height: 180px; } .hero-art img { max-height: none; } .converge-hint { margin-top: 10px; padding: 8px 10px; } }
+    @media (max-width: 640px) { .recipe { padding: 10px; } .facts { margin-bottom: 14px; padding-top: 10px; } .parallel-lanes { display: block; } .parallel-lane + .parallel-lane { margin-top: 12px; } .step-card, .step-card.compact { padding: 10px; border-radius: 12px; } .step-inner, .step-card.compact .step-inner { grid-template-columns: 1fr; gap: 10px; } .art-slot img, .step-card.compact .art-slot img { max-height: 180px; } .hero-art img { max-height: none; } }
   `;
 
   return `<!doctype html>

@@ -1,0 +1,254 @@
+Generate one standalone recipe illustration.
+
+Recipe context: Smothered Chicken + Barley — Baked chicken with barley, tomatoes, and lots of spices
+Target image: Smothered Chicken + Barley: Assemble
+Used as: Step 9 card
+Aspect ratio: 4:3
+
+STYLE PACK
+Style pack: french-hen-folk-wave
+Loose French-hen-inspired folk cookbook recipe art. The look should feel hand-painted, coarse, confident, and materially wet, not photorealistic or digitally polished.
+Medium: Loose watercolor and gouache on bright white cold-press paper, with obvious wet pigment blooms, dappled stippling, broken dry-brush texture, uneven gouache opacity, and selective dark ink/paint contours. Preserve visible brush marks and pigment pooling; do not smooth them away.
+Palette: Warm ochres, siennas, mustards, olives, browned-food tones, cream paper, faint sky-blue washes, jade/teal paint accents, dark brown or black ink, and small warm red highlights.
+Composition: Consistent three-quarter recipe-card food perspective with the action or finished food centered and scaled for card use: clear silhouette, even breathing room, but no broad dead bands of blank paper above or beside the subject. Use the same cookware angle when an object repeats. Step art should fill the usable canvas enough to read at mobile width; optional loose teal accent marks only when they help a hero composition, never inside step art.
+Lighting: Soft natural kitchen light suggested through watercolor wash and irregular shadow, not photorealistic studio lighting or glossy metal rendering. Food should be readable and appetizing while retaining handmade looseness.
+Rendering: Naive-but-assured folk-art cookbook plate feel: large economical strokes, coarse stippled texture, visible wet-on-wet pooling, uneven edges, dry-brush skips, confident black/brown calligraphic contours, and simplified forms. No smooth gradients, no airbrushed finish, no hyper-detailed realism.
+- Asset is art only; the HTML supplies all typography, layout, tables, timing, and labels.
+- Show the specific food state for this step clearly enough that a cook can recognize it, but render it with loose brushwork rather than photographic detail.
+- Keep cookware and food fully visible while using a tight, balanced crop that can be trimmed and placed full-bleed in a card.
+- Avoid placing the subject low, tiny, or off to one side with large removable paper margins.
+- Do not draw words, numbers, measurement labels, arrows, callouts, badges, watermarks, or interface chrome.
+- Use the reference image for material handling and brush language only; do not copy the rooster/chick subject, signature, or border.
+
+STYLE REFERENCES
+One-shot style example 1: Use as a style reference for loose watercolor/gouache brushwork, pigment pooling, stippling, warm folk-art palette, teal accent marks, and hand-painted cookbook-plate feeling. Do not copy the rooster subject, chick, signature, border, or page layout
+
+FULL RECIPE CONTEXT
+<recipe_context_markdown>
+# Smothered Chicken + Barley
+Baked chicken with barley, tomatoes, and lots of spices
+
+## Quick facts
+- Active: ~40 min
+- Wait: ~1 h 15 min
+- Heat: medium high heat / 350 F
+- Stations: stovetop + oven
+
+## Process layout
+- Step: make-spice-mixture
+- Step: chop-onions
+- Step: chop-red-pepper
+- Step: prep-tomatoes
+- Step: rub-chicken
+- Step: brown-chicken
+- Step: saute-vegetables
+- Step: build-barley-sauce
+- Step: assemble
+- Covered-time group
+  - Steps: bake
+  - Steps: slice-green-onions
+- Step: rest-and-garnish
+
+## Steps
+### 1. Make Spice Mixture
+Timing: 0 min · 2 minutes
+Station/tools: counter, small bowl
+Combine the first six ingredients in a small bowl.
+Uses:
+  - 1 t ground cumin (2.1 g)
+  - 1/2 t chili powder (1.4 g)
+  - 1/2 t salt (3 g)
+  - 1/2 t ground cinnamon (1.3 g)
+  - 1/8 t garlic powder (0.4 g)
+  - 1/8 t pepper (0.3 g)
+Makes: spice mixture
+
+### 2. Chop Onions
+Timing: 2 min · 5 minutes
+Station/tools: knife, cutting board
+Chop the onions for the barley mixture.
+Uses:
+  - 1 1/2 c onions (240 g)
+Makes: chopped onions
+
+### 3. Chop Red Pepper
+Timing: 7 min · 3 minutes
+Station/tools: knife, cutting board
+Chop the red pepper for the barley mixture.
+Uses:
+  - 1 c red pepper (150 g)
+Makes: chopped red pepper
+
+### 4. Prep Tomatoes
+Timing: 10 min · 3 minutes
+Station/tools: sink, knife, cutting board
+Drain and chop the tomatoes.
+Uses:
+  - 14.5 oz can tomatoes (410 g can)
+Makes: drained chopped tomatoes
+
+### 5. Rub Chicken
+Timing: 13 min · 2 minutes
+Station/tools: counter
+Rub the chicken with half the resulting spice mixture.
+Uses:
+  - 6 chicken thighs
+  - half spice mixture
+Makes: spice-rubbed chicken
+
+### 6. Brown Chicken
+Timing: 15 min · 8 minutes, estimated
+Station/tools: stovetop, skillet
+Brown chicken in 2 T oil in skillet over medium high heat. Remove as it browns to baking pan.
+Uses:
+  - spice-rubbed chicken
+  - 2 T olive oil (28 g)
+Makes: browned chicken
+Notes:
+- Heat: medium high heat
+- Cue: chicken browned and moved to baking pan
+
+### 7. Saute Vegetables
+Timing: 23 min · 4 minutes
+Station/tools: stovetop, skillet
+Add remaining oil to skillet. Saute onion and pepper a few minutes.
+Uses:
+  - remaining 2 T olive oil (remaining 28 g)
+  - chopped onions
+  - chopped red pepper
+Makes: sauteed onion and pepper
+Notes:
+- Source timing: a few minutes
+
+### 8. Build Barley Sauce
+Timing: 27 min · 5 minutes
+Station/tools: stovetop, skillet
+Add soy sauce and continue cooking a few more minutes. Add broth, barley, tomatoes, and remaining spice mixture. Bring to boil.
+Uses:
+  - sauteed onion and pepper
+  - 1 T soy sauce (16 g)
+  - 3 1/2 c chicken broth (840 g)
+  - 1 1/4 c uncooked barley (250 g)
+  - drained chopped tomatoes
+  - remaining half spice mixture
+Makes: boiling barley mixture
+Notes:
+- Source timing: a few more minutes, then bring to boil
+- Cue: mixture comes to a boil
+
+### 9. Assemble
+Timing: 32 min · 2 minutes
+Station/tools: counter
+Pour mixture over chicken in baking pan.
+Uses:
+  - boiling barley mixture
+  - browned chicken
+Makes: chicken covered with barley mixture
+
+### 10. Bake
+Timing: 34 min · 2 minutes · wait 1 hour
+Station/tools: oven
+Cover and bake 1 hour at 350 F.
+Uses:
+  - chicken covered with barley mixture
+Makes: baked chicken and barley
+Notes:
+- Heat: 350 F
+- Source timing: 1 hour
+- Wait: 1 hour
+- Cue: barley tender and chicken cooked
+
+### 11. Slice Green Onions
+Timing: 36 min · 3 minutes
+Station/tools: knife, cutting board
+Slice the green onions for garnish.
+Uses:
+  - 1 bunch green onions
+Makes: sliced green onions
+
+### 12. Rest And Garnish
+Timing: 39 min · 1 minute · wait 15 minutes
+Station/tools: counter
+Let stand 15 minutes before serving. Top with sliced green onions.
+Uses:
+  - baked chicken and barley
+  - sliced green onions
+Makes: smothered chicken and barley
+Notes:
+- Source timing: 15 minutes
+- Wait: 15 minutes
+</recipe_context_markdown>
+
+RECIPE STORYBOARD
+Use the storyboard asset and rules as the primary continuity reference when available.
+Continuity storyboard asset: storyboard-smothered-chicken.png
+Intent: Generate this first as one coherent white-background continuity board for reusable ingredients, cookware, intermediate states, and final serving. Later hero and step images should match its cookware, camera angle, repeated ingredients, cooked states, palette, and lighting. It is not a thumbnail sheet of final step images.
+Camera and angle: Use one consistent three-quarter overhead recipe-card perspective for every object: slightly above the food, looking down at a shallow angle, with cookware handles and ellipses oriented consistently left-to-right. Keep objects centered with comfortable padding and a clean white-paper background.
+Cookware/tools to preserve:
+- counter: Use one consistent counter design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- small bowl: Use one consistent small bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- mixing bowl: Use one consistent mixing bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- knife: Use one consistent knife design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- cutting board: Use one consistent cutting board design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- sink: Use one consistent sink design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- stovetop: Use one consistent stovetop design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- skillet: Use one consistent skillet design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- oven: Use one consistent oven design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- bowl: Use one consistent bowl design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+- baking pan: Use one consistent baking pan design whenever this tool or station appears; preserve orientation, scale, material, and lighting across assets.
+Recipe visual inventory:
+- ground cumin: 1 t spice mix; ingredient
+- chili powder: 1/2 t spice mix; ingredient
+- salt: 1/2 t spice mix; ingredient
+- ground cinnamon: 1/2 t spice mix; ingredient
+- garlic powder: 1/8 t spice mix; ingredient
+- pepper: 1/8 t spice mix; ingredient
+- chicken thighs: 6 main; ingredient
+- olive oil: 4 T, divided cooking; ingredient
+- onions: 1 1/2 c barley mixture; ingredient
+- red pepper: 1 c barley mixture; ingredient
+- soy sauce: 1 T barley mixture; ingredient
+- chicken broth: 3 1/2 c barley mixture; ingredient
+- uncooked barley: 1 1/4 c barley mixture; ingredient
+- tomatoes: 14.5 oz can barley mixture; ingredient
+- green onions: 1 bunch garnish; ingredient
+- chopped onions: chop: 1 1/2 c onions
+- chopped red pepper: chop: 1 c red pepper
+- drained chopped tomatoes: drain and chop: 14.5 oz can tomatoes
+- sliced green onions: slice: 1 bunch green onions
+- spice mixture: combine: 1 t ground cumin + 1/2 t chili powder + 1/2 t salt + 1/2 t ground cinnamon + 1/8 t garlic powder + 1/8 t pepper
+- spice-rubbed chicken: rub: 6 chicken thighs + half spice mixture
+- browned chicken: brown: spice-rubbed chicken + 2 T olive oil
+- sauteed onion and pepper: saute: remaining 2 T olive oil + chopped onions + chopped red pepper
+- boiling barley mixture: boil: sauteed onion and pepper + 1 T soy sauce + 3 1/2 c chicken broth + 1 1/4 c uncooked barley + drained chopped tomatoes + remaining half spice mixture
+- chicken covered with barley mixture: pour: boiling barley mixture + browned chicken
+- baked chicken and barley: bake: chicken covered with barley mixture
+- smothered chicken and barley: rest: baked chicken and barley + sliced green onions
+Repeated food states:
+- spice mixture: combine from ground cumin + chili powder + salt + ground cinnamon + garlic powder + pepper; keep this state visually identical wherever it appears later.
+- chopped onions: chop from onions; keep this state visually identical wherever it appears later.
+- chopped red pepper: chop from red pepper; keep this state visually identical wherever it appears later.
+- drained chopped tomatoes: prep from tomatoes; keep this state visually identical wherever it appears later.
+- spice-rubbed chicken: rub from chicken thighs + spice mixture; keep this state visually identical wherever it appears later.
+- browned chicken: brown from spice-rubbed chicken + olive oil; keep this state visually identical wherever it appears later.
+- sauteed onion and pepper: saute from olive oil + chopped onions + chopped red pepper; keep this state visually identical wherever it appears later.
+- boiling barley mixture: boil from sauteed onion and pepper + soy sauce + chicken broth + uncooked barley + drained chopped tomatoes + spice mixture; keep this state visually identical wherever it appears later.
+- chicken covered with barley mixture: pour from boiling barley mixture + browned chicken; keep this state visually identical wherever it appears later.
+- baked chicken and barley: bake from chicken covered with barley mixture; keep this state visually identical wherever it appears later.
+- sliced green onions: slice from green onions; keep this state visually identical wherever it appears later.
+- smothered chicken and barley: rest from baked chicken and barley + sliced green onions; keep this state visually identical wherever it appears later.
+Continuity rules:
+- This storyboard is art only; do not include labels, numbers, arrows, UI cards, ingredient text, captions, panels, thumbnail frames, or visible text.
+- Pick a single coherent cookware set and keep it fixed across the recipe: same pan shapes, dish shapes, bowls, cutting board, and serving vessel whenever repeated.
+- Show repeated food states clearly enough that individual step images can reuse them without changing color, cut size, doneness, or vessel.
+- Use the same lighting direction, paper tone, shadows, scale, and three-quarter camera angle across all later assets.
+- Make one coherent white-background still-life/inventory board of reusable elements, not a contact sheet, comic strip, diagram, timeline, or set of final per-step images.
+VISUAL CONTINUITY
+This asset should stay visually consistent with earlier generated assets: step-07-saute-vegetables.png, step-08-build-barley-sauce.png. Repeated ingredients, tools, food states, colors, and plating should feel like the same recipe world unless the prompt explicitly changes them.
+
+
+IMAGE CONTENT
+Assemble: Pour mixture over chicken in baking pan. Depict the ingredients or components used now: boiling barley mixture; browned chicken. Show the resulting food state: chicken covered with barley mixture.  Tools or station: counter. Use a clear single-scene food illustration focused on the actual food/tool state for this step; no text or labels.
+
+NEGATIVE PROMPT
+No text, captions, ingredient labels, fake handwriting, UI cards, arrows, diagram lines, watermark, photorealistic product ad, glossy digital painting, smooth gradients, stock-photo realism, slick editorial food photo, shiny 3D render, airbrushed finish, tiny over-detailed garnish, plastic-looking food, extra hands, distorted cookware, cluttered background.

@@ -58,6 +58,8 @@ type ReciPopIngredient = {
   quantity?: string;
   quantityKind?: string;
   scalable?: boolean;
+  group?: string;
+  category?: string;
   item?: string;
   ingredient?: string;
   note?: string;
@@ -98,6 +100,13 @@ type ScalingOption = {
   context: string;
   original: string;
   metric: string;
+};
+type IngredientOverviewItem = {
+  item: string;
+  group: string;
+  notes: Set<string>;
+  divided: boolean;
+  quantities: Array<{ original: string; metric: string; scalable: boolean }>;
 };
 
 function parseFrontMatter(src: string): { data: Record<string, unknown>; body: string } {
@@ -601,6 +610,107 @@ ${facts.map((fact) => `<div><dt>${escapeHtml(fact.label)}</dt><dd>${escapeHtml(f
 </dl>`;
 }
 
+function cleanOverviewQuantity(value: string): { value: string; divided: boolean } {
+  const trimmed = String(value ?? "").trim();
+  const cleaned = trimmed.replace(/^remaining\s+/i, "");
+  return { value: cleaned, divided: cleaned !== trimmed };
+}
+
+function inferIngredientGroup(row: ReciPopIngredient, item: string): string {
+  const explicit = row.group ?? row.category;
+  if (explicit) return explicit;
+  const normalized = item.toLowerCase();
+  if (/\b(onion|onions|red pepper|bell pepper|tomato|tomatoes|green onion|green onions|spinach|greens|lemon|banana|carrot|cilantro|parsley|mushroom|apple|berry)\b/.test(normalized)) {
+    return "Produce";
+  }
+  if (/\b(cumin|chili powder|chile powder|pepper|kosher salt|table salt|salt|cinnamon|garlic powder|sumac|za'?atar|spice|vanilla|baking powder|baking soda)\b/.test(normalized)) {
+    return "Spices + seasoning";
+  }
+  if (/\b(oil|soy sauce|broth|stock|tahini|milk|cream|butter|yogurt|juice|water)\b/.test(normalized)) return "Liquids + fats";
+  if (/\b(chicken|salmon|beef|pork|lamb|egg|eggs|fish|meat)\b/.test(normalized)) return "Protein";
+  if (/\b(flour|sugar|barley|rice|oats|cornmeal|bread|crumb|chocolate|cocoa)\b/.test(normalized)) return "Dry goods";
+  return "Other";
+}
+
+function overviewIngredientItems(recipe: ReciPopRecipe): IngredientOverviewItem[] {
+  const skipKinds = new Set(["portion", "component"]);
+  const items = new Map<string, IngredientOverviewItem>();
+  for (const step of recipe.steps ?? []) {
+    for (const row of step.ingredients ?? []) {
+      const item = row.item ?? row.ingredient ?? "";
+      const originalSource = row.amounts?.original ?? getIngredientQuantity(row);
+      const metricSource = row.amounts?.metric ?? "";
+      const quantityKind = String(row.quantityKind ?? "absolute").toLowerCase();
+      if (!item || !originalSource || skipKinds.has(quantityKind)) continue;
+      const original = cleanOverviewQuantity(originalSource);
+      const metric = cleanOverviewQuantity(metricSource);
+      const key = item.toLowerCase();
+      const entry = items.get(key) ?? {
+        item,
+        group: inferIngredientGroup(row, item),
+        notes: new Set<string>(),
+        divided: false,
+        quantities: [],
+      };
+      entry.divided ||= original.divided || metric.divided;
+      if (row.note) entry.notes.add(row.note);
+      entry.quantities.push({
+        original: original.value,
+        metric: metric.value,
+        scalable: isScalableIngredient(row),
+      });
+      items.set(key, entry);
+    }
+  }
+  return [...items.values()];
+}
+
+function renderOverviewAmount(amount: { original: string; metric: string; scalable: boolean }): string {
+  const originalAttrs = amount.scalable && amount.original ? ` data-scale-qty="${escapeHtml(amount.original)}"` : "";
+  const metricAttrs = amount.scalable && amount.metric ? ` data-scale-qty="${escapeHtml(amount.metric)}"` : "";
+  if (amount.metric) {
+    return `<span class="sn-ingredient-overview__amount"><span data-unit-value="original"${originalAttrs}>${escapeHtml(amount.original)}</span><span data-unit-value="metric"${metricAttrs}>${escapeHtml(amount.metric)}</span></span>`;
+  }
+  return `<span class="sn-ingredient-overview__amount"><span${originalAttrs}>${escapeHtml(amount.original)}</span></span>`;
+}
+
+function renderIngredientOverview(recipe: ReciPopRecipe): string {
+  const items = overviewIngredientItems(recipe);
+  if (!items.length) return "";
+  const groupOrder = ["Spices + seasoning", "Protein", "Produce", "Dry goods", "Liquids + fats", "Other"];
+  const grouped = new Map<string, IngredientOverviewItem[]>();
+  for (const item of items) {
+    const group = item.group || "Other";
+    grouped.set(group, [...(grouped.get(group) ?? []), item]);
+  }
+  const groups = [...grouped.entries()].sort(([a], [b]) => {
+    const ai = groupOrder.indexOf(a);
+    const bi = groupOrder.indexOf(b);
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi) || a.localeCompare(b);
+  });
+  return `<section class="sn-ingredient-overview" aria-labelledby="ingredients-overview">
+<div class="sn-ingredient-overview__head">
+<h2 id="ingredients-overview">Ingredients</h2>
+</div>
+<div class="sn-ingredient-overview__groups">
+${groups.map(([group, groupItems]) => `<section class="sn-ingredient-overview__group">
+<h3>${escapeHtml(group)}</h3>
+<ul>
+${groupItems.map((item) => {
+    const notes = [...item.notes];
+    const note = [item.divided ? "divided across steps" : "", ...notes].filter(Boolean).join("; ");
+    return `<li>
+<span class="sn-ingredient-overview__qty">${item.quantities.map(renderOverviewAmount).join("<span class=\"sn-ingredient-overview__plus\">+</span>")}</span>
+<b>${escapeHtml(item.item)}</b>
+${note ? `<small>${escapeHtml(note)}</small>` : ""}
+</li>`;
+  }).join("\n")}
+</ul>
+</section>`).join("\n")}
+</div>
+</section>`;
+}
+
 function renderReciPopIngredientRows(rows: ReciPopIngredient[] = []): string {
   if (!rows.length) return "";
   return `<table class="sn-flow-ingredients"><tbody>
@@ -712,7 +822,6 @@ ${renderStepFooter(step)}
 function renderParallelSection(recipe: ReciPopRecipe, section: any, steps: Map<string, ReciPopStep>, prefix: string): string {
   const lanes = Array.isArray(section.lanes) ? section.lanes : [];
   return `<section class="sn-flow-parallel">
-${section.summary ? `<p class="sn-flow-parallel__summary">${escapeHtml(section.summary)}</p>` : ""}
 <div class="sn-flow-parallel__lanes">
 ${lanes.map((lane: any) => `<div class="sn-flow-parallel__lane">
 ${(lane.steps ?? []).map((id: string) => {
@@ -721,7 +830,6 @@ ${(lane.steps ?? []).map((id: string) => {
   }).join("\n")}
 </div>`).join("\n")}
 </div>
-${section.converge?.label ? `<p class="sn-flow-parallel__converge">${escapeHtml(section.converge.label)}</p>` : ""}
 </section>`;
 }
 
@@ -750,6 +858,7 @@ ${renderScaleControls(flow)}
 </div>
 ${heroes.length ? `<div class="sn-recipop__hero-art">${heroes.map((filename) => renderReciPopImage(flow, filename, prefix, "sn-recipop__hero-image")).join("\n")}</div>` : ""}
 ${renderReciPopFacts(flow)}
+${renderIngredientOverview(flow)}
 ${renderPhaseKey(flow)}
 ${renderReciPopProcess(flow, prefix)}
 ${renderStoryboardLink(flow, prefix)}

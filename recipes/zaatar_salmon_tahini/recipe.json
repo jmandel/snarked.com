@@ -185,7 +185,6 @@
       },
       {
         "type": "parallel",
-        "summary": "While the pan bakes, whisk the tahini sauce.",
         "lanes": [
           {
             "label": "Oven",
@@ -203,7 +202,6 @@
           }
         ],
         "converge": {
-          "label": "Tahini sauce joins the pan for the finish bake.",
           "targetStep": "finish-bake"
         }
       },

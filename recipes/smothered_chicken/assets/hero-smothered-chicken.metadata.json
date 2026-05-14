@@ -1,0 +1,22 @@
+{
+  "filename": "hero-smothered-chicken.png",
+  "provider": "agent-guided",
+  "generatedAt": "2026-05-13T14:52:17.992Z",
+  "sourceFile": "/home/jmandel/hobby/snarked.com/.recipop-runs/20260513T144552Z-smothered-chicken/codex-home/generated_images/019e21cd-291f-7c13-9397-9169b2e006ac/ig_07f2b06d515b40f5016a048fa3f938819998ee1b106e7aa922.png",
+  "promptFile": "recipes/smothered_chicken/prompts/hero-smothered-chicken.txt",
+  "referenceMode": "agent-guided",
+  "style": "french-hen-folk-wave",
+  "referenceImages": [
+    "styles/french-hen-folk-wave/hen.png"
+  ],
+  "dependencyImages": [],
+  "sourceMimeType": "image/png",
+  "targetMimeType": "image/png",
+  "postprocess": {
+    "status": "trimmed",
+    "method": "imagemagick-trim",
+    "fuzz": "3%",
+    "beforeBytes": 2902857,
+    "afterBytes": 2699388
+  }
+}

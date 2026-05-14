@@ -189,7 +189,7 @@ export function firstPositional(args, fallback = undefined) {
 export function requireRecipePath(args) {
   const recipePath = firstPositional(args);
   if (!recipePath) {
-    throw new Error('Missing recipe path. Example: bun skills/recipop/scripts/reci-pop/render.ts recipes/smothered-chicken/recipe.json');
+    throw new Error('Missing recipe path. Example: bun skills/recipop/scripts/reci-pop/render.ts recipes/smothered_chicken/recipe.json');
   }
   return path.resolve(ROOT, recipePath);
 }

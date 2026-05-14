@@ -154,9 +154,11 @@
                     "const": "parallel",
                     "description": "A local covered-time group, not a global swimlane. Use only when a wait/unattended step plausibly covers another task."
                   },
-                  "label": { "type": "string" },
+                  "label": {
+                    "type": "string",
+                    "description": "Structural/debug label only. Do not use generic user-facing labels such as Covered time."
+                  },
                   "timeLabel": { "type": "string" },
-                  "summary": { "type": "string" },
                   "lanes": {
                     "type": "array",
                     "items": {
@@ -173,7 +175,6 @@
                     "type": "object",
                     "additionalProperties": true,
                     "properties": {
-                      "label": { "type": "string" },
                       "targetStep": { "type": "string" }
                     }
                   }
@@ -224,6 +225,14 @@
                   }
                 },
                 "item": { "type": "string" },
+                "group": {
+                  "type": "string",
+                  "description": "Optional shopping/prep overview grouping such as Spices + seasoning, Produce, Protein, Dry goods, Liquids + fats, Dairy, or Garnish. Use this when renderer inference would be ambiguous."
+                },
+                "category": {
+                  "type": "string",
+                  "description": "Alias for group for imported data. Prefer group in hand-authored JSON."
+                },
                 "note": { "type": "string" }
               }
             }

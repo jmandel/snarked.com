@@ -16,6 +16,7 @@ Requirements:
 - Create `unitSystems` with `original` and `metric` when any defensible metric quantities are present.
 - Keep `qty` as the source-facing quantity. Add `amounts.metric` for reasonable gram conversions. Use sensible precision: whole grams for ordinary quantities, one decimal below 10 g, two decimals only for tiny amounts where precision matters.
 - Keep `qty` compact: amount and unit, not prose. Put alternatives and prep instructions in `item` or `note`, and set `scalable: false` when an either/or quantity would not scale coherently.
+- Add `group` on source ingredient rows when it improves the derived ingredient/shopping overview. Use practical cook-facing groups such as `Spices + seasoning`, `Produce`, `Protein`, `Dry goods`, `Liquids + fats`, `Dairy`, or `Garnish`. Do not group intermediate components or relational portions as shopping items.
 - Use `quantityKind` where plain quantities are ambiguous: `portion` for relational splits such as `half spice mixture` or `remaining half dough`, `as-needed` for oiling/greasing as needed, and `to-taste` for salt, pepper, pinches, or judgment quantities.
 - Do not add `amounts.metric` to relational portions of a previously made component unless the recipe explicitly gives that component yield. A later `half spice mixture` scales through the spices that made the mixture, not through an invented standalone gram amount.
 - Create a `steps` array with stable ids, numbers, time labels, phases, ingredients, makes, notes, durations, resources, and one image asset filename per illustrated step.
@@ -26,7 +27,8 @@ Requirements:
 - Use `layout.sections` for rendering order. Default to mise en place: setup steps first, then prep, then cooking.
 - Use `parallel` only for true covered-time simultaneity, where a wait or mostly unattended step such as simmering, baking, resting, chilling, draining, or cooling plausibly covers another task. Do not use `parallel` merely because tasks are independent.
 - Do not put invented parent durations on parallel groups. Let each child step carry its own timing, active/passive duration, and notes.
-- Avoid generic labels like "Covered time"; if explanation is needed, use a short cook-facing `summary` such as "While the pan bakes, whisk the sauce." Renderers should not need to show a parent heading.
+- Keep parallel groups structural. Do not add generic parent labels, summaries, or convergence captions such as "Covered time", "prep lane", or "Return to the main sequence"; the next real step should express how the work comes back together.
+- Keep source ingredients represented in the step rows so renderers can derive a compact shopping/prep overview. Exclude intermediate components and relational portions from that overview.
 - Include `style` as the only style field, either a style id string such as "french-hen-folk-wave" or an inline style object.
 - Use `assetBasePath: "assets"` when assets are stored beside the recipe JSON in a recipe-local `assets/` directory.
 - Include `assets[].dependsOnAssets` when repeated ingredients, tools, cooked states, or plating should remain visually consistent with earlier assets.

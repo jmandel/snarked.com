@@ -89,6 +89,9 @@ if (recipe.layout?.sections) {
       if (!stepIds.has(id)) errors.push(`layout references missing step: ${id}`);
     }
     if (item.type === 'parallel') {
+      if (item.label && /covered\s+time/i.test(item.label)) errors.push('parallel sections should not use generic labels like "Covered time"');
+      if (item.summary) errors.push('parallel sections should not include summary prose; keep the relationship clear through the step cards');
+      if (item.converge?.label) errors.push('parallel converge should use targetStep only, not a user-facing label');
       if (!Array.isArray(item.lanes) || !item.lanes.length) errors.push(`parallel section ${item.label || '?'} needs lanes`);
       for (const lane of item.lanes || []) {
         if (!lane.label) errors.push(`parallel section ${item.label || '?'} has a lane without label`);
