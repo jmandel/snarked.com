@@ -1,7 +1,7 @@
 // Procedurally generated wave for the hero band.
-// On load: pick random parameters for ~5 wave layers, each a sum of 3–4
-// sine harmonics. Animate the harmonic phases for 500ms with a quadratic
-// ease-out (waves "settle" to a halt), then freeze.
+// On load: pick random parameters for ~5 wave layers, each a sum of 3-4
+// sine harmonics. Animate the harmonic phases briefly with a smooth
+// ease-in/ease-out settle, then freeze.
 
 (() => {
   const hosts = document.querySelectorAll(".sn-hero__wave");
@@ -10,8 +10,6 @@
 })();
 
 function setupWave(host) {
-  const STATIC = host.hasAttribute("data-static");
-
   const SVG_NS = "http://www.w3.org/2000/svg";
   const W = 1600;
   const H = 280;
@@ -210,61 +208,17 @@ function setupWave(host) {
     return { layer, el: p };
   });
 
-  // The snark: a coral lifebuoy that rides on the foreground wave crest.
-  const lifebuoyGroup = document.createElementNS(SVG_NS, "g");
-  const buoyX = rand(W * 0.30, W * 0.70);
-  lifebuoyGroup.innerHTML = `
-    <circle r="6" fill="#F43F5E"/>
-    <circle r="13" fill="none" stroke="#F43F5E" stroke-width="1.2" opacity="0.55"/>`;
-  masked.appendChild(lifebuoyGroup);
-
-  // Tiny far-side lighthouse pinpoint
-  const lighthouse = document.createElementNS(SVG_NS, "g");
-  const lhX = rand(60, 200);
-  lighthouse.innerHTML = `
-    <line x1="0" y1="0" x2="0" y2="14" stroke="#0A1F4D" stroke-width="0.9" opacity="0.7"/>
-    <circle cx="0" cy="-2" r="2.2" fill="#F43F5E" opacity="0.85"/>`;
-  lighthouse.setAttribute("transform", `translate(${lhX} 100)`);
-  masked.appendChild(lighthouse);
-
   host.replaceChildren(svg);
 
   // ----- Animate --------------------------------------------------------
-  const DUR = 500; // ms
-  // Quadratic ease-out: ∫(v0 (1 - t/dur)) dt = v0 t - v0 t²/(2 dur).
-  // We want eased "wall-clock-equivalent" time so phaseSpeed * t reads naturally.
-  // Scale so the integrated time over [0, DUR] equals SETTLE_SECONDS.
+  const DUR = 720; // ms
   const SETTLE_SECONDS = 1.6;
   const easedTime = (tMs) => {
     const x = Math.min(tMs, DUR) / DUR;
-    // ∫(1 - x) dx from 0..u = u - u²/2 ; max at u=1 is 0.5
-    const integ = x - 0.5 * x * x;
-    return integ * 2 * SETTLE_SECONDS; // 0..SETTLE_SECONDS over 0..DUR
+    // Smootherstep: velocity starts near zero, rises, then returns to zero.
+    const y = x * x * x * (x * (x * 6 - 15) + 10);
+    return y * SETTLE_SECONDS;
   };
-
-  // Static mode: render once at the settled time and stop. Used on
-  // utility pages (recipe detail) where a half-second swell on every
-  // navigation would be more noise than delight.
-  if (STATIC) {
-    const t = 2 * SETTLE_SECONDS; // any value past the easedTime asymptote works
-    const allYs = computeAll(t);
-    for (let i = 0; i < layers.length; i++) {
-      const entry = elements[i];
-      const d = pathDFromYs(layers[i], allYs[i]);
-      entry.el.setAttribute("d", d);
-      if (entry.hatch) entry.hatch.setAttribute("d", d);
-    }
-    const foreground = layers[7];
-    let buoyY = foreground.baseY;
-    let buoyDX = 0;
-    for (const h of foreground.harmonics) {
-      const phi = h.freq * buoyX + h.phase + h.phaseSpeed * t;
-      buoyY += h.amp * Math.sin(phi);
-      buoyDX += h.amp * Math.cos(phi) * 0.6;
-    }
-    lifebuoyGroup.setAttribute("transform", `translate(${buoyX + buoyDX} ${buoyY - 6})`);
-    return;
-  }
 
   const start = performance.now();
   function frame(now) {
@@ -278,19 +232,6 @@ function setupWave(host) {
       entry.el.setAttribute("d", d);
       if (entry.hatch) entry.hatch.setAttribute("d", d);
     }
-
-    // Drive the lifebuoy: ride the foreground wave with deep-water
-    // orbital motion (water particles trace circles, so the buoy traces
-    // a small ellipse on the surface).
-    const foreground = layers[7];
-    let buoyY = foreground.baseY;
-    let buoyDX = 0;
-    for (const h of foreground.harmonics) {
-      const phi = h.freq * buoyX + h.phase + h.phaseSpeed * t;
-      buoyY += h.amp * Math.sin(phi);
-      buoyDX += h.amp * Math.cos(phi) * 0.6;
-    }
-    lifebuoyGroup.setAttribute("transform", `translate(${buoyX + buoyDX} ${buoyY - 6})`);
 
     if (elapsed < DUR) requestAnimationFrame(frame);
   }

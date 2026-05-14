@@ -473,6 +473,8 @@
         },
         {
           "qty": "as needed",
+          "quantityKind": "as-needed",
+          "scalable": false,
           "item": "vegetable oil",
           "amounts": {
             "original": "as needed"

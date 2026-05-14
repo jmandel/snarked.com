@@ -33,6 +33,8 @@ if (typeof recipe.style === 'string') {
 }
 
 const stepIds = new Set();
+const quantityKinds = new Set(['absolute', 'count', 'portion', 'ratio', 'as-needed', 'to-taste', 'component']);
+const noMetricQuantityKinds = new Set(['portion', 'ratio', 'as-needed', 'to-taste', 'component']);
 for (const step of recipe.steps || []) {
   if (!step.id) errors.push('Every step needs an id');
   if (step.id && stepIds.has(step.id)) errors.push(`Duplicate step id: ${step.id}`);
@@ -40,9 +42,18 @@ for (const step of recipe.steps || []) {
   if (!step.title) errors.push(`Step ${step.id || '?'} is missing title`);
   if (step.asset && !(recipe.assets || []).some(a => a.filename === step.asset)) errors.push(`Step ${step.id} references missing asset: ${step.asset}`);
   for (const row of step.ingredients || []) {
+    if (row.quantityKind && !quantityKinds.has(row.quantityKind)) {
+      errors.push(`Step ${step.id} has invalid ingredient quantityKind: ${row.quantityKind}`);
+    }
+    if (row.scalable != null && typeof row.scalable !== 'boolean') {
+      errors.push(`Step ${step.id} ingredient scalable must be boolean`);
+    }
     if (row.amounts && typeof row.amounts !== 'object') errors.push(`Step ${step.id} has ingredient amounts that are not an object`);
     for (const [unitId, value] of Object.entries(row.amounts || {})) {
       if (typeof value !== 'string') errors.push(`Step ${step.id} ingredient amount ${unitId} must be a string`);
+    }
+    if (noMetricQuantityKinds.has(row.quantityKind) && row.amounts?.metric) {
+      errors.push(`Step ${step.id} ingredient ${row.item || row.ingredient || '?'} uses quantityKind ${row.quantityKind} but also defines amounts.metric`);
     }
   }
 }

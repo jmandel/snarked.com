@@ -283,6 +283,8 @@
         },
         {
           "qty": "to taste",
+          "quantityKind": "to-taste",
+          "scalable": false,
           "item": "kosher salt and black pepper",
           "amounts": {
             "original": "to taste"
@@ -331,6 +333,8 @@
         },
         {
           "qty": "pinch",
+          "quantityKind": "to-taste",
+          "scalable": false,
           "item": "kosher salt and black pepper",
           "amounts": {
             "original": "pinch"
@@ -421,8 +425,7 @@
           "item": "garlic",
           "note": "minced",
           "amounts": {
-            "original": "3 cloves",
-            "metric": "3 cloves"
+            "original": "3 cloves"
           }
         },
         {
@@ -443,6 +446,8 @@
         },
         {
           "qty": "pinch",
+          "quantityKind": "to-taste",
+          "scalable": false,
           "item": "kosher salt",
           "amounts": {
             "original": "pinch"

@@ -91,7 +91,7 @@ Station/tools: counter
 Rub the chicken with half the resulting spice mixture.
 Uses:
   - 6 chicken thighs
-  - half spice mixture (4.3 g)
+  - half spice mixture
 Makes: spice-rubbed chicken
 
 ### 6. Brown Chicken
@@ -128,7 +128,7 @@ Uses:
   - 3 1/2 c chicken broth (840 g)
   - 1 1/4 c uncooked barley (250 g)
   - drained chopped tomatoes
-  - remaining half spice mixture (remaining 4.3 g)
+  - remaining half spice mixture
 Makes: boiling barley mixture
 Notes:
 - Source timing: a few more minutes, then bring to boil

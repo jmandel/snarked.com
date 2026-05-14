@@ -424,6 +424,8 @@
         },
         {
           "qty": "to taste",
+          "quantityKind": "to-taste",
+          "scalable": false,
           "item": "salt and pepper",
           "amounts": {
             "original": "to taste"

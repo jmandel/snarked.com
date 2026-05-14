@@ -353,6 +353,8 @@
       "ingredients": [
         {
           "qty": "1 pinch",
+          "quantityKind": "as-needed",
+          "scalable": false,
           "item": "saffron threads",
           "amounts": {
             "original": "1 pinch"

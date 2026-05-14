@@ -53,6 +53,8 @@ type FlowRecipe = {
 type ReciIngredient = {
   qty: string;
   item: string;
+  quantityKind?: "absolute" | "count" | "portion" | "ratio" | "as-needed" | "to-taste" | "component";
+  scalable?: boolean;
   note?: string;
   amounts?: Record<string, string>;
 };
@@ -343,20 +345,18 @@ function metricAmount(qty: string, item: string): string | undefined {
   return `${prefix}${formatMetricGrams(grams, canSuffix)}`;
 }
 
-function metricFromComponentAmount(input: { ref: string; amount?: string }, componentMetrics: Map<string, string>): string | undefined {
-  const base = metricGramsValue(componentMetrics.get(input.ref));
-  if (!base) return undefined;
-  const amount = String(input.amount || "").trim().toLowerCase();
-  if (!amount) return undefined;
-  if (amount === "half") return formatMetricGrams(base / 2);
-  if (amount === "remaining half") return `remaining ${formatMetricGrams(base / 2)}`;
+function quantityKindFor(qty: string): ReciIngredient["quantityKind"] {
+  const text = String(qty || "").trim().toLowerCase();
+  if (!text) return undefined;
+  if (/^(?:remaining\s+)?(?:half|one half|third|one third|quarter|one quarter)\b/.test(text)) return "portion";
+  if (/^to taste\b/.test(text)) return "to-taste";
+  if (/^(?:as needed|pinch|dash|1 pinch|1 dash)\b/.test(text)) return "as-needed";
   return undefined;
 }
 
 function ingredientForInput(
   input: { ref: string; amount?: string },
   components: Map<string, FlowComponent>,
-  componentMetrics: Map<string, string>,
 ): ReciIngredient {
   const component = components.get(input.ref);
   const qty = input.amount || component?.quantity?.text || "";
@@ -364,7 +364,12 @@ function ingredientForInput(
   const ingredient: ReciIngredient = { qty, item };
   const notes = [component?.state, component?.optional ? "optional" : "", component?.note].filter(Boolean);
   if (notes.length) ingredient.note = notes.join("; ");
-  const metric = metricAmount(qty, item) || metricFromComponentAmount(input, componentMetrics);
+  const quantityKind = quantityKindFor(qty);
+  if (quantityKind) {
+    ingredient.quantityKind = quantityKind;
+    if (["portion", "as-needed", "to-taste"].includes(quantityKind)) ingredient.scalable = false;
+  }
+  const metric = quantityKind ? undefined : metricAmount(qty, item);
   const amounts: Record<string, string> = {};
   if (qty) amounts.original = qty;
   if (metric) amounts.metric = metric;
@@ -436,7 +441,7 @@ function buildSteps(flow: FlowRecipe) {
       },
       attention: action.execution?.attention,
       resources,
-      ingredients: (action.inputs || []).map((input) => ingredientForInput(input, components, metrics)),
+      ingredients: (action.inputs || []).map((input) => ingredientForInput(input, components)),
       makes: output ? [{ item: output }] : [],
       notes: notesForAction(action),
       asset: `step-${String(index + 1).padStart(2, "0")}-${slugify(action.id)}.png`

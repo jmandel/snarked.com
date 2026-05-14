@@ -205,6 +205,15 @@
               "type": "object",
               "properties": {
                 "qty": { "type": "string" },
+                "quantityKind": {
+                  "type": "string",
+                  "enum": ["absolute", "count", "portion", "ratio", "as-needed", "to-taste", "component"],
+                  "description": "Semantic kind of quantity. Use portion for relational splits such as half, remaining half, a third, or half the dough. Portion rows are displayed as quantities but should not be independently metric-converted or scaled unless a renderer explicitly understands the source component yield."
+                },
+                "scalable": {
+                  "type": "boolean",
+                  "description": "Optional override for renderer scaling. Set false when a parseable-looking quantity should be displayed but not multiplied independently."
+                },
                 "amounts": {
                   "type": "object",
                   "additionalProperties": { "type": "string" },

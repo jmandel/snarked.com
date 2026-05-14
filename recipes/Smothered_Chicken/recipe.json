@@ -563,10 +563,10 @@
         },
         {
           "qty": "half",
+          "quantityKind": "portion",
           "item": "spice mixture",
           "amounts": {
-            "original": "half",
-            "metric": "4.3 g"
+            "original": "half"
           }
         }
       ],
@@ -717,10 +717,10 @@
         },
         {
           "qty": "remaining half",
+          "quantityKind": "portion",
           "item": "spice mixture",
           "amounts": {
-            "original": "remaining half",
-            "metric": "remaining 4.3 g"
+            "original": "remaining half"
           }
         }
       ],

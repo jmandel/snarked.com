@@ -53,7 +53,16 @@ type Recipe = FrontMatter & {
 };
 
 type Section = { name: string; md: string };
-type ReciPopIngredient = { qty?: string; quantity?: string; item?: string; ingredient?: string; note?: string; amounts?: Record<string, string> };
+type ReciPopIngredient = {
+  qty?: string;
+  quantity?: string;
+  quantityKind?: string;
+  scalable?: boolean;
+  item?: string;
+  ingredient?: string;
+  note?: string;
+  amounts?: Record<string, string>;
+};
 type ReciPopStep = {
   id: string;
   number?: number;
@@ -347,8 +356,16 @@ function getIngredientQuantity(row: ReciPopIngredient): string {
   return row.qty ?? row.quantity ?? "";
 }
 
+function isScalableIngredient(row: ReciPopIngredient): boolean {
+  if (row.scalable === false) return false;
+  const quantityKind = String(row.quantityKind ?? "absolute").toLowerCase();
+  if (["portion", "ratio", "as-needed", "to-taste", "component"].includes(quantityKind)) return false;
+  const hasLeadingNumber = (text: string) => /^\D*(?:\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?|\.\d+)/.test(text.trim());
+  return hasLeadingNumber(getIngredientQuantity(row)) || hasLeadingNumber(row.amounts?.metric ?? "");
+}
+
 function hasScalableQuantities(recipe: ReciPopRecipe): boolean {
-  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some((row) => getIngredientQuantity(row) || row.amounts?.metric));
+  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some(isScalableIngredient));
 }
 
 function scalingOptions(recipe: ReciPopRecipe): ScalingOption[] {
@@ -359,7 +376,7 @@ function scalingOptions(recipe: ReciPopRecipe): ScalingOption[] {
       const item = row.item ?? row.ingredient ?? "";
       const original = getIngredientQuantity(row);
       const metric = row.amounts?.metric ?? "";
-      if (!item || (!original && !metric)) continue;
+      if (!item || !isScalableIngredient(row)) continue;
       const key = `${item.toLowerCase()}|${original}|${metric}|${step.id}`;
       if (seen.has(key)) continue;
       seen.add(key);
@@ -607,8 +624,9 @@ ${rows.map((row) => {
     const qty = row.qty ?? row.quantity ?? "";
     const metric = row.amounts?.metric ?? "";
     const item = row.item ?? row.ingredient ?? "";
-    const originalAttrs = qty ? ` data-scale-qty="${escapeHtml(qty)}"` : "";
-    const metricAttrs = metric ? ` data-scale-qty="${escapeHtml(metric)}"` : "";
+    const scalable = isScalableIngredient(row);
+    const originalAttrs = scalable && qty ? ` data-scale-qty="${escapeHtml(qty)}"` : "";
+    const metricAttrs = scalable && metric ? ` data-scale-qty="${escapeHtml(metric)}"` : "";
     const qtyHtml = metric
       ? `<span data-unit-value="original"${originalAttrs}>${escapeHtml(qty)}</span><span data-unit-value="metric"${metricAttrs}>${escapeHtml(metric)}</span>`
       : `<span${originalAttrs}>${escapeHtml(qty)}</span>`;
@@ -631,11 +649,9 @@ function renderStepMeta(step: ReciPopStep): string {
 }
 
 function renderStepFooter(step: ReciPopStep): string {
-  const makes = (step.makes ?? []).map((item) => item.item).filter(Boolean);
   const notes = step.notes ?? [];
-  if (!makes.length && !notes.length) return "";
+  if (!notes.length) return "";
   return `<div class="sn-flow-step__footer">
-${makes.length ? `<p><b>Makes</b> ${makes.map(escapeHtml).join(", ")}</p>` : ""}
 ${notes.map((note) => `<p>${escapeHtml(note)}</p>`).join("\n")}
 </div>`;
 }
@@ -755,7 +771,7 @@ function renderRecipe(r: Recipe, all: Recipe[]): string {
 <span>Date: ${escapeHtml(r.date)}</span>
 </div>
 </div>
-<div class="sn-hero__wave sn-hero__wave--compact" data-static aria-hidden="true"></div>
+<div class="sn-hero__wave sn-hero__wave--compact" aria-hidden="true"></div>
 <script src="${prefix}assets/wave.js" defer></script>
 </section>
 
