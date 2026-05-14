@@ -254,7 +254,8 @@ Preserve source wording and add alternatives. Do not overwrite the original reci
 - Leave metric absent for `quantityKind: "portion"` rows such as `half spice mixture`. The whole component scales by scaling the source ingredients, so converting the later half into a standalone gram value breaks the logic unless the source states the component yield.
 - Leave metric absent on the parent `alternative` row. If an individual alternative item has a defensible metric value, put it on that item; keep the parent non-scalable because the cook must choose an option before scaling can be interpreted.
 - Use parseable leading quantities so renderers can scale: `240 g`, `1 1/2 c`, `remaining 2 T`, `2 eggs`.
-- Scaling can be by factor or by a key ingredient target. The renderer should multiply parseable leading absolute/count quantities, keep `remaining 2 T` style known split amounts scalable, and leave `portion`, `as-needed`, `to-taste`, and component rows unchanged.
+- Scaling can be by factor or by a key ingredient target. The renderer should multiply parseable leading absolute/count quantities, including the item rows inside each alternative choice. It should keep the parent `alternative` row out of the key-ingredient target list, because the user has not chosen one branch there.
+- Keep `remaining 2 T` style known split amounts scalable, and leave `portion`, `as-needed`, `to-taste`, and component rows unchanged.
 - Mark rows `scalable: false` when the quantity is a judgment quantity or otherwise cannot be multiplied without changing the meaning. Either/or choices should also use `quantityKind: "alternative"` and structured `alternatives[]`.
 
 ## Layout Guidance

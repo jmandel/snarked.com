@@ -227,7 +227,7 @@
                 "item": { "type": "string" },
                 "alternatives": {
                   "type": "array",
-                  "description": "Either/or ingredient choices. Use this instead of smuggling OR text into item when a cook must choose between ingredient sets, such as 2-3 bananas OR 1 banana plus 2 carrots. The parent row should usually have quantityKind: alternative and scalable: false.",
+                  "description": "Either/or ingredient choices. Use this instead of smuggling OR text into item when a cook must choose between ingredient sets, such as 2-3 bananas OR 1 banana plus 2 carrots. The parent row should usually have quantityKind: alternative and scalable: false. Child items can still scale with the whole recipe.",
                   "items": {
                     "type": "object",
                     "required": ["items"],

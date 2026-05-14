@@ -395,7 +395,10 @@ function isScalableIngredient(row: ReciPopIngredientBase): boolean {
 }
 
 function hasScalableQuantities(recipe: ReciPopRecipe): boolean {
-  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some(isScalableIngredient));
+  return (recipe.steps ?? []).some((step) => (step.ingredients ?? []).some((row) => {
+    if (isScalableIngredient(row)) return true;
+    return (row.alternatives ?? []).some((choice) => (choice.items ?? []).some(isScalableIngredient));
+  }));
 }
 
 function scalingOptions(recipe: ReciPopRecipe): ScalingOption[] {
@@ -681,7 +684,7 @@ function overviewIngredientItems(recipe: ReciPopRecipe): IngredientOverviewItem[
             const metric = cleanOverviewQuantity(choiceItem.amounts?.metric ?? "");
             return {
               item: choiceLabel,
-              quantity: { original: original.value, metric: metric.value, scalable: false },
+              quantity: { original: original.value, metric: metric.value, scalable: isScalableIngredient(choiceItem) },
             };
           }).filter((choiceItem) => choiceItem.item);
           if (choiceItems.length) {
@@ -773,7 +776,7 @@ ${note ? `<small>${escapeHtml(note)}</small>` : ""}
 </section>`;
 }
 
-function renderReciPopIngredientRow(row: ReciPopIngredientBase, forceStatic = false): string {
+function reciPopIngredientParts(row: ReciPopIngredientBase, forceStatic = false) {
   const qty = row.qty ?? row.quantity ?? "";
   const metric = row.amounts?.metric ?? "";
   const item = row.item ?? row.ingredient ?? "";
@@ -783,26 +786,39 @@ function renderReciPopIngredientRow(row: ReciPopIngredientBase, forceStatic = fa
   const qtyHtml = metric
     ? `<span data-unit-value="original"${originalAttrs}>${escapeHtml(qty)}</span><span data-unit-value="metric"${metricAttrs}>${escapeHtml(metric)}</span>`
     : `<span${originalAttrs}>${escapeHtml(qty)}</span>`;
+  return { qty, metric, item, note: row.note ?? "", qtyHtml };
+}
+
+function renderReciPopIngredientRow(row: ReciPopIngredientBase, forceStatic = false): string {
+  const { qty, metric, item, note, qtyHtml } = reciPopIngredientParts(row, forceStatic);
   if (!qty && !metric) {
-    return `<tr class="sn-flow-ingredients__component"><td colspan="2"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+    return `<tr class="sn-flow-ingredients__component"><td colspan="2"><b>${escapeHtml(item)}</b>${note ? `<small>${escapeHtml(note)}</small>` : ""}</td></tr>`;
   }
-  return `<tr><td class="sn-flow-ingredients__qty">${qtyHtml}</td><td><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`;
+  return `<tr><td class="sn-flow-ingredients__qty">${qtyHtml}</td><td><b>${escapeHtml(item)}</b>${note ? `<small>${escapeHtml(note)}</small>` : ""}</td></tr>`;
+}
+
+function renderReciPopAlternativeItem(row: ReciPopIngredientBase): string {
+  const { item, note, qtyHtml } = reciPopIngredientParts(row);
+  return `<div class="sn-flow-alternative__item"><span class="sn-flow-alternative__qty">${qtyHtml}</span><b>${escapeHtml(item)}</b>${note ? `<small>${escapeHtml(note)}</small>` : ""}</div>`;
 }
 
 function renderReciPopAlternativeRows(row: ReciPopIngredient): string {
   const item = row.item ?? row.ingredient ?? "choice";
   const choices = row.alternatives ?? [];
-  return [
-    `<tr class="sn-flow-ingredients__component sn-flow-ingredients__alternative-head"><td colspan="2"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</td></tr>`,
-    ...choices.flatMap((choice, index) => {
-      const rows = choice.items ?? [];
-      return [
-        index > 0 ? `<tr class="sn-flow-ingredients__or"><td colspan="2">or</td></tr>` : "",
-        choice.label ? `<tr class="sn-flow-ingredients__choice-label"><td colspan="2">${escapeHtml(choice.label)}${choice.note ? `<small>${escapeHtml(choice.note)}</small>` : ""}</td></tr>` : "",
-        ...rows.map((choiceItem) => renderReciPopIngredientRow(choiceItem, true)),
-      ].filter(Boolean);
-    }),
-  ].join("\n");
+  const choiceHtml = choices.map((choice, index) => {
+    const rows = choice.items ?? [];
+    return `${index > 0 ? `<div class="sn-flow-alternative__or">or</div>` : ""}
+<div class="sn-flow-alternative__choice">
+${choice.label ? `<div class="sn-flow-alternative__choice-label">${escapeHtml(choice.label)}${choice.note ? `<small>${escapeHtml(choice.note)}</small>` : ""}</div>` : ""}
+${rows.map(renderReciPopAlternativeItem).join("")}
+</div>`;
+  }).join("");
+  return `<tr class="sn-flow-ingredients__alternative"><td colspan="2">
+<div class="sn-flow-alternative">
+<div class="sn-flow-alternative__head"><b>${escapeHtml(item)}</b>${row.note ? `<small>${escapeHtml(row.note)}</small>` : ""}</div>
+${choiceHtml}
+</div>
+</td></tr>`;
 }
 
 function renderReciPopIngredientRows(rows: ReciPopIngredient[] = []): string {
@@ -934,12 +950,12 @@ function renderReciPopRecipe(flow: ReciPopRecipe, sourceRecipe: Recipe, prefix: 
   const hasUnits = hasMetricUnits(flow);
   const hasScale = hasScalableQuantities(flow);
   return `<section class="sn-recipop" data-units="${escapeHtml(units)}">
+${heroes.length ? `<div class="sn-recipop__hero-art">${heroes.map((filename) => renderReciPopImage(flow, filename, prefix, "sn-recipop__hero-image")).join("\n")}</div>` : ""}
 <div class="sn-recipop__toolbar">
 ${renderUnitToggle(flow)}
 ${renderScaleControls(flow)}
 <a href="recipe.json">JSON</a>
 </div>
-${heroes.length ? `<div class="sn-recipop__hero-art">${heroes.map((filename) => renderReciPopImage(flow, filename, prefix, "sn-recipop__hero-image")).join("\n")}</div>` : ""}
 ${renderReciPopFacts(flow)}
 ${renderIngredientOverview(flow)}
 ${renderPhaseKey(flow)}
