@@ -772,8 +772,8 @@ a:hover { color: var(--link-hover); }
 .sn-flow-ingredients tr + tr { border-top: 1px solid var(--ink-rule); }
 .sn-flow-ingredients td {
   padding: 9px 10px;
-  vertical-align: top;
-  line-height: 1.25;
+  vertical-align: baseline;
+  line-height: 1.2;
 }
 .sn-flow-ingredients td:first-child {
   width: 1%;
@@ -788,13 +788,15 @@ a:hover { color: var(--link-hover); }
   white-space: nowrap;
 }
 .sn-flow-ingredients b {
-  display: block;
+  display: inline;
   color: var(--ink);
   text-align: left;
+  line-height: 1.2;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 .sn-flow-ingredients__component td {
+  vertical-align: top;
   text-align: left;
   padding-left: 10px;
 }
